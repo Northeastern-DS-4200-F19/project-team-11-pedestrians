@@ -1,4 +1,4 @@
-Timestamp,Move-In-Date,Visit-Frequency,Visit-Time,Construction-Frequency,Traffic,Safety-Level,Cross-Rate
+Timestamp,Move-In-Date,Visit-Frequency,visittime,Construction-Frequency,Traffic,safetylevel,Cross-Rate
 10/14/19 21:27,8/1/12,Daily,Morning,1,5,1,Never
 10/14/19 22:02,12/1/09,Daily,Morning,1,1,9,Never
 10/15/19 7:09,11/5/15,Daily,Afternoon,3,3,4,Never
