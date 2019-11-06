@@ -1,3 +1,6 @@
+// NOTE: Sample code from class was used on this assignment
+// We plan to add it to the Acknowledgements section but do not know the format
+
 d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
   return {
     visittime: d.visittime,
