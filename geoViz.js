@@ -1,81 +1,58 @@
-// NOTE: Sample code from class was used on this assignment
-// We plan to add it to the Acknowledgements section but do not know the format
-var minSafetyLevel = 0;
-var maxSafetyLevel = 10;
-var width  = 700;
-var height = 500;
+var width  = 1280;
+var height = 720;
 var margin = {
   top: 30,
   bottom: 30,
   left: 50,
   right: 30
 };
-
-
+const centerBoston = [-71.0589,42.3601]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
 
-const svg = d3.select("svg")
-const graph = svg.append("g").attr("height",graphHeight).attr("width",graphWidth)
+const svg = d3.select("#vis-svg")
+const graph = svg.append("g").attr("height",graphHeight).attr("width",graphWidth);
+//lon and lat to x and y
+var projection = d3.geoEquirectangular()                   
+                    .center(centerBoston)
+                    .scale(100000);
 
-d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
-  return {
-    visittime: d.visittime,
-    safetylevel: + d.safetylevel
-  };
-}).then(() => {
-  geoChart
-  lineChart
+ var albersProjection = d3.geoAlbers()
+    .scale( 190000 )
+    .rotate( [71.057,0] )
+    .center( [0, 42.313] )
+    .translate( [width/2,height/2] );
 
-});
-// const geoChart = (data) => {
+var geoGenerator = d3.geoPath()
+    .projection(projection);
 
-// }
-
-function lineChart(data){
-  console.log(data);
-
-
-  var svg = d3.select('body')
-              .append('svg')
-              .attr('width' , width)
-              .attr('height', height)
-              .style('background', '#efefef');
-
-var chartGroup = svg.append('g')
-  					  .append('svg')
-                      .attr('transform','translate(' + margin.left +',' + margin.top + ')');
-
-  var xScale = d3.scaleOrdinal()
-                 .domain(["", "Morning", "Afternoon", "Evening"])
-                 // Shifting by 50 so the last category label doesn't get cut off
-                 .range([0, 100, width/2, width - 100]);
-
-  var yScale = d3.scaleLinear()
-                 .domain([minSafetyLevel, maxSafetyLevel])
-                 .range([height - margin.bottom - margin.top, 0]);
-
-  var xAxis = d3.axisBottom(xScale);
-
-  chartGroup.append('g')
-            .attr('class', 'x axis')
-            .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
-            .call(xAxis);
-
-  var yAxis = d3.axisLeft(yScale);
-
-  chartGroup.append('g')
-            .attr('class', 'y axis')
-            .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
-            .call(yAxis);
-
-  svg.append('g')
-     .selectAll("dot")
-     .data(data)
-     .enter()
-     .append("circle")
-     .attr("cx", function (d) { return xScale(d.visittime) + margin.left; } )
-     .attr("cy", function (d) { return yScale(d.safetylevel) + margin.top; } )
-     .attr("r", 5)
-     .style("fill", "#69b3a2")
+//the update function
+const update = data => {
+    console.log(data);
+    // var b = geoGenerator.bounds(plane)
+    // var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    // var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+    // var plane = topojson.feature(data, data.objects.collection).features;
+    // var paths = graph.selectAll("path").data(plane)
+    var paths = graph.selectAll("path").data(data.features);
+    // projection .fitSize([width,height],plane);
+    //painting
+    paths.enter()
+    .append('path')
+    .attr("fill","#fff")
+    .attr("stroke","#333")
+    .attr('d', geoGenerator);
+    
 }
+
+//load all datasets here
+var promises = [
+    d3.json("./data/map.topojson")
+    // d3.json("./data/boston.geojson")
+]
+
+const go = (data) => {
+    update(data[0]);
+}
+
+Promise.all(promises).then(go);
