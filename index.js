@@ -1,5 +1,5 @@
 const stateBttns = document.querySelectorAll(".btn")
-var state = 'crime'
+
 console.log(stateBttns)
 stateBttns.forEach(btn => {
     btn.addEventListener("click",(e) => {

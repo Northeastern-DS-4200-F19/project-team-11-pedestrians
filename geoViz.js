@@ -8,6 +8,7 @@ var margin = {
 };
 var colors = {"crime":"red","real_estate":"green"}
 var data = []
+var state = 'crime'
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
