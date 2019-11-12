@@ -1,4 +1,4 @@
-var width  = 1280;
+var width  = 960;
 var height = 720;
 var margin = {
   top: 30,
@@ -7,20 +7,16 @@ var margin = {
   right: 30
 };
 var colors = {"crime":"red","real_estate":"green"}
-var data = []
-var state = 'crime'
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
-
+var state = 'crime'
 const graph = d3.select("#vis-svg")
               .attr("height",graphHeight)
               .attr("width",graphWidth)
               .attr("transform", `translate(${margin.left},${margin.bottom})`);
 
-//lon and lat to x and y
-var projection = d3.geoEquirectangular()                   
-
+//lon and lat to x and y              
  var albersProjection = d3.geoAlbers()
     .scale( 190000 )
     .rotate( [71.057,0] )
@@ -31,32 +27,35 @@ var geoGenerator = d3.geoPath()
     .projection(albersProjection);
 
 //the update function
-const update = (data) => {
+const update = (info) => {
   var tip = d3.tip()
             .attr("class","tip")
             .html(d => {
-              return `<p><span>${d["properties"]["Name"]}</span><br>Total ${state}: ${Math.round(d["properties"][state])}</p>`
+              return `<p class="tool"><span>${d["properties"]["Name"]}</span><br>Total ${state}: ${Math.round(d["properties"][state])}</p>`
             });
     graph.call(tip);
   //TODO convert to per feet not raw values
-    var stuff = data["features"].map(d => Math.round(d["properties"][state]))
-    var daMax = Math.max(...stuff);
-    console.log(daMax)
-    var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state]])
-    var paths = graph.selectAll("path").data(data.features)
-    paths.exit().remove();
-    // projection.fitSize([width,height],plane);
-    //painting
+  var stuff = info["features"].map(d => Math.round(d["properties"][state]))
+  var daMax = Math.max(...stuff);
+  var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state]])
+  var paths = graph.selectAll("path").data(info.features)
+
+    //updating stuff
     paths.attr('d', geoGenerator)
           .attr("fill",d => {
-      return color(d["properties"][state])})
+              return color(d["properties"][state])
+            })
           .attr("stroke","grey")
           .attr("stroke-width",1)
           .attr("class","neighborhoods")
           .on("mouseover",tip.show)
           .on("mouseout",tip.hide);
 
-          paths.enter()
+    //removing stuff
+    paths.exit().remove();
+
+    //adding stuff
+    paths.enter()
           .append('path')
           .attr('d', geoGenerator)
           .attr("fill",d => {
@@ -65,6 +64,7 @@ const update = (data) => {
           .attr("stroke-width",1)
           .on("mouseover",tip.show)
           .on("mouseout",tip.hide)
+
     // var labels = graph.selectAll(".labels")
     //       .data(data.features)
     //       .enter()
@@ -73,24 +73,22 @@ const update = (data) => {
     //         return `translate(${geoGenerator.centroid(d)})`
     //       })
     //       .text(d => {
-    //         return d.properties.Name;
+    //         return d.properties["Name"];
     //       })
     //       .attr("text-anchor","end")
     //       .attr("fill","white")
-    //       .attr("font-size","10")
+    //       .attr("font-size","8")
     //       .attr("class","labels");
     
 }
 
 //load all datasets here
 var promises = [
-    //d3.json("./data/map.topojson")
     d3.json("./data/bostonv2.geojson")
 ]
 
 const letsGo = (d) => {
-  data = d
-  update(data[0]);
+  update(d[0]);
 }
 
-Promise.all(promises).then(letsGo);
+Promise.all(promises).then((d) => letsGo(d));
