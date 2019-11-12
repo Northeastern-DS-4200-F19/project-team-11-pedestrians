@@ -1,15 +1,12 @@
-// NOTE: Sample code from class was used on this assignment
-// We plan to add it to the Acknowledgements section but do not know the format
-
 d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
   return {
     visittime: d.visittime,
     safetylevel: + d.safetylevel
   };
   console.log(d)
-}).then(lineChart);
+}).then(scatterplot);
 
-function lineChart(data){
+function scatterplot(data){
   console.log(data);
 
   var minSafetyLevel = 0;
@@ -24,7 +21,7 @@ function lineChart(data){
     right: 30
   };
 
-  var svg = d3.select('body')
+  var svg = d3.select('#vis4')
               .append('svg')
               .attr('width' , width)
               .attr('height', height)
