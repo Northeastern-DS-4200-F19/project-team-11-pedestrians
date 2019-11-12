@@ -3,9 +3,15 @@
   <!-- Metadata -->
 	<head>
     <meta charset="utf-8">
-		<title>Project Team 11: Pedestrian, DS 4200 F19</title>
-    
+
+
+    <!-- Title -->
+		<title>Project Team 11: Crime and Safety around Chester Square Park, DS 4200 F19</title>
+
+    <!-- CSS Styling -->
 		<link rel="stylesheet" href="style.css">
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
@@ -16,72 +22,59 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 	</head>
-  
+
   <!-- Main page content -->
 	<body>
     <!-- Update this with your GitHub repo URL -->
     <span id="forkongithub"><a href="https://github.com/Northeastern-DS-4200-F19-Staff/S-L-Project-Template">Fork me on GitHub</a></span>
-    
+
     <!-- Your writeup goes here -->
     <div class = "content-column">
-    
-      <h1>Project Team #: Topic, DS 4200 F19</h1>
-      
-      <p><strong>Student One</strong>, <strong>Student Two</strong>, <strong>Student Three</strong></p>
-      
+
+      <h1>Project Team 11: Crime and Safety around Chester Square Park, DS 4200 F19</h1>
+
+      <p><strong>Karman Singh</strong>, <strong>Edward Chung</strong>, <strong>Eric Chung</strong></p>
+
       <p>Service-Learning Course Project as part of <a href="http://www.ccs.neu.edu/home/cody/courses/ds4200-f19/">DS 4200: Information Presentation and Visualization</a>, taught by <a href="https://cody.khoury.northeastern.edu/">Prof. Cody Dunne</a>, <a href="https://visualization.khoury.northeastern.edu/">Data Visualization @ Khoury</a>, <a href="https://www.khoury.northeastern.edu/">Northeastern University</a>.</p>
-      
-      
+
+
       <h1>Motivation</h1>
-      
+
       <p><em>Summary of user needs and motivating questions.</em></p>
-      
+
       <p><em>Expectation: There is a clear focus, and a developed explanation of the problem, and a reasonable response is proposed.</em></p>
 
-      
+
       <h1>Visualization</h1>
-      
+
       <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
-      
+
     </div>
-    
+
     <!-- Your visualization here -->
     <div class="container vis-holder">
-<<<<<<< HEAD
       <div class="row section center">
-        <div class="col s16 l5">
+            <div class="col s16 l5"><svg id="vis-svg"></svg></div>
+            <div class="col s8 l3">
             <div id = "surveyvis"> </div>
         </div>
-        <div class="col section center"><svg id="vis-svg"></svg></div>
-      </div>
-      
-      <div class="row section center">
-          <!-- <button class="btn" data-activity="crime">Crime</button> -->
-          <!-- <button class="btn" data-activity="real_estate">Real Estate</button> -->
-        <!-- <button class="btn" data-activity="demographic">Demographic</button> -->
-=======
-      <div class="row">
-        <!-- <div class="col s16 l5">
-            <div id = "surveyvis"> </div>
-        </div> -->
-        <div class="col center"><svg id="vis-svg"></svg></div>
-      </div>
       
       <div class="row section center">
           <button class="btn" data-activity="crime">Crime</button>
           <button class="btn" data-activity="realestate">Real Estate</button>
-        <button class="btn" data-activity="demographic">Demographic</button>
->>>>>>> dccafe182fcb99eaa8c30f8317cb8e4727ab8595
-      </div>
+        <!-- <button class="btn" data-activity="demographic">Demographic</button> -->
     </div>
-    
+        </div>
+
+
+
     <!-- Your writeup goes here -->
     <div class ="content-column">
 
       <h1>Demo Video</h1>
-      
+
       <p><em>Embedded MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</em></p>
-      
+
       <video controls width="100%">
         <source src="http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4" type="video/mp4">
         <p>Your browser doesn't support HTML5 video. Here is
@@ -89,7 +82,7 @@
       </video>
 
       <h1>Visualization explanation</h1>
-      
+
       <p><em>final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
 
       <h1>Data Analysis</h1>
@@ -104,7 +97,7 @@
       <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
 
       <h1>Design Process</h1>
-      
+
       <p><em>Sketches and design choices to justify final visualization.</em></p>
 
       <p><em>Expectation: Evidence of iterative improvement.
@@ -115,33 +108,28 @@
       <h1>Conclusion</h1>
 
       <p><em>Short summary of work completed and areas for improvement/future-work.</em></p>
-      
+
       <p><em>Expectation: Meaningfully wraps up project and has good future directions.</em></p>
 
-      
       <h1>Acknowledgements</h1>
 
       <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
-      
+
       <ul>
         <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
         <li><a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">Pure CSS responsive "Fork me on GitHub" ribbon</a> by Chris Heilmann</li>
+        <li>Line Chart Starter Code From Class</li>
+        <li><a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">Basic Scatterplot in D3.js</a></li>
       </ul>
-      
+
     </div>
 
     <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script> 
-<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
     <script src="geoViz.js"></script>
     <script src="index.js"></script>
     <script src="visualization.js"></script>
-    
-=======
-    <script src="geoViz.js"></script>
-    <script src="visualization.js"></script>
->>>>>>> dccafe182fcb99eaa8c30f8317cb8e4727ab8595
 	</body>
 </html>
