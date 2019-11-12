@@ -1,19 +1,5 @@
-import csv
-import pandas as pd
-import numpy as np
-import sqlalchemy
-from sqlalchemy import create_engine
+
 import json
-import xlrd
-from dotenv import load_dotenv
-import os
-import pickle
-import quandl
-from sklearn.neighbors import KNeighborsClassifier
-
-engine = create_engine('sqlite:///boston.db')
-classifier = KNeighborsClassifier(n_neighbors=3,algorithm="kd_tree",n_jobs=2)
-
 ## pulling test data from geojson
 geo = {}
 

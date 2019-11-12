@@ -7,7 +7,7 @@ var margin = {
   right: 30
 };
 var colors = {"crime":"red","real_estate":"green"}
-
+var data = []
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
@@ -37,28 +37,17 @@ const update = (data) => {
               return `<p><span>${d["properties"]["Name"]}</span><br>Total ${state}: ${Math.round(d["properties"][state])}</p>`
             });
     graph.call(tip);
-
   //TODO convert to per feet not raw values
     var stuff = data["features"].map(d => Math.round(d["properties"][state]))
-    console.log(stuff)
     var daMax = Math.max(...stuff);
     console.log(daMax)
     var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state]])
-    var paths = graph.selectAll("path")
-                        .data(data.features)
-                        .enter()
-                        .append('path')
-                        .attr('d', geoGenerator)
-                        .attr("fill",d => {
-                          color(d["properties"][state])})
-                        .attr("stroke","grey")
-                        .attr("stroke-width",1)
-                        .on("mouseover",tip.show)
-                        .on("mouseout",tip.hide)
-                   
+    var paths = graph.selectAll("path").data(data.features)
+    paths.exit().remove();
     // projection.fitSize([width,height],plane);
     //painting
-    paths.attr('d', geoGenerator).attr("fill",d => {
+    paths.attr('d', geoGenerator)
+          .attr("fill",d => {
       return color(d["properties"][state])})
           .attr("stroke","grey")
           .attr("stroke-width",1)
@@ -66,6 +55,15 @@ const update = (data) => {
           .on("mouseover",tip.show)
           .on("mouseout",tip.hide);
 
+          paths.enter()
+          .append('path')
+          .attr('d', geoGenerator)
+          .attr("fill",d => {
+            color(d["properties"][state])})
+          .attr("stroke","grey")
+          .attr("stroke-width",1)
+          .on("mouseover",tip.show)
+          .on("mouseout",tip.hide)
     // var labels = graph.selectAll(".labels")
     //       .data(data.features)
     //       .enter()
@@ -89,8 +87,9 @@ var promises = [
     d3.json("./data/bostonv2.geojson")
 ]
 
-const letsGo = (data) => {
-    update(data[0]);
+const letsGo = (d) => {
+  data = d
+  update(data[0]);
 }
 
 Promise.all(promises).then(letsGo);
