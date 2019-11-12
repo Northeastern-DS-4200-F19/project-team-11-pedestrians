@@ -3,6 +3,7 @@
   <!-- Metadata -->
 	<head>
     <meta charset="utf-8">
+<<<<<<< HEAD
 
     <!-- Title -->
 		<title>Project Team 11: Crime and Safety around Chester Square Park, DS 4200 F19</title>
@@ -11,9 +12,15 @@
 		<link rel="stylesheet" href="style.css">
 
     <!-- Favicons -->
+=======
+		<title>Project Team 11: Pedestrian, DS 4200 F19</title>
+    
+		<link rel="stylesheet" href="style.css">
+>>>>>>> ebranch
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="manifest" href="/favicons/site.webmanifest">
     <link rel="shortcut icon" href="/favicons/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
@@ -23,7 +30,10 @@
 
   <!-- Main page content -->
 	<body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebranch
     <!-- Update this with your GitHub repo URL -->
     <span id="forkongithub"><a href="https://github.com/Northeastern-DS-4200-F19-Staff/S-L-Project-Template">Fork me on GitHub</a></span>
 
@@ -51,6 +61,7 @@
     </div>
 
     <!-- Your visualization here -->
+<<<<<<< HEAD
     <div class="vis-holder">
       <div id = 'vis3'>
       </div>
@@ -59,12 +70,27 @@
       </div>
       <!-- Change viewbox to whatever you want, e.g. "0 0 1000 6000" This determines your aspect ratio and coordinate system -->
       <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+=======
+    <div class="container vis-holder">
+      <div class="row section center">
+        <div class="col s16 l5">
+            <div id = "surveyvis"> </div>
+        </div>
+        <div class="col section center"><svg id="vis-svg"></svg></div>
+      </div>
+      
+      <div class="row section center">
+          <button class="btn" data-activity="crime">Crime</button>
+          <button class="btn" data-activity="real_estate">Real Estate</button>
+        <!-- <button class="btn" data-activity="demographic">Demographic</button> -->
+      </div>
+>>>>>>> ebranch
     </div>
 
 
 
     <!-- Your writeup goes here -->
-    <div class = "content-column">
+    <div class ="content-column">
 
       <h1>Demo Video</h1>
 
@@ -118,12 +144,28 @@
       </ul>
 
     </div>
+<<<<<<< HEAD
 
     <div id = "surveyvis"> </div>
+=======
+>>>>>>> ebranch
 
     <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
-    <script src="lib/d3.v5.12.0/d3.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script> 
+<<<<<<< HEAD
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+    <script src="geoViz.js"></script>
+    <script src="index.js"></script>
     <script src="visualization.js"></script>
+    
+=======
+    <script src="geoViz.js"></script>
+    <script src="visualization.js"></script>
+<<<<<<< HEAD
     <script src="visualization3.js"></script>
+=======
+>>>>>>> dccafe182fcb99eaa8c30f8317cb8e4727ab8595
+>>>>>>> ebranch
 	</body>
 </html>
