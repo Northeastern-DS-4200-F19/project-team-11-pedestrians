@@ -6,7 +6,6 @@ d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
     visittime: d.visittime,
     safetylevel: + d.safetylevel
   };
-  console.log(d)
 }).then(lineChart);
 
 function lineChart(data){
