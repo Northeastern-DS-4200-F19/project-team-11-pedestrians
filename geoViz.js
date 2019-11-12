@@ -59,7 +59,7 @@ const update = (info) => {
           .append('path')
           .attr('d', geoGenerator)
           .attr("fill",d => {
-            color(d["properties"][state])})
+            return color(d["properties"][state])})
           .attr("stroke","grey")
           .attr("stroke-width",1)
           .on("mouseover",tip.show)
