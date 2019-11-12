@@ -47,17 +47,17 @@
     
     <!-- Your visualization here -->
     <div class="container vis-holder">
-      <div class="row">
-        <!-- <div class="col s16 l5">
+      <div class="row section center">
+        <div class="col s16 l5">
             <div id = "surveyvis"> </div>
-        </div> -->
-        <div class="col center"><svg id="vis-svg"></svg></div>
+        </div>
+        <div class="col section center"><svg id="vis-svg"></svg></div>
       </div>
       
       <div class="row section center">
-          <button class="btn" data-activity="crime">Crime</button>
-          <button class="btn" data-activity="realestate">Real Estate</button>
-        <button class="btn" data-activity="demographic">Demographic</button>
+          <!-- <button class="btn" data-activity="crime">Crime</button> -->
+          <!-- <button class="btn" data-activity="real_estate">Real Estate</button> -->
+        <!-- <button class="btn" data-activity="demographic">Demographic</button> -->
       </div>
     </div>
     
@@ -119,7 +119,10 @@
     <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/topojson.v2.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
     <script src="geoViz.js"></script>
+    <script src="index.js"></script>
     <script src="visualization.js"></script>
+    
 	</body>
 </html>
