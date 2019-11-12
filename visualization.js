@@ -3,12 +3,8 @@ d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
     visittime: d.visittime,
     safetylevel: + d.safetylevel
   };
-<<<<<<< HEAD
   console.log(d)
 }).then(scatterplot);
-=======
-}).then(lineChart);
->>>>>>> ebranch
 
 function scatterplot(data){
   console.log(data);
