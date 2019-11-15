@@ -63,9 +63,9 @@ const filterLine = (d) => {
     if(state.neighborhood === "") {
       d.forEach(obj => {
         if (Object.keys(result).includes(String(obj.hour))) {
-          result[obj.hour] = result[obj.hour] + obj.crimecount
+          result[obj.hour] = result[obj.hour] + (obj.crimecount / 1000)
         } else {
-          result[obj.hour] = obj.crimecount
+          result[obj.hour] = (obj.crimecount / 1000)
         }
       })
       Object.keys(result).forEach(key => {
@@ -74,7 +74,7 @@ const filterLine = (d) => {
       return rArray.sort((a,b) => a.hour > b.hour);
     } else {
       return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"hour":new Date(item.hour),"crimecount": item.crimecount}
+        return {"hour":new Date(item.hour),"crimecount": item.crimecount / 1000}
       }).sort((a,b) => a.hour > b.hour);
     }
   }

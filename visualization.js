@@ -1,5 +1,4 @@
 function scatterplot(data){
-  console.log(data);
 
   var minSafetyLevel = 0;
   var maxSafetyLevel = 10;

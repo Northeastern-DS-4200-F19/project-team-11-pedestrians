@@ -137,5 +137,9 @@ def realEstateData():
 # df3.to_sql("quandl_indicators",engine)
 
 real = realEstateData()
-real.to_csv("real_estate.csv")
+# real.sort_values(by='Date')
+# real = pd.read_csv("real_estate.csv")
+sorted_real = real.sort_values(by="Date")
+sorted_real.to_csv("real_estate.csv")
+
 # real.to_sql("real_estate",engine)
