@@ -14,7 +14,7 @@ engine = create_engine('sqlite:///boston.db')
 # df = pd.read_csv("../data/cs_crime_i.csv", low_memory=False)
 # df1 = pd.read_csv("../data/cs_crime_ii.csv", low_memory=False)
 df2 = pd.read_csv("./neighborhood.txt",delimiter= "|", low_memory=False)
-# df3 = pd.read_csv("../data/indicators.csv", low_memory=False)
+df3 = pd.read_csv("../data/indicators.csv", low_memory=False)
 
 def colComparison(df1,df2,colname1,colname2):
     result = []
@@ -47,7 +47,7 @@ def mergeCols(col1,col2):
 # for feature in data["features"]:
 #     print(feature["properties"]["Name"])
 
-excel = xlrd.open_workbook("./demographics.xlsx")
+# excel = xlrd.open_workbook("./demographics.xlsx")
 
 def getNCodes():
     result = []
@@ -81,53 +81,53 @@ def realEstateData():
     data = pd.concat(result)
     return data
 
-def createAge(sheet):
-    result = []
-    relevant_columns = [1,3,5,7,9]
-    relevant_rows = [1,4,5,6,7,8,9,11,12,13,14,16,18,19,20,21,22,24,25,27,28,29]
-    for col in relevant_columns:
-        line = []
-        line.append(sheet.name)
-        for row in relevant_rows:
-            line.append(sheet.cell(row,col).value)
-        result.append(line)
-    return result
+# def createAge(sheet):
+#     result = []
+#     relevant_columns = [1,3,5,7,9]
+#     relevant_rows = [1,4,5,6,7,8,9,11,12,13,14,16,18,19,20,21,22,24,25,27,28,29]
+#     for col in relevant_columns:
+#         line = []
+#         line.append(sheet.name)
+#         for row in relevant_rows:
+#             line.append(sheet.cell(row,col).value)
+#         result.append(line)
+#     return result
 
-def createAgeDatabase(excel):
-    columns = ["neighborhood"
-                ,"year"
-                ,"0 - 9 years"
-                ,"10 - 19 years"
-                ,"20 - 34 years"
-                ,"25 - 54 years"
-                ,"55 - 64 years"
-                ,"65 years and over"
-                ,"less than High School"
-                ,"High School or GED"
-                ,"Some College or Associate's Degree"
-                ,"Bachelor's Degree or Higher"
-                ,"Foreign Born"
-                ,"White"
-                ,"Black/ African American"
-                ,"Hispanic"
-                ,"Asian/PI"
-                ,"Other"
-                ,"Male"
-                ,"Female"
-                ,"Occupied Housing Units"
-                ,"Owner-occupied"
-                ,"Renter-occupied"
-                ]
-    result = []
-    for sheet in excel.sheets():
-        result.extend(createAge(sheet))
-    return pd.DataFrame(result, columns=columns)
+# def createAgeDatabase(excel):
+#     columns = ["neighborhood"
+#                 ,"year"
+#                 ,"0 - 9 years"
+#                 ,"10 - 19 years"
+#                 ,"20 - 34 years"
+#                 ,"25 - 54 years"
+#                 ,"55 - 64 years"
+#                 ,"65 years and over"
+#                 ,"less than High School"
+#                 ,"High School or GED"
+#                 ,"Some College or Associate's Degree"
+#                 ,"Bachelor's Degree or Higher"
+#                 ,"Foreign Born"
+#                 ,"White"
+#                 ,"Black/ African American"
+#                 ,"Hispanic"
+#                 ,"Asian/PI"
+#                 ,"Other"
+#                 ,"Male"
+#                 ,"Female"
+#                 ,"Occupied Housing Units"
+#                 ,"Owner-occupied"
+#                 ,"Renter-occupied"
+#                 ]
+#     result = []
+#     for sheet in excel.sheets():
+#         result.extend(createAge(sheet))
+#     return pd.DataFrame(result, columns=columns)
 
-demographic = createAgeDatabase(excel)
+# demographic = createAgeDatabase(excel)
 # crime = pd.DataFrame(data)
 
-demographic.to_csv("./demographic.csv")
-# crime.to_csv("./data/crime.csv")
+# demographic.to_csv("./demographic.csv")
+# crime.to_csv("./crime.csv")
 # df2.to_csv("./data/quandl_neighborhoods.csv")
 # df3.to_csv("./data/quandl_indicators.csv")
 
@@ -136,6 +136,10 @@ demographic.to_csv("./demographic.csv")
 # df2.to_sql("quandl_neighborhoods",engine)
 # df3.to_sql("quandl_indicators",engine)
 
-# real = realEstateData()
-# real.to_csv("./data/real_estate.csv")
+real = realEstateData()
+# real.sort_values(by='Date')
+# real = pd.read_csv("real_estate.csv")
+sorted_real = real.sort_values(by="Date")
+sorted_real.to_csv("real_estate.csv")
+
 # real.to_sql("real_estate",engine)

@@ -1,0 +1,1879 @@
+Date,Value,neighborhood
+2010-01-31,450000.0,Charlestown
+2010-01-31,465000.0,Charlestown
+2010-01-31,265000.0,South Dorchester
+2010-01-31,304450.0,Roslindale
+2010-01-31,304450.0,Roslindale
+2010-01-31,399250.0,West Roxbury
+2010-01-31,399000.0,West Roxbury
+2010-01-31,269000.0,South Dorchester
+2010-01-31,294000.0,Hyde Park
+2010-02-28,312000.0,Roslindale
+2010-02-28,455000.0,Charlestown
+2010-02-28,312000.0,Roslindale
+2010-02-28,294500.0,Hyde Park
+2010-02-28,269000.0,South Dorchester
+2010-02-28,371950.0,West Roxbury
+2010-02-28,379500.0,West Roxbury
+2010-02-28,265000.0,South Dorchester
+2010-02-28,450000.0,Charlestown
+2010-03-31,289900.0,Hyde Park
+2010-03-31,329900.0,Roslindale
+2010-03-31,269000.0,South Dorchester
+2010-03-31,399900.0,West Roxbury
+2010-03-31,274000.0,South Dorchester
+2010-03-31,462000.0,Charlestown
+2010-03-31,329900.0,Roslindale
+2010-03-31,399900.0,West Roxbury
+2010-03-31,459000.0,Charlestown
+2010-04-30,269000.0,South Dorchester
+2010-04-30,329000.0,Roslindale
+2010-04-30,450000.0,Charlestown
+2010-04-30,399900.0,West Roxbury
+2010-04-30,399900.0,West Roxbury
+2010-04-30,284900.0,Hyde Park
+2010-04-30,329000.0,Roslindale
+2010-04-30,454500.0,Charlestown
+2010-04-30,264000.0,South Dorchester
+2010-05-31,399900.0,West Roxbury
+2010-05-31,455000.0,Charlestown
+2010-05-31,329000.0,Roslindale
+2010-05-31,329000.0,Roslindale
+2010-05-31,249000.0,South Dorchester
+2010-05-31,279000.0,Hyde Park
+2010-05-31,259000.0,South Dorchester
+2010-05-31,399900.0,West Roxbury
+2010-05-31,449950.0,Charlestown
+2010-06-30,399000.0,West Roxbury
+2010-06-30,309000.0,Roslindale
+2010-06-30,259000.0,South Dorchester
+2010-06-30,450000.0,Charlestown
+2010-06-30,399000.0,West Roxbury
+2010-06-30,309000.0,Roslindale
+2010-06-30,249000.0,South Dorchester
+2010-06-30,264000.0,Hyde Park
+2010-06-30,459000.0,Charlestown
+2010-07-31,252000.0,South Dorchester
+2010-07-31,399900.0,West Roxbury
+2010-07-31,455000.0,Charlestown
+2010-07-31,300900.0,Roslindale
+2010-07-31,459000.0,Charlestown
+2010-07-31,300900.0,Roslindale
+2010-07-31,262000.0,South Dorchester
+2010-07-31,259900.0,Hyde Park
+2010-07-31,399000.0,West Roxbury
+2010-08-31,259450.0,Hyde Park
+2010-08-31,399900.0,West Roxbury
+2010-08-31,469000.0,Charlestown
+2010-08-31,249000.0,South Dorchester
+2010-08-31,241000.0,South Dorchester
+2010-08-31,399900.0,West Roxbury
+2010-08-31,289900.0,Roslindale
+2010-08-31,289900.0,Roslindale
+2010-08-31,459000.0,Charlestown
+2010-09-30,249000.0,South Dorchester
+2010-09-30,449000.0,Charlestown
+2010-09-30,269400.0,Hyde Park
+2010-09-30,409900.0,West Roxbury
+2010-09-30,249900.0,South Dorchester
+2010-09-30,299900.0,Roslindale
+2010-09-30,454000.0,Charlestown
+2010-09-30,299900.0,Roslindale
+2010-09-30,409900.0,West Roxbury
+2010-10-31,249000.0,South Dorchester
+2010-10-31,299900.0,Roslindale
+2010-10-31,299900.0,Roslindale
+2010-10-31,440500.0,Charlestown
+2010-10-31,449000.0,Charlestown
+2010-10-31,272200.0,Hyde Park
+2010-10-31,399900.0,West Roxbury
+2010-10-31,399900.0,West Roxbury
+2010-10-31,248000.0,South Dorchester
+2010-11-30,444000.0,Charlestown
+2010-11-30,394900.0,West Roxbury
+2010-11-30,249450.0,South Dorchester
+2010-11-30,289000.0,Roslindale
+2010-11-30,449000.0,Charlestown
+2010-11-30,263000.0,Hyde Park
+2010-11-30,394900.0,West Roxbury
+2010-11-30,247000.0,South Dorchester
+2010-11-30,289000.0,Roslindale
+2010-12-31,439000.0,Charlestown
+2010-12-31,379000.0,West Roxbury
+2010-12-31,250000.0,Hyde Park
+2010-12-31,381950.0,West Roxbury
+2010-12-31,284450.0,Roslindale
+2010-12-31,439000.0,Charlestown
+2010-12-31,284450.0,Roslindale
+2010-12-31,246450.0,South Dorchester
+2010-12-31,235900.0,South Dorchester
+2011-01-31,439000.0,Charlestown
+2011-01-31,249000.0,South Dorchester
+2011-01-31,399900.0,West Roxbury
+2011-01-31,245900.0,South Dorchester
+2011-01-31,294900.0,Roslindale
+2011-01-31,249000.0,Hyde Park
+2011-01-31,294900.0,Roslindale
+2011-01-31,449000.0,Charlestown
+2011-01-31,399900.0,West Roxbury
+2011-02-28,455000.0,Charlestown
+2011-02-28,226250.0,South Dorchester
+2011-02-28,399900.0,West Roxbury
+2011-02-28,289900.0,Roslindale
+2011-02-28,239000.0,Hyde Park
+2011-02-28,289900.0,Roslindale
+2011-02-28,232500.0,South Dorchester
+2011-02-28,399450.0,West Roxbury
+2011-02-28,457000.0,Charlestown
+2011-03-31,229000.0,South Dorchester
+2011-03-31,437000.0,Charlestown
+2011-03-31,399000.0,West Roxbury
+2011-03-31,239990.0,Hyde Park
+2011-03-31,244900.0,South Dorchester
+2011-03-31,399000.0,West Roxbury
+2011-03-31,436000.0,Charlestown
+2011-03-31,300000.0,Roslindale
+2011-03-31,300000.0,Roslindale
+2011-04-30,297000.0,Roslindale
+2011-04-30,449900.0,Charlestown
+2011-04-30,295000.0,Roslindale
+2011-04-30,450000.0,Charlestown
+2011-04-30,240950.0,South Dorchester
+2011-04-30,239000.0,South Dorchester
+2011-04-30,377450.0,West Roxbury
+2011-04-30,374900.0,West Roxbury
+2011-04-30,249000.0,Hyde Park
+2011-05-31,239500.0,South Dorchester
+2011-05-31,384950.0,West Roxbury
+2011-05-31,455000.0,Charlestown
+2011-05-31,243450.0,South Dorchester
+2011-05-31,254000.0,Hyde Park
+2011-05-31,299000.0,Roslindale
+2011-05-31,459000.0,Charlestown
+2011-05-31,387450.0,West Roxbury
+2011-05-31,299000.0,Roslindale
+2011-06-30,239000.0,South Dorchester
+2011-06-30,385000.0,West Roxbury
+2011-06-30,449000.0,Charlestown
+2011-06-30,252000.0,Hyde Park
+2011-06-30,379900.0,West Roxbury
+2011-06-30,299000.0,Roslindale
+2011-06-30,239900.0,South Dorchester
+2011-06-30,299000.0,Roslindale
+2011-06-30,449000.0,Charlestown
+2011-07-31,299000.0,Roslindale
+2011-07-31,239000.0,South Dorchester
+2011-07-31,237750.0,South Dorchester
+2011-07-31,369000.0,West Roxbury
+2011-07-31,299000.0,Roslindale
+2011-07-31,449000.0,Charlestown
+2011-07-31,369900.0,West Roxbury
+2011-07-31,449000.0,Charlestown
+2011-07-31,259000.0,Hyde Park
+2011-08-31,359050.0,West Roxbury
+2011-08-31,289000.0,Roslindale
+2011-08-31,469000.0,Charlestown
+2011-08-31,242000.0,South Dorchester
+2011-08-31,469000.0,Charlestown
+2011-08-31,259000.0,Hyde Park
+2011-08-31,289000.0,Roslindale
+2011-08-31,242000.0,South Dorchester
+2011-08-31,359500.0,West Roxbury
+2011-09-30,239450.0,South Dorchester
+2011-09-30,350000.0,West Roxbury
+2011-09-30,259900.0,Hyde Park
+2011-09-30,234235.0,South Dorchester
+2011-09-30,299000.0,Roslindale
+2011-09-30,487000.0,Charlestown
+2011-09-30,354500.0,West Roxbury
+2011-09-30,479900.0,Charlestown
+2011-09-30,299000.0,Roslindale
+2011-10-31,506500.0,Charlestown
+2011-10-31,250000.0,Hyde Park
+2011-10-31,224900.0,South Dorchester
+2011-10-31,350000.0,West Roxbury
+2011-10-31,219425.0,South Dorchester
+2011-10-31,359000.0,West Roxbury
+2011-10-31,519499.5,Charlestown
+2011-10-31,319900.0,Roslindale
+2011-10-31,319900.0,Roslindale
+2011-11-30,309980.0,Roslindale
+2011-11-30,209900.0,South Dorchester
+2011-11-30,506500.0,Charlestown
+2011-11-30,309980.0,Roslindale
+2011-11-30,349900.0,West Roxbury
+2011-11-30,215000.0,South Dorchester
+2011-11-30,519000.0,Charlestown
+2011-11-30,349900.0,West Roxbury
+2011-11-30,249950.0,Hyde Park
+2011-12-31,257000.0,Hyde Park
+2011-12-31,199900.0,South Dorchester
+2011-12-31,359900.0,West Roxbury
+2011-12-31,302450.0,Roslindale
+2011-12-31,302450.0,Roslindale
+2011-12-31,359900.0,West Roxbury
+2011-12-31,209900.0,South Dorchester
+2011-12-31,514450.0,Charlestown
+2011-12-31,499000.0,Charlestown
+2012-01-31,229000.0,South Dorchester
+2012-01-31,299000.0,Roslindale
+2012-01-31,529000.0,Charlestown
+2012-01-31,299000.0,Roslindale
+2012-01-31,359900.0,West Roxbury
+2012-01-31,249950.0,Hyde Park
+2012-01-31,525000.0,Charlestown
+2012-01-31,219900.0,South Dorchester
+2012-01-31,359900.0,West Roxbury
+2012-02-29,359900.0,West Roxbury
+2012-02-29,254450.0,Hyde Park
+2012-02-29,504000.0,Charlestown
+2012-02-29,519000.0,Charlestown
+2012-02-29,228450.0,South Dorchester
+2012-02-29,230950.0,South Dorchester
+2012-02-29,292450.0,Roslindale
+2012-02-29,292450.0,Roslindale
+2012-02-29,359900.0,West Roxbury
+2012-03-31,374500.0,West Roxbury
+2012-03-31,299900.0,Roslindale
+2012-03-31,225000.0,South Dorchester
+2012-03-31,299900.0,Roslindale
+2012-03-31,219900.0,South Dorchester
+2012-03-31,499000.0,Charlestown
+2012-03-31,494450.0,Charlestown
+2012-03-31,379000.0,West Roxbury
+2012-03-31,269900.0,Hyde Park
+2012-04-30,299900.0,Roslindale
+2012-04-30,499000.0,Charlestown
+2012-04-30,369900.0,West Roxbury
+2012-04-30,369900.0,West Roxbury
+2012-04-30,279000.0,Hyde Park
+2012-04-30,299900.0,Roslindale
+2012-04-30,245000.0,South Dorchester
+2012-04-30,477000.0,Charlestown
+2012-04-30,249250.0,South Dorchester
+2012-05-31,279000.0,Hyde Park
+2012-05-31,499000.0,Charlestown
+2012-05-31,384000.0,West Roxbury
+2012-05-31,309000.0,Roslindale
+2012-05-31,309000.0,Roslindale
+2012-05-31,381950.0,West Roxbury
+2012-05-31,257000.0,South Dorchester
+2012-05-31,249900.0,South Dorchester
+2012-05-31,499000.0,Charlestown
+2012-06-30,319000.0,Roslindale
+2012-06-30,509950.0,Charlestown
+2012-06-30,375000.0,West Roxbury
+2012-06-30,376000.0,West Roxbury
+2012-06-30,255000.0,South Dorchester
+2012-06-30,264000.0,South Dorchester
+2012-06-30,319000.0,Roslindale
+2012-06-30,499000.0,Charlestown
+2012-06-30,269999.0,Hyde Park
+2012-07-31,269000.0,South Dorchester
+2012-07-31,519000.0,Charlestown
+2012-07-31,360000.0,West Roxbury
+2012-07-31,312000.0,Roslindale
+2012-07-31,360000.0,West Roxbury
+2012-07-31,315000.0,Roslindale
+2012-07-31,510000.0,Charlestown
+2012-07-31,267250.0,South Dorchester
+2012-07-31,269900.0,Hyde Park
+2012-08-31,512450.0,Charlestown
+2012-08-31,309000.0,Roslindale
+2012-08-31,519000.0,Charlestown
+2012-08-31,359900.0,West Roxbury
+2012-08-31,267250.0,South Dorchester
+2012-08-31,265500.0,South Dorchester
+2012-08-31,359000.0,West Roxbury
+2012-08-31,304450.0,Roslindale
+2012-08-31,269900.0,Hyde Park
+2012-09-30,265000.0,South Dorchester
+2012-09-30,254000.0,Hyde Park
+2012-09-30,269000.0,South Dorchester
+2012-09-30,569000.0,Charlestown
+2012-09-30,370000.0,West Roxbury
+2012-09-30,322000.0,Roslindale
+2012-09-30,369900.0,West Roxbury
+2012-09-30,557500.0,Charlestown
+2012-09-30,325000.0,Roslindale
+2012-10-31,369500.0,West Roxbury
+2012-10-31,544000.0,Charlestown
+2012-10-31,269000.0,South Dorchester
+2012-10-31,269000.0,South Dorchester
+2012-10-31,369500.0,West Roxbury
+2012-10-31,319000.0,Roslindale
+2012-10-31,549900.0,Charlestown
+2012-10-31,319000.0,Roslindale
+2012-10-31,259900.0,Hyde Park
+2012-11-30,329900.0,Roslindale
+2012-11-30,291000.0,South Dorchester
+2012-11-30,273950.0,South Dorchester
+2012-11-30,269000.0,Hyde Park
+2012-11-30,558450.0,Charlestown
+2012-11-30,379000.0,West Roxbury
+2012-11-30,379000.0,West Roxbury
+2012-11-30,564450.0,Charlestown
+2012-11-30,329450.0,Roslindale
+2012-12-31,324900.0,Roslindale
+2012-12-31,259000.0,South Dorchester
+2012-12-31,344900.0,West Roxbury
+2012-12-31,259000.0,South Dorchester
+2012-12-31,327400.0,Roslindale
+2012-12-31,525000.0,Charlestown
+2012-12-31,269450.0,Hyde Park
+2012-12-31,349000.0,West Roxbury
+2012-12-31,525000.0,Charlestown
+2013-01-31,297000.0,Hyde Park
+2013-01-31,557450.0,Charlestown
+2013-01-31,339000.0,West Roxbury
+2013-01-31,555000.0,Charlestown
+2013-01-31,321400.0,Roslindale
+2013-01-31,321400.0,Roslindale
+2013-01-31,259000.0,South Dorchester
+2013-01-31,349000.0,West Roxbury
+2013-01-31,259000.0,South Dorchester
+2013-02-28,370000.0,West Roxbury
+2013-02-28,572000.0,Charlestown
+2013-02-28,374000.0,West Roxbury
+2013-02-28,307000.0,Roslindale
+2013-02-28,562000.0,Charlestown
+2013-02-28,269000.0,South Dorchester
+2013-02-28,269000.0,South Dorchester
+2013-02-28,299000.0,Hyde Park
+2013-02-28,307000.0,Roslindale
+2013-03-31,309900.0,Roslindale
+2013-03-31,509900.0,South Boston
+2013-03-31,539900.0,Charlestown
+2013-03-31,309900.0,Roslindale
+2013-03-31,394500.0,West Roxbury
+2013-03-31,302450.0,Hyde Park
+2013-03-31,390000.0,West Roxbury
+2013-03-31,285000.0,South Dorchester
+2013-03-31,509900.0,South Boston
+2013-03-31,525000.0,Charlestown
+2013-03-31,281000.0,South Dorchester
+2013-04-30,489000.0,South Boston
+2013-04-30,399900.0,West Roxbury
+2013-04-30,489000.0,South Boston
+2013-04-30,289900.0,Hyde Park
+2013-04-30,292000.0,South Dorchester
+2013-04-30,349900.0,Roslindale
+2013-04-30,399450.0,West Roxbury
+2013-04-30,344950.0,Roslindale
+2013-04-30,529000.0,Charlestown
+2013-04-30,285000.0,South Dorchester
+2013-04-30,548950.0,Charlestown
+2013-05-31,329900.0,Roslindale
+2013-05-31,298900.0,South Dorchester
+2013-05-31,469000.0,South Boston
+2013-05-31,549000.0,Charlestown
+2013-05-31,389000.0,West Roxbury
+2013-05-31,299900.0,South Dorchester
+2013-05-31,389000.0,West Roxbury
+2013-05-31,469000.0,South Boston
+2013-05-31,332450.0,Roslindale
+2013-05-31,299900.0,Hyde Park
+2013-05-31,549900.0,Charlestown
+2013-06-30,469000.0,South Boston
+2013-06-30,299900.0,East Boston
+2013-06-30,289000.0,South Dorchester
+2013-06-30,289450.0,South Dorchester
+2013-06-30,422450.0,West Roxbury
+2013-06-30,366950.0,Roslindale
+2013-06-30,469000.0,South Boston
+2013-06-30,364900.0,Roslindale
+2013-06-30,529000.0,Charlestown
+2013-06-30,415000.0,West Roxbury
+2013-06-30,306500.0,Hyde Park
+2013-06-30,525000.0,Charlestown
+2013-07-31,499000.0,South Boston
+2013-07-31,327000.0,Roslindale
+2013-07-31,499000.0,South Boston
+2013-07-31,296000.0,South Dorchester
+2013-07-31,296000.0,South Dorchester
+2013-07-31,327000.0,Roslindale
+2013-07-31,497450.0,Charlestown
+2013-07-31,322400.0,Hyde Park
+2013-07-31,419900.0,West Roxbury
+2013-07-31,299944.0,East Boston
+2013-07-31,489000.0,Charlestown
+2013-07-31,419900.0,West Roxbury
+2013-08-31,509900.0,South Boston
+2013-08-31,329900.0,Roslindale
+2013-08-31,509900.0,South Boston
+2013-08-31,399450.0,West Roxbury
+2013-08-31,329900.0,Roslindale
+2013-08-31,299900.0,South Dorchester
+2013-08-31,299900.0,South Dorchester
+2013-08-31,299922.0,East Boston
+2013-08-31,539450.0,Charlestown
+2013-08-31,399900.0,West Roxbury
+2013-08-31,324900.0,Hyde Park
+2013-08-31,525000.0,Charlestown
+2013-09-30,339000.0,Roslindale
+2013-09-30,389000.0,West Roxbury
+2013-09-30,297000.0,South Dorchester
+2013-09-30,514700.0,South Boston
+2013-09-30,529000.0,Charlestown
+2013-09-30,289000.0,Hyde Park
+2013-09-30,339000.0,Roslindale
+2013-09-30,309900.0,East Boston
+2013-09-30,535000.0,Charlestown
+2013-09-30,309900.0,East Boston
+2013-09-30,499900.0,South Boston
+2013-09-30,297000.0,South Dorchester
+2013-09-30,389000.0,West Roxbury
+2013-10-31,289900.0,South Dorchester
+2013-10-31,289900.0,South Dorchester
+2013-10-31,299900.0,East Boston
+2013-10-31,519900.0,South Boston
+2013-10-31,399900.0,West Roxbury
+2013-10-31,334900.0,Roslindale
+2013-10-31,519950.0,South Boston
+2013-10-31,299450.0,Hyde Park
+2013-10-31,334900.0,Roslindale
+2013-10-31,299900.0,East Boston
+2013-10-31,409450.0,West Roxbury
+2013-10-31,559000.0,Charlestown
+2013-10-31,559000.0,Charlestown
+2013-11-30,509000.0,South Boston
+2013-11-30,384450.0,West Roxbury
+2013-11-30,294900.0,East Boston
+2013-11-30,549000.0,Charlestown
+2013-11-30,339450.0,Roslindale
+2013-11-30,339450.0,Roslindale
+2013-11-30,389000.0,West Roxbury
+2013-11-30,289000.0,South Dorchester
+2013-11-30,294900.0,East Boston
+2013-11-30,517000.0,South Boston
+2013-11-30,554000.0,Charlestown
+2013-11-30,289000.0,South Dorchester
+2013-11-30,305000.0,Hyde Park
+2013-11-30,305000.0,Hyde Park
+2013-12-31,539000.0,South Boston
+2013-12-31,539000.0,South Boston
+2013-12-31,414900.0,West Roxbury
+2013-12-31,559000.0,Charlestown
+2013-12-31,290000.0,East Boston
+2013-12-31,289000.0,Hyde Park
+2013-12-31,329000.0,Roslindale
+2013-12-31,329000.0,Roslindale
+2013-12-31,559000.0,Charlestown
+2013-12-31,294500.0,Hyde Park
+2013-12-31,276950.0,South Dorchester
+2013-12-31,397450.0,West Roxbury
+2013-12-31,279950.0,South Dorchester
+2013-12-31,290000.0,East Boston
+2014-01-31,569000.0,South Boston
+2014-01-31,318250.0,Roslindale
+2014-01-31,269500.0,Hyde Park
+2014-01-31,649000.0,Charlestown
+2014-01-31,369900.0,West Roxbury
+2014-01-31,299000.0,South Dorchester
+2014-01-31,289900.0,East Boston
+2014-01-31,299900.0,South Dorchester
+2014-01-31,569000.0,South Boston
+2014-01-31,382400.0,West Roxbury
+2014-01-31,644000.0,Charlestown
+2014-01-31,318250.0,Roslindale
+2014-01-31,289900.0,East Boston
+2014-01-31,267000.0,Hyde Park
+2014-02-28,324900.0,Roslindale
+2014-02-28,599000.0,South Boston
+2014-02-28,294450.0,Hyde Park
+2014-02-28,299900.0,South Dorchester
+2014-02-28,399450.0,West Roxbury
+2014-02-28,304000.0,East Boston
+2014-02-28,309000.0,East Boston
+2014-02-28,322400.0,Roslindale
+2014-02-28,287450.0,Hyde Park
+2014-02-28,599000.0,South Boston
+2014-02-28,659450.0,Charlestown
+2014-02-28,319000.0,South Dorchester
+2014-02-28,659900.0,Charlestown
+2014-02-28,396950.0,West Roxbury
+2014-03-31,300000.0,Hyde Park
+2014-03-31,479900.0,Jamaica Plain
+2014-03-31,304450.0,North Dorchester
+2014-03-31,279000.0,East Boston
+2014-03-31,399900.0,West Roxbury
+2014-03-31,632000.0,Charlestown
+2014-03-31,304450.0,North Dorchester
+2014-03-31,329000.0,Roslindale
+2014-03-31,327000.0,Roslindale
+2014-03-31,559000.0,South Boston
+2014-03-31,300000.0,Hyde Park
+2014-03-31,484500.0,Jamaica Plain
+2014-03-31,279000.0,East Boston
+2014-03-31,307000.0,South Dorchester
+2014-03-31,559000.0,South Boston
+2014-03-31,629000.0,Charlestown
+2014-03-31,319000.0,South Dorchester
+2014-03-31,399000.0,West Roxbury
+2014-04-30,439900.0,West Roxbury
+2014-04-30,304475.0,East Boston
+2014-04-30,339000.0,Roslindale
+2014-04-30,439000.0,Jamaica Plain
+2014-04-30,299000.0,South Dorchester
+2014-04-30,439900.0,West Roxbury
+2014-04-30,339000.0,Roslindale
+2014-04-30,303500.0,Hyde Park
+2014-04-30,319450.0,North Dorchester
+2014-04-30,549000.0,South Boston
+2014-04-30,319450.0,North Dorchester
+2014-04-30,299000.0,South Dorchester
+2014-04-30,549000.0,South Boston
+2014-04-30,615000.0,Charlestown
+2014-04-30,622000.0,Charlestown
+2014-04-30,303500.0,Hyde Park
+2014-04-30,444450.0,Jamaica Plain
+2014-04-30,299950.0,East Boston
+2014-05-31,309000.0,South Dorchester
+2014-05-31,319900.0,East Boston
+2014-05-31,439000.0,Jamaica Plain
+2014-05-31,589000.0,Charlestown
+2014-05-31,339450.0,Roslindale
+2014-05-31,310000.0,Hyde Park
+2014-05-31,299450.0,South Dorchester
+2014-05-31,589000.0,Charlestown
+2014-05-31,310000.0,Hyde Park
+2014-05-31,554500.0,South Boston
+2014-05-31,439000.0,Jamaica Plain
+2014-05-31,335000.0,North Dorchester
+2014-05-31,439900.0,West Roxbury
+2014-05-31,335000.0,North Dorchester
+2014-05-31,317400.0,East Boston
+2014-05-31,559000.0,South Boston
+2014-05-31,439900.0,West Roxbury
+2014-05-31,339450.0,Roslindale
+2014-06-30,549000.0,South Boston
+2014-06-30,330000.0,Hyde Park
+2014-06-30,309000.0,South Dorchester
+2014-06-30,335000.0,North Dorchester
+2014-06-30,349450.0,East Boston
+2014-06-30,449000.0,Jamaica Plain
+2014-06-30,624000.0,Charlestown
+2014-06-30,629000.0,Charlestown
+2014-06-30,335000.0,North Dorchester
+2014-06-30,334450.0,Roslindale
+2014-06-30,334450.0,Roslindale
+2014-06-30,549000.0,South Boston
+2014-06-30,349000.0,East Boston
+2014-06-30,319000.0,South Dorchester
+2014-06-30,449000.0,Jamaica Plain
+2014-06-30,429700.0,West Roxbury
+2014-06-30,330000.0,Hyde Park
+2014-06-30,426000.5,West Roxbury
+2014-07-31,427000.0,West Roxbury
+2014-07-31,569000.0,South Boston
+2014-07-31,325000.0,Hyde Park
+2014-07-31,349000.0,East Boston
+2014-07-31,449000.0,Jamaica Plain
+2014-07-31,299900.0,South Dorchester
+2014-07-31,429700.0,West Roxbury
+2014-07-31,639000.0,Charlestown
+2014-07-31,349950.0,North Dorchester
+2014-07-31,325000.0,Hyde Park
+2014-07-31,349950.0,North Dorchester
+2014-07-31,349000.0,Roslindale
+2014-07-31,349000.0,Roslindale
+2014-07-31,649450.0,Charlestown
+2014-07-31,349000.0,East Boston
+2014-07-31,569000.0,South Boston
+2014-07-31,449000.0,Jamaica Plain
+2014-07-31,309500.0,South Dorchester
+2014-08-31,329450.0,Hyde Park
+2014-08-31,349000.0,East Boston
+2014-08-31,669000.0,Charlestown
+2014-08-31,681500.0,Charlestown
+2014-08-31,584000.0,South Boston
+2014-08-31,399000.0,Jamaica Plain
+2014-08-31,354500.0,North Dorchester
+2014-08-31,399000.0,Jamaica Plain
+2014-08-31,347000.0,East Boston
+2014-08-31,319000.0,South Dorchester
+2014-08-31,334450.0,South Dorchester
+2014-08-31,429900.0,West Roxbury
+2014-08-31,579000.0,South Boston
+2014-08-31,359000.0,Roslindale
+2014-08-31,329450.0,Hyde Park
+2014-08-31,429000.0,West Roxbury
+2014-08-31,354500.0,North Dorchester
+2014-08-31,359000.0,Roslindale
+2014-09-30,349000.0,North Dorchester
+2014-09-30,639000.0,Charlestown
+2014-09-30,354450.0,Roslindale
+2014-09-30,559000.0,South Boston
+2014-09-30,365000.0,East Boston
+2014-09-30,399000.0,Jamaica Plain
+2014-09-30,312500.0,South Dorchester
+2014-09-30,354450.0,Roslindale
+2014-09-30,349000.0,North Dorchester
+2014-09-30,329900.0,Hyde Park
+2014-09-30,304500.0,South Dorchester
+2014-09-30,365000.0,East Boston
+2014-09-30,444000.0,West Roxbury
+2014-09-30,449450.0,West Roxbury
+2014-09-30,329999.5,Hyde Park
+2014-09-30,399000.0,Jamaica Plain
+2014-09-30,564000.0,South Boston
+2014-09-30,632000.0,Charlestown
+2014-10-31,374900.0,North Dorchester
+2014-10-31,409900.0,Jamaica Plain
+2014-10-31,454500.0,West Roxbury
+2014-10-31,369000.0,East Boston
+2014-10-31,409900.0,Jamaica Plain
+2014-10-31,374900.0,North Dorchester
+2014-10-31,549000.0,South Boston
+2014-10-31,339000.0,South Dorchester
+2014-10-31,449450.0,West Roxbury
+2014-10-31,335500.0,Hyde Park
+2014-10-31,365000.0,East Boston
+2014-10-31,336000.0,Hyde Park
+2014-10-31,591830.5,Charlestown
+2014-10-31,369900.0,Roslindale
+2014-10-31,549000.0,South Boston
+2014-10-31,369900.0,Roslindale
+2014-10-31,597250.0,Charlestown
+2014-10-31,329000.0,South Dorchester
+2014-11-30,449000.0,West Roxbury
+2014-11-30,328000.0,Hyde Park
+2014-11-30,339000.0,South Dorchester
+2014-11-30,409000.0,Roslindale
+2014-11-30,394000.0,East Boston
+2014-11-30,327000.0,Hyde Park
+2014-11-30,389000.0,North Dorchester
+2014-11-30,536950.0,South Boston
+2014-11-30,449900.0,West Roxbury
+2014-11-30,444250.0,Jamaica Plain
+2014-11-30,444250.0,Jamaica Plain
+2014-11-30,394000.0,East Boston
+2014-11-30,584750.0,Charlestown
+2014-11-30,589000.0,Charlestown
+2014-11-30,536950.0,South Boston
+2014-11-30,389000.0,North Dorchester
+2014-11-30,409000.0,Roslindale
+2014-11-30,329900.0,South Dorchester
+2014-12-31,329250.0,Hyde Park
+2014-12-31,429900.0,West Roxbury
+2014-12-31,419450.0,Roslindale
+2014-12-31,435000.0,Jamaica Plain
+2014-12-31,319000.0,South Dorchester
+2014-12-31,540900.0,South Boston
+2014-12-31,379000.0,North Dorchester
+2014-12-31,419450.0,Roslindale
+2014-12-31,577000.0,Charlestown
+2014-12-31,352450.0,East Boston
+2014-12-31,569000.0,Charlestown
+2014-12-31,429900.0,West Roxbury
+2014-12-31,319000.0,South Dorchester
+2014-12-31,349900.0,East Boston
+2014-12-31,435000.0,Jamaica Plain
+2014-12-31,329000.0,Hyde Park
+2014-12-31,540900.0,South Boston
+2014-12-31,379000.0,North Dorchester
+2015-01-31,379000.0,North Dorchester
+2015-01-31,444900.0,Roslindale
+2015-01-31,444900.0,Roslindale
+2015-01-31,439000.0,West Roxbury
+2015-01-31,409900.0,Jamaica Plain
+2015-01-31,622250.0,Charlestown
+2015-01-31,569000.0,South Boston
+2015-01-31,339900.0,East Boston
+2015-01-31,324499.5,South Dorchester
+2015-01-31,569000.0,South Boston
+2015-01-31,379000.0,North Dorchester
+2015-01-31,632250.0,Charlestown
+2015-01-31,319000.0,South Dorchester
+2015-01-31,434450.0,West Roxbury
+2015-01-31,314500.0,Hyde Park
+2015-01-31,314500.0,Hyde Park
+2015-01-31,409900.0,Jamaica Plain
+2015-01-31,339900.0,East Boston
+2015-02-28,437450.0,Roslindale
+2015-02-28,319000.0,South Dorchester
+2015-02-28,314000.0,Hyde Park
+2015-02-28,437450.0,Roslindale
+2015-02-28,649000.0,Charlestown
+2015-02-28,335000.0,East Boston
+2015-02-28,384000.0,North Dorchester
+2015-02-28,596500.0,South Boston
+2015-02-28,319000.0,South Dorchester
+2015-02-28,409900.0,Jamaica Plain
+2015-02-28,384000.0,North Dorchester
+2015-02-28,335000.0,East Boston
+2015-02-28,409900.0,Jamaica Plain
+2015-02-28,434450.0,West Roxbury
+2015-02-28,596500.0,South Boston
+2015-02-28,649000.0,Charlestown
+2015-02-28,439000.0,West Roxbury
+2015-02-28,314000.0,Hyde Park
+2015-03-31,335000.0,Hyde Park
+2015-03-31,384000.0,North Dorchester
+2015-03-31,649000.0,Charlestown
+2015-03-31,439000.0,West Roxbury
+2015-03-31,599499.5,South Boston
+2015-03-31,649000.0,Charlestown
+2015-03-31,321000.0,South Dorchester
+2015-03-31,429000.0,Roslindale
+2015-03-31,335000.0,Hyde Park
+2015-03-31,450000.0,Jamaica Plain
+2015-03-31,439000.0,West Roxbury
+2015-03-31,450000.0,Jamaica Plain
+2015-03-31,429000.0,Roslindale
+2015-03-31,389000.0,North Dorchester
+2015-03-31,321000.0,South Dorchester
+2015-03-31,339000.0,East Boston
+2015-03-31,337000.0,East Boston
+2015-03-31,599000.0,South Boston
+2015-04-30,339900.0,Hyde Park
+2015-04-30,649000.0,Charlestown
+2015-04-30,452450.0,Roxbury
+2015-04-30,599000.0,South Boston
+2015-04-30,394000.0,North Dorchester
+2015-04-30,444000.0,West Roxbury
+2015-04-30,599000.0,South Boston
+2015-04-30,659000.0,Charlestown
+2015-04-30,319450.0,South Dorchester
+2015-04-30,450000.0,Jamaica Plain
+2015-04-30,385000.0,Roxbury
+2015-04-30,389000.0,North Dorchester
+2015-04-30,340000.0,Hyde Park
+2015-04-30,319900.0,South Dorchester
+2015-04-30,349950.0,East Boston
+2015-04-30,349950.0,East Boston
+2015-04-30,449000.0,West Roxbury
+2015-04-30,419000.0,Roslindale
+2015-04-30,419000.0,Roslindale
+2015-04-30,449500.0,Jamaica Plain
+2015-05-31,449900.0,West Roxbury
+2015-05-31,352000.0,Roxbury
+2015-05-31,339000.0,Hyde Park
+2015-05-31,484450.0,Jamaica Plain
+2015-05-31,409000.0,North Dorchester
+2015-05-31,629000.0,South Boston
+2015-05-31,349950.0,East Boston
+2015-05-31,649500.0,Charlestown
+2015-05-31,449900.0,West Roxbury
+2015-05-31,439000.0,Roslindale
+2015-05-31,404450.0,North Dorchester
+2015-05-31,422000.0,Roxbury
+2015-05-31,629000.0,South Boston
+2015-05-31,339450.0,Hyde Park
+2015-05-31,349950.0,East Boston
+2015-05-31,479900.0,Jamaica Plain
+2015-05-31,649000.0,Charlestown
+2015-05-31,339900.0,South Dorchester
+2015-05-31,342950.0,South Dorchester
+2015-05-31,439000.0,Roslindale
+2015-06-30,344000.0,South Dorchester
+2015-06-30,444450.0,West Roxbury
+2015-06-30,619000.0,South Boston
+2015-06-30,499000.0,Jamaica Plain
+2015-06-30,434900.0,West Roxbury
+2015-06-30,619000.0,South Boston
+2015-06-30,416950.0,North Dorchester
+2015-06-30,445000.0,Roslindale
+2015-06-30,639450.0,Charlestown
+2015-06-30,619000.0,Charlestown
+2015-06-30,499000.0,Jamaica Plain
+2015-06-30,379000.0,East Boston
+2015-06-30,347000.0,Hyde Park
+2015-06-30,339000.0,South Dorchester
+2015-06-30,409900.0,Roxbury
+2015-06-30,445000.0,Roslindale
+2015-06-30,375000.0,Roxbury
+2015-06-30,379000.0,East Boston
+2015-06-30,416950.0,North Dorchester
+2015-06-30,349000.0,Hyde Park
+2015-07-31,599000.0,South Boston
+2015-07-31,416950.0,North Dorchester
+2015-07-31,339000.0,South Dorchester
+2015-07-31,379000.0,East Boston
+2015-07-31,599000.0,South Boston
+2015-07-31,445000.0,Roslindale
+2015-07-31,389000.0,East Boston
+2015-07-31,429900.0,West Roxbury
+2015-07-31,349450.0,Hyde Park
+2015-07-31,349000.0,South Dorchester
+2015-07-31,369909.0,Roxbury
+2015-07-31,409900.0,Roxbury
+2015-07-31,648000.0,Charlestown
+2015-07-31,349450.0,Hyde Park
+2015-07-31,499500.0,Jamaica Plain
+2015-07-31,499500.0,Jamaica Plain
+2015-07-31,445000.0,Roslindale
+2015-07-31,429900.0,West Roxbury
+2015-07-31,416950.0,North Dorchester
+2015-07-31,642700.0,Charlestown
+2015-08-31,599000.0,South Boston
+2015-08-31,599000.0,South Boston
+2015-08-31,399000.0,Roxbury
+2015-08-31,349900.0,South Dorchester
+2015-08-31,539000.0,Jamaica Plain
+2015-08-31,445000.0,Roslindale
+2015-08-31,349900.0,Hyde Park
+2015-08-31,349000.0,South Dorchester
+2015-08-31,439000.0,West Roxbury
+2015-08-31,650000.0,Charlestown
+2015-08-31,655500.0,Charlestown
+2015-08-31,341950.0,Roxbury
+2015-08-31,409950.0,North Dorchester
+2015-08-31,354450.0,Hyde Park
+2015-08-31,439000.0,West Roxbury
+2015-08-31,377000.0,East Boston
+2015-08-31,419900.0,North Dorchester
+2015-08-31,369000.0,East Boston
+2015-08-31,445000.0,Roslindale
+2015-08-31,539000.0,Jamaica Plain
+2015-09-30,349000.0,Hyde Park
+2015-09-30,589000.0,South Boston
+2015-09-30,384500.0,Roxbury
+2015-09-30,354900.0,South Dorchester
+2015-09-30,639000.0,Charlestown
+2015-09-30,429000.0,West Roxbury
+2015-09-30,399000.0,North Dorchester
+2015-09-30,349000.0,South Dorchester
+2015-09-30,382000.0,Roslindale
+2015-09-30,382000.0,Roslindale
+2015-09-30,589000.0,South Boston
+2015-09-30,369000.0,East Boston
+2015-09-30,349000.0,Hyde Park
+2015-09-30,639000.0,Charlestown
+2015-09-30,429000.0,Roxbury
+2015-09-30,564950.0,Jamaica Plain
+2015-09-30,564950.0,Jamaica Plain
+2015-09-30,429000.0,West Roxbury
+2015-09-30,369000.0,East Boston
+2015-09-30,399000.0,North Dorchester
+2015-10-31,375000.0,East Boston
+2015-10-31,332500.0,Hyde Park
+2015-10-31,429900.0,West Roxbury
+2015-10-31,375000.0,East Boston
+2015-10-31,335000.0,Hyde Park
+2015-10-31,429900.0,West Roxbury
+2015-10-31,387250.0,Roslindale
+2015-10-31,399900.0,North Dorchester
+2015-10-31,349000.0,South Dorchester
+2015-10-31,387250.0,Roslindale
+2015-10-31,396500.0,Roxbury
+2015-10-31,525000.0,Jamaica Plain
+2015-10-31,434500.0,Roxbury
+2015-10-31,599000.0,South Boston
+2015-10-31,399900.0,North Dorchester
+2015-10-31,344900.0,South Dorchester
+2015-10-31,645500.0,Charlestown
+2015-10-31,645500.0,Charlestown
+2015-10-31,599000.0,South Boston
+2015-10-31,522000.0,Jamaica Plain
+2015-11-30,329000.0,Hyde Park
+2015-11-30,377450.0,East Boston
+2015-11-30,329500.0,Hyde Park
+2015-11-30,669000.0,Charlestown
+2015-11-30,340000.0,South Dorchester
+2015-11-30,532000.0,Jamaica Plain
+2015-11-30,669000.0,Charlestown
+2015-11-30,413700.0,Roxbury
+2015-11-30,399000.0,Roslindale
+2015-11-30,454450.0,Roxbury
+2015-11-30,592450.0,South Boston
+2015-11-30,532000.0,Jamaica Plain
+2015-11-30,587000.0,South Boston
+2015-11-30,459950.0,West Roxbury
+2015-11-30,419000.0,North Dorchester
+2015-11-30,399000.0,Roslindale
+2015-11-30,377450.0,East Boston
+2015-11-30,349900.0,South Dorchester
+2015-11-30,422000.0,North Dorchester
+2015-11-30,459950.0,West Roxbury
+2015-12-31,399900.0,Roslindale
+2015-12-31,349974.0,East Boston
+2015-12-31,399900.0,Roslindale
+2015-12-31,349000.0,Hyde Park
+2015-12-31,439000.0,Roxbury
+2015-12-31,339000.0,South Dorchester
+2015-12-31,387100.0,Roxbury
+2015-12-31,599000.0,South Boston
+2015-12-31,675000.0,Charlestown
+2015-12-31,599450.0,South Boston
+2015-12-31,380000.0,North Dorchester
+2015-12-31,571950.0,Jamaica Plain
+2015-12-31,675000.0,Charlestown
+2015-12-31,329000.0,South Dorchester
+2015-12-31,380000.0,North Dorchester
+2015-12-31,439900.0,West Roxbury
+2015-12-31,439900.0,West Roxbury
+2015-12-31,571950.0,Jamaica Plain
+2015-12-31,344450.0,Hyde Park
+2015-12-31,349974.0,East Boston
+2016-01-31,447000.0,Roslindale
+2016-01-31,447000.0,Roslindale
+2016-01-31,394450.0,East Boston
+2016-01-31,399756.0,Roxbury
+2016-01-31,599000.0,South Boston
+2016-01-31,412450.0,North Dorchester
+2016-01-31,589000.0,Jamaica Plain
+2016-01-31,589000.0,Jamaica Plain
+2016-01-31,695000.0,Charlestown
+2016-01-31,320000.0,Hyde Park
+2016-01-31,449000.0,Roxbury
+2016-01-31,307500.0,Hyde Park
+2016-01-31,442450.0,West Roxbury
+2016-01-31,695000.0,Charlestown
+2016-01-31,442450.0,West Roxbury
+2016-01-31,329000.0,South Dorchester
+2016-01-31,412450.0,North Dorchester
+2016-01-31,338000.0,South Dorchester
+2016-01-31,399000.0,East Boston
+2016-01-31,599000.0,South Boston
+2016-02-29,425000.0,Roslindale
+2016-02-29,469000.0,West Roxbury
+2016-02-29,577000.0,Jamaica Plain
+2016-02-29,464000.0,North Dorchester
+2016-02-29,422000.0,East Boston
+2016-02-29,469000.0,West Roxbury
+2016-02-29,307500.0,Hyde Park
+2016-02-29,304500.0,South Dorchester
+2016-02-29,320000.0,Hyde Park
+2016-02-29,685000.0,Charlestown
+2016-02-29,579000.0,Jamaica Plain
+2016-02-29,365000.0,Roxbury
+2016-02-29,599900.0,South Boston
+2016-02-29,599900.0,South Boston
+2016-02-29,425000.0,Roslindale
+2016-02-29,687000.0,Charlestown
+2016-02-29,399756.0,Roxbury
+2016-02-29,464000.0,North Dorchester
+2016-02-29,419000.0,East Boston
+2016-02-29,329000.0,South Dorchester
+2016-03-31,325000.0,Hyde Park
+2016-03-31,539000.0,Jamaica Plain
+2016-03-31,429900.0,Roxbury
+2016-03-31,300000.0,Hyde Park
+2016-03-31,672000.0,Charlestown
+2016-03-31,644949.5,South Boston
+2016-03-31,529000.0,Jamaica Plain
+2016-03-31,332000.0,South Dorchester
+2016-03-31,432450.0,North Dorchester
+2016-03-31,438900.0,East Boston
+2016-03-31,299900.0,South Dorchester
+2016-03-31,675000.0,Charlestown
+2016-03-31,494450.0,West Roxbury
+2016-03-31,399000.0,Roxbury
+2016-03-31,437450.0,North Dorchester
+2016-03-31,432000.0,Roslindale
+2016-03-31,487450.0,West Roxbury
+2016-03-31,432000.0,Roslindale
+2016-03-31,644949.5,South Boston
+2016-03-31,438900.0,East Boston
+2016-04-30,539000.0,Jamaica Plain
+2016-04-30,459900.0,East Boston
+2016-04-30,459900.0,East Boston
+2016-04-30,349900.0,Hyde Park
+2016-04-30,439000.0,Roslindale
+2016-04-30,644450.0,Charlestown
+2016-04-30,429400.0,North Dorchester
+2016-04-30,377000.0,South Dorchester
+2016-04-30,679000.0,South Boston
+2016-04-30,419000.0,Roxbury
+2016-04-30,389000.0,Roxbury
+2016-04-30,539000.0,Jamaica Plain
+2016-04-30,679000.0,South Boston
+2016-04-30,519900.0,West Roxbury
+2016-04-30,349450.0,Hyde Park
+2016-04-30,649000.0,Charlestown
+2016-04-30,439450.0,North Dorchester
+2016-04-30,439000.0,Roslindale
+2016-04-30,515000.0,West Roxbury
+2016-04-30,344500.0,South Dorchester
+2016-05-31,399378.0,Roxbury
+2016-05-31,699000.0,South Boston
+2016-05-31,449000.0,East Boston
+2016-05-31,369900.0,South Dorchester
+2016-05-31,392000.0,South Dorchester
+2016-05-31,409000.0,Roxbury
+2016-05-31,664000.0,Charlestown
+2016-05-31,699000.0,South Boston
+2016-05-31,679999.0,Charlestown
+2016-05-31,449000.0,Roslindale
+2016-05-31,449000.0,Roslindale
+2016-05-31,524900.0,West Roxbury
+2016-05-31,327500.0,Hyde Park
+2016-05-31,449000.0,North Dorchester
+2016-05-31,531950.0,Jamaica Plain
+2016-05-31,527000.0,Jamaica Plain
+2016-05-31,449000.0,East Boston
+2016-05-31,349000.0,Hyde Park
+2016-05-31,449000.0,North Dorchester
+2016-05-31,529999.0,West Roxbury
+2016-06-30,649949.5,Charlestown
+2016-06-30,454450.0,East Boston
+2016-06-30,514499.5,Jamaica Plain
+2016-06-30,364900.0,Hyde Park
+2016-06-30,399000.0,South Dorchester
+2016-06-30,399000.0,Roxbury
+2016-06-30,519999.0,Jamaica Plain
+2016-06-30,409378.0,Roxbury
+2016-06-30,454450.0,East Boston
+2016-06-30,699949.5,South Boston
+2016-06-30,419500.0,Roslindale
+2016-06-30,689000.0,Charlestown
+2016-06-30,389000.0,South Dorchester
+2016-06-30,369900.0,Hyde Park
+2016-06-30,429900.0,North Dorchester
+2016-06-30,419500.0,Roslindale
+2016-06-30,539900.0,West Roxbury
+2016-06-30,534000.0,West Roxbury
+2016-06-30,699450.0,South Boston
+2016-06-30,429900.0,North Dorchester
+2016-07-31,399000.0,Roslindale
+2016-07-31,698000.0,South Boston
+2016-07-31,749000.0,Charlestown
+2016-07-31,696500.0,South Boston
+2016-07-31,574000.0,Jamaica Plain
+2016-07-31,399000.0,South Dorchester
+2016-07-31,574000.0,Jamaica Plain
+2016-07-31,369000.0,South Dorchester
+2016-07-31,399000.0,Roxbury
+2016-07-31,529000.0,West Roxbury
+2016-07-31,439000.0,East Boston
+2016-07-31,359000.0,Hyde Park
+2016-07-31,729000.0,Charlestown
+2016-07-31,439000.0,East Boston
+2016-07-31,425000.0,North Dorchester
+2016-07-31,399000.0,Roslindale
+2016-07-31,525000.0,West Roxbury
+2016-07-31,425000.0,North Dorchester
+2016-07-31,379104.5,Roxbury
+2016-07-31,349950.0,Hyde Park
+2016-08-31,389900.0,Roslindale
+2016-08-31,699000.0,South Boston
+2016-08-31,445000.0,North Dorchester
+2016-08-31,338450.0,Hyde Park
+2016-08-31,749000.0,Charlestown
+2016-08-31,485000.0,East Boston
+2016-08-31,369000.0,South Dorchester
+2016-08-31,445000.0,North Dorchester
+2016-08-31,349900.0,Hyde Park
+2016-08-31,389900.0,Roslindale
+2016-08-31,484950.0,East Boston
+2016-08-31,749900.0,Charlestown
+2016-08-31,425000.0,Roxbury
+2016-08-31,698500.0,South Boston
+2016-08-31,519450.0,West Roxbury
+2016-08-31,529000.0,Jamaica Plain
+2016-08-31,529000.0,Jamaica Plain
+2016-08-31,387000.0,Roxbury
+2016-08-31,517000.0,West Roxbury
+2016-08-31,386950.0,South Dorchester
+2016-09-30,449500.0,North Dorchester
+2016-09-30,749000.0,Charlestown
+2016-09-30,499949.5,Jamaica Plain
+2016-09-30,385000.0,South Dorchester
+2016-09-30,482000.0,West Roxbury
+2016-09-30,469900.0,East Boston
+2016-09-30,482000.0,West Roxbury
+2016-09-30,449500.0,North Dorchester
+2016-09-30,737000.0,South Boston
+2016-09-30,469000.0,East Boston
+2016-09-30,500000.0,Brighton
+2016-09-30,359000.0,Hyde Park
+2016-09-30,379900.0,Roxbury
+2016-09-30,714600.0,South Boston
+2016-09-30,359900.0,Hyde Park
+2016-09-30,499949.5,Jamaica Plain
+2016-09-30,749950.0,Charlestown
+2016-09-30,409450.0,Roslindale
+2016-09-30,429000.0,Roxbury
+2016-09-30,399000.0,South Dorchester
+2016-09-30,409450.0,Roslindale
+2016-10-31,481950.0,West Roxbury
+2016-10-31,479900.0,East Boston
+2016-10-31,427000.0,South Dorchester
+2016-10-31,479000.0,North Dorchester
+2016-10-31,717000.0,South Boston
+2016-10-31,375000.0,Hyde Park
+2016-10-31,480000.0,Roxbury
+2016-10-31,719000.0,South Boston
+2016-10-31,527000.0,Jamaica Plain
+2016-10-31,481950.0,West Roxbury
+2016-10-31,399950.0,Roxbury
+2016-10-31,479000.0,North Dorchester
+2016-10-31,479900.0,East Boston
+2016-10-31,372450.0,Hyde Park
+2016-10-31,459900.0,Roslindale
+2016-10-31,527000.0,Jamaica Plain
+2016-10-31,682000.0,Charlestown
+2016-10-31,699000.0,Charlestown
+2016-10-31,400000.0,South Dorchester
+2016-10-31,459900.0,Roslindale
+2016-10-31,474950.0,Brighton
+2016-11-30,465000.0,Brighton
+2016-11-30,699000.0,Charlestown
+2016-11-30,549000.0,Jamaica Plain
+2016-11-30,399900.0,South Dorchester
+2016-11-30,459900.0,East Boston
+2016-11-30,400000.0,Roslindale
+2016-11-30,399900.0,Roxbury
+2016-11-30,375000.0,Hyde Park
+2016-11-30,739000.0,South Boston
+2016-11-30,399000.0,South Dorchester
+2016-11-30,400000.0,Roslindale
+2016-11-30,469900.0,West Roxbury
+2016-11-30,509000.0,North Dorchester
+2016-11-30,529000.0,Roxbury
+2016-11-30,699000.0,Charlestown
+2016-11-30,459900.0,East Boston
+2016-11-30,474900.0,West Roxbury
+2016-11-30,735000.0,South Boston
+2016-11-30,509000.0,North Dorchester
+2016-11-30,372450.0,Hyde Park
+2016-11-30,549000.0,Jamaica Plain
+2016-12-31,449000.0,Roslindale
+2016-12-31,749000.0,South Boston
+2016-12-31,685000.0,Charlestown
+2016-12-31,452000.0,Brighton
+2016-12-31,699000.0,Charlestown
+2016-12-31,418450.0,South Dorchester
+2016-12-31,459000.0,West Roxbury
+2016-12-31,467450.0,East Boston
+2016-12-31,499000.0,North Dorchester
+2016-12-31,354999.5,Hyde Park
+2016-12-31,499000.0,North Dorchester
+2016-12-31,544000.0,Jamaica Plain
+2016-12-31,467450.0,East Boston
+2016-12-31,480000.0,Roxbury
+2016-12-31,749000.0,South Boston
+2016-12-31,399900.0,South Dorchester
+2016-12-31,364499.5,Hyde Park
+2016-12-31,399900.0,Roxbury
+2016-12-31,539000.0,Jamaica Plain
+2016-12-31,449000.0,Roslindale
+2016-12-31,459000.0,West Roxbury
+2017-01-31,524900.0,Roxbury
+2017-01-31,589450.0,Jamaica Plain
+2017-01-31,649900.0,Charlestown
+2017-01-31,579900.0,Jamaica Plain
+2017-01-31,424450.0,South Dorchester
+2017-01-31,749000.0,South Boston
+2017-01-31,344000.0,Hyde Park
+2017-01-31,479000.0,West Roxbury
+2017-01-31,462000.0,North Dorchester
+2017-01-31,462000.0,North Dorchester
+2017-01-31,459900.0,East Boston
+2017-01-31,375000.0,Roxbury
+2017-01-31,1825000.0,Downtown
+2017-01-31,475000.0,East Boston
+2017-01-31,349000.0,Hyde Park
+2017-01-31,479900.0,Roslindale
+2017-01-31,399900.0,South Dorchester
+2017-01-31,749000.0,South Boston
+2017-01-31,654450.0,Charlestown
+2017-01-31,512500.0,Brighton
+2017-01-31,474500.0,West Roxbury
+2017-01-31,2150000.0,Back Bay
+2017-01-31,479900.0,Roslindale
+2017-02-28,514700.0,Roslindale
+2017-02-28,750000.0,South Boston
+2017-02-28,359000.0,Hyde Park
+2017-02-28,349900.0,Roxbury
+2017-02-28,699000.0,Charlestown
+2017-02-28,493500.0,West Roxbury
+2017-02-28,699000.0,Charlestown
+2017-02-28,422000.0,North Dorchester
+2017-02-28,1910000.0,Back Bay
+2017-02-28,354500.0,Hyde Park
+2017-02-28,399450.0,South Dorchester
+2017-02-28,589000.0,Jamaica Plain
+2017-02-28,409900.0,South Dorchester
+2017-02-28,512450.0,Brighton
+2017-02-28,425000.0,North Dorchester
+2017-02-28,450000.0,East Boston
+2017-02-28,750000.0,South Boston
+2017-02-28,455000.0,East Boston
+2017-02-28,498000.0,West Roxbury
+2017-02-28,499900.0,Roslindale
+2017-02-28,594450.0,Jamaica Plain
+2017-02-28,455000.0,Roxbury
+2017-02-28,1600000.0,Downtown
+2017-03-31,349500.0,Roxbury
+2017-03-31,599000.0,Jamaica Plain
+2017-03-31,532000.0,West Roxbury
+2017-03-31,449900.0,East Boston
+2017-03-31,793000.0,South Boston
+2017-03-31,539000.0,West Roxbury
+2017-03-31,459900.0,Brighton
+2017-03-31,1677000.0,Back Bay
+2017-03-31,729900.0,Charlestown
+2017-03-31,499000.0,Roslindale
+2017-03-31,489450.0,Roslindale
+2017-03-31,1569000.0,Downtown
+2017-03-31,449500.0,Roxbury
+2017-03-31,421500.0,South Dorchester
+2017-03-31,357000.0,Hyde Park
+2017-03-31,729000.0,Charlestown
+2017-03-31,429000.0,South Dorchester
+2017-03-31,449900.0,East Boston
+2017-03-31,798000.0,South Boston
+2017-03-31,594000.0,Jamaica Plain
+2017-03-31,369950.0,Hyde Park
+2017-03-31,429000.0,North Dorchester
+2017-03-31,429000.0,North Dorchester
+2017-04-30,454500.0,East Boston
+2017-04-30,369900.0,Hyde Park
+2017-04-30,550000.0,Jamaica Plain
+2017-04-30,469000.0,North Dorchester
+2017-04-30,359000.0,Roxbury
+2017-04-30,779000.0,South Boston
+2017-04-30,565000.0,West Roxbury
+2017-04-30,786500.0,Charlestown
+2017-04-30,789000.0,Charlestown
+2017-04-30,469000.0,North Dorchester
+2017-04-30,565000.0,West Roxbury
+2017-04-30,459000.0,Roxbury
+2017-04-30,1647500.0,Back Bay
+2017-04-30,784450.0,South Boston
+2017-04-30,370000.0,Hyde Park
+2017-04-30,550000.0,Jamaica Plain
+2017-04-30,1324500.0,Downtown
+2017-04-30,475000.0,Brighton
+2017-04-30,459450.0,East Boston
+2017-04-30,445000.0,South Dorchester
+2017-04-30,464450.0,Roslindale
+2017-04-30,439000.0,South Dorchester
+2017-04-30,464450.0,Roslindale
+2017-05-31,374950.0,Hyde Park
+2017-05-31,444900.0,South Dorchester
+2017-05-31,473500.0,North Dorchester
+2017-05-31,473500.0,North Dorchester
+2017-05-31,907000.0,North End
+2017-05-31,825000.0,Charlestown
+2017-05-31,562000.0,Jamaica Plain
+2017-05-31,460900.0,Brighton
+2017-05-31,1399000.0,Downtown
+2017-05-31,439000.0,Roxbury
+2017-05-31,799000.0,Charlestown
+2017-05-31,559000.0,West Roxbury
+2017-05-31,475000.0,Roslindale
+2017-05-31,899000.0,North End
+2017-05-31,475000.0,Roslindale
+2017-05-31,340900.0,Roxbury
+2017-05-31,459000.0,East Boston
+2017-05-31,449250.0,South Dorchester
+2017-05-31,554500.0,Jamaica Plain
+2017-05-31,459000.0,East Boston
+2017-05-31,1572500.0,Back Bay
+2017-05-31,798237.5,South Boston
+2017-05-31,374950.0,Hyde Park
+2017-05-31,554500.0,West Roxbury
+2017-05-31,797475.0,South Boston
+2017-06-30,795000.0,Charlestown
+2017-06-30,799900.0,South Boston
+2017-06-30,554000.0,North Dorchester
+2017-06-30,554000.0,North Dorchester
+2017-06-30,470381.0,East Boston
+2017-06-30,479000.0,Roslindale
+2017-06-30,799000.0,South Boston
+2017-06-30,425000.0,South Dorchester
+2017-06-30,548000.0,Jamaica Plain
+2017-06-30,400000.0,Hyde Park
+2017-06-30,899000.0,North End
+2017-06-30,459000.0,Roxbury
+2017-06-30,539000.0,Jamaica Plain
+2017-06-30,400000.0,Hyde Park
+2017-06-30,1347000.0,Downtown
+2017-06-30,1475000.0,Back Bay
+2017-06-30,399000.0,South Dorchester
+2017-06-30,437800.0,Brighton
+2017-06-30,477000.0,East Boston
+2017-06-30,485000.0,Roslindale
+2017-06-30,899000.0,North End
+2017-06-30,362450.0,Roxbury
+2017-06-30,554450.0,West Roxbury
+2017-06-30,549900.0,West Roxbury
+2017-06-30,764000.0,Charlestown
+2017-07-31,499000.0,North Dorchester
+2017-07-31,585000.0,Jamaica Plain
+2017-07-31,799000.0,Charlestown
+2017-07-31,579000.0,West Roxbury
+2017-07-31,1439000.0,Downtown
+2017-07-31,460900.0,Brighton
+2017-07-31,389500.0,South Dorchester
+2017-07-31,759500.0,Charlestown
+2017-07-31,582000.0,Jamaica Plain
+2017-07-31,499949.5,Roslindale
+2017-07-31,504999.5,Roslindale
+2017-07-31,408500.0,Hyde Park
+2017-07-31,579000.0,West Roxbury
+2017-07-31,873425.0,South Boston
+2017-07-31,1597000.0,Back Bay
+2017-07-31,887000.0,South Boston
+2017-07-31,407500.0,South Dorchester
+2017-07-31,407000.0,Hyde Park
+2017-07-31,895000.0,North End
+2017-07-31,499499.5,North Dorchester
+2017-07-31,895000.0,North End
+2017-07-31,529000.0,East Boston
+2017-07-31,529000.0,East Boston
+2017-07-31,374900.0,Roxbury
+2017-07-31,504350.0,Roxbury
+2017-08-31,499900.0,Roslindale
+2017-08-31,510000.0,Roslindale
+2017-08-31,996000.0,North End
+2017-08-31,499000.0,North Dorchester
+2017-08-31,559900.0,West Roxbury
+2017-08-31,780000.0,Charlestown
+2017-08-31,559900.0,West Roxbury
+2017-08-31,899000.0,South Boston
+2017-08-31,497000.0,North Dorchester
+2017-08-31,549000.0,East Boston
+2017-08-31,404000.0,Roxbury
+2017-08-31,400000.0,South Dorchester
+2017-08-31,439450.0,South Dorchester
+2017-08-31,1712500.0,Back Bay
+2017-08-31,549000.0,East Boston
+2017-08-31,899000.0,South Boston
+2017-08-31,1232500.0,Downtown
+2017-08-31,719000.0,Charlestown
+2017-08-31,594000.0,Jamaica Plain
+2017-08-31,996000.0,North End
+2017-08-31,419000.0,Hyde Park
+2017-08-31,413000.0,Hyde Park
+2017-08-31,460000.0,Brighton
+2017-08-31,499450.0,Roxbury
+2017-08-31,599000.0,Jamaica Plain
+2017-09-30,599000.0,Jamaica Plain
+2017-09-30,1825000.0,Back Bay
+2017-09-30,925000.0,South Boston
+2017-09-30,529450.0,East Boston
+2017-09-30,559900.0,West Roxbury
+2017-09-30,599000.0,Jamaica Plain
+2017-09-30,499000.0,North Dorchester
+2017-09-30,469450.0,South Dorchester
+2017-09-30,532400.0,East Boston
+2017-09-30,479900.0,South Dorchester
+2017-09-30,569000.0,West Roxbury
+2017-09-30,499000.0,North Dorchester
+2017-09-30,539000.0,Roslindale
+2017-09-30,1444500.0,Downtown
+2017-09-30,755000.0,Charlestown
+2017-09-30,434450.0,Roxbury
+2017-09-30,932500.0,South Boston
+2017-09-30,534500.0,Roslindale
+2017-09-30,998000.0,North End
+2017-09-30,1275000.0,South End
+2017-09-30,1299000.0,South End
+2017-09-30,399900.0,Hyde Park
+2017-09-30,996000.0,North End
+2017-09-30,459000.0,Roxbury
+2017-09-30,449950.0,Brighton
+2017-09-30,399000.0,Hyde Park
+2017-09-30,765000.0,Charlestown
+2017-10-31,1875000.0,Back Bay
+2017-10-31,839000.0,North End
+2017-10-31,1439000.0,Downtown
+2017-10-31,499900.0,North Dorchester
+2017-10-31,534000.0,Roxbury
+2017-10-31,1347000.0,South End
+2017-10-31,459000.0,Roxbury
+2017-10-31,417000.0,Hyde Park
+2017-10-31,500000.0,East Boston
+2017-10-31,847000.0,North End
+2017-10-31,1349500.0,South End
+2017-10-31,572450.0,West Roxbury
+2017-10-31,527000.0,Roslindale
+2017-10-31,499000.0,South Dorchester
+2017-10-31,629000.0,Jamaica Plain
+2017-10-31,479999.0,South Dorchester
+2017-10-31,529000.0,Roslindale
+2017-10-31,949000.0,South Boston
+2017-10-31,949000.0,South Boston
+2017-10-31,525000.0,East Boston
+2017-10-31,499450.0,North Dorchester
+2017-10-31,415000.0,Hyde Park
+2017-10-31,629000.0,Jamaica Plain
+2017-10-31,495000.0,Brighton
+2017-10-31,749000.0,Charlestown
+2017-10-31,569450.0,West Roxbury
+2017-10-31,740000.0,Charlestown
+2017-11-30,922000.0,South Boston
+2017-11-30,507450.0,Roslindale
+2017-11-30,469000.0,South Dorchester
+2017-11-30,549000.0,West Roxbury
+2017-11-30,480000.0,Roxbury
+2017-11-30,740000.0,Charlestown
+2017-11-30,1348500.0,South End
+2017-11-30,399900.0,Hyde Park
+2017-11-30,604450.0,Jamaica Plain
+2017-11-30,1850000.0,Back Bay
+2017-11-30,924500.0,North End
+2017-11-30,489000.0,South Dorchester
+2017-11-30,569450.0,North Dorchester
+2017-11-30,525000.0,East Boston
+2017-11-30,900000.0,North End
+2017-11-30,604450.0,Jamaica Plain
+2017-11-30,407000.0,Hyde Park
+2017-11-30,929000.0,South Boston
+2017-11-30,1445000.0,Downtown
+2017-11-30,569000.0,North Dorchester
+2017-11-30,517000.0,Roslindale
+2017-11-30,1287000.0,South End
+2017-11-30,437753.5,Roxbury
+2017-11-30,549450.0,West Roxbury
+2017-11-30,739900.0,Charlestown
+2017-11-30,577000.0,Brighton
+2017-11-30,525000.0,East Boston
+2017-12-31,1399000.0,South End
+2017-12-31,637000.0,Brighton
+2017-12-31,479888.0,South Dorchester
+2017-12-31,749000.0,Charlestown
+2017-12-31,469000.0,South Dorchester
+2017-12-31,1355000.0,South End
+2017-12-31,1445000.0,Downtown
+2017-12-31,650000.0,Jamaica Plain
+2017-12-31,385000.0,Hyde Park
+2017-12-31,995000.0,North End
+2017-12-31,499450.0,Roslindale
+2017-12-31,995000.0,North End
+2017-12-31,952500.0,South Boston
+2017-12-31,950000.0,South Boston
+2017-12-31,499900.0,Roslindale
+2017-12-31,384950.0,Hyde Park
+2017-12-31,760000.0,Charlestown
+2017-12-31,549000.0,West Roxbury
+2017-12-31,549000.0,West Roxbury
+2017-12-31,568000.0,North Dorchester
+2017-12-31,567000.0,North Dorchester
+2017-12-31,499900.0,East Boston
+2017-12-31,649500.0,Jamaica Plain
+2017-12-31,499000.0,Roxbury
+2017-12-31,499949.5,East Boston
+2017-12-31,2150000.0,Back Bay
+2017-12-31,480000.0,Roxbury
+2018-01-31,549900.0,East Boston
+2018-01-31,420000.0,Hyde Park
+2018-01-31,469000.0,South Dorchester
+2018-01-31,952500.0,South Boston
+2018-01-31,549900.0,West Roxbury
+2018-01-31,567000.0,North Dorchester
+2018-01-31,549900.0,West Roxbury
+2018-01-31,664000.0,Charlestown
+2018-01-31,625000.0,Brighton
+2018-01-31,649000.0,Charlestown
+2018-01-31,422999.5,Hyde Park
+2018-01-31,950000.0,South Boston
+2018-01-31,1399000.0,South End
+2018-01-31,539000.0,East Boston
+2018-01-31,573000.0,North Dorchester
+2018-01-31,479000.0,Roxbury
+2018-01-31,1399000.0,South End
+2018-01-31,521000.0,Roslindale
+2018-01-31,459000.0,South Dorchester
+2018-01-31,992500.0,North End
+2018-01-31,494000.0,Roxbury
+2018-01-31,675000.0,Jamaica Plain
+2018-01-31,2225000.0,Back Bay
+2018-01-31,667450.0,Jamaica Plain
+2018-01-31,499900.0,Roslindale
+2018-01-31,995000.0,North End
+2018-02-28,569000.0,West Roxbury
+2018-02-28,569250.0,West Roxbury
+2018-02-28,649000.0,Jamaica Plain
+2018-02-28,499000.0,Roslindale
+2018-02-28,484500.0,South Dorchester
+2018-02-28,494000.0,South Dorchester
+2018-02-28,1219000.0,South End
+2018-02-28,640000.0,Charlestown
+2018-02-28,527400.0,Brighton
+2018-02-28,549000.0,North Dorchester
+2018-02-28,550000.0,East Boston
+2018-02-28,969000.0,South Boston
+2018-02-28,350000.0,Hyde Park
+2018-02-28,972000.0,South Boston
+2018-02-28,529450.0,East Boston
+2018-02-28,459000.0,Roxbury
+2018-02-28,549000.0,North Dorchester
+2018-02-28,2357500.0,Back Bay
+2018-02-28,860000.0,North End
+2018-02-28,497000.0,Roxbury
+2018-02-28,412000.0,Mattapan
+2018-02-28,860000.0,North End
+2018-02-28,354900.0,Hyde Park
+2018-02-28,1199000.0,South End
+2018-02-28,499000.0,Roslindale
+2018-02-28,649000.0,Jamaica Plain
+2018-02-28,632000.0,Charlestown
+2018-03-31,935000.0,South Boston
+2018-03-31,644500.0,Jamaica Plain
+2018-03-31,387500.0,Hyde Park
+2018-03-31,942500.0,South Boston
+2018-03-31,559900.0,West Roxbury
+2018-03-31,393700.0,Hyde Park
+2018-03-31,739000.0,Charlestown
+2018-03-31,522400.0,East Boston
+2018-03-31,1635000.0,Chinatown
+2018-03-31,549000.0,North Dorchester
+2018-03-31,549900.0,West Roxbury
+2018-03-31,509950.0,East Boston
+2018-03-31,509000.0,Roslindale
+2018-03-31,982500.0,North End
+2018-03-31,1287500.0,South End
+2018-03-31,379000.0,Mattapan
+2018-03-31,494000.0,South Dorchester
+2018-03-31,477499.5,Roxbury
+2018-03-31,990000.0,North End
+2018-03-31,459000.0,Roxbury
+2018-03-31,484500.0,South Dorchester
+2018-03-31,749000.0,Charlestown
+2018-03-31,535000.0,Brighton
+2018-03-31,535000.0,Brighton
+2018-03-31,519000.0,Roslindale
+2018-03-31,549000.0,North Dorchester
+2018-03-31,644500.0,Jamaica Plain
+2018-03-31,1287500.0,South End
+2018-04-30,1067500.0,South End
+2018-04-30,582000.0,West Roxbury
+2018-04-30,1122500.0,South End
+2018-04-30,499900.0,South Dorchester
+2018-04-30,564900.0,West Roxbury
+2018-04-30,1725000.0,Back Bay
+2018-04-30,474000.0,Roxbury
+2018-04-30,512000.0,Roslindale
+2018-04-30,389900.0,Mattapan
+2018-04-30,649000.0,Jamaica Plain
+2018-04-30,949000.0,North End
+2018-04-30,749000.0,Charlestown
+2018-04-30,430000.0,Hyde Park
+2018-04-30,571000.0,North Dorchester
+2018-04-30,899000.0,South Boston
+2018-04-30,899000.0,South Boston
+2018-04-30,729000.0,Charlestown
+2018-04-30,1598000.0,Chinatown
+2018-04-30,575000.0,North Dorchester
+2018-04-30,502400.0,South Dorchester
+2018-04-30,560000.0,East Boston
+2018-04-30,560000.0,East Boston
+2018-04-30,429500.0,Hyde Park
+2018-04-30,544000.0,Brighton
+2018-04-30,499900.0,Roxbury
+2018-04-30,515000.0,Roslindale
+2018-04-30,649000.0,Jamaica Plain
+2018-04-30,962000.0,North End
+2018-05-31,649500.0,Jamaica Plain
+2018-05-31,1087000.0,South End
+2018-05-31,529000.0,Roxbury
+2018-05-31,1549500.0,Chinatown
+2018-05-31,875000.0,North End
+2018-05-31,504000.0,Roslindale
+2018-05-31,899900.0,South Boston
+2018-05-31,439900.0,Hyde Park
+2018-05-31,649000.0,Jamaica Plain
+2018-05-31,559900.0,East Boston
+2018-05-31,559950.0,East Boston
+2018-05-31,449450.0,Hyde Park
+2018-05-31,594000.0,West Roxbury
+2018-05-31,359999.0,Mattapan
+2018-05-31,785000.0,Charlestown
+2018-05-31,899000.0,South Boston
+2018-05-31,529000.0,North Dorchester
+2018-05-31,529000.0,North Dorchester
+2018-05-31,1050000.0,South End
+2018-05-31,585000.0,West Roxbury
+2018-05-31,1624750.0,Back Bay
+2018-05-31,489000.0,South Dorchester
+2018-05-31,774900.0,Charlestown
+2018-05-31,489900.0,South Dorchester
+2018-05-31,537000.0,Brighton
+2018-05-31,499000.0,Roslindale
+2018-05-31,887000.0,North End
+2018-06-30,504450.0,Roslindale
+2018-06-30,560000.0,East Boston
+2018-06-30,509000.0,Roslindale
+2018-06-30,577000.0,West Roxbury
+2018-06-30,1095000.0,South End
+2018-06-30,499000.0,South Dorchester
+2018-06-30,499000.0,Roxbury
+2018-06-30,499900.0,North Dorchester
+2018-06-30,369900.0,Mattapan
+2018-06-30,575000.0,West Roxbury
+2018-06-30,1799000.0,Back Bay
+2018-06-30,774500.0,North End
+2018-06-30,514899.5,Brighton
+2018-06-30,499000.0,South Dorchester
+2018-06-30,499450.0,North Dorchester
+2018-06-30,899000.0,South Boston
+2018-06-30,650000.0,Jamaica Plain
+2018-06-30,769000.0,Charlestown
+2018-06-30,432500.0,Hyde Park
+2018-06-30,759500.0,Charlestown
+2018-06-30,1125000.0,South End
+2018-06-30,899000.0,South Boston
+2018-06-30,789000.0,North End
+2018-06-30,1449000.0,Chinatown
+2018-06-30,564500.0,East Boston
+2018-06-30,650000.0,Jamaica Plain
+2018-07-31,1110000.0,South End
+2018-07-31,512450.0,North Dorchester
+2018-07-31,795000.0,North End
+2018-07-31,799000.0,North End
+2018-07-31,660000.0,Jamaica Plain
+2018-07-31,524900.0,Roslindale
+2018-07-31,1137000.0,South End
+2018-07-31,669000.0,Jamaica Plain
+2018-07-31,369900.0,Mattapan
+2018-07-31,899000.0,South Boston
+2018-07-31,754450.0,Charlestown
+2018-07-31,1397000.0,Chinatown
+2018-07-31,764500.0,Charlestown
+2018-07-31,599000.0,East Boston
+2018-07-31,899000.0,South Boston
+2018-07-31,512500.0,Brighton
+2018-07-31,424900.0,Hyde Park
+2018-07-31,519000.0,Roslindale
+2018-07-31,599000.0,East Boston
+2018-07-31,499900.0,Roxbury
+2018-07-31,499900.0,South Dorchester
+2018-07-31,569000.0,West Roxbury
+2018-07-31,1861603.0,Back Bay
+2018-07-31,539000.0,South Dorchester
+2018-07-31,525000.0,North Dorchester
+2018-07-31,569000.0,West Roxbury
+2018-08-31,544450.0,North Dorchester
+2018-08-31,1050000.0,South End
+2018-08-31,649000.0,Jamaica Plain
+2018-08-31,774900.0,Charlestown
+2018-08-31,399999.0,Mattapan
+2018-08-31,899000.0,South Boston
+2018-08-31,1983000.0,Back Bay
+2018-08-31,499000.0,South Dorchester
+2018-08-31,539900.0,North Dorchester
+2018-08-31,824000.0,North End
+2018-08-31,514997.0,Brighton
+2018-08-31,749000.0,Charlestown
+2018-08-31,533000.0,Roslindale
+2018-08-31,649000.0,Jamaica Plain
+2018-08-31,509900.0,South Dorchester
+2018-08-31,564450.0,West Roxbury
+2018-08-31,999000.0,South End
+2018-08-31,429000.0,Hyde Park
+2018-08-31,533000.0,Roslindale
+2018-08-31,527000.0,Roxbury
+2018-08-31,899000.0,South Boston
+2018-08-31,599000.0,East Boston
+2018-08-31,824000.0,North End
+2018-08-31,564450.0,West Roxbury
+2018-08-31,1395000.0,Chinatown
+2018-08-31,599450.0,East Boston
+2018-09-30,369999.0,Mattapan
+2018-09-30,599000.0,East Boston
+2018-09-30,825000.0,Charlestown
+2018-09-30,569900.0,West Roxbury
+2018-09-30,1735000.0,Back Bay
+2018-09-30,664000.0,Jamaica Plain
+2018-09-30,587000.0,North Dorchester
+2018-09-30,1391250.0,Chinatown
+2018-09-30,527000.0,Brighton
+2018-09-30,661500.0,Jamaica Plain
+2018-09-30,599000.0,East Boston
+2018-09-30,449900.0,Hyde Park
+2018-09-30,799000.0,Charlestown
+2018-09-30,572450.0,West Roxbury
+2018-09-30,859000.0,North End
+2018-09-30,894000.0,North End
+2018-09-30,1050000.0,South End
+2018-09-30,556000.0,Roslindale
+2018-09-30,529000.0,South Dorchester
+2018-09-30,1075000.0,South End
+2018-09-30,599000.0,North Dorchester
+2018-09-30,499000.0,Roxbury
+2018-09-30,552500.0,Roslindale
+2018-09-30,899000.0,South Boston
+2018-09-30,509450.0,South Dorchester
+2018-09-30,899000.0,South Boston
+2018-10-31,1295000.0,Chinatown
+2018-10-31,599000.0,East Boston
+2018-10-31,879000.0,South Boston
+2018-10-31,550000.0,West Roxbury
+2018-10-31,499900.0,South Dorchester
+2018-10-31,549000.0,Roslindale
+2018-10-31,779000.0,Charlestown
+2018-10-31,1085000.0,South End
+2018-10-31,444450.0,Hyde Park
+2018-10-31,649000.0,Jamaica Plain
+2018-10-31,1495000.0,Back Bay
+2018-10-31,499900.0,Roxbury
+2018-10-31,354950.0,Mattapan
+2018-10-31,529000.0,Brighton
+2018-10-31,549000.0,North Dorchester
+2018-10-31,985000.0,North End
+2018-11-30,449900.0,Hyde Park
+2018-11-30,599000.0,East Boston
+2018-11-30,374999.5,Mattapan
+2018-11-30,530000.0,Brighton
+2018-11-30,499000.0,Roxbury
+2018-11-30,1149500.0,South End
+2018-11-30,1617500.0,Back Bay
+2018-11-30,665000.0,Jamaica Plain
+2018-11-30,1395000.0,Chinatown
+2018-11-30,869000.0,South Boston
+2018-11-30,550000.0,West Roxbury
+2018-11-30,995000.0,North End
+2018-11-30,519450.0,Roslindale
+2018-11-30,749000.0,Charlestown
+2018-11-30,479999.0,South Dorchester
+2018-11-30,549000.0,North Dorchester
+2018-12-31,1799450.0,Back Bay
+2018-12-31,1149000.0,South End
+2018-12-31,569900.0,West Roxbury
+2018-12-31,519000.0,Roslindale
+2018-12-31,929000.0,North End
+2018-12-31,449900.0,Hyde Park
+2018-12-31,649000.0,Jamaica Plain
+2018-12-31,599000.0,East Boston
+2018-12-31,564900.0,Brighton
+2018-12-31,725000.0,Charlestown
+2018-12-31,349999.0,Mattapan
+2018-12-31,472450.0,South Dorchester
+2018-12-31,1395000.0,Chinatown
+2018-12-31,884000.0,South Boston
+2018-12-31,492000.0,Roxbury
+2018-12-31,549000.0,North Dorchester
+2019-01-31,499000.0,Roxbury
+2019-01-31,569500.0,East Boston
+2019-01-31,599000.0,North Dorchester
+2019-01-31,519450.0,Roslindale
+2019-01-31,899000.0,South Boston
+2019-01-31,699000.0,Charlestown
+2019-01-31,1887000.0,Back Bay
+2019-01-31,581450.0,Brighton
+2019-01-31,1500000.0,Chinatown
+2019-01-31,995500.0,North End
+2019-01-31,525000.0,West Roxbury
+2019-01-31,439974.0,Hyde Park
+2019-01-31,639000.0,Jamaica Plain
+2019-01-31,479000.0,South Dorchester
+2019-01-31,364500.0,Mattapan
+2019-01-31,1245000.0,South End
+2019-02-28,1023000.0,North End
+2019-02-28,549000.0,North Dorchester
+2019-02-28,649000.0,Jamaica Plain
+2019-02-28,589900.0,East Boston
+2019-02-28,1447000.0,Chinatown
+2019-02-28,379000.0,Mattapan
+2019-02-28,469900.0,South Dorchester
+2019-02-28,1799000.0,Back Bay
+2019-02-28,709900.0,Charlestown
+2019-02-28,549000.0,West Roxbury
+2019-02-28,529500.0,Roxbury
+2019-02-28,512250.0,Brighton
+2019-02-28,449900.0,Hyde Park
+2019-02-28,899000.0,South Boston
+2019-02-28,519450.0,Roslindale
+2019-02-28,1195000.0,South End
+2019-03-31,579000.0,West Roxbury
+2019-03-31,639000.0,Jamaica Plain
+2019-03-31,449999.0,Hyde Park
+2019-03-31,385000.0,Mattapan
+2019-03-31,520000.0,Brighton
+2019-03-31,584950.0,East Boston
+2019-03-31,1495000.0,Chinatown
+2019-03-31,570000.0,North Dorchester
+2019-03-31,519000.0,Roxbury
+2019-03-31,519900.0,Roslindale
+2019-03-31,1897000.0,Back Bay
+2019-03-31,935000.0,South Boston
+2019-03-31,999000.0,North End
+2019-03-31,477450.0,South Dorchester
+2019-03-31,724950.0,Charlestown
+2019-03-31,1095000.0,South End
+2019-04-30,549000.0,North Dorchester
+2019-04-30,540000.0,Brighton
+2019-04-30,915000.0,South Boston
+2019-04-30,1450000.0,Chinatown
+2019-04-30,739000.0,Charlestown
+2019-04-30,469000.0,South Dorchester
+2019-04-30,549900.0,Roxbury
+2019-04-30,996000.0,North End
+2019-04-30,559900.0,West Roxbury
+2019-04-30,395000.0,Mattapan
+2019-04-30,639000.0,Jamaica Plain
+2019-04-30,449900.0,Hyde Park
+2019-04-30,589900.0,East Boston
+2019-04-30,1795000.0,Back Bay
+2019-04-30,995000.0,South End
+2019-04-30,529000.0,Roslindale
+2019-05-31,639000.0,Jamaica Plain
+2019-05-31,549900.0,West Roxbury
+2019-05-31,549000.0,North Dorchester
+2019-05-31,539000.0,Roslindale
+2019-05-31,892000.0,South Boston
+2019-05-31,529000.0,Roxbury
+2019-05-31,1067500.0,South End
+2019-05-31,1685000.0,Back Bay
+2019-05-31,549000.0,Brighton
+2019-05-31,449000.0,Hyde Park
+2019-05-31,589950.0,East Boston
+2019-05-31,1435000.0,Chinatown
+2019-05-31,499000.0,South Dorchester
+2019-05-31,999000.0,North End
+2019-05-31,759000.0,Charlestown
+2019-06-30,885000.0,South Boston
+2019-06-30,525000.0,Brighton
+2019-06-30,469000.0,Hyde Park
+2019-06-30,499000.0,South Dorchester
+2019-06-30,995000.0,North End
+2019-06-30,564900.0,West Roxbury
+2019-06-30,1442500.0,Chinatown
+2019-06-30,632500.0,Jamaica Plain
+2019-06-30,1722000.0,Back Bay
+2019-06-30,599000.0,North Dorchester
+2019-06-30,1077500.0,South End
+2019-06-30,548000.0,Roslindale
+2019-06-30,599000.0,East Boston
+2019-06-30,572000.0,Roxbury
+2019-06-30,739000.0,Charlestown
+2019-07-31,1749000.0,Back Bay
+2019-07-31,1395000.0,Chinatown
+2019-07-31,639000.0,Jamaica Plain
+2019-07-31,1072500.0,South End
+2019-07-31,525000.0,Brighton
+2019-07-31,899000.0,South Boston
+2019-07-31,599999.0,East Boston
+2019-07-31,599900.0,Roxbury
+2019-07-31,519000.0,Roslindale
+2019-07-31,574450.0,West Roxbury
+2019-07-31,962449.5,North End
+2019-07-31,469000.0,Hyde Park
+2019-07-31,599000.0,North Dorchester
+2019-07-31,482499.5,South Dorchester
+2019-07-31,727000.0,Charlestown
+2019-08-31,899000.0,South Boston
+2019-08-31,1642000.0,Back Bay
+2019-08-31,477000.0,South Dorchester
+2019-08-31,559900.0,West Roxbury
+2019-08-31,456500.0,Hyde Park
+2019-08-31,547000.0,Brighton
+2019-08-31,987000.0,South End
+2019-08-31,494000.0,Roslindale
+2019-08-31,624900.0,East Boston
+2019-08-31,1395000.0,Chinatown
+2019-08-31,649950.0,Jamaica Plain
+2019-08-31,992000.0,North End
+2019-08-31,599000.0,North Dorchester
+2019-08-31,725000.0,Charlestown
+2019-08-31,565000.0,Roxbury
+2019-09-30,675000.0,Jamaica Plain
+2019-09-30,1050000.0,South End
+2019-09-30,485000.0,South Dorchester
+2019-09-30,649000.0,North Dorchester
+2019-09-30,996000.0,North End
+2019-09-30,934000.0,South Boston
+2019-09-30,599900.0,West Roxbury
+2019-09-30,497000.0,Roslindale
+2019-09-30,1349000.0,Chinatown
+2019-09-30,1595000.0,Back Bay
+2019-09-30,529000.0,Roxbury
+2019-09-30,744450.0,Charlestown
+2019-09-30,549000.0,Brighton
+2019-09-30,439900.0,Hyde Park
+2019-09-30,599900.0,East Boston

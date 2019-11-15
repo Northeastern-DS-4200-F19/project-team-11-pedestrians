@@ -1,15 +1,6 @@
-d3.csv("./data/aggregatecrime.csv", function(d) {
-  return {
-    hour: d.hour,
-    crimecount: + d.crimecount
-  };
-  console.log(d)
-}).then(lineChart);
-
 function lineChart(data){
-  console.log(data);
-  var width  = 700;
-  var height = 500;
+  var width  = 500;
+  var height = 300;
   var margin = {
     top: 30,
     bottom: 30,
@@ -17,14 +8,14 @@ function lineChart(data){
     right: 30
   };
 
-  var minhour = 0;
-  var maxhour = 23;
+  var minhour = d3.min(data, function(d){return d.hour;});
+  var maxhour = d3.max(data, function(d){return d.hour;});
 
   var mincrimecount = 0;
   var maxcrimecount  = d3.max(data, function(d){return d.crimecount;});
 
   var svg = d3.select('#vis3')
-              .append('svg')
+              // .append('svg')
               .attr('width' , width)
               .attr('height', height)
               .style('background', '#efefef');
@@ -43,24 +34,30 @@ function lineChart(data){
 
   var xAxis = d3.axisBottom(xScale);
 
-  chartGroup.append('g')
-            .attr('class', 'x axis')
+  var yAxis = d3.axisLeft(yScale);
+
+  var x_axis = chartGroup.append('g')
+            .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis);
 
-  var yAxis = d3.axisLeft(yScale);
-
-  chartGroup.append('g')
-            .attr('class', 'y axis')
+  var y_axis = chartGroup.append('g')
+            .attr('class', 'y_axis')
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
             .call(yAxis);
 
-  chartGroup.append("path")
+  var paths = chartGroup
+            .append("path")
+            .attr("class","derp")
             .datum(data)
             .attr("fill", "none")
             .attr("stroke", "#69b3a2")
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
                      .x(function (d) { return xScale(d.hour) + margin.left; })
-                     .y(function (d) { return yScale(d.crimecount) + margin.top; } ));
+                     .y(function (d) { return yScale(d.crimecount) + margin.top; }));
+                     
+  paths.exit().remove();
+  chartGroup.exit().remove();
+
 }
