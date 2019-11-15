@@ -1,5 +1,4 @@
 function lineChart(data){
-  console.log(data)
   var width  = 700;
   var height = 500;
   var margin = {
