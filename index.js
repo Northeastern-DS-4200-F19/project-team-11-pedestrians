@@ -69,12 +69,12 @@ const filterLine = (d) => {
         }
       })
       Object.keys(result).forEach(key => {
-        rArray.push({"hour": new Date(key), "crimecount": result[key]});
+        rArray.push({"hour": new Date(key).getFullYear(), "crimecount": result[key]});
       })
       return rArray.sort((a,b) => a.hour > b.hour);
     } else {
       return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"hour":new Date(item.hour),"crimecount": item.crimecount / 1000}
+        return {"hour":new Date(item.hour).getFullYear(),"crimecount": item.crimecount / 1000}
       }).sort((a,b) => a.hour > b.hour);
     }
   }

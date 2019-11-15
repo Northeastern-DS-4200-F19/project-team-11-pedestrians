@@ -1,5 +1,5 @@
-var width  = 960;
-var height = 720;
+var width  = 700;
+var height = 700;
 var margin = {
   top: 30,
   bottom: 30,
@@ -13,6 +13,7 @@ const graphWidth = width - margin.left - margin.right;
 const graph = d3.select("#vis-svg")
               .attr("height",graphHeight)
               .attr("width",graphWidth)
+              .attr("margin",5)
               .attr("transform", `translate(${margin.left},${margin.bottom})`);
 
 //lon and lat to x and y              
