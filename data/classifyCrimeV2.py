@@ -5,7 +5,6 @@ import sqlalchemy
 from sqlalchemy import create_engine
 import json
 import xlrd
-from dotenv import load_dotenv
 import os
 import pickle
 import quandl
@@ -47,7 +46,7 @@ def convertFeatures(features):
 testData = convertFeatures(geo["features"])
 classifier.fit(testData[0],testData[1])
 
-df = pd.read_csv("../data/crime.csv", low_memory=False)
+df = pd.read_csv("../data/Boston Crime Data.csv", low_memory=False)
 nb =[]
 # classifying crime to neighborhoods
 for row in df.iterrows():
@@ -59,3 +58,10 @@ df["neighborhoods"] = nb
 # print(geo["features"][len(geo["features"])])
 # test = findBox(geo["features"][len(geo["features"])-1])
 df.to_csv("./crimeV3.csv")
+
+with open('crimeV4.csv', 'w') as csvFile:
+    writer = csv.writer(csvFile)
+
+    writer.writerow(testData)
+csvFile.close()
+

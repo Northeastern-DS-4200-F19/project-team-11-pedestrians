@@ -1,6 +1,6 @@
-d3.json("./data/bostonv2.geojson", function(d) {
+d3.csv("./data/crimeV4.csv", function(d) {
 	return {
-		neighborNames: d["properties"]["Name"],
+		neighborNames: d.neighborhoods,
 		crimeCount: + d["properties"]["crime"]
 	};
 	console.log(d)
