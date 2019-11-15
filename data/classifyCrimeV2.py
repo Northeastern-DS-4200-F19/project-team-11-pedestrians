@@ -57,11 +57,7 @@ for row in df.iterrows():
 df["neighborhoods"] = nb
 # print(geo["features"][len(geo["features"])])
 # test = findBox(geo["features"][len(geo["features"])-1])
+
+
 df.to_csv("./crimeV3.csv")
-
-with open('crimeV4.csv', 'w') as csvFile:
-    writer = csv.writer(csvFile)
-
-    writer.writerow(testData)
-csvFile.close()
 
