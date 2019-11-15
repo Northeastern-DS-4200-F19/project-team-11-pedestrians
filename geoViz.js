@@ -68,6 +68,7 @@ const update = (info) => {
     var show = (d,target) => {
       state["neighborhood"] = d["properties"]["Name"];
       tip.show(d,target);
+      lineChart(filterLine(db[1]))
       d3.select(target).attr("stroke","blue");
       
     };
@@ -75,6 +76,7 @@ const update = (info) => {
     var hide = (d,target) => {
       state["neighborhood"] = "";
       tip.hide(d,target);
+      lineChart(filterLine(db[1]))
       d3.select(target).attr("stroke","grey");
     };
 }
