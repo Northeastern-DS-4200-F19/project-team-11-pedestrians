@@ -10,7 +10,7 @@ var colors = {"crime":"red","real_estate":"green"}
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
-var state = {view:'crime',neighborhood:""};
+var state = 'crime'
 const graph = d3.select("#vis-svg")
               .attr("height",graphHeight)
               .attr("width",graphWidth)
@@ -31,31 +31,25 @@ const update = (info) => {
   var tip = d3.tip()
             .attr("class","tip")
             .html(d => {
-              return `<p class="tool"><span>${d["properties"]["Name"]}</span><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>`
+              return `<p class="tool"><span>${d["properties"]["Name"]}</span><br>Total ${state}: ${Math.round(d["properties"][state])}</p>`
             });
     graph.call(tip);
   //TODO convert to per feet not raw values
-  var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]))
+  var stuff = info["features"].map(d => Math.round(d["properties"][state]))
   var daMax = Math.max(...stuff);
-  var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]])
+  var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state]])
   var paths = graph.selectAll("path").data(info.features)
 
     //updating stuff
     paths.attr('d', geoGenerator)
           .attr("fill",d => {
-              return color(d["properties"][state["view"]])
+              return color(d["properties"][state])
             })
           .attr("stroke","grey")
-          .attr("stroke-width",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
-              return 3
-            } else {
-              return 1
-            }
-          })
+          .attr("stroke-width",1)
           .attr("class","neighborhoods")
-          .on("mouseover",function(d){show(d,this)})
-          .on("mouseout",function(d){hide(d,this)})
+          .on("mouseover",tip.show)
+          .on("mouseout",tip.hide);
 
     //removing stuff
     paths.exit().remove();
@@ -65,37 +59,27 @@ const update = (info) => {
           .append('path')
           .attr('d', geoGenerator)
           .attr("fill",d => {
-            return color(d["properties"][state["view"]])})
-          .attr("stroke",(d) => {
-            console.log(d["properties"]["Name"])
-            console.log(state["neighborhood"])
-            if(d["properties"]["Name"] === state["neighborhood"]) {
-              return "blue"
-            } else {
-              return "grey"
-            }
-          })
-          .attr("stroke-width",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
-              return 5
-            } else {
-              return 1
-            }
-          })
-          .on("mouseover",function(d){show(d,this)})
-          .on("mouseout",function(d){hide(d,this)})
+            return color(d["properties"][state])})
+          .attr("stroke","grey")
+          .attr("stroke-width",1)
+          .on("mouseover",tip.show)
+          .on("mouseout",tip.hide)
 
-    var show = (d,target) => {
-      state["neighborhood"] = d["properties"]["Name"];
-      tip.show(d,target);
-      d3.select(target).attr("stroke","blue");
-    };
-
-    var hide = (d,target) => {
-      state["neighborhood"] = "";
-      tip.hide(d,target);
-      d3.select(target).attr("stroke","grey");
-    };
+    // var labels = graph.selectAll(".labels")
+    //       .data(data.features)
+    //       .enter()
+    //       .append('text')
+    //       .attr("transform", (d) => {
+    //         return `translate(${geoGenerator.centroid(d)})`
+    //       })
+    //       .text(d => {
+    //         return d.properties["Name"];
+    //       })
+    //       .attr("text-anchor","end")
+    //       .attr("fill","white")
+    //       .attr("font-size","8")
+    //       .attr("class","labels");
+    
 }
 
 //load all datasets here
@@ -107,6 +91,4 @@ const letsGo = (d) => {
   update(d[0]);
 }
 
-const render = () => Promise.all(promises).then((d) => letsGo(d));
-
-render()
+Promise.all(promises).then((d) => letsGo(d));
