@@ -35,15 +35,15 @@ function lineChart(data){
 
   var xAxis = d3.axisBottom(xScale);
 
-  chartGroup.append('g')
-            .attr('class', 'x axis')
+  var yAxis = d3.axisLeft(yScale);
+
+  var x_axis = chartGroup.append('g')
+            .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis);
 
-  var yAxis = d3.axisLeft(yScale);
-
-  chartGroup.append('g')
-            .attr('class', 'y axis')
+  var y_axis = chartGroup.append('g')
+            .attr('class', 'y_axis')
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
             .call(yAxis);
 
@@ -59,4 +59,5 @@ function lineChart(data){
                      
   paths.exit().remove();
   chartGroup.exit().remove();
+
 }

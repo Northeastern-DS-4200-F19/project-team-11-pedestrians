@@ -66,17 +66,15 @@ const update = (info) => {
           .on("mouseout",function(d){hide(d,this)})
 
     var show = (d,target) => {
-      state["neighborhood"] = d["properties"]["Name"];
+      state.setN = d["properties"]["Name"];
       tip.show(d,target);
-      lineChart(filterLine(db[1]))
       d3.select(target).attr("stroke","blue");
       
     };
 
     var hide = (d,target) => {
-      state["neighborhood"] = "";
+      state.setN = "";
       tip.hide(d,target);
-      lineChart(filterLine(db[1]))
       d3.select(target).attr("stroke","grey");
     };
 }
