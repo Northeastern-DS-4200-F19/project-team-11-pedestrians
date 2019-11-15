@@ -9,8 +9,8 @@ function lineChart(data){
     right: 30
   };
 
-  var minhour = 0;
-  var maxhour = 23;
+  var minhour = d3.min(data, function(d){return d.hour;});
+  var maxhour = d3.max(data, function(d){return d.hour;});
 
   var mincrimecount = 0;
   var maxcrimecount  = d3.max(data, function(d){return d.crimecount;});
@@ -49,6 +49,7 @@ function lineChart(data){
 
   var paths = chartGroup
             .append("path")
+            .attr("class","derp")
             .datum(data)
             .attr("fill", "none")
             .attr("stroke", "#69b3a2")
