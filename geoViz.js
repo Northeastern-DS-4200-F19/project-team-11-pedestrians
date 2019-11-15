@@ -6,11 +6,10 @@ var margin = {
   left: 50,
   right: 30
 };
-var colors = {"crime":"red","real_estate":"green"}
+
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
-var state = {view:'crime',neighborhood:""};
 const graph = d3.select("#vis-svg")
               .attr("height",graphHeight)
               .attr("width",graphWidth)
@@ -33,28 +32,11 @@ const update = (info) => {
             .html(d => {
               return `<p class="tool"><span>${d["properties"]["Name"]}</span><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>`
             });
-  //TODO convert to per feet not raw values
-  var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]))
+  var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
   var daMax = Math.max(...stuff);
-  var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]])
-  var paths = graph.selectAll("path").data(info.features)
+  var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
+  var paths = graph.selectAll("path").data(info.features);
   graph.call(tip);
-    //updating stuff
-    paths.attr('d', geoGenerator)
-          .attr("fill",d => {
-              return color(d["properties"][state])
-            })
-          .attr("stroke","grey")
-          .attr("stroke-width",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
-              return 3
-            } else {
-              return 1
-            }
-          })
-          .attr("class","neighborhoods")
-          .on("mouseover",function(d){show(d,this)})
-          .on("mouseout",function(d){hide(d,this)})
 
     //removing stuff
     paths.exit().remove();
@@ -62,6 +44,7 @@ const update = (info) => {
     //adding stuff
     paths.enter()
           .append('path')
+          .merge(paths)
           .attr('d', geoGenerator)
           .attr("fill",d => {
             return color(d["properties"][state["view"]])})
