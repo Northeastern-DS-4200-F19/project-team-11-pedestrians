@@ -2,14 +2,15 @@ const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green"}
 var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
-  removeLineChart();
+  removeChart();
   lineChart(filterLine(db[lineIndex]));
+  stackChart(filterBar(db[4]));
 }};
 
-const removeLineChart = () => {
-  d3.select(".derp").remove()
-  d3.select(".x_axis").remove()
-  d3.select(".y_axis").remove()
+const removeChart = () => {
+  d3.selectAll(".derp").remove()
+  d3.selectAll(".x_axis").remove()
+  d3.selectAll(".y_axis").remove()
 }
 
 var lineIndex = 0;
@@ -35,12 +36,41 @@ var promises = [
                       visittime: d.visittime,
                       safetylevel: + d.safetylevel
                     }}),
-        d3.json("./data/bostonv2.geojson")
+        d3.json("./data/bostonv2.geojson"),
+        d3.csv("./data/crimeV4.csv",function(d){
+          return {
+                      crimecount: + d.count,
+                      neighborhood: d.neighborhoods,
+                      offenseType: d.offense_type.split(' ')[0]
+                    };
+                  }),
     ]
 
+const filterBar = (d) => {
+  var result = {}
+  var rArray = []
+  if(state.neighborhood === "") {
+    d.forEach(obj => {
+      if (Object.keys(result).includes(String(obj.offense_type))) {
+        result[obj.offenseType] = result[obj.offenseType] + obj.crimecount
+      } else {
+        result[obj.offenseType] = obj.crimecount
+      }
+    })
+    Object.keys(result).forEach(key => {
+      rArray.push({"offenseType": key, "crimecount": result[key]});
+    })
+    return rArray;
+  } else {
+    return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
+      return {"offenseType":item.offense_type,"crimecount": item.crimecount}
+    })
+  }
+}
+
 const filterLine = (d) => { 
-  result = {}
-  rArray = []
+  var result = {}
+  var rArray = []
   if(lineIndex == 0) {
     if(state.neighborhood === "") {
       d.forEach(obj => {
@@ -84,6 +114,7 @@ const letsGo = (d) => {
         db = d;
         scatterplot(d[2]);
         lineChart(filterLine(d[lineIndex]));
+        stackChart(filterBar(d[4]));
         geoViz(d[3]);
 }
 
@@ -97,8 +128,7 @@ stateBttns.forEach(btn => {
         state["view"] = btn.attributes["data-activity"].nodeValue;
         geoViz(db[3])
         lineIndex = (lineIndex + 1) % 2
-
-        d3.select(".derp").remove()
+        d3.selectAll(".derp").remove()
         d3.select(".x_axis").remove()
         d3.select(".y_axis").remove()
         lineChart(filterLine(db[lineIndex]))
