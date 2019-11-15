@@ -47,7 +47,7 @@ def convertFeatures(features):
 testData = convertFeatures(geo["features"])
 classifier.fit(testData[0],testData[1])
 
-df = pd.read_csv("../data/crime.csv", low_memory=False)
+df = pd.read_csv("../data/Boston Crime Data.csv", low_memory=False)
 nb =[]
 # classifying crime to neighborhoods
 for row in df.iterrows():
