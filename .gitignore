@@ -1,3 +1,4 @@
 .DS_Store
 data/venv/
+data/crimeV3.csv
 .gitignore
