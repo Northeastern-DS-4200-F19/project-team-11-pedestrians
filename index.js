@@ -1,6 +1,9 @@
 const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green"}
-var state = {view:'crime',neighborhood:""};
+var state = {view:'crime',neighborhood:"", set setN(x) {
+  this.neighborhood = x;
+  lineChart(filterLine(db[1]));
+}};
 var db = []
 //load all datasets here
 var promises = [
