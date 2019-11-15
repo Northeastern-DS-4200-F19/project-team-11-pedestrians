@@ -133,9 +133,9 @@ def realEstateData():
 
 # demographic.to_sql("demographic",engine)
 # crime.to_sql("crime",engine)
-df2.to_sql("quandl_neighborhoods",engine)
-df3.to_sql("quandl_indicators",engine)
+# df2.to_sql("quandl_neighborhoods",engine)
+# df3.to_sql("quandl_indicators",engine)
 
 real = realEstateData()
-real.to_csv("./data/real_estate.csv")
+real.to_csv("real_estate.csv")
 # real.to_sql("real_estate",engine)
