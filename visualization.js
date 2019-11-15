@@ -1,10 +1,10 @@
-d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
-  return {
-    visittime: d.visittime,
-    safetylevel: + d.safetylevel
-  };
-  console.log(d)
-}).then(scatterplot);
+// d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
+//   return {
+//     visittime: d.visittime,
+//     safetylevel: + d.safetylevel
+//   };
+//   console.log(d)
+// }).then(scatterplot);
 
 function scatterplot(data){
   console.log(data);
@@ -63,4 +63,6 @@ var chartGroup = svg.append('g')
      .attr("cy", function (d) { return yScale(d.safetylevel) + margin.top; } )
      .attr("r", 5)
      .style("fill", "#69b3a2")
+
+    svg.exit().remove();
 }

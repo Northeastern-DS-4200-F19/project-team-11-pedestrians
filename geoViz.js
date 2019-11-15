@@ -97,15 +97,6 @@ const update = (info) => {
     };
 }
 
-//load all datasets here
-var promises = [
-    d3.json("./data/bostonv2.geojson")
-]
-
-const letsGo = (d) => {
-  update(d[0]);
+const geoViz = (d) => {
+  update(d);
 }
-
-const render = () => Promise.all(promises).then((d) => letsGo(d));
-
-render()

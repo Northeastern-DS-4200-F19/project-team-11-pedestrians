@@ -1,10 +1,10 @@
-d3.csv("./data/aggregatecrime.csv", function(d) {
-  return {
-    hour: d.hour,
-    crimecount: + d.crimecount
-  };
-  console.log(d)
-}).then(lineChart);
+// d3.csv("./data/aggregatecrime.csv", function(d) {
+//   return {
+//     hour: d.hour,
+//     crimecount: + d.crimecount
+//   };
+//   console.log(d)
+// }).then(lineChart);
 
 function lineChart(data){
   console.log(data);
@@ -63,4 +63,5 @@ function lineChart(data){
             .attr("d", d3.line()
                      .x(function (d) { return xScale(d.hour) + margin.left; })
                      .y(function (d) { return yScale(d.crimecount) + margin.top; } ));
+                     chartGroup.exit().remove();
 }
