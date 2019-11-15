@@ -60,6 +60,7 @@ function stackChart(data){
                 .style("fill", "#69b3a2")
 
     rects.selectAll("rect")
+            .attr("class", "derp")
             .attr("x", function (d) { return xScale(d.offenseType) + margin.left + 3; } )
             .attr("width", xScale.bandwidth() - 3)
             .attr("y", function (d) { return yScale(d.crimecount)} )
