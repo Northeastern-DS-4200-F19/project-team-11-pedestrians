@@ -7,7 +7,7 @@ function stackChart(data){
     var height = 500;
     var margin = {
       top: 30,
-      bottom: 200,
+      bottom: 30,
       left: 50,
       right: 30
     };
