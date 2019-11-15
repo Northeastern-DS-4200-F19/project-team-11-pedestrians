@@ -60,11 +60,11 @@ const filterBar = (d) => {
     Object.keys(result).forEach(key => {
       rArray.push({"offenseType": key, "crimecount": result[key]});
     })
-    return rArray;
+    return rArray.sort((a,b) => a.crimecount >= b.crimecount);
   } else {
     return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
       return {"offenseType":item.offense_type,"crimecount": item.crimecount}
-    })
+    }).sort((a,b) => a.crimecount >= b.crimecount);
   }
 }
 
@@ -129,9 +129,10 @@ stateBttns.forEach(btn => {
         geoViz(db[3])
         lineIndex = (lineIndex + 1) % 2
         d3.selectAll(".derp").remove()
-        d3.select(".x_axis").remove()
-        d3.select(".y_axis").remove()
+        d3.selectAll(".x_axis").remove()
+        d3.selectAll(".y_axis").remove()
         lineChart(filterLine(db[lineIndex]))
+        stackChart(filterBar(db[4]));
     });
 });
 
