@@ -39,7 +39,8 @@ function lineChart(data){
   var x_axis = chartGroup.append('g')
             .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
-            .call(xAxis);
+            .call(xAxis)
+            .selectAll("text")
 
   var y_axis = chartGroup.append('g')
             .attr('class', 'y_axis')
