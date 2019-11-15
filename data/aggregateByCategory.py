@@ -1,7 +1,7 @@
 import pandas as pd
 df = pd.read_csv("../data/crimeV3.csv", low_memory=False, usecols=["neighborhoods","offense_type","id"])
-aggregate = df.groupby(["neighborhoods","offense_type"]).agg('count')
-agg2 = aggregate.groupby("neighborhoods",as_index=False).apply(lambda x:x.nlargest(5,'id'))
-# agg2.columns=["neighborhoods","offense_type","count"]
-agg2.rename(columns={'id':'count'}, inplace=True)
-agg2.to_csv("./crimeV4.csv")
+aggregate = df.groupby("offense_type").agg('count')
+agg2 = aggregate.sort_values("id",ascending=False).groupby('id').head(5)
+print(agg2)
+# agg2.rename(columns={'id':'count'}, inplace=True)
+# agg2.to_csv("./crimeV4.csv")
