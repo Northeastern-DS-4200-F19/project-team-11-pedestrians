@@ -48,11 +48,9 @@ def toHour(d):
         result = datetime.strptime(d, '%Y-%m-%d %H:%M:%S').strftime("%H")
     return result
 
-df = pd.read_csv("../data/crimeV3.csv", low_memory=False, usecols=["date","neighborhoods","offense_type","id"])
-df["hour"] = df['date'].apply(toHour)
+df = pd.read_csv("../data/crimeV3.csv", low_memory=False, usecols=["date","neighborhoods","id"])
+df['hour'] = df['date'].apply(toHour)
 
 aggregate = df.groupby(["neighborhoods","hour"]).agg('count')
-# agg2 = aggregate.sort_values("id",ascending=False).groupby('id').head(5)
-# print(agg2)
 aggregate.rename(columns={'id':'count'}, inplace=True)
 aggregate.to_csv("./aggregatecrimev2.csv")
