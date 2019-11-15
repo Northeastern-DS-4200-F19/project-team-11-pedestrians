@@ -49,8 +49,6 @@ const update = (info) => {
           .attr("fill",d => {
             return color(d["properties"][state["view"]])})
           .attr("stroke",(d) => {
-            console.log(d["properties"]["Name"])
-            console.log(state["neighborhood"])
             if(d["properties"]["Name"] === state["neighborhood"]) {
               return "blue"
             } else {
@@ -71,6 +69,7 @@ const update = (info) => {
       state["neighborhood"] = d["properties"]["Name"];
       tip.show(d,target);
       d3.select(target).attr("stroke","blue");
+      
     };
 
     var hide = (d,target) => {

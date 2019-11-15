@@ -1,0 +1,625 @@
+neighborhoods,hour,count,offense_type,date
+Allston,00,794,794,794
+Allston,01,1320,1320,1320
+Allston,02,1300,1300,1300
+Allston,03,799,799,799
+Allston,04,706,706,706
+Allston,05,631,631,631
+Allston,06,806,806,806
+Allston,07,1158,1158,1158
+Allston,08,1452,1452,1452
+Allston,09,1566,1566,1566
+Allston,10,1486,1486,1486
+Allston,11,1514,1514,1514
+Allston,12,1993,2277,2277
+Allston,13,639,639,639
+Allston,14,674,674,674
+Allston,15,621,621,621
+Allston,16,779,779,779
+Allston,17,686,686,686
+Allston,18,742,742,742
+Allston,19,622,622,622
+Allston,20,648,648,648
+Allston,21,581,581,581
+Allston,22,593,593,593
+Allston,23,498,498,498
+Back Bay,00,467,467,467
+Back Bay,01,900,900,900
+Back Bay,02,929,929,929
+Back Bay,03,674,674,674
+Back Bay,04,662,662,662
+Back Bay,05,726,726,726
+Back Bay,06,798,798,798
+Back Bay,07,953,953,953
+Back Bay,08,1269,1269,1269
+Back Bay,09,1253,1253,1253
+Back Bay,10,1314,1314,1314
+Back Bay,11,1309,1309,1309
+Back Bay,12,1638,1974,1974
+Back Bay,13,646,646,646
+Back Bay,14,661,661,661
+Back Bay,15,605,605,605
+Back Bay,16,629,629,629
+Back Bay,17,761,761,761
+Back Bay,18,672,672,672
+Back Bay,19,602,602,602
+Back Bay,20,450,450,450
+Back Bay,21,405,405,405
+Back Bay,22,311,311,311
+Back Bay,23,277,277,277
+Bay Village,00,136,136,136
+Bay Village,01,194,194,194
+Bay Village,02,230,230,230
+Bay Village,03,96,96,96
+Bay Village,04,101,101,101
+Bay Village,05,82,82,82
+Bay Village,06,121,121,121
+Bay Village,07,150,150,150
+Bay Village,08,197,197,197
+Bay Village,09,210,210,210
+Bay Village,10,201,201,201
+Bay Village,11,188,188,188
+Bay Village,12,229,276,276
+Bay Village,13,93,93,93
+Bay Village,14,66,66,66
+Bay Village,15,83,83,83
+Bay Village,16,73,73,73
+Bay Village,17,96,96,96
+Bay Village,18,75,75,75
+Bay Village,19,65,65,65
+Bay Village,20,74,74,74
+Bay Village,21,72,72,72
+Bay Village,22,79,79,79
+Bay Village,23,83,83,83
+Beacon Hill,00,288,288,288
+Beacon Hill,01,706,706,706
+Beacon Hill,02,625,625,625
+Beacon Hill,03,454,454,454
+Beacon Hill,04,431,431,431
+Beacon Hill,05,459,459,459
+Beacon Hill,06,520,520,520
+Beacon Hill,07,644,644,644
+Beacon Hill,08,872,872,872
+Beacon Hill,09,909,909,909
+Beacon Hill,10,973,973,973
+Beacon Hill,11,976,976,976
+Beacon Hill,12,1211,1375,1375
+Beacon Hill,13,577,577,577
+Beacon Hill,14,511,511,511
+Beacon Hill,15,419,419,419
+Beacon Hill,16,548,548,548
+Beacon Hill,17,723,723,723
+Beacon Hill,18,663,663,663
+Beacon Hill,19,464,464,464
+Beacon Hill,20,393,393,393
+Beacon Hill,21,277,277,277
+Beacon Hill,22,239,239,239
+Beacon Hill,23,190,190,190
+Brighton,00,648,648,648
+Brighton,01,956,956,956
+Brighton,02,930,930,930
+Brighton,03,732,732,732
+Brighton,04,624,624,624
+Brighton,05,639,639,639
+Brighton,06,804,804,804
+Brighton,07,1324,1324,1324
+Brighton,08,1583,1583,1583
+Brighton,09,1402,1402,1402
+Brighton,10,1385,1385,1385
+Brighton,11,1295,1295,1295
+Brighton,12,1802,2086,2086
+Brighton,13,606,606,606
+Brighton,14,621,621,621
+Brighton,15,632,632,632
+Brighton,16,727,727,727
+Brighton,17,763,763,763
+Brighton,18,741,741,741
+Brighton,19,678,678,678
+Brighton,20,617,617,617
+Brighton,21,525,525,525
+Brighton,22,524,524,524
+Brighton,23,473,473,473
+Charlestown,00,302,302,302
+Charlestown,01,470,470,470
+Charlestown,02,428,428,428
+Charlestown,03,384,384,384
+Charlestown,04,407,407,407
+Charlestown,05,450,450,450
+Charlestown,06,546,546,546
+Charlestown,07,686,686,686
+Charlestown,08,953,953,953
+Charlestown,09,921,921,921
+Charlestown,10,902,902,902
+Charlestown,11,849,849,849
+Charlestown,12,1075,1262,1262
+Charlestown,13,423,423,423
+Charlestown,14,403,403,403
+Charlestown,15,372,372,372
+Charlestown,16,433,433,433
+Charlestown,17,459,459,459
+Charlestown,18,458,458,458
+Charlestown,19,416,416,416
+Charlestown,20,400,400,400
+Charlestown,21,365,365,365
+Charlestown,22,302,302,302
+Charlestown,23,239,239,239
+Chinatown,00,309,309,309
+Chinatown,01,552,552,552
+Chinatown,02,647,647,647
+Chinatown,03,405,405,405
+Chinatown,04,274,274,274
+Chinatown,05,304,304,304
+Chinatown,06,303,303,303
+Chinatown,07,297,297,297
+Chinatown,08,447,447,447
+Chinatown,09,467,467,467
+Chinatown,10,481,481,481
+Chinatown,11,459,459,459
+Chinatown,12,609,723,723
+Chinatown,13,260,260,260
+Chinatown,14,203,203,203
+Chinatown,15,256,256,256
+Chinatown,16,314,314,314
+Chinatown,17,447,447,447
+Chinatown,18,375,375,375
+Chinatown,19,311,311,311
+Chinatown,20,242,242,242
+Chinatown,21,245,245,245
+Chinatown,22,207,207,207
+Chinatown,23,181,181,181
+Dorchester,00,3701,3701,3701
+Dorchester,01,5371,5371,5371
+Dorchester,02,4901,4901,4901
+Dorchester,03,4119,4119,4119
+Dorchester,04,4184,4184,4184
+Dorchester,05,4046,4046,4046
+Dorchester,06,4692,4692,4692
+Dorchester,07,5641,5641,5641
+Dorchester,08,6681,6681,6681
+Dorchester,09,7043,7043,7043
+Dorchester,10,7449,7449,7449
+Dorchester,11,7211,7211,7211
+Dorchester,12,8240,10129,10129
+Dorchester,13,3684,3684,3684
+Dorchester,14,3893,3893,3893
+Dorchester,15,3747,3747,3747
+Dorchester,16,4486,4486,4486
+Dorchester,17,4756,4756,4756
+Dorchester,18,4751,4751,4751
+Dorchester,19,4350,4350,4350
+Dorchester,20,4086,4086,4086
+Dorchester,21,3604,3604,3604
+Dorchester,22,3154,3154,3154
+Dorchester,23,2504,2504,2504
+Downtown,00,1226,1226,1226
+Downtown,01,2645,2645,2645
+Downtown,02,2372,2372,2372
+Downtown,03,1140,1140,1140
+Downtown,04,912,912,912
+Downtown,05,912,912,912
+Downtown,06,910,910,910
+Downtown,07,1041,1041,1041
+Downtown,08,1370,1370,1370
+Downtown,09,1658,1658,1658
+Downtown,10,1902,1902,1902
+Downtown,11,2095,2095,2095
+Downtown,12,2503,2881,2881
+Downtown,13,1028,1028,1028
+Downtown,14,1020,1020,1020
+Downtown,15,1016,1016,1016
+Downtown,16,1220,1220,1220
+Downtown,17,1333,1333,1333
+Downtown,18,1204,1204,1204
+Downtown,19,954,954,954
+Downtown,20,866,866,866
+Downtown,21,790,790,790
+Downtown,22,757,757,757
+Downtown,23,739,739,739
+East Boston,00,741,741,741
+East Boston,01,1440,1440,1440
+East Boston,02,1403,1403,1403
+East Boston,03,1081,1081,1081
+East Boston,04,1149,1149,1149
+East Boston,05,1083,1083,1083
+East Boston,06,1204,1204,1204
+East Boston,07,1385,1385,1385
+East Boston,08,1725,1725,1725
+East Boston,09,1869,1869,1869
+East Boston,10,1746,1746,1746
+East Boston,11,1711,1711,1711
+East Boston,12,2142,2584,2584
+East Boston,13,877,877,877
+East Boston,14,882,882,882
+East Boston,15,856,856,856
+East Boston,16,1049,1049,1049
+East Boston,17,1107,1107,1107
+East Boston,18,1037,1037,1037
+East Boston,19,1018,1018,1018
+East Boston,20,857,857,857
+East Boston,21,743,743,743
+East Boston,22,683,683,683
+East Boston,23,584,584,584
+Fenway,00,797,797,797
+Fenway,01,1256,1256,1256
+Fenway,02,1270,1270,1270
+Fenway,03,764,764,764
+Fenway,04,859,859,859
+Fenway,05,889,889,889
+Fenway,06,993,993,993
+Fenway,07,1730,1730,1730
+Fenway,08,1578,1578,1578
+Fenway,09,1564,1564,1564
+Fenway,10,1872,1872,1872
+Fenway,11,1835,1835,1835
+Fenway,12,2176,2599,2599
+Fenway,13,961,961,961
+Fenway,14,990,990,990
+Fenway,15,1011,1011,1011
+Fenway,16,1131,1131,1131
+Fenway,17,1143,1143,1143
+Fenway,18,1174,1174,1174
+Fenway,19,975,975,975
+Fenway,20,884,884,884
+Fenway,21,765,765,765
+Fenway,22,677,677,677
+Fenway,23,582,582,582
+Harbor Islands,00,1261,1261,1261
+Harbor Islands,01,1994,2230,2230
+Harbor Islands,02,1931,2178,2178
+Harbor Islands,03,1301,1475,1475
+Harbor Islands,04,1209,1391,1391
+Harbor Islands,05,1232,1470,1470
+Harbor Islands,06,1490,1698,1698
+Harbor Islands,07,1720,1960,1960
+Harbor Islands,08,2051,2286,2286
+Harbor Islands,09,2161,2373,2373
+Harbor Islands,10,2246,2489,2489
+Harbor Islands,11,2233,2470,2470
+Harbor Islands,12,3208,3490,3490
+Harbor Islands,13,1403,1403,1403
+Harbor Islands,14,1471,1471,1471
+Harbor Islands,15,1459,1459,1459
+Harbor Islands,16,1811,1811,1811
+Harbor Islands,17,2158,2158,2158
+Harbor Islands,18,2064,2064,2064
+Harbor Islands,19,1547,1547,1547
+Harbor Islands,20,1317,1317,1317
+Harbor Islands,21,1235,1235,1235
+Harbor Islands,22,1148,1148,1148
+Harbor Islands,23,856,856,856
+Hyde Park,00,759,759,759
+Hyde Park,01,1090,1090,1090
+Hyde Park,02,962,962,962
+Hyde Park,03,838,838,838
+Hyde Park,04,977,977,977
+Hyde Park,05,911,911,911
+Hyde Park,06,1123,1123,1123
+Hyde Park,07,1456,1456,1456
+Hyde Park,08,1751,1751,1751
+Hyde Park,09,1809,1809,1809
+Hyde Park,10,1699,1699,1699
+Hyde Park,11,1679,1679,1679
+Hyde Park,12,2302,2701,2701
+Hyde Park,13,984,984,984
+Hyde Park,14,1063,1063,1063
+Hyde Park,15,984,984,984
+Hyde Park,16,1248,1248,1248
+Hyde Park,17,1224,1224,1224
+Hyde Park,18,1060,1060,1060
+Hyde Park,19,998,998,998
+Hyde Park,20,831,831,831
+Hyde Park,21,728,728,728
+Hyde Park,22,622,622,622
+Hyde Park,23,468,468,468
+Jamaica Plain,00,748,748,748
+Jamaica Plain,01,1228,1228,1228
+Jamaica Plain,02,1156,1156,1156
+Jamaica Plain,03,994,994,994
+Jamaica Plain,04,856,856,856
+Jamaica Plain,05,951,951,951
+Jamaica Plain,06,1088,1088,1088
+Jamaica Plain,07,1358,1358,1358
+Jamaica Plain,08,1832,1832,1832
+Jamaica Plain,09,1904,1904,1904
+Jamaica Plain,10,1904,1904,1904
+Jamaica Plain,11,1784,1784,1784
+Jamaica Plain,12,2143,2513,2513
+Jamaica Plain,13,997,997,997
+Jamaica Plain,14,986,986,986
+Jamaica Plain,15,940,940,940
+Jamaica Plain,16,1117,1117,1117
+Jamaica Plain,17,1182,1182,1182
+Jamaica Plain,18,1164,1164,1164
+Jamaica Plain,19,1003,1003,1003
+Jamaica Plain,20,904,904,904
+Jamaica Plain,21,795,795,795
+Jamaica Plain,22,779,779,779
+Jamaica Plain,23,542,542,542
+Leather District,00,131,131,131
+Leather District,01,192,192,192
+Leather District,02,195,195,195
+Leather District,03,139,139,139
+Leather District,04,99,99,99
+Leather District,05,116,116,116
+Leather District,06,124,124,124
+Leather District,07,141,141,141
+Leather District,08,185,185,185
+Leather District,09,196,196,196
+Leather District,10,169,169,169
+Leather District,11,231,231,231
+Leather District,12,202,240,240
+Leather District,13,65,65,65
+Leather District,14,76,76,76
+Leather District,15,64,64,64
+Leather District,16,86,86,86
+Leather District,17,108,108,108
+Leather District,18,109,109,109
+Leather District,19,92,92,92
+Leather District,20,61,61,61
+Leather District,21,60,60,60
+Leather District,22,69,69,69
+Leather District,23,63,63,63
+Longwood,00,211,211,211
+Longwood,01,323,323,323
+Longwood,02,260,260,260
+Longwood,03,203,203,203
+Longwood,04,214,214,214
+Longwood,05,212,212,212
+Longwood,06,238,238,238
+Longwood,07,264,264,264
+Longwood,08,397,397,397
+Longwood,09,388,388,388
+Longwood,10,405,405,405
+Longwood,11,415,415,415
+Longwood,12,538,636,636
+Longwood,13,217,217,217
+Longwood,14,205,205,205
+Longwood,15,195,195,195
+Longwood,16,220,220,220
+Longwood,17,223,223,223
+Longwood,18,253,253,253
+Longwood,19,219,219,219
+Longwood,20,176,176,176
+Longwood,21,178,178,178
+Longwood,22,171,171,171
+Longwood,23,156,156,156
+Mattapan,00,1337,1337,1337
+Mattapan,01,1971,1971,1971
+Mattapan,02,1792,1792,1792
+Mattapan,03,1366,1366,1366
+Mattapan,04,1469,1469,1469
+Mattapan,05,1369,1369,1369
+Mattapan,06,1637,1637,1637
+Mattapan,07,1983,1983,1983
+Mattapan,08,2576,2576,2576
+Mattapan,09,2731,2731,2731
+Mattapan,10,2955,2955,2955
+Mattapan,11,2806,2806,2806
+Mattapan,12,3222,3939,3939
+Mattapan,13,1509,1509,1509
+Mattapan,14,1564,1564,1564
+Mattapan,15,1520,1520,1520
+Mattapan,16,1770,1770,1770
+Mattapan,17,1708,1708,1708
+Mattapan,18,1795,1795,1795
+Mattapan,19,1491,1491,1491
+Mattapan,20,1456,1456,1456
+Mattapan,21,1366,1366,1366
+Mattapan,22,1271,1271,1271
+Mattapan,23,1005,1005,1005
+Mission Hill,00,483,483,483
+Mission Hill,01,747,747,747
+Mission Hill,02,666,666,666
+Mission Hill,03,527,527,527
+Mission Hill,04,514,514,514
+Mission Hill,05,555,555,555
+Mission Hill,06,583,583,583
+Mission Hill,07,780,780,780
+Mission Hill,08,1032,1032,1032
+Mission Hill,09,1055,1055,1055
+Mission Hill,10,1072,1072,1072
+Mission Hill,11,1020,1020,1020
+Mission Hill,12,1293,1534,1534
+Mission Hill,13,502,502,502
+Mission Hill,14,524,524,524
+Mission Hill,15,486,486,486
+Mission Hill,16,613,613,613
+Mission Hill,17,632,632,632
+Mission Hill,18,634,634,634
+Mission Hill,19,505,505,505
+Mission Hill,20,517,517,517
+Mission Hill,21,470,470,470
+Mission Hill,22,404,404,404
+Mission Hill,23,380,380,380
+North End,00,176,176,176
+North End,01,405,405,405
+North End,02,322,322,322
+North End,03,229,229,229
+North End,04,209,209,209
+North End,05,195,195,195
+North End,06,224,224,224
+North End,07,286,286,286
+North End,08,430,430,430
+North End,09,459,459,459
+North End,10,463,463,463
+North End,11,401,401,401
+North End,12,479,566,566
+North End,13,177,177,177
+North End,14,160,160,160
+North End,15,161,161,161
+North End,16,204,204,204
+North End,17,187,187,187
+North End,18,198,198,198
+North End,19,181,181,181
+North End,20,180,180,180
+North End,21,130,130,130
+North End,22,132,132,132
+North End,23,145,145,145
+Roslindale,00,553,553,553
+Roslindale,01,868,868,868
+Roslindale,02,862,862,862
+Roslindale,03,708,708,708
+Roslindale,04,825,825,825
+Roslindale,05,747,747,747
+Roslindale,06,891,891,891
+Roslindale,07,1042,1042,1042
+Roslindale,08,1234,1234,1234
+Roslindale,09,1449,1449,1449
+Roslindale,10,1418,1418,1418
+Roslindale,11,1223,1223,1223
+Roslindale,12,1627,1904,1904
+Roslindale,13,658,658,658
+Roslindale,14,700,700,700
+Roslindale,15,646,646,646
+Roslindale,16,744,744,744
+Roslindale,17,760,760,760
+Roslindale,18,729,729,729
+Roslindale,19,637,637,637
+Roslindale,20,616,616,616
+Roslindale,21,525,525,525
+Roslindale,22,474,474,474
+Roslindale,23,412,412,412
+Roxbury,00,2547,2547,2547
+Roxbury,01,3866,3866,3866
+Roxbury,02,3545,3545,3545
+Roxbury,03,2995,2995,2995
+Roxbury,04,2945,2945,2945
+Roxbury,05,2929,2929,2929
+Roxbury,06,3489,3489,3489
+Roxbury,07,4127,4127,4127
+Roxbury,08,5085,5085,5085
+Roxbury,09,5426,5426,5426
+Roxbury,10,5781,5781,5781
+Roxbury,11,5432,5432,5432
+Roxbury,12,6438,7691,7691
+Roxbury,13,2846,2846,2846
+Roxbury,14,2866,2866,2866
+Roxbury,15,2935,2935,2935
+Roxbury,16,3388,3388,3388
+Roxbury,17,3394,3394,3394
+Roxbury,18,3449,3449,3449
+Roxbury,19,3070,3070,3070
+Roxbury,20,2759,2759,2759
+Roxbury,21,2615,2615,2615
+Roxbury,22,2445,2445,2445
+Roxbury,23,1876,1876,1876
+South Boston,00,943,943,943
+South Boston,01,1344,1344,1344
+South Boston,02,1238,1238,1238
+South Boston,03,895,895,895
+South Boston,04,941,941,941
+South Boston,05,1038,1038,1038
+South Boston,06,1135,1135,1135
+South Boston,07,1547,1547,1547
+South Boston,08,2070,2070,2070
+South Boston,09,2214,2214,2214
+South Boston,10,2139,2139,2139
+South Boston,11,1853,1853,1853
+South Boston,12,2115,2591,2591
+South Boston,13,1029,1029,1029
+South Boston,14,1031,1031,1031
+South Boston,15,905,905,905
+South Boston,16,1196,1196,1196
+South Boston,17,1167,1167,1167
+South Boston,18,1196,1196,1196
+South Boston,19,1046,1046,1046
+South Boston,20,833,833,833
+South Boston,21,750,750,750
+South Boston,22,680,680,680
+South Boston,23,573,573,573
+South Boston Waterfront,00,351,351,351
+South Boston Waterfront,01,512,512,512
+South Boston Waterfront,02,435,435,435
+South Boston Waterfront,03,333,333,333
+South Boston Waterfront,04,343,343,343
+South Boston Waterfront,05,358,358,358
+South Boston Waterfront,06,404,404,404
+South Boston Waterfront,07,516,516,516
+South Boston Waterfront,08,665,665,665
+South Boston Waterfront,09,839,839,839
+South Boston Waterfront,10,752,752,752
+South Boston Waterfront,11,651,651,651
+South Boston Waterfront,12,771,965,965
+South Boston Waterfront,13,317,317,317
+South Boston Waterfront,14,339,339,339
+South Boston Waterfront,15,348,348,348
+South Boston Waterfront,16,465,465,465
+South Boston Waterfront,17,433,433,433
+South Boston Waterfront,18,400,400,400
+South Boston Waterfront,19,388,388,388
+South Boston Waterfront,20,322,322,322
+South Boston Waterfront,21,291,291,291
+South Boston Waterfront,22,239,239,239
+South Boston Waterfront,23,224,224,224
+South End,00,997,997,997
+South End,01,1583,1583,1583
+South End,02,1609,1609,1609
+South End,03,1268,1268,1268
+South End,04,1319,1319,1319
+South End,05,1396,1396,1396
+South End,06,1479,1479,1479
+South End,07,1806,1806,1806
+South End,08,2262,2262,2262
+South End,09,2286,2286,2286
+South End,10,2568,2568,2568
+South End,11,2547,2547,2547
+South End,12,3081,3628,3628
+South End,13,1294,1294,1294
+South End,14,1366,1366,1366
+South End,15,1231,1231,1231
+South End,16,1457,1457,1457
+South End,17,1569,1569,1569
+South End,18,1411,1411,1411
+South End,19,1171,1171,1171
+South End,20,1029,1029,1029
+South End,21,894,894,894
+South End,22,881,881,881
+South End,23,628,628,628
+West End,00,217,217,217
+West End,01,400,400,400
+West End,02,349,349,349
+West End,03,233,233,233
+West End,04,275,275,275
+West End,05,255,255,255
+West End,06,327,327,327
+West End,07,434,434,434
+West End,08,476,476,476
+West End,09,539,539,539
+West End,10,565,565,565
+West End,11,483,483,483
+West End,12,599,672,672
+West End,13,180,180,180
+West End,14,193,193,193
+West End,15,217,217,217
+West End,16,410,410,410
+West End,17,314,314,314
+West End,18,229,229,229
+West End,19,185,185,185
+West End,20,208,208,208
+West End,21,181,181,181
+West End,22,193,193,193
+West End,23,149,149,149
+West Roxbury,00,399,399,399
+West Roxbury,01,518,518,518
+West Roxbury,02,521,521,521
+West Roxbury,03,457,457,457
+West Roxbury,04,446,446,446
+West Roxbury,05,448,448,448
+West Roxbury,06,581,581,581
+West Roxbury,07,717,717,717
+West Roxbury,08,921,921,921
+West Roxbury,09,1055,1055,1055
+West Roxbury,10,983,983,983
+West Roxbury,11,895,895,895
+West Roxbury,12,1170,1377,1377
+West Roxbury,13,551,551,551
+West Roxbury,14,564,564,564
+West Roxbury,15,531,531,531
+West Roxbury,16,553,553,553
+West Roxbury,17,519,519,519
+West Roxbury,18,536,536,536
+West Roxbury,19,472,472,472
+West Roxbury,20,425,425,425
+West Roxbury,21,369,369,369
+West Roxbury,22,353,353,353
+West Roxbury,23,234,234,234

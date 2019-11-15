@@ -1,4 +1,5 @@
 function lineChart(data){
+  console.log(state)
   var width  = 700;
   var height = 500;
   var margin = {
@@ -46,7 +47,7 @@ function lineChart(data){
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
             .call(yAxis);
 
-  chartGroup.append("path")
+  var paths = chartGroup.append("path")
             .datum(data)
             .attr("fill", "none")
             .attr("stroke", "#69b3a2")
@@ -54,5 +55,6 @@ function lineChart(data){
             .attr("d", d3.line()
                      .x(function (d) { return xScale(d.hour) + margin.left; })
                      .y(function (d) { return yScale(d.crimecount) + margin.top; } ));
-  chartGroup.exit().remove();
+                     
+  paths.exit().remove();
 }

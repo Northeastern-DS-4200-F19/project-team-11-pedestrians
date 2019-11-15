@@ -18,6 +18,10 @@ var promises = [
         d3.json("./data/bostonv2.geojson")
     ]
 
+const filterLine = (d) => {
+  
+}
+
 const letsGo = (d) => {
         scatterplot(d[0]);
         lineChart(d[1]);

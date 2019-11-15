@@ -40,11 +40,19 @@ from datetime import datetime
 #         writer.writerow(compiledhour[x])
 # csvFile.close()
 
+def toHour(d):
+    result = 0
+    try:
+        result = datetime.strptime(d, '%m/%d/%Y %H:%M:%S %p').strftime("%H")
+    except:
+        result = datetime.strptime(d, '%Y-%m-%d %H:%M:%S').strftime("%H")
+    return result
 
-import pandas as pd
 df = pd.read_csv("../data/crimeV3.csv", low_memory=False, usecols=["date","neighborhoods","offense_type","id"])
-aggregate = df.groupby("offense_type").agg('count')
-agg2 = aggregate.sort_values("id",ascending=False).groupby('id').head(5)
-print(agg2)
-# agg2.rename(columns={'id':'count'}, inplace=True)
-# agg2.to_csv("./crimeV4.csv")
+df["hour"] = df['date'].apply(toHour)
+
+aggregate = df.groupby(["neighborhoods","hour"]).agg('count')
+# agg2 = aggregate.sort_values("id",ascending=False).groupby('id').head(5)
+# print(agg2)
+aggregate.rename(columns={'id':'count'}, inplace=True)
+aggregate.to_csv("./aggregatecrimev2.csv")
