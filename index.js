@@ -1,4 +1,6 @@
 const stateBttns = document.querySelectorAll(".btn")
+var colors = {"crime":"red","real_estate":"green"}
+var state = {view:'crime',neighborhood:""};
 
 //load all datasets here
 var promises = [
@@ -17,7 +19,6 @@ var promises = [
     ]
 
 const letsGo = (d) => {
-        console.log(d[0]);
         scatterplot(d[0]);
         lineChart(d[1]);
         geoViz(d[2]);
@@ -25,7 +26,7 @@ const letsGo = (d) => {
 
 const render = () => {
         Promise.all(promises).then(letsGo);
-}
+};
 
 stateBttns.forEach(btn => {
     btn.addEventListener("click",(e) => {
@@ -33,8 +34,6 @@ stateBttns.forEach(btn => {
         state["view"] = btn.attributes["data-activity"].nodeValue;
         render()
     });
-})
+});
 
-render()
-
-
+render();

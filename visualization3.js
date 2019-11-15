@@ -1,13 +1,4 @@
-// d3.csv("./data/aggregatecrime.csv", function(d) {
-//   return {
-//     hour: d.hour,
-//     crimecount: + d.crimecount
-//   };
-//   console.log(d)
-// }).then(lineChart);
-
 function lineChart(data){
-  console.log(data);
   var width  = 700;
   var height = 500;
   var margin = {
@@ -24,7 +15,7 @@ function lineChart(data){
   var maxcrimecount  = d3.max(data, function(d){return d.crimecount;});
 
   var svg = d3.select('#vis3')
-              .append('svg')
+              // .append('svg')
               .attr('width' , width)
               .attr('height', height)
               .style('background', '#efefef');
@@ -63,5 +54,5 @@ function lineChart(data){
             .attr("d", d3.line()
                      .x(function (d) { return xScale(d.hour) + margin.left; })
                      .y(function (d) { return yScale(d.crimecount) + margin.top; } ));
-                     chartGroup.exit().remove();
+  chartGroup.exit().remove();
 }
