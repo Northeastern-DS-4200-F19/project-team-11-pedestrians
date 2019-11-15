@@ -1,19 +1,10 @@
-d3.csv("./data/ChesterSquareSurveyResponses.csv", function(d) {
-  return {
-    visittime: d.visittime,
-    safetylevel: + d.safetylevel
-  };
-  console.log(d)
-}).then(scatterplot);
-
 function scatterplot(data){
-  console.log(data);
 
   var minSafetyLevel = 0;
   var maxSafetyLevel = 10;
 
-  var width  = 700;
-  var height = 500;
+  var width  = 500;
+  var height = 300;
   var margin = {
     top: 30,
     bottom: 30,
@@ -22,7 +13,7 @@ function scatterplot(data){
   };
 
   var svg = d3.select('#vis4')
-              .append('svg')
+              // .append('svg')
               .attr('width' , width)
               .attr('height', height)
               .style('background', '#efefef');
@@ -42,19 +33,19 @@ var chartGroup = svg.append('g')
 
   var xAxis = d3.axisBottom(xScale);
 
+  var yAxis = d3.axisLeft(yScale);
+  
   chartGroup.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis);
-
-  var yAxis = d3.axisLeft(yScale);
 
   chartGroup.append('g')
             .attr('class', 'y axis')
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
             .call(yAxis);
 
-  svg.append('g')
+  var dots = chartGroup
      .selectAll("dot")
      .data(data)
      .enter()
@@ -63,4 +54,6 @@ var chartGroup = svg.append('g')
      .attr("cy", function (d) { return yScale(d.safetylevel) + margin.top; } )
      .attr("r", 5)
      .style("fill", "#69b3a2")
+
+    dots.exit().remove();
 }
