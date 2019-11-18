@@ -45,6 +45,7 @@ var promises = [
                     };
                   }),
     ]
+  console.log(db[2]);
 
 const filterBar = (d) => {
   var result = {}
