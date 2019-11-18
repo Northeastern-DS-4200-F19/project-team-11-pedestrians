@@ -68,7 +68,7 @@ const filterBar = (d) => {
   }
 }
 
-const filterLine = (d) => { 
+const filterLine = (d) => {
   var result = {}
   var rArray = []
   if(lineIndex == 0) {
