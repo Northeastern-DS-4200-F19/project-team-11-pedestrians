@@ -39,7 +39,8 @@ function lineChart(data){
   var x_axis = chartGroup.append('g')
             .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
-            .call(xAxis);
+            .call(xAxis)
+            .selectAll("text")
 
   var y_axis = chartGroup.append('g')
             .attr('class', 'y_axis')
@@ -56,8 +57,7 @@ function lineChart(data){
             .attr("d", d3.line()
                      .x(function (d) { return xScale(d.hour) + margin.left; })
                      .y(function (d) { return yScale(d.crimecount) + margin.top; }));
-                     
-  paths.exit().remove();
-  chartGroup.exit().remove();
 
+  paths.exit().remove();
+  chartGroup.exit().remove()
 }

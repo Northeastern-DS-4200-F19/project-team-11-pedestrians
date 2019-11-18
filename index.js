@@ -2,7 +2,7 @@ const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green"}
 var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
-  removeChart();
+  // removeChart();
   lineChart(filterLine(db[lineIndex]));
   stackChart(filterBar(db[4]));
 }};
@@ -68,7 +68,7 @@ const filterBar = (d) => {
   }
 }
 
-const filterLine = (d) => { 
+const filterLine = (d) => {
   var result = {}
   var rArray = []
   if(lineIndex == 0) {
@@ -99,12 +99,12 @@ const filterLine = (d) => {
         }
       })
       Object.keys(result).forEach(key => {
-        rArray.push({"hour": new Date(key), "crimecount": result[key]});
+        rArray.push({"hour": new Date(key).getFullYear(), "crimecount": result[key]});
       })
       return rArray.sort((a,b) => a.hour > b.hour);
     } else {
       return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"hour":new Date(item.hour),"crimecount": item.crimecount / 1000}
+        return {"hour":new Date(item.hour).getFullYear(),"crimecount": item.crimecount / 1000}
       }).sort((a,b) => a.hour > b.hour);
     }
   }
