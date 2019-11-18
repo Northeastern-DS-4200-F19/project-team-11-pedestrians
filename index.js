@@ -2,7 +2,7 @@ const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green"}
 var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
-  removeChart();
+  // removeChart();
   lineChart(filterLine(db[lineIndex]));
   stackChart(filterBar(db[4]));
 }};
