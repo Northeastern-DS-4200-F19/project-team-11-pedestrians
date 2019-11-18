@@ -1,5 +1,5 @@
 function stackChart(data){
-    console.log("testing" + data[1])
+    console.log("testing" + data)
     var minSafetyLevel = 0;
     var maxSafetyLevel = d3.max(data, function(d){ return d.crimecount;});
 
