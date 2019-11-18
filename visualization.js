@@ -1,4 +1,5 @@
 function scatterplot(data){
+  console.log(data);
 
   var minSafetyLevel = 0;
   var maxSafetyLevel = 10;
@@ -34,7 +35,7 @@ var chartGroup = svg.append('g')
   var xAxis = d3.axisBottom(xScale);
 
   var yAxis = d3.axisLeft(yScale);
-  
+
   chartGroup.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
