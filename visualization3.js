@@ -57,7 +57,7 @@ function lineChart(deets){
             .attr("class","derp")
             .datum(data)
             .attr("fill", "none")
-            .attr("stroke", "#69b3a2")
+            .attr("stroke", colors[state["view"]])
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
                      .x(function (d) { return xScale(d.key) + margin.left; })
