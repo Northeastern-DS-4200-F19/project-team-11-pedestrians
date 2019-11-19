@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- Metadata -->
-	<head>
+  <head>
     <meta charset="utf-8">
 
     <!-- Title -->
-		<title>Project Team 11: Crime and Safety around Chester Square Park, DS 4200 F19</title>
+    <title>Project Team 11: Crime and Safety around Chester Square Park, DS 4200 F19</title>
 
     <!-- CSS Styling -->
-		<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -20,10 +20,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-	</head>
+  </head>
 
   <!-- Main page content -->
-	<body>
+  <body>
     <!-- Update this with your GitHub repo URL -->
     <span id="forkongithub"><a href="https://github.com/Northeastern-DS-4200-F19-Staff/S-L-Project-Template">Fork me on GitHub</a></span>
 
@@ -34,14 +34,14 @@
       <p><strong>Karman Singh</strong>, <strong>Eric Chung</strong>, <strong>Edward Chung</strong></p>
 
       <p>Service-Learning Course Project as part of <a href="http://www.ccs.neu.edu/home/cody/courses/ds4200-f19/">DS 4200: Information Presentation and Visualization</a>,
-				taught by <a href="https://cody.khoury.northeastern.edu/">Prof. Cody Dunne</a>, <a href="https://visualization.khoury.northeastern.edu/">Data Visualization @ Khoury</a>,
-				<a href="https://www.khoury.northeastern.edu/">Northeastern University</a>.</p>
+        taught by <a href="https://cody.khoury.northeastern.edu/">Prof. Cody Dunne</a>, <a href="https://visualization.khoury.northeastern.edu/">Data Visualization @ Khoury</a>,
+        <a href="https://www.khoury.northeastern.edu/">Northeastern University</a>.</p>
 
       <h1>Motivation</h1>
       <p><em>For this project, we decided to focus on pedestrian safety and how to make the park more safe for both residents of the homes nearby
-						 and anyone walking by the park itself.</em></p>
+             and anyone walking by the park itself.</em></p>
       <p><em>What we expect to find using the data visualization that we are creating is an addressable to trend in crime around Chester Square Park.
-						 We are using crime data as a stand-in for safety data as there is no usable dataset of safety levels around Boston.</em></p>
+             We are using crime data as a stand-in for safety data as there is no usable dataset of safety levels around Boston.</em></p>
 
       <h1>Visualization</h1>
       <p><em>Include the interactive visualization as part of this page. Static example follows.</em></p>
@@ -91,11 +91,11 @@
 
       <h1>Data Analysis</h1>
       <p><em>The primary dataset that we used was the Boston Crime dataset pulled from the Analyze Boston website. Due to the fact that the dataset was
-				very large (over 450,000 entries) we did a lot of preprocessing using Python to aggregate the data ahead of time. For example, for the crime count by hour
-				chart, we ran a python script on the Boston crime dataset ahead of time to aggregate the data by hour before displaying the data using D3.</em></p>
+        very large (over 450,000 entries) we did a lot of preprocessing using Python to aggregate the data ahead of time. For example, for the crime count by hour
+        chart, we ran a python script on the Boston crime dataset ahead of time to aggregate the data by hour before displaying the data using D3.</em></p>
 
       <p><em>Summary of data, data types, and data preprocessing.
-				Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
+        Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
 
       <h1>Task Analysis</h1>
 
@@ -104,27 +104,27 @@
       <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
 
       <h1>Design Process</h1>
-				<p><em>We began our design process by looking at already existing visualizations of crime data for Boston. While looking at the visualizations, we
-					noticed that there was a common theme in that all of the already existing visualizations did not have good visual encodings and were overall very
-					unintuitive. A common problem was the color schemes for the visualizations were very poorly chosen. With this information in mind, we decided
-					that we would create a better crime map for Boston. <br><br> On top of creating a crime map, we also surveyed safety levels of residents around Chester
-				 	Square Park and plan to compare crime levels with perceived safety levels around the Park. We hope to find a correlation between crime and safety
-				 	around the park so as to use the crime dataset we have as an analog for Safety data. Originally we planned on our visualizations to look like the
-					following: <br> </em></p>
+        <p><em>We began our design process by looking at already existing visualizations of crime data for Boston. While looking at the visualizations, we
+          noticed that there was a common theme in that all of the already existing visualizations did not have good visual encodings and were overall very
+          unintuitive. A common problem was the color schemes for the visualizations were very poorly chosen. With this information in mind, we decided
+          that we would create a better crime map for Boston. <br><br> On top of creating a crime map, we also surveyed safety levels of residents around Chester
+          Square Park and plan to compare crime levels with perceived safety levels around the Park. We hope to find a correlation between crime and safety
+          around the park so as to use the crime dataset we have as an analog for Safety data. Originally we planned on our visualizations to look like the
+          following: <br> </em></p>
 
-				<table>
-					<tr>
-						<td><img src ="images/vis1.png" width="800px" height="500px"></img></td>
-						<td><img src ="images/vis2.png" width="800px" height="500px"></img></td>
-					</tr>
-					<tr>
-						<td><img src ="images/vis3.png" width="800px" height="500px"></img></td>
-						<td><img src ="images/vis4.png" width="800px" height="500px"></img></td>
-					</tr>
-				</table>
+        <table>
+          <tr>
+            <td><img src ="images/vis1.png" width="800px" height="500px"></img></td>
+            <td><img src ="images/vis2.png" width="800px" height="500px"></img></td>
+          </tr>
+          <tr>
+            <td><img src ="images/vis3.png" width="800px" height="500px"></img></td>
+            <td><img src ="images/vis4.png" width="800px" height="500px"></img></td>
+          </tr>
+        </table>
 
-				<p><em>However, after looking at the visualizations more critically, we realized that size encoded circles were not the best way to show relative crime (and
-					real estate prices). Ultimatley we chose to go with the shaded neighborhood regions instead as this was a more distinguishable use of color.</p>
+        <p><em>However, after looking at the visualizations more critically, we realized that size encoded circles were not the best way to show relative crime (and
+          real estate prices). Ultimatley we chose to go with the shaded neighborhood regions instead as this was a more distinguishable use of color.</p>
 
       <p><em>Sketches and design choices to justify final visualization.</em></p>
 
@@ -161,5 +161,5 @@
     <script src="visualization3.js"></script>
     <script src="stacked.js"></script>
     <script src="index.js"></script>
-	</body>
+  </body>
 </html>
