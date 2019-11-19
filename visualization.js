@@ -20,7 +20,7 @@ function scatterplot(data){
               .style('background', '#efefef');
 
 var chartGroup = svg.append('g')
-  					  .append('svg')
+              .append('svg')
                       .attr('transform','translate(' + margin.left +',' + margin.top + ')');
 
   var xScale = d3.scaleOrdinal()
