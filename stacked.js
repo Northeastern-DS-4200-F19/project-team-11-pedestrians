@@ -61,7 +61,7 @@ function stackChart(deets){
                    .domain([0, 100])
                    .range([height, margin.top]);
   
-    var z = d3.scaleOrdinal(d3.schemeAccent)
+    var z = d3.scaleOrdinal(d3.schemePaired)
                     // .range(["red","orange","yellow","green","blue","purple","indigo","white","black","grey","navy","indigo","brown","maroon"])
                    .domain([...offenses]);
 
