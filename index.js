@@ -17,27 +17,44 @@ var lineIndex = 0;
 var db = []
 //load all datasets here
 var promises = [
+<<<<<<< HEAD
         d3.csv("./data/csv_files/crime_test.csv",function(d){
+=======
+        d3.csv("./data/aggregatecrimev2.csv",function(d){
+>>>>>>> c74dbf1ac4ae2abb22800cc8c1004a237ed73054
                 return {
                             hour: parseInt(d.hour),
                             crimecount: + d.count,
                             neighborhood: d.neighborhoods
                           };
                         }),
+<<<<<<< HEAD
         d3.csv("./data/csv_files/real_estate.csv",function(d){
+=======
+        d3.csv("./data/real_estate.csv",function(d){
+>>>>>>> c74dbf1ac4ae2abb22800cc8c1004a237ed73054
           return {
                       hour: d.Date,
                       crimecount: + d.Value,
                       neighborhood: d.neighborhood
                     };
                   }),
+<<<<<<< HEAD
         d3.csv("./data/csv_files/ChesterSquareSurveyResponses.csv",function(d) {
+=======
+        d3.csv("./data/ChesterSquareSurveyResponses.csv",function(d) {
+>>>>>>> c74dbf1ac4ae2abb22800cc8c1004a237ed73054
                     return {
                       visittime: d.visittime,
                       safetylevel: + d.safetylevel
                     }}),
+<<<<<<< HEAD
         d3.json("./data/json_files/bostonv2.geojson"),
         d3.csv("./data/csv_files/crime_test.csv",function(d){
+=======
+        d3.json("./data/bostonv2.geojson"),
+        d3.csv("./data/crimeV4.csv",function(d){
+>>>>>>> c74dbf1ac4ae2abb22800cc8c1004a237ed73054
           return {
                       crimecount: + d.count,
                       neighborhood: d.neighborhoods,
