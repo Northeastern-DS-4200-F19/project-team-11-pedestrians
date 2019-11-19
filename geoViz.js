@@ -1,5 +1,5 @@
-var width  = 700;
-var height = 700;
+var width  = 400;
+var height = 300;
 var margin = {
   top: 30,
   bottom: 30,
@@ -10,18 +10,29 @@ var margin = {
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
-const graph = d3.select("#vis-svg")
-              .attr("height",graphHeight)
-              .attr("width",graphWidth)
-              .attr("margin",5)
-              .attr("transform", `translate(${margin.left},${margin.bottom})`);
+const canvas = d3.select("#vis-svg")
+              .attr("height",height)
+              .attr("width",width)
+              // .attr("margin",5)
+              .attr("border","black")
+              .append("rect")
+              .attr("x",0)
+              .attr("y",0)
+              .attr("height",height)
+              .attr("width",width)
+              // .attr("margin",5)
+              .attr("stroke","black")
+              .attr("stroke-width","border")
+              .attr("fill","none")
+  const graph = d3.select("#vis-svg").append("svg")
+                            // .attr("transform", `translate(${margin.left},${margin.top})`);
 
 //lon and lat to x and y
  var albersProjection = d3.geoAlbers()
-    .scale( 190000 )
-    .rotate( [71.057,0] )
-    .center( [0, 42.313] )
-    .translate( [width/2,height/2] );
+    .scale( 90000 )
+    .rotate( [71.107,0] )
+    .center( [0, 42.333] )
+    .translate( [graphWidth/2,graphHeight/2] );
 
 var geoGenerator = d3.geoPath()
     .projection(albersProjection);

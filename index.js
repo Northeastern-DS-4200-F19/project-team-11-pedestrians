@@ -4,7 +4,7 @@ var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
   removeChart();
   lineChart(filterLine(db[lineIndex]));
-  // stackChart(filterBar(db[4]));
+  stackChart(filterBar(db[0]));
 }};
 
 const removeChart = () => {
@@ -38,36 +38,36 @@ var promises = [
                       safetylevel: + d.safetylevel
                     }}),
         d3.json("./data/json_files/bostonv2.geojson"),
-        d3.csv("./data/csv_files/crime.csv",function(d){
-          return {
-                      crimecount: + d.count,
-                      neighborhood: d.neighborhoods,
-                      offenseType: d.offense_type.split(' ')[0]
-                    };
-                  }),
     ]
-  console.log(db[2]);
 
 const filterBar = (d) => {
   var result = {}
   var rArray = []
-  if(state.neighborhood === "") {
-    d.forEach(obj => {
-      if (Object.keys(result).includes(String(obj.offense_type))) {
-        result[obj.offenseType] = result[obj.offenseType] + obj.crimecount
-      } else {
-        result[obj.offenseType] = obj.crimecount
-      }
+  var offenseTypes = new Set(d.map(obj => obj.offenseType));
+  var neighborhoods = new Set(d.map(obj => obj.neighborhood))
+  neighborhoods.forEach(n => {
+    row = {}
+    offenseTypes.forEach(ot => {
+      row[ot] = 0
     })
-    Object.keys(result).forEach(key => {
-      rArray.push({"offenseType": key, "crimecount": result[key]});
-    })
-    return rArray.sort((a,b) => a.crimecount >= b.crimecount);
-  } else {
-    return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-      return {"offenseType":item.offense_type,"crimecount": item.crimecount}
-    }).sort((a,b) => a.crimecount >= b.crimecount);
-  }
+    result[n] = row
+  })
+  d.forEach(obj => {
+    result[obj.neighborhood][obj.offenseType] = result[obj.neighborhood][obj.offenseType] + obj.crimecount
+  })
+  Object.keys(result).forEach(neighborhood => {
+    row = result[neighborhood]
+    filtered_row = {}
+    sortedKeys = Object.keys(result[neighborhood]).sort((a,b) => {
+      return result[neighborhood][b] - result[neighborhood][a]}
+      )
+    for(let i = 0; i < 5; i++) {
+      filtered_row[sortedKeys[i]] = row[sortedKeys[i]]
+    }
+    filtered_row["neighborhood"] = neighborhood
+    rArray.push(filtered_row)
+  })
+  return rArray
 }
 
 
@@ -117,7 +117,7 @@ const letsGo = (d) => {
         db = d;
         scatterplot(d[2]);
         lineChart(filterLine(d[lineIndex]));
-        // stackChart(filterBar(d[4]));
+        stackChart(filterBar(d[0]));
         geoViz(d[3]);
 }
 
@@ -135,7 +135,7 @@ stateBttns.forEach(btn => {
         d3.selectAll(".x_axis").remove()
         d3.selectAll(".y_axis").remove()
         lineChart(filterLine(db[lineIndex]))
-        stackChart(filterBar(db[4]));
+        stackChart(filterBar(db[0]));
     });
 });
 
