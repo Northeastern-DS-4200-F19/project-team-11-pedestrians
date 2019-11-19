@@ -39,12 +39,25 @@ var chartGroup = svg.append('g')
   chartGroup.append('g')
             .attr('class', 'x axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
-            .call(xAxis);
+            .call(xAxis)
+            .append("text")
+            .attr("fill", "#000")
+            .attr("x", margin.top)
+            .attr("dy", "0.71em")
+            .attr("text-anchor", "end")
+            .text("Speed");;
 
   chartGroup.append('g')
             .attr('class', 'y axis')
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
-            .call(yAxis);
+            .call(yAxis)
+            .append("text")
+.attr("fill", "#000")
+.attr("transform", "rotate(-90)")
+.attr("y", 6)
+.attr("dy", "0.71em")
+.attr("text-anchor", "end")
+.text("Speed");
 
   var dots = chartGroup
      .selectAll("dot")
