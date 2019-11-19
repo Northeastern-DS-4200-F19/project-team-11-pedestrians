@@ -1,11 +1,12 @@
 function lineChart(deets){
   var data = d3.nest()
-  .key(function(d) { return d.hour; })
-  .rollup(function(v) { return d3.sum(v, function(d) { return d.crimecount; }); })
-  .entries(deets)
-  console.log(data)
-  var width  = 500;
-  var height = 500;
+              .key(function(d) { return d.hour; })
+              .rollup(function(v) { return d3.sum(v, function(d) { return d.crimecount; }); })
+              .entries(deets)
+              .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
+
+  var width  = 600;
+  var height = 300;
   var margin = {
     top: 30,
     bottom: 30,
@@ -13,8 +14,8 @@ function lineChart(deets){
     right: 30
   };
 
-  var minhour = d3.min(data, function(d){return d.key;});
-  var maxhour = d3.max(data, function(d){return d.key;});
+  var minhour = d3.min(data, function(d){return parseInt(d.key);});
+  var maxhour = d3.max(data, function(d){return parseInt(d.key);});
 
   var mincrimecount = 0;
   var maxcrimecount  = d3.max(data, function(d){return d.value;});
@@ -60,7 +61,7 @@ function lineChart(deets){
             .attr("stroke", "#69b3a2")
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
-                     .x(function (d) { return xScale(d.key) + margin.left; })
+                     .x(function (d) { return xScale(parseInt(d.key)) + margin.left; })
                      .y(function (d) { return yScale(d.value) + margin.top; }));
 
   paths.exit().remove();

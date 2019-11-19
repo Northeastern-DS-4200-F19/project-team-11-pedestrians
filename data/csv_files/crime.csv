@@ -1,5 +1,4 @@
 ,neighborhoods,offense_type,hour,count
-<<<<<<< HEAD
 0,,07rv,01,2
 1,,07rv,02,3
 2,,07rv,04,3
@@ -42330,6 +42329,8 @@
 42327,West Roxbury,weapons charge,09,1
 42328,West Roxbury,weapons charge,12,1
 =======
+=======
+>>>>>>> ebranch
 0,Allston,07RV,1,1
 1,Allston,07RV,2,1
 2,Allston,07RV,3,1
@@ -67448,4 +67449,4 @@
 25115,West Roxbury,Warrant Arrests,21,4
 25116,West Roxbury,Warrant Arrests,22,1
 25117,West Roxbury,Warrant Arrests,23,1
->>>>>>> ebranch
+
