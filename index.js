@@ -70,8 +70,6 @@ const filterBar = (d) => {
 }
 
 
-
-
 const filterLine = (d) => {
   var result = {}
   var rArray = []
