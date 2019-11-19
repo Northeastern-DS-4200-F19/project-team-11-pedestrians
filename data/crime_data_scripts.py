@@ -8,6 +8,7 @@ from shapely.geometry import shape, Point
 
 
 ## TODO implement string similarity for crime categories
+## TODO convert to full time series to begin trend analysis
 
 ## Aggregating Legacy and Current Crime Tracking System
 df1 = pd.read_csv("https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/tmp3bg1m024.csv")
