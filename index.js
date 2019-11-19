@@ -4,7 +4,7 @@ var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
   removeChart();
   lineChart(filterLine(db[lineIndex]));
-  stackChart(filterBar(db[4]));
+  // stackChart(filterBar(db[4]));
 }};
 
 const removeChart = () => {
@@ -117,7 +117,7 @@ const letsGo = (d) => {
         db = d;
         scatterplot(d[2]);
         lineChart(filterLine(d[lineIndex]));
-        stackChart(filterBar(d[4]));
+        // stackChart(filterBar(d[4]));
         geoViz(d[3]);
 }
 

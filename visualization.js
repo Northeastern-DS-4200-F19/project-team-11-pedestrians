@@ -13,6 +13,7 @@ function scatterplot(data){
     right: 30
   };
 
+
   var svg = d3.select('#vis4')
               // .append('svg')
               .attr('width' , width)
