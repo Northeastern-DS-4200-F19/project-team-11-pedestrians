@@ -5,9 +5,10 @@ from datetime import datetime
 import json
 import os
 from shapely.geometry import shape, Point
-
+from fuzzywuzzy import process
 
 ## TODO implement string similarity for crime categories
+## TODO reiterate through this data set once a week for discrepancies
 
 ## Aggregating Legacy and Current Crime Tracking System
 df1 = pd.read_csv("https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/tmp3bg1m024.csv")
@@ -54,28 +55,41 @@ def classify(location):
             continue
     return result
 
-data = {}
-data["id"] = mergeCols(df["COMPNOS"],df1["INCIDENT_NUMBER"])
-data["offense_type"] = mergeCols(df["INCIDENT_TYPE_DESCRIPTION"].apply(lambda x:x.lower()),df1["OFFENSE_DESCRIPTION"].apply(lambda x: x.split(" - ")[0].lower()))
-data["year"] = mergeCols(df["Year"],df1["YEAR"])
-data["month"]= mergeCols(df["Month"],df1["MONTH"])
-data["day_of_Week"]= mergeCols(df["DAY_WEEK"], df1["DAY_OF_WEEK"])
-data["ucr_oart"] = mergeCols(df["UCRPART"], df1["UCR_PART"])
-data["lat"] = mergeCols(df["X"], df1["Lat"])
-data["long"] = mergeCols(df["Y"] , df1["Long"])
-data["location"] = mergeCols(df["Location"], df1["Location"])
-data["street"] = mergeCols(df["STREETNAME"], df1["STREET"])
-data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
+newCategories = df1["OFFENSE_CODE_GROUP"].unique()
 
-crime = pd.DataFrame(data)
+def legacyToNew(category):
+    highest = process.extractOne(category, newCategories)
+    if(highest[1] < 50):
+        return category
+    else: 
+        return highest[0]
 
-## Creating Hour Field, Classifying Crime, Saving base level dataset
-crime["hour"] = crime["date"].apply(toHour)
-crime["neighborhoods"] = crime["location"].apply(classify)
+# Recategorizing legacy crime categories
+# df["OFFENSE_CODE_GROUP"] = df["INCIDENT_TYPE_DESCRIPTION"].apply(legacyToNew)
+
+# data = {}
+# data["id"] = mergeCols(df["COMPNOS"],df1["INCIDENT_NUMBER"])
+# data["offense_type"] = mergeCols(df["OFFENSE_CODE_GROUP"],df1["OFFENSE_CODE_GROUP"])
+# data["year"] = mergeCols(df["Year"],df1["YEAR"])
+# data["month"]= mergeCols(df["Month"],df1["MONTH"])
+# data["day_of_Week"]= mergeCols(df["DAY_WEEK"], df1["DAY_OF_WEEK"])
+# data["ucr_oart"] = mergeCols(df["UCRPART"], df1["UCR_PART"])
+# data["lat"] = mergeCols(df["X"], df1["Lat"])
+# data["long"] = mergeCols(df["Y"] , df1["Long"])
+# data["location"] = mergeCols(df["Location"], df1["Location"])
+# data["street"] = mergeCols(df["STREETNAME"], df1["STREET"])
+# data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
+
+# crime = pd.DataFrame(data)
+
+# Creating Hour Field, Classifying Crime, Saving base level dataset
+# crime["hour"] = crime["date"].apply(toHour)
+# crime["neighborhoods"] = crime["location"].apply(classify)
+# crime.to_csv("./csv_files/boston_crime.csv")
 
 # Aggregating Dataset
-aggregate = crime.groupby(["neighborhoods","offense_type","hour"]).agg('count')
-agg2 = aggregate.groupby(["neighborhoods","offense_type","hour"],as_index=False).apply(lambda x:x.nlargest(5,'id'))
-agg2.rename(columns={'id':'count'}, inplace=True)
-agg2.reset_index(inplace=True)
-agg2[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
+df = pd.read_csv("./csv_files/boston_crime.csv", low_memory=False)
+aggregate = df.groupby(["neighborhoods","offense_type","hour"]).agg('count')
+aggregate.reset_index(inplace=True)
+aggregate.rename(columns={'id':'count'}, inplace=True)
+aggregate[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
