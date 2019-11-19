@@ -1,7 +1,8 @@
 function lineChart(deets){
+  console.log(deets)
   var data = d3.nest()
-              .key(function(d) { return d.hour; })
-              .rollup(function(v) { return d3.sum(v, function(d) { return d.crimecount; }); })
+              .key(function(d) { return d.time; })
+              .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
               .entries(deets)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
 
@@ -14,11 +15,11 @@ function lineChart(deets){
     right: 30
   };
 
-  var minhour = d3.min(data, function(d){return parseInt(d.key);});
-  var maxhour = d3.max(data, function(d){return parseInt(d.key);});
+  var mintime = d3.min(data, function(d){return parseInt(d.key);});
+  var maxtime = d3.max(data, function(d){return parseInt(d.key);});
 
-  var mincrimecount = 0;
-  var maxcrimecount  = d3.max(data, function(d){return d.value;});
+  var minvalue = 0;
+  var maxvalue  = d3.max(data, function(d){return d.value;});
 
   var svg = d3.select('#vis3')
               // .append('svg')
@@ -31,11 +32,11 @@ function lineChart(deets){
                       .attr('transform','translate(' + margin.left +',' + margin.top + ')');
 
   var xScale = d3.scaleLinear()
-                 .domain([minhour, maxhour])
+                 .domain([mintime, maxtime])
                  .range([0, width - 100]);
 
   var yScale = d3.scaleLinear()
-                 .domain([mincrimecount, maxcrimecount + 1000])
+                 .domain([minvalue, maxvalue + 1000])
                  .range([height - margin.bottom - margin.top, 0]);
 
   var xAxis = d3.axisBottom(xScale);

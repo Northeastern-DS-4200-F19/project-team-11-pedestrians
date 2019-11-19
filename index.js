@@ -3,6 +3,7 @@ var colors = {"crime":"red","real_estate":"green"}
 var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
   removeChart();
+  geoViz(db[3])
   lineChart(filterLine(db[lineIndex]));
   stackChart(filterBar(db[0]));
 }};
@@ -19,17 +20,18 @@ var db = []
 var promises = [
         d3.csv("./data/csv_files/crime.csv",function(d){
                 return {
-                            hour: parseInt(d.hour),
-                            crimecount: + d.count,
-                            neighborhood: d.neighborhoods,
-                            offenseType: d.offense_type.split(' ')[0]
+                            time: parseInt(d.time),
+                            value: +d.value,
+                            neighborhood: d.neighborhood,
+                            category: d.category
                           };
                         }),
         d3.csv("./data/csv_files/real_estate.csv",function(d){
           return {
-                      hour: d.Date,
-                      crimecount: + d.Value,
-                      neighborhood: d.neighborhood
+                      time: d.time,
+                      value: +d.value,
+                      neighborhood: d.neighborhood,
+                      category: d.category
                     };
                   }),
         d3.csv("./data/csv_files/ChesterSquareSurveyResponses.csv",function(d) {
@@ -37,23 +39,23 @@ var promises = [
                       visittime: d.visittime,
                       safetylevel: + d.safetylevel
                     }}),
-        d3.json("./data/json_files/bostonv2.geojson"),
+        d3.json("./data/json_files/bostonv2.geojson")
     ]
 
 const filterBar = (d) => {
   var result = {}
   var rArray = []
-  var offenseTypes = new Set(d.map(obj => obj.offenseType));
+  var categorys = new Set(d.map(obj => obj.category));
   var neighborhoods = new Set(d.map(obj => obj.neighborhood))
   neighborhoods.forEach(n => {
     row = {}
-    offenseTypes.forEach(ot => {
+    categorys.forEach(ot => {
       row[ot] = 0
     })
     result[n] = row
   })
   d.forEach(obj => {
-    result[obj.neighborhood][obj.offenseType] = result[obj.neighborhood][obj.offenseType] + obj.crimecount
+    result[obj.neighborhood][obj.category] = result[obj.neighborhood][obj.category] + obj.value
   })
   Object.keys(result).forEach(neighborhood => {
     row = result[neighborhood]
@@ -77,38 +79,38 @@ const filterLine = (d) => {
   if(lineIndex == 0) {
     if(state.neighborhood === "") {
       d.forEach(obj => {
-        if (Object.keys(result).includes(String(obj.hour))) {
-          result[obj.hour] = result[obj.hour] + obj.crimecount
+        if (Object.keys(result).includes(String(obj.time))) {
+          result[obj.time] = result[obj.time] + obj.value
         } else {
-          result[obj.hour] = obj.crimecount
+          result[obj.time] = obj.value
         }
       })
       Object.keys(result).forEach(key => {
-        rArray.push({"hour": parseInt(key), "crimecount": result[key]});
+        rArray.push({"time": parseInt(key), "value": result[key]});
       })
-      return rArray.sort((a,b) => a.hour > b.hour);
+      return rArray.sort((a,b) => a.time > b.time);
     } else {
       return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"hour":parseInt(item.hour),"crimecount": item.crimecount}
-      }).sort((a,b) => a.hour > b.hour);
+        return {"time":parseInt(item.time),"value": item.value}
+      }).sort((a,b) => a.time > b.time);
     }
   } else {
     if(state.neighborhood === "") {
       d.forEach(obj => {
-        if (Object.keys(result).includes(String(obj.hour))) {
-          result[obj.hour] = result[obj.hour] + (obj.crimecount / 1000)
+        if (Object.keys(result).includes(String(obj.time))) {
+          result[obj.time] = result[obj.time] + (obj.value / 1000)
         } else {
-          result[obj.hour] = (obj.crimecount / 1000)
+          result[obj.time] = (obj.value / 1000)
         }
       })
       Object.keys(result).forEach(key => {
-        rArray.push({"hour": new Date(key).getFullYear(), "crimecount": result[key]});
+        rArray.push({"time": new Date(key).getFullYear(), "value": result[key]});
       })
-      return rArray.sort((a,b) => a.hour > b.hour);
+      return rArray.sort((a,b) => a.time > b.time);
     } else {
       return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"hour":new Date(item.hour).getFullYear(),"crimecount": item.crimecount / 1000}
-      }).sort((a,b) => a.hour > b.hour);
+        return {"time":new Date(item.time).getFullYear(),"value": item.value / 1000}
+      }).sort((a,b) => a.time > b.time);
     }
   }
 }
@@ -129,13 +131,13 @@ stateBttns.forEach(btn => {
     btn.addEventListener("click",(e) => {
         e.preventDefault();
         state["view"] = btn.attributes["data-activity"].nodeValue;
-        geoViz(db[3])
         lineIndex = (lineIndex + 1) % 2
         d3.selectAll(".derp").remove()
         d3.selectAll(".x_axis").remove()
         d3.selectAll(".y_axis").remove()
+        geoViz(db[3])
         lineChart(filterLine(db[lineIndex]))
-        stackChart(filterBar(db[0]));
+        stackChart(filterBar(db[lineIndex]));
     });
 });
 

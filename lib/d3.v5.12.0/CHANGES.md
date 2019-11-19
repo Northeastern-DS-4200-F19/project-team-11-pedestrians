@@ -1107,7 +1107,7 @@ var parseTime = d3.timeParse("%c");
 
 The multi-scale time format d3.time.format.multi has been replaced by [d3.scaleTime](https://github.com/d3/d3-scale/blob/master/README.md#scaleTime)’s [tick format](https://github.com/d3/d3-scale/blob/master/README.md#time_tickFormat). Time formats now coerce inputs to dates, and time parsers coerce inputs to strings. The `%Z` directive now allows more flexible parsing of time zone offsets, such as `-0700`, `-07:00`, `-07`, and `Z`. The `%p` directive is now parsed correctly when the locale’s period name is longer than two characters (*e.g.*, “a.m.”).
 
-The default U.S. English locale now uses 12-hour time and a more concise representation of the date. This aligns with local convention and is consistent with [*date*.toLocaleString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) in Chrome, Firefox and Node:
+The default U.S. English locale now uses 12-time time and a more concise representation of the date. This aligns with local convention and is consistent with [*date*.toLocaleString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString) in Chrome, Firefox and Node:
 
 ```js
 var now = new Date;
@@ -1127,7 +1127,7 @@ Pursuant to the great namespace flattening, the local time intervals have been r
 * ADDED ↦ [d3.timeMillisecond](https://github.com/d3/d3-time/blob/master/README.md#timeMillisecond)
 * d3.time.second ↦ [d3.timeSecond](https://github.com/d3/d3-time/blob/master/README.md#timeSecond)
 * d3.time.minute ↦ [d3.timeMinute](https://github.com/d3/d3-time/blob/master/README.md#timeMinute)
-* d3.time.hour ↦ [d3.timeHour](https://github.com/d3/d3-time/blob/master/README.md#timeHour)
+* d3.time.time ↦ [d3.timetime](https://github.com/d3/d3-time/blob/master/README.md#timetime)
 * d3.time.day ↦ [d3.timeDay](https://github.com/d3/d3-time/blob/master/README.md#timeDay)
 * d3.time.sunday ↦ [d3.timeSunday](https://github.com/d3/d3-time/blob/master/README.md#timeSunday)
 * d3.time.monday ↦ [d3.timeMonday](https://github.com/d3/d3-time/blob/master/README.md#timeMonday)
@@ -1145,7 +1145,7 @@ The UTC time intervals have likewise been renamed:
 * ADDED ↦ [d3.utcMillisecond](https://github.com/d3/d3-time/blob/master/README.md#utcMillisecond)
 * d3.time.second.utc ↦ [d3.utcSecond](https://github.com/d3/d3-time/blob/master/README.md#utcSecond)
 * d3.time.minute.utc ↦ [d3.utcMinute](https://github.com/d3/d3-time/blob/master/README.md#utcMinute)
-* d3.time.hour.utc ↦ [d3.utcHour](https://github.com/d3/d3-time/blob/master/README.md#utcHour)
+* d3.time.time.utc ↦ [d3.utctime](https://github.com/d3/d3-time/blob/master/README.md#utctime)
 * d3.time.day.utc ↦ [d3.utcDay](https://github.com/d3/d3-time/blob/master/README.md#utcDay)
 * d3.time.sunday.utc ↦ [d3.utcSunday](https://github.com/d3/d3-time/blob/master/README.md#utcSunday)
 * d3.time.monday.utc ↦ [d3.utcMonday](https://github.com/d3/d3-time/blob/master/README.md#utcMonday)
@@ -1162,7 +1162,7 @@ The local time range aliases have been renamed:
 
 * d3.time.seconds ↦ [d3.timeSeconds](https://github.com/d3/d3-time/blob/master/README.md#timeSeconds)
 * d3.time.minutes ↦ [d3.timeMinutes](https://github.com/d3/d3-time/blob/master/README.md#timeMinutes)
-* d3.time.hours ↦ [d3.timeHours](https://github.com/d3/d3-time/blob/master/README.md#timeHours)
+* d3.time.times ↦ [d3.timetimes](https://github.com/d3/d3-time/blob/master/README.md#timetimes)
 * d3.time.days ↦ [d3.timeDays](https://github.com/d3/d3-time/blob/master/README.md#timeDays)
 * d3.time.sundays ↦ [d3.timeSundays](https://github.com/d3/d3-time/blob/master/README.md#timeSundays)
 * d3.time.mondays ↦ [d3.timeMondays](https://github.com/d3/d3-time/blob/master/README.md#timeMondays)
@@ -1179,7 +1179,7 @@ The UTC time range aliases have been renamed:
 
 * d3.time.seconds.utc ↦ [d3.utcSeconds](https://github.com/d3/d3-time/blob/master/README.md#utcSeconds)
 * d3.time.minutes.utc ↦ [d3.utcMinutes](https://github.com/d3/d3-time/blob/master/README.md#utcMinutes)
-* d3.time.hours.utc ↦ [d3.utcHours](https://github.com/d3/d3-time/blob/master/README.md#utcHours)
+* d3.time.times.utc ↦ [d3.utctimes](https://github.com/d3/d3-time/blob/master/README.md#utctimes)
 * d3.time.days.utc ↦ [d3.utcDays](https://github.com/d3/d3-time/blob/master/README.md#utcDays)
 * d3.time.sundays.utc ↦ [d3.utcSundays](https://github.com/d3/d3-time/blob/master/README.md#utcSundays)
 * d3.time.mondays.utc ↦ [d3.utcMondays](https://github.com/d3/d3-time/blob/master/README.md#utcMondays)
@@ -1242,10 +1242,10 @@ Likewise, in place of 3.x’s d3.time.weekOfYear, in 4.0 you would say:
 d3.timeWeek.count(d3.timeYear(now), now); // 24
 ```
 
-The new *interval*.count is of course more general. For example, you can use it to compute hour-of-week for a heatmap:
+The new *interval*.count is of course more general. For example, you can use it to compute time-of-week for a heatmap:
 
 ```js
-d3.timeHour.count(d3.timeWeek(now), now); // 64
+d3.timetime.count(d3.timeWeek(now), now); // 64
 ```
 
 Here are all the equivalences from 3.x to 4.0:
@@ -1317,7 +1317,7 @@ setInterval(function() {
 }, 1000);
 ```
 
-If such code runs in the background for hours, thousands of queued transitions will try to run simultaneously when the page is foregrounded. D3 4.0 avoids this hang by freezing time in the background: when a page is in the background, time does not advance, and so no queue of timers accumulates to run when the page returns to the foreground. Use d3.timer instead of transitions to schedule a long-running animation, or use [d3.timeout](https://github.com/d3/d3-timer/blob/master/README.md#timeout) and [d3.interval](https://github.com/d3/d3-timer/blob/master/README.md#interval) in place of setTimeout and setInterval to prevent transitions from being queued in the background:
+If such code runs in the background for times, thousands of queued transitions will try to run simultaneously when the page is foregrounded. D3 4.0 avoids this hang by freezing time in the background: when a page is in the background, time does not advance, and so no queue of timers accumulates to run when the page returns to the foreground. Use d3.timer instead of transitions to schedule a long-running animation, or use [d3.timeout](https://github.com/d3/d3-timer/blob/master/README.md#timeout) and [d3.interval](https://github.com/d3/d3-timer/blob/master/README.md#interval) in place of setTimeout and setInterval to prevent transitions from being queued in the background:
 
 ```js
 d3.interval(function() {

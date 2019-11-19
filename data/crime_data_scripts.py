@@ -31,7 +31,7 @@ def colComparison(df1,df2,colname1,colname2):
 def mergeCols(col1,col2):
     return np.concatenate((col1.values, col2.values))
 
-def toHour(d):
+def totime(d):
     result = 0
     try:
         result = datetime.strptime(d, '%m/%d/%Y %H:%M:%S %p').strftime("%H")
@@ -69,7 +69,7 @@ df["OFFENSE_CODE_GROUP"] = df["INCIDENT_TYPE_DESCRIPTION"].apply(legacyToNew)
 
 data = {}
 data["id"] = mergeCols(df["COMPNOS"],df1["INCIDENT_NUMBER"])
-data["offense_type"] = mergeCols(df["OFFENSE_CODE_GROUP"],df1["OFFENSE_CODE_GROUP"])
+data["category"] = mergeCols(df["OFFENSE_CODE_GROUP"],df1["OFFENSE_CODE_GROUP"])
 data["year"] = mergeCols(df["Year"],df1["YEAR"])
 data["month"]= mergeCols(df["Month"],df1["MONTH"])
 data["day_of_Week"]= mergeCols(df["DAY_WEEK"], df1["DAY_OF_WEEK"])
@@ -80,18 +80,15 @@ data["location"] = mergeCols(df["Location"], df1["Location"])
 data["street"] = mergeCols(df["STREETNAME"], df1["STREET"])
 data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
 
-# crime = pd.DataFrame(data)
+crime = pd.DataFrame(data)
 
-# Creating Hour Field, Classifying Crime, Saving base level dataset
-crime["hour"] = crime["date"].apply(toHour)
-crime["neighborhoods"] = crime["location"].apply(classify)
+# Creating time Field, Classifying Crime, Saving base level dataset
+crime["time"] = crime["date"].apply(totime)
+crime["neighborhood"] = crime["location"].apply(classify)
 crime.to_csv("./csv_files/boston_crime.csv")
 
 # Aggregating Dataset
-aggregate = crime.groupby(["neighborhoods","offense_type","hour"]).agg('count')
-aggregate.rename(columns={'id':'count'}, inplace=True)
+aggregate = crime.groupby(["neighborhood","category","time"]).agg('count')
+aggregate.rename(columns={'id':'value'}, inplace=True)
 aggregate.reset_index(inplace=True)
-aggregate[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
-
-
-
+aggregate[["neighborhood","category","time","value"]].to_csv("./csv_files/crime.csv")

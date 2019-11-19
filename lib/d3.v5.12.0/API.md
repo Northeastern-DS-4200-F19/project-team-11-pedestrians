@@ -1229,8 +1229,8 @@ A calculator for humanity’s peculiar conventions of time.
 * [d3.timeSeconds](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeSecond), [d3.utcSeconds](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeSecond) - aliases for second.range.
 * [d3.timeMinute](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeMinute), [d3.utcMinute](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeMinute) - the minute interval.
 * [d3.timeMinutes](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeMinute), [d3.utcMinutes](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeMinute) - aliases for minute.range.
-* [d3.timeHour](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeHour), [d3.utcHour](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeHour) - the hour interval.
-* [d3.timeHours](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeHour), [d3.utcHours](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeHour) - aliases for hour.range.
+* [d3.timetime](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timetime), [d3.utctime](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timetime) - the time interval.
+* [d3.timetimes](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timetime), [d3.utctimes](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timetime) - aliases for time.range.
 * [d3.timeDay](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeDay), [d3.utcDay](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeDay) - the day interval.
 * [d3.timeDays](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeDay), [d3.utcDays](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeDay) - aliases for day.range.
 * [d3.timeWeek](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeWeek), [d3.utcWeek](https://github.com/d3/d3-time/blob/v1.0.11/README.md#timeWeek) - aliases for sunday.

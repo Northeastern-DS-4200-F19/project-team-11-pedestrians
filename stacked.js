@@ -1,5 +1,5 @@
   //   var minSafetyLevel = 0;
-  //   var maxSafetyLevel = d3.max(data, function(d){ return d.crimecount;});
+  //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
   //
   var width  = 1000;
   var height = 300;
@@ -55,14 +55,14 @@ function stackChart(deets){
   var xScale = d3.scaleBand()
                  .domain(neighborhoods)
                  // Shifting by 50 so the last category label doesn't get cut off
-                 .range([0, width - margin.right]);
+                 .range([0, width - margin.right - 100]);
   //
     var yScale = d3.scaleLinear()
                    .domain([0, 100])
                    .range([height, margin.top]);
   
     var z = d3.scaleOrdinal(d3.schemeAccent)
-                    // .range(["red","orange","yellow","green","blue","purple","indigo","white","black","grey"])
+                    // .range(["red","orange","yellow","green","blue","purple","indigo","white","black","grey","navy","indigo","brown","maroon"])
                    .domain([...offenses]);
 
   var xAxis = d3.axisBottom(xScale);
@@ -103,10 +103,10 @@ function stackChart(deets){
     bars.enter()
         .append("rect")
         .merge(bars)
+        .attr("class","derp")
         .attr("x", function (d) { return xScale(d.data.neighborhood) + margin.left + 3;})
         .attr("width",xScale.bandwidth() - 3)
         .attr("y", function (d) { return yScale(d[1]) - margin.bottom})
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
-        .attr("stroke","white")
-   
+        .attr("stroke","white")   
   }

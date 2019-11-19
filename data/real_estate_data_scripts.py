@@ -24,40 +24,43 @@ def getNCodes():
                 result.append(row_result)
             else:
                 continue
-        else:
-            continue
     return result
 
 quandl.ApiConfig.api_key = os.getenv("QUANDLAPIKEY")
+
+def getIndicators():
+    result = []
+    for row in df1.iterrows():
+        row_result = []
+        if "Median Listing Price Per Square Foot" == row[1][0].split(" - ")[0]:
+            row_result.append(row[1][0].split(" - ")[1].split("|")[0])
+            row_result.append(row[1][0].split(" - ")[1].split("|")[1])
+            result.append(row_result)
+        else:
+            continue
+    return result
 
 ##TODO data too large to completely send over http
 ##TODO convert DateValues Properly
 def realEstateData():
     n = getNCodes()
+    indicators = getIndicators()
     result = []
     for row in n:
-        try:
-            code = "ZILLOW/N%s_MSPFAH" % (row[1])
-            realEstate = quandl.get(code)
-            realEstate["neighborhood"] = row[0]
-            realEstate["category"] = "buy"
-            result.append(realEstate)
-            rent_code = "ZILLOW/N%s_MRPFAH" % (row[1])
-            rent_realEstate = quandl.get(rent_code)
-            rent_realEstate["neighborhood"] = row[0]
-            rent_realEstate["category"] = "rent"
-            result.append(rent_realEstate)
-        except:
-            print(row[0], code)
-            continue
+        for indicator in indicators:
+            try:
+                code = "ZILLOW/N%s_%s" % (row[1],indicator[1])
+                realEstate = quandl.get(code)
+                realEstate["neighborhood"] = row[0]
+                realEstate["category"] = indicator[0]
+                result.append(realEstate)
+            except:
+                print(row[0], code)
+                continue
     data = pd.concat(result)
     return data
 
 real = realEstateData()
 sorted_real = real.sort_values(by="Date")
-# aggregate = sorted_real.groupby(["neighborhood","category"]).agg('mean')
-# agg2 = aggregate.groupby(["neighborhood","category"],as_index=False).apply(lambda x:x.nlargest(5,'value'))
-# agg2.rename(columns={'value':'price_per_foot'}, inplace=True)
-# agg2.reset_index(inplace=True)
-# agg2[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
+sorted_real.rename(columns={'Date':'time','Value':'value'}, inplace=True)
 sorted_real.to_csv("./csv_files/real_estate.csv")
