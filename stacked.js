@@ -1,5 +1,12 @@
-function stackChart(data){
-    console.log("testing" + data)
+function stackChart(deets){
+  console.log(deets)
+  var data = d3.nest()
+  .key(function(d) { return d.hour; })
+  .key(function(d) { return d.offenseType; })
+  .rollup(function(v) { return d3.sum(v, function(d) { return d.crimecount; }); })
+  .entries(deets)
+  console.log(data)
+    // console.log("testing" + data)
     var minSafetyLevel = 0;
     var maxSafetyLevel = d3.max(data, function(d){ return d.crimecount;});
 

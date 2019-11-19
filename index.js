@@ -21,7 +21,8 @@ var promises = [
                 return {
                             hour: parseInt(d.hour),
                             crimecount: + d.count,
-                            neighborhood: d.neighborhoods
+                            neighborhood: d.neighborhoods,
+                            offenseType: d.offense_type.split(' ')[0]
                           };
                         }),
         d3.csv("./data/csv_files/real_estate.csv",function(d){
@@ -88,7 +89,7 @@ const filterLine = (d) => {
       return rArray.sort((a,b) => a.hour > b.hour);
     } else {
       return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"hour":item.hour,"crimecount": item.crimecount}
+        return {"hour":parseInt(item.hour),"crimecount": item.crimecount}
       }).sort((a,b) => a.hour > b.hour);
     }
   } else {
