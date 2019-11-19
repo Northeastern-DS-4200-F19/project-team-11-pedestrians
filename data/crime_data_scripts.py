@@ -5,10 +5,14 @@ from datetime import datetime
 import json
 import os
 from shapely.geometry import shape, Point
-## Aggregating Legacy and Current Crime Tracking System
 
-df = pd.read_csv("./csv_files/cs_crime_i.csv", low_memory=False)
-df1 = pd.read_csv("./csv_files/cs_crime_ii.csv", low_memory=False)
+## Aggregating Legacy and Current Crime Tracking System
+df1 = pd.read_csv("https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/tmp3bg1m024.csv")
+df = pd.read_csv("https://data.boston.gov/dataset/eefad66a-e805-4b35-b170-d26e2028c373/resource/ba5ed0e2-e901-438c-b2e0-4acfc3c452b9/download/crime-incident-reports-july-2012-august-2015-source-legacy-system.csv", low_memory=False)
+## pulling test data from geojson
+geo = {}
+with open('./json_files/boston.geojson') as constraints:
+    geo = json.load(constraints)
 
 ## defining functions
 def colComparison(df1,df2,colname1,colname2):
@@ -26,9 +30,25 @@ def mergeCols(col1,col2):
 def toHour(d):
     result = 0
     try:
-        result = datetime.strptime(d, '%m/%d/%Y %H:%M').strftime("%H")
+        result = datetime.strptime(d, '%m/%d/%Y %H:%M:%S %p').strftime("%H")
     except:
-        result = datetime.strptime(d, '%Y-%m-%d %H:%M:%S %p').strftime("%H")
+        result = datetime.strptime(d, '%Y-%m-%d %H:%M:%S').strftime("%H")
+    return result
+
+## classifying crime to neighborhoods
+def classify(location):
+    result = ""
+    y = float(location.split(", ")[0][1:len(location.split(", ")[0])])
+    x = float(location.split(", ")[1][0:len(location.split(", ")[1])-1])
+    point = Point(y,x)
+    for feature in geo["features"]:
+        nb_name = feature["properties"]["Name"]
+        area = shape(feature["geometry"])
+        if(area.contains(point)):
+            result = nb_name
+            break
+        else:
+            continue
     return result
 
 data = {}
@@ -48,40 +68,20 @@ crime = pd.DataFrame(data)
 
 ## Classifying Neighborhoods
 
-## pulling test data from geojson
-geo = {}
-with open('./json_files/boston.geojson') as constraints:
-    geo = json.load(constraints)
 
-## classifying crime to neighborhoods
-def classify(location):
-    result = ""
-    y = float(row[1][9].split(", ")[0][1:len(row[1][9].split(", ")[0])])
-    x = float(row[1][9].split(", ")[1][0:len(row[1][9].split(", ")[1])-1])
-    point = point(y,x)
-    for feature in geo["features"]:
-        nb_name = feature["properties"]["Name"]
-        area = shape(feature["geometry"])
-        if(area.contains(point)):
-            result = nb_name
-            break
-        else:
-            continue
-    return result
 
-# crime["neighborhoods"] = crime["location"].apply(location)
+## Creating Hour Field, Classifying Crime, Saving base level dataset
+crime["hour"] = crime["date"].apply(toHour)
+crime["neighborhoods"] = crime["location"].apply(classify)
+crime.to_csv("./csv_files/boston_crime.csv")
 
-## Creating Hour Field
-# crime["hour"] = crime["date"].apply(toHour)
 ## Aggregating Dataset
-df = pd.read_csv("./csv_files/crimes_with_neighborhoods.csv", low_memory=False)
-df["hour"] = df["date"].apply(toHour)
-aggregate = df.groupby(["neighborhoods","offense_type","hour"]).agg('count')
+aggregate = crime.groupby(["neighborhoods","offense_type","hour"]).agg('count')
 agg2 = aggregate.groupby(["neighborhoods","offense_type","hour"],as_index=False).apply(lambda x:x.nlargest(5,'id'))
 agg2.rename(columns={'id':'count'}, inplace=True)
 agg2.reset_index(inplace=True)
-print(agg2.columns)
-agg2[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime_test.csv")
+agg2[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
+
 
 # with open('boston.geojson') as constraints:
 #     geo = json.load(constraints)
