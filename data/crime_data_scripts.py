@@ -69,10 +69,6 @@ data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
 
 crime = pd.DataFrame(data)
 
-## Classifying Neighborhoods
-
-
-
 ## Creating Hour Field, Classifying Crime, Saving base level dataset
 crime["hour"] = crime["date"].apply(toHour)
 crime["neighborhoods"] = crime["location"].apply(classify)
@@ -83,6 +79,3 @@ agg2 = aggregate.groupby(["neighborhoods","offense_type","hour"],as_index=False)
 agg2.rename(columns={'id':'count'}, inplace=True)
 agg2.reset_index(inplace=True)
 agg2[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
-
-
-
