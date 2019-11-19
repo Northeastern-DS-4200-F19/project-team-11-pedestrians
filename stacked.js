@@ -3,7 +3,7 @@ function stackChart(data){
     var minSafetyLevel = 0;
     var maxSafetyLevel = d3.max(data, function(d){ return d.crimecount;});
 
-    var width  = 1200;
+    var width  = 1000;
     var height = 500;
     var margin = {
       top: 30,

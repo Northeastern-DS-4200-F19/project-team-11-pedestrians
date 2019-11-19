@@ -1,8 +1,3 @@
-
-import json
-## pulling test data from geojson
-geo = {}
-
 with open('boston.geojson') as constraints:
     geo = json.load(constraints)
     with open("aggregates.json") as agg:

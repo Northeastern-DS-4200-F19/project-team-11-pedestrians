@@ -4,8 +4,8 @@ function scatterplot(data){
   var minSafetyLevel = 0;
   var maxSafetyLevel = 10;
 
-  var width  = 500;
-  var height = 300;
+  var width  = 1000;
+  var height = 600;
   var margin = {
     top: 30,
     bottom: 30,

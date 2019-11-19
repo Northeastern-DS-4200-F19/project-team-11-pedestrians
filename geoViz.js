@@ -16,7 +16,7 @@ const graph = d3.select("#vis-svg")
               .attr("margin",5)
               .attr("transform", `translate(${margin.left},${margin.bottom})`);
 
-//lon and lat to x and y              
+//lon and lat to x and y
  var albersProjection = d3.geoAlbers()
     .scale( 190000 )
     .rotate( [71.057,0] )
@@ -70,7 +70,7 @@ const update = (info) => {
       state.setN = d["properties"]["Name"];
       tip.show(d,target);
       d3.select(target).attr("stroke","blue");
-      
+
     };
 
     var hide = (d,target) => {

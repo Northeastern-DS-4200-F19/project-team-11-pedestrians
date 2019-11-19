@@ -9,37 +9,9 @@ from dotenv import load_dotenv
 import os
 import pickle
 import quandl
-engine = create_engine('sqlite:///boston.db')
 
-# df = pd.read_csv("../data/cs_crime_i.csv", low_memory=False)
-# df1 = pd.read_csv("../data/cs_crime_ii.csv", low_memory=False)
 df2 = pd.read_csv("./neighborhood.txt",delimiter= "|", low_memory=False)
 df3 = pd.read_csv("../data/indicators.csv", low_memory=False)
-
-def colComparison(df1,df2,colname1,colname2):
-    result = []
-    for item in set(df1[colname1]):
-        if item.upper() in set(df2[colname2]):
-            result.append(item)
-        else:
-            continue
-    return result
-
-def mergeCols(col1,col2):
-    return np.concatenate((col1.values, col2.values))
-
-# data = {}
-# data["id"] = mergeCols(df["COMPNOS"],df1["INCIDENT_NUMBER"])
-# data["offense_type"] = mergeCols(df["INCIDENT_TYPE_DESCRIPTION"],df1["OFFENSE_DESCRIPTION"])
-# data["year"] = mergeCols(df["Year"],df1["YEAR"])
-# data["month"]= mergeCols(df["Month"],df1["MONTH"])
-# data["day_of_Week"]= mergeCols(df["DAY_WEEK"], df1["DAY_OF_WEEK"])
-# data["ucr_oart"] = mergeCols(df["UCRPART"], df1["UCR_PART"])
-# data["lat"] = mergeCols(df["X"], df1["Lat"])
-# data["long"] = mergeCols(df["Y"] , df1["Long"])
-# data["location"] = mergeCols(df["Location"], df1["Location"])
-# data["street"] = mergeCols(df["STREETNAME"], df1["STREET"])
-# data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
 
 # with open('neighborhoods.geojson') as f:
 #     data = json.load(f)

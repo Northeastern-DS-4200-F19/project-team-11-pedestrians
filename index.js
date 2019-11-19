@@ -2,7 +2,7 @@ const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green"}
 var state = {view:'crime',neighborhood:"", set setN(x) {
   this.neighborhood = x;
-  // removeChart();
+  removeChart();
   lineChart(filterLine(db[lineIndex]));
   stackChart(filterBar(db[4]));
 }};
@@ -17,27 +17,27 @@ var lineIndex = 0;
 var db = []
 //load all datasets here
 var promises = [
-        d3.csv("./data/aggregatecrimev2.csv",function(d){
+        d3.csv("./data/csv_files/crime.csv",function(d){
                 return {
                             hour: parseInt(d.hour),
                             crimecount: + d.count,
                             neighborhood: d.neighborhoods
                           };
                         }),
-        d3.csv("./data/real_estate.csv",function(d){
+        d3.csv("./data/csv_files/real_estate.csv",function(d){
           return {
                       hour: d.Date,
                       crimecount: + d.Value,
                       neighborhood: d.neighborhood
                     };
                   }),
-        d3.csv("./data/ChesterSquareSurveyResponses.csv",function(d) {
+        d3.csv("./data/csv_files/ChesterSquareSurveyResponses.csv",function(d) {
                     return {
                       visittime: d.visittime,
                       safetylevel: + d.safetylevel
                     }}),
-        d3.json("./data/bostonv2.geojson"),
-        d3.csv("./data/crimeV4.csv",function(d){
+        d3.json("./data/json_files/bostonv2.geojson"),
+        d3.csv("./data/csv_files/crime.csv",function(d){
           return {
                       crimecount: + d.count,
                       neighborhood: d.neighborhoods,
@@ -45,6 +45,7 @@ var promises = [
                     };
                   }),
     ]
+  console.log(db[2]);
 
 const filterBar = (d) => {
   var result = {}
@@ -67,6 +68,7 @@ const filterBar = (d) => {
     }).sort((a,b) => a.crimecount >= b.crimecount);
   }
 }
+
 
 const filterLine = (d) => {
   var result = {}
