@@ -80,10 +80,9 @@ crime["neighborhoods"] = crime["location"].apply(classify)
 
 # Aggregating Dataset
 aggregate = crime.groupby(["neighborhoods","offense_type","hour"]).agg('count')
-agg2 = aggregate.groupby(["neighborhoods","offense_type","hour"],as_index=False).apply(lambda x:x.nlargest(5,'id'))
-agg2.rename(columns={'id':'count'}, inplace=True)
-agg2.reset_index(inplace=True)
-agg2[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
+aggregate.rename(columns={'id':'count'}, inplace=True)
+aggregate.reset_index(inplace=True)
+aggregate[["neighborhoods","offense_type","hour","count"]].to_csv("./csv_files/crime.csv")
 
 
 

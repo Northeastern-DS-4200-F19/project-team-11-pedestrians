@@ -37,7 +37,7 @@ def realEstateData():
     result = []
     for row in n:
         try:
-            code = "ZILLOW/N%s_MLPFAH" % (row[1])
+            code = "ZILLOW/N%s_MSPFAH" % (row[1])
             realEstate = quandl.get(code)
             realEstate["neighborhood"] = row[0]
             realEstate["category"] = "buy"
@@ -48,6 +48,7 @@ def realEstateData():
             rent_realEstate["category"] = "rent"
             result.append(rent_realEstate)
         except:
+            print(row[0], code)
             continue
     data = pd.concat(result)
     return data
