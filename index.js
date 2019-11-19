@@ -17,7 +17,7 @@ var lineIndex = 0;
 var db = []
 //load all datasets here
 var promises = [
-        d3.csv("./data/csv_files/crime_test.csv",function(d){
+        d3.csv("./data/csv_files/crime.csv",function(d){
                 return {
                             hour: parseInt(d.hour),
                             crimecount: + d.count,
@@ -37,7 +37,7 @@ var promises = [
                       safetylevel: + d.safetylevel
                     }}),
         d3.json("./data/json_files/bostonv2.geojson"),
-        d3.csv("./data/csv_files/crime_test.csv",function(d){
+        d3.csv("./data/csv_files/crime.csv",function(d){
           return {
                       crimecount: + d.count,
                       neighborhood: d.neighborhoods,
