@@ -132,6 +132,8 @@ stateBttns.forEach(btn => {
         d3.selectAll(".x_axis").remove()
         d3.selectAll(".y_axis").remove()
         lineChart(filterLine(db[lineIndex]))
+        d3.selectAll("#vis5").style("fill", "red")
+        d3.selectAll("#vis4").style("fill", "red")
         stackChart(filterBar(db[4]));
     });
 });
