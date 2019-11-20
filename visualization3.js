@@ -55,16 +55,16 @@ console.log(data)
             .call(yAxis);
 
   var paths = chartGroup
+            .datum(data)
             .append("path")
             .attr("class","derp")
-            .datum(data)
             .attr("fill", "none")
             .attr("stroke", colors[state["view"]])
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
-                     .x(function (d) { return xScale(parseInt(d.key)) + margin.left; })
-                     .y(function (d) { return yScale(d.value) + margin.top; }));
-
+            .x(function (d) { return xScale(parseInt(d.key)) + margin.left; })
+            .y(function (d) { return yScale(d.value) + margin.top; }));
+      
   paths.exit().remove();
   chartGroup.exit().remove()
 }

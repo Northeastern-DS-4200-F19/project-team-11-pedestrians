@@ -136,7 +136,7 @@ stateBttns.forEach(btn => {
         d3.selectAll(".x_axis").remove()
         d3.selectAll(".y_axis").remove()
         geoViz(db[3])
-        lineChart(filterLine(db[lineIndex]))
+        lineChart(filterLine(db[lineIndex]));
         stackChart(filterBar(db[lineIndex]));
     });
 });

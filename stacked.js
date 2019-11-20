@@ -46,7 +46,7 @@ function stackChart(deets){
   var svg = d3.select('#vis5')
               .attr('width' , width)
               .attr('height', height)
-              .style('background', '#efefef');
+              // .style('background', '#efefef');
 
   var chartGroup = svg.append('g')
                         .append('svg')
@@ -87,12 +87,22 @@ function stackChart(deets){
     var group = chartGroup
                 .append("svg" )
                 .selectAll("g.layer")
-                .data(main_data, d => d.key)
+                .data(main_data, d => d.key, e => e.data.neighborhood)
                 .enter()
                 .append("g")
                 // .merge(group)
                 .classed("layer",true)
                 .attr("fill", d => z(d.key))
+                .attr("stroke", (d,e) => {
+                  if (e == state.neighborhood) {
+                    return "blue"
+                  } else {
+                    return "black"
+                  }
+                })
+                .on("click", d => {
+                  console.log(d.key);
+                })
       
                 // .attr("class", "derp")
 
@@ -104,9 +114,15 @@ function stackChart(deets){
         .append("rect")
         .merge(bars)
         .attr("class","derp")
+        // .attr("class",(d,e) => {
+        //   if(e == state.neighborhood) {
+        //     return `${d.key} highlighted`;
+        //   }
+        //   return d.key;
+        // })
         .attr("x", function (d) { return xScale(d.data.neighborhood) + margin.left + 3;})
         .attr("width",xScale.bandwidth() - 3)
         .attr("y", function (d) { return yScale(d[1]) - margin.bottom})
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
-        .attr("stroke","white")   
+ 
   }

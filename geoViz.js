@@ -13,14 +13,12 @@ const graphWidth = width - margin.left - margin.right;
 const canvas = d3.select("#vis-svg")
               .attr("height",height)
               .attr("width",width)
-              // .attr("margin",5)
               .attr("border","black")
               .append("rect")
               .attr("x",0)
               .attr("y",0)
               .attr("height",height)
               .attr("width",width)
-              // .attr("margin",5)
               .attr("stroke","black")
               .attr("stroke-width","border")
               .attr("fill","none")
@@ -52,7 +50,6 @@ const update = (info) => {
 
     //removing stuff
     paths.exit().remove();
-
     //adding stuff
     paths.enter()
           .append('path')
@@ -74,14 +71,13 @@ const update = (info) => {
               return 1
             }
           })
-          .on("mouseover",function(d){show(d,this)})
-          .on("mouseout",function(d){hide(d,this)})
+          .on("click",function(d){show(d,this)})
+          // .on("mouseout",function(d){hide(d,this)})
 
     var show = (d,target) => {
       state.setN = d["properties"]["Name"];
       tip.show(d,target);
       d3.select(target).attr("stroke","blue");
-
     };
 
     var hide = (d,target) => {
