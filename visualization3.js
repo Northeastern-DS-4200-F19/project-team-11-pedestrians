@@ -5,7 +5,7 @@ function lineChart(deets){
               .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
               .entries(deets)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
-
+console.log(data)
   var width  = 600;
   var height = 300;
   var margin = {
@@ -55,16 +55,16 @@ function lineChart(deets){
             .call(yAxis);
 
   var paths = chartGroup
+            .datum(data)
             .append("path")
             .attr("class","derp")
-            .datum(data)
             .attr("fill", "none")
             .attr("stroke", colors[state["view"]])
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
-                     .x(function (d) { return xScale(parseInt(d.key)) + margin.left; })
-                     .y(function (d) { return yScale(d.value) + margin.top; }));
-
+            .x(function (d) { return xScale(parseInt(d.key)) + margin.left; })
+            .y(function (d) { return yScale(d.value) + margin.top; }));
+      
   paths.exit().remove();
   chartGroup.exit().remove()
 }

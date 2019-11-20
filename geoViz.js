@@ -48,13 +48,14 @@ const update = (info) => {
               <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
               </div>
               </div>`
-
-            });
+            })
+            .attr("x", width).attr("y", height)
   var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
   var daMax = Math.max(...stuff);
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
   graph.call(tip);
+  
 
     //removing stuff
     paths.exit().remove();
