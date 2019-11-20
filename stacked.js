@@ -4,7 +4,7 @@
   var width  = 1000;
   var height = 600;
     var margin = {
-      top: 30,
+      top: 20,
       bottom: 115,
       left: 50,
       right: 75
