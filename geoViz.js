@@ -74,19 +74,19 @@ const update = (info) => {
               return 1
             }
           })
-          .on("mouseover",function(d){show(d,this)})
-          .on("mouseout",function(d){hide(d,this)})
+          .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
+          .on("click",function(d){show(d,this)})
+          .on("mouseout",function(d){hide(d,this);});
 
     var show = (d,target) => {
       state.setN = d["properties"]["Name"];
       tip.show(d,target);
       d3.select(target).attr("stroke","blue");
-
     };
 
     var hide = (d,target) => {
       state.setN = "";
-      tip.hide(d,target);
+      tip.hide(d);
       d3.select(target).attr("stroke","grey");
     };
 }
