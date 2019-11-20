@@ -42,7 +42,13 @@ const update = (info) => {
   var tip = d3.tip()
             .attr("class","tip")
             .html(d => {
-              return `<p class="tool"><span>${d["properties"]["Name"]}</span><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>`
+              return `<div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+              <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
+              <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
+              </div>
+              </div>`
+
             });
   var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
   var daMax = Math.max(...stuff);
@@ -86,7 +92,7 @@ const update = (info) => {
 
     var hide = (d,target) => {
       state.setN = "";
-      tip.hide(d);
+      tip.hide(d,target);
       d3.select(target).attr("stroke","grey");
     };
 }

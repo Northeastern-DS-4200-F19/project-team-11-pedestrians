@@ -7,12 +7,12 @@
       top: 20,
       bottom: 115,
       left: 50,
-      right: 75
+      right: 100
     };
 
 function stackChart(deets){
   console.log(deets)
-  var neighborhoods = [... new Set(deets.map(d => d.neighborhood))]
+  var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
   var offenses = [... new Set(deets.reduce((a,b) => {
     let keys = Object.keys(b)
     keys.pop()
@@ -61,7 +61,7 @@ function stackChart(deets){
                    .domain([0, 100])
                    .range([height - margin.bottom - margin.top, margin.top]);
 
-    var z = d3.scaleOrdinal(d3.schemeAccent)
+    var z = d3.scaleOrdinal(d3.schemeTableau10)
                     // .range(["red","orange","yellow","green","blue","purple","indigo","white","black","grey","navy","indigo","brown","maroon"])
                    .domain([...offenses]);
 
