@@ -131,7 +131,7 @@ function stackChart(deets){
             .attr("cy", (d,i) => y(i * 5) - 100)
             .attr("fill", (d) => z(d.key))
       
-      var texts = legends.selectAll("circle > text").data(main_data, d => d.key)
+      var texts = legends.selectAll("g > .stuff").data(main_data, d => d.key)
           texts.enter()
               .append("text")
               .merge(texts)

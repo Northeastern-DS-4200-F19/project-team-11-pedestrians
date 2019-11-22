@@ -23,7 +23,7 @@ function lineChart(deets){
               // .append('svg')
               .attr('width' , width)
               .attr('height', height)
-              .style('background', '#efefef');
+              // .style('background', '#efefef');
 
   var chartGroup = svg.append('g')
   					          .append('svg')

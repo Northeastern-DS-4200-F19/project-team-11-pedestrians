@@ -12,6 +12,7 @@ var state = {view:'crime',neighborhood:["Allston"], data: {"crime": null,"demogr
 }};
 
 const removeChart = () => {
+  d3.selectAll(".stuff").remove()
   d3.selectAll(".derp").remove()
   d3.selectAll(".x_axis").remove()
   d3.selectAll(".y_axis").remove()
@@ -95,9 +96,9 @@ const filterLine = (d) => {
   } else if (state.view === "real_estate") {
     return d.map((item) => {
             return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value / 1000}
-          }).sort((a,b) => a.time > b.time);
+          }).sort((a,b) => a.time - b.time);
  } else {
-  return d
+  return d.sort((a,b) => a.category - b.category)
  }
 }
 
