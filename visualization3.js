@@ -1,5 +1,4 @@
 function lineChart(deets){
-  console.log(deets)
   var data = d3.nest()
               .key(function(d) { return d.time; })
               .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })

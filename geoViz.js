@@ -74,15 +74,15 @@ const update = (deets) => {
               return color(0);
             }})
           .attr("stroke",(d) => {
-            if(d.key === state["neighborhood"]) {
+            if(state["neighborhood"].includes(d.properties.Name)) {
               return "blue"
             } else {
               return "grey"
             }
           })
           .attr("stroke-width",(d) => {
-            if(d.key === state["neighborhood"]) {
-              return 5
+            if(state["neighborhood"].includes(d.properties.Name)) {
+              return 3
             } else {
               return 1
             }
@@ -94,13 +94,13 @@ const update = (deets) => {
     var show = (d,target) => {
       state.setN = d.properties.Name;
       // tip.show(d,target);
-      d3.select(target).attr("stroke","blue");
+      // d3.select(target).attr("stroke","blue");
     };
 
       var hide = (d,target) => {
         state.removeN = [];
         // tip.hide(d);
-        d3.select(target).attr("stroke","grey");
+        // d3.select(target).attr("stroke","grey");
       };
 }
 

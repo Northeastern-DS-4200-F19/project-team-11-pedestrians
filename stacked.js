@@ -86,7 +86,7 @@ function stackChart(deets){
     var group = chartGroup
                 .append("svg" )
                 .selectAll("g.layer")
-                .data(main_data, d => d.key, e => e.data.neighborhood)
+                .data(main_data, d => d)
                 .enter()
                 .append("g")
                 // .merge(group)
@@ -113,13 +113,18 @@ function stackChart(deets){
         .attr("width",xScale.bandwidth() - 3)
         .attr("y", function (d) { return yScale(d[1])+margin.top})
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
-        // .attr("stroke", (d,e) => {
-        //   if(state.neighborhood = e) {
-        //     return "blue"
-        //   } else {
-        //     return "white"
-        //   }
-        // })
+        .attr("stroke", (d,e) => {
+          if(state.neighborhood.includes(d.data.neighborhood)) {
+            return "black"
+          } else {
+            return "white"
+          }
+        }).on("click", d => {
+          state.setN = d.data.neighborhood;
+        })
+        .on("mouseout", (d,e) => {
+          state.removeN = d
+        })
 
       var legends = chartGroup.selectAll("g.layer").append("g")
       var circles = legends.selectAll("g.layer > circle").data(main_data, d => d.key)
