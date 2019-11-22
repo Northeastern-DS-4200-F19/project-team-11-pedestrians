@@ -134,7 +134,6 @@ var btn1 = document.querySelector(".btn1")
 var btn2 = document.querySelector(".btn2")
 
 btn1.addEventListener("click" , (e) => {
-  console.log(0)
   state["view"] = btn1.attributes["data-activity"].nodeValue;
   lineIndex = 0
   d3.selectAll(".derp").remove()
@@ -146,7 +145,6 @@ btn1.addEventListener("click" , (e) => {
 })
 
 btn2.addEventListener("click" , (e) => {
-  console.log(1)
   state["view"] = btn2.attributes["data-activity"].nodeValue;
   lineIndex = 1
   d3.selectAll(".derp").remove()

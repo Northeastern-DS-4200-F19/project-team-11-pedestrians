@@ -1,14 +1,11 @@
-  //   var minSafetyLevel = 0;
-  //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
-  //
-  var width  = 1000;
-  var height = 600;
-    var margin = {
-      top: 20,
-      bottom: 115,
-      left: 50,
-      right: 100
-    };
+var width  = 1000;
+var height = 600;
+var margin = {
+  top: 20,
+  bottom: 115,
+  left: 50,
+  right: 100
+};
 
 function stackChart(deets){
   console.log(deets)
@@ -105,22 +102,22 @@ function stackChart(deets){
         .append("rect")
         .merge(bars)
         .attr("class","derp")
-        .attr("id", (d,e) => {
-          if(state.neighborhood.includes(e)) {
-            return e + " highlighted"
-          } else {
-            return e;
-          }
-        })
+        // .attr("id", (d,e) => {
+        //   if(state.neighborhood.includes(e)) {
+        //     return e + " highlighted"
+        //   } else {
+        //     return e;
+        //   }
+        // })
         .attr("x", function (d) { return xScale(d.data.neighborhood) + margin.left + 20;})
         .attr("width",xScale.bandwidth() - 3)
         .attr("y", function (d) { return yScale(d[1])+margin.top})
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
-        .attr("stroke", (d,e) => {
-          if(state.neighborhood = e) {
-            return "blue"
-          } else {
-            return "white"
-          }
-        })
+        // .attr("stroke", (d,e) => {
+        //   if(state.neighborhood = e) {
+        //     return "blue"
+        //   } else {
+        //     return "white"
+        //   }
+        // })
   }
