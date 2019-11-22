@@ -102,13 +102,6 @@ function stackChart(deets){
         .append("rect")
         .merge(bars)
         .attr("class","derp")
-        // .attr("id", (d,e) => {
-        //   if(state.neighborhood.includes(e)) {
-        //     return e + " highlighted"
-        //   } else {
-        //     return e;
-        //   }
-        // })
         .attr("x", function (d) { return xScale(d.data.neighborhood) + margin.left + 20;})
         .attr("width",xScale.bandwidth() - 3)
         .attr("y", function (d) { return yScale(d[1])+margin.top})
@@ -142,8 +135,8 @@ function stackChart(deets){
           texts.enter()
               .append("text")
               .merge(texts)
-              .attr("x", width - 120)
-              .attr("y", (d,i) => y(i * 5) - 100)
+              .attr("x", width - 130)
+              .attr("y", (d,i) => y(i * 5) - 97)
               .attr("text-anchor","begin")
               .text(d => d.key)
               .attr("font-size","10")
