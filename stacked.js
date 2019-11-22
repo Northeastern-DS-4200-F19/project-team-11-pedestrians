@@ -10,28 +10,28 @@ var margin = {
 function stackChart(deets){
   console.log(deets)
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
-  var offenses = [... new Set(deets.reduce((a,b) => {
+  var categories = [... new Set(deets.reduce((a,b) => {
     let keys = Object.keys(b)
     keys.pop()
     return a.concat(keys)
   },[]))]
 
-  offenses.pop()
+  categories.pop()
 
   var totals = {}
   deets.forEach(obj => {
     total = 0
     let keys = Object.keys(obj)
     keys.pop()
-    keys.forEach(offense => total += obj[offense])
+    keys.forEach(category => total += obj[category])
     totals[obj.neighborhood] = total
   });
 
   console.log(neighborhoods)
-  console.log(offenses)
+  console.log(categories)
   console.log(totals)
 
-  var main_data = d3.stack().keys(offenses).value((d,k) => {
+  var main_data = d3.stack().keys(categories).value((d,k) => {
     if(Object.keys(d).includes(k)) {
       return 100 * d[k]/totals[d.neighborhood]
     } else {
@@ -62,7 +62,7 @@ function stackChart(deets){
       d3.schemeTableau10
       )
                     //.range(["#efefef","orange","yellow","green","blue","purple","indigo","white","black","grey","navy","indigo","brown","maroon"])
-                   .domain([...offenses]);
+                   .domain([...categories]);
 
   var xAxis = d3.axisBottom(xScale);
   //

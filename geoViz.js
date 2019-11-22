@@ -36,23 +36,30 @@ var geoGenerator = d3.geoPath()
     .projection(albersProjection);
 
 //the update function
-const update = (info) => {
-  var tip = d3.tip()
-            .attr("class","tip")
-            .html(d => {
-              return `<div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-              <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
-              <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
-              </div>
-              </div>`
-            })
-            .attr("x", width).attr("y", height)
-  var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
-  var daMax = Math.max(...stuff);
+const update = (deets) => {
+  var info = deets.info
+  // var tip = d3.tip()
+  //           .attr("class","tip")
+  //           .html(d => {
+  //             return `<div class="card blue-grey darken-1">
+  //             <div class="card-content white-text">
+  //             <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
+  //             <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
+  //             </div>
+  //             </div>`
+  //           })
+  //           .attr("x", width).attr("y", height)
+  var stuff = d3.nest()
+                .key(function(d) { return d.neighborhood; })
+                .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
+                .object(deets.data)
+                
+  console.log(stuff)
+  var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key]));
+  console.log(daMax)
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
-  graph.call(tip);
+  // graph.call(tip);
   
 
     //removing stuff
@@ -63,36 +70,40 @@ const update = (info) => {
           .merge(paths)
           .attr('d', geoGenerator)
           .attr("fill",d => {
-            return color(d["properties"][state["view"]])})
+            if(Object.keys(stuff).includes(d.properties.Name)) {
+              return color(stuff[d.properties.Name])
+            } else {
+              return color(0);
+            }})
           .attr("stroke",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
+            if(d.key === state["neighborhood"]) {
               return "blue"
             } else {
               return "grey"
             }
           })
           .attr("stroke-width",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
+            if(d.key === state["neighborhood"]) {
               return 5
             } else {
               return 1
             }
           })
-          .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
+          // .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
           .on("click",function(d){show(d,this)})
           .on("mouseout",function(d){hide(d,this);});
 
-    // var show = (d,target) => {
-    //   state.setN = d["properties"]["Name"];
-    //   tip.show(d,target);
-    //   d3.select(target).attr("stroke","blue");
-    // };
+    var show = (d,target) => {
+      state.setN = d.key;
+      // tip.show(d,target);
+      d3.select(target).attr("stroke","blue");
+    };
 
-    // var hide = (d,target) => {
-    //   state.setN = "";
-    //   tip.hide(d);
-    //   d3.select(target).attr("stroke","grey");
-    // };
+      var hide = (d,target) => {
+        state.setN = "";
+        // tip.hide(d);
+        d3.select(target).attr("stroke","grey");
+      };
 }
 
 const geoViz = (d) => {
