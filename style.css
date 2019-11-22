@@ -17,6 +17,7 @@ h1, h2, h3 {
 
 .derp.highlighted {
 	stroke: width 10;
+	stroke: black;
 }
 
 /* But your visualization should be full-width and full-height */

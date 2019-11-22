@@ -40,13 +40,20 @@ const update = (info) => {
   var tip = d3.tip()
             .attr("class","tip")
             .html(d => {
-              return `<p class="tool"><span>${d["properties"]["Name"]}</span><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>`
-            });
+              return `<div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+              <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
+              <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
+              </div>
+              </div>`
+            })
+            .attr("x", width).attr("y", height)
   var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
   var daMax = Math.max(...stuff);
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
   graph.call(tip);
+  
 
     //removing stuff
     paths.exit().remove();
@@ -71,20 +78,21 @@ const update = (info) => {
               return 1
             }
           })
+          .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
           .on("click",function(d){show(d,this)})
-          // .on("mouseout",function(d){hide(d,this)})
+          .on("mouseout",function(d){hide(d,this);});
 
-    var show = (d,target) => {
-      state.setN = d["properties"]["Name"];
-      tip.show(d,target);
-      d3.select(target).attr("stroke","blue");
-    };
+    // var show = (d,target) => {
+    //   state.setN = d["properties"]["Name"];
+    //   tip.show(d,target);
+    //   d3.select(target).attr("stroke","blue");
+    // };
 
-    var hide = (d,target) => {
-      state.setN = "";
-      tip.hide(d,target);
-      d3.select(target).attr("stroke","grey");
-    };
+    // var hide = (d,target) => {
+    //   state.setN = "";
+    //   tip.hide(d);
+    //   d3.select(target).attr("stroke","grey");
+    // };
 }
 
 const geoViz = (d) => {

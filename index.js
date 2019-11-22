@@ -5,7 +5,7 @@ var state = {view:'crime',neighborhood:"", set setN(x) {
   removeChart();
   geoViz(db[3])
   lineChart(filterLine(db[lineIndex]));
-  stackChart(filterBar(db[0]));
+  stackChart(filterBar(db[lineIndex]));
 }};
 
 const removeChart = () => {
@@ -127,18 +127,55 @@ const render = () => {
         Promise.all(promises).then(letsGo);
 };
 
-stateBttns.forEach(btn => {
-    btn.addEventListener("click",(e) => {
-        e.preventDefault();
-        state["view"] = btn.attributes["data-activity"].nodeValue;
-        lineIndex = (lineIndex + 1) % 2
-        d3.selectAll(".derp").remove()
-        d3.selectAll(".x_axis").remove()
-        d3.selectAll(".y_axis").remove()
-        geoViz(db[3])
-        lineChart(filterLine(db[lineIndex]));
-        stackChart(filterBar(db[lineIndex]));
-    });
-});
+var btn1 = document.querySelector(".btn1")
+var btn2 = document.querySelector(".btn2")
+
+btn1.addEventListener("click" , (e) => {
+  console.log(0)
+  state["view"] = btn1.attributes["data-activity"].nodeValue;
+  lineIndex = 0
+  d3.selectAll(".derp").remove()
+  d3.selectAll(".x_axis").remove()
+  d3.selectAll(".y_axis").remove()
+  geoViz(db[3])
+  lineChart(filterLine(db[lineIndex]))
+  stackChart(filterBar(db[lineIndex]));
+})
+
+btn2.addEventListener("click" , (e) => {
+  console.log(1)
+  state["view"] = btn2.attributes["data-activity"].nodeValue;
+  lineIndex = 1
+  d3.selectAll(".derp").remove()
+  d3.selectAll(".x_axis").remove()
+  d3.selectAll(".y_axis").remove()
+  geoViz(db[3])
+  lineChart(filterLine(db[lineIndex]))
+  stackChart(filterBar(db[lineIndex]));
+})
+
+// btn3.addEventListener("click" , e => {
+//   state["view"] = btn.attributes["data-activity"].nodeValue;
+//   lineIndex = 0
+//   d3.selectAll(".derp").remove()
+//   d3.selectAll(".x_axis").remove()
+//   d3.selectAll(".y_axis").remove()
+//   geoViz(db[3])
+//   lineChart(filterLine(db[lineIndex]))
+//   stackChart(filterBar(db[lineIndex]));
+// })
+// stateBttns.forEach(btn => {
+//     btn.addEventListener("click",(e) => {
+//         e.preventDefault();
+//         state["view"] = btn.attributes["data-activity"].nodeValue;
+//         lineIndex = (lineIndex + 1) % 2
+//         d3.selectAll(".derp").remove()
+//         d3.selectAll(".x_axis").remove()
+//         d3.selectAll(".y_axis").remove()
+//         geoViz(db[3])
+//         lineChart(filterLine(db[lineIndex]))
+//         stackChart(filterBar(db[lineIndex]));
+//     });
+// });
 
 render();
