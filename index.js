@@ -115,16 +115,19 @@ const filterLine = (d) => {
   }
 }
 
-const letsGo = (d) => {
-        db = d;
-        scatterplot(d[2]);
-        lineChart(filterLine(d[lineIndex]));
-        stackChart(filterBar(d[0]));
-        geoViz(d[3]);
+const render = () => {
+        scatterplot(db[2]);
+        lineChart(filterLine(db[lineIndex]));
+        stackChart(filterBar(db[0]));
+        geoViz(db[3]);
 }
 
-const render = () => {
-        Promise.all(promises).then(letsGo);
+const setData = (d) => {
+  db = d;
+}
+
+const load = () => {
+    Promise.all(promises).then(setData).then(render);
 };
 
 var btn1 = document.querySelector(".btn1")
@@ -154,28 +157,4 @@ btn2.addEventListener("click" , (e) => {
   stackChart(filterBar(db[lineIndex]));
 })
 
-// btn3.addEventListener("click" , e => {
-//   state["view"] = btn.attributes["data-activity"].nodeValue;
-//   lineIndex = 0
-//   d3.selectAll(".derp").remove()
-//   d3.selectAll(".x_axis").remove()
-//   d3.selectAll(".y_axis").remove()
-//   geoViz(db[3])
-//   lineChart(filterLine(db[lineIndex]))
-//   stackChart(filterBar(db[lineIndex]));
-// })
-// stateBttns.forEach(btn => {
-//     btn.addEventListener("click",(e) => {
-//         e.preventDefault();
-//         state["view"] = btn.attributes["data-activity"].nodeValue;
-//         lineIndex = (lineIndex + 1) % 2
-//         d3.selectAll(".derp").remove()
-//         d3.selectAll(".x_axis").remove()
-//         d3.selectAll(".y_axis").remove()
-//         geoViz(db[3])
-//         lineChart(filterLine(db[lineIndex]))
-//         stackChart(filterBar(db[lineIndex]));
-//     });
-// });
-
-render();
+load();
