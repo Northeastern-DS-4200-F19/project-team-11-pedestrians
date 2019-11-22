@@ -1,8 +1,12 @@
 const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green","demographic":"blue"}
 var state = {view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
-  this.neighborhood = x;
+  this.neighborhood = [...this.neighborhood, x];
   removeChart();
+  render()
+}, set removeN(x) {
+  this.neighborhood = []
+  removeChart()
   render()
 }};
 
@@ -85,45 +89,15 @@ const filterBar = (d) => {
 }
 
 const filterLine = (d) => {
-  var result = {}
-  var rArray = []
-  if(lineIndex == 0) {
-    if(state.neighborhood.length == 0) {
-      d.forEach(obj => {
-        if (Object.keys(result).includes(String(obj.time))) {
-          result[obj.time] = result[obj.time] + obj.value
-        } else {
-          result[obj.time] = obj.value
-        }
-      })
-      Object.keys(result).forEach(key => {
-        rArray.push({"time": parseInt(key), "value": result[key]});
-      })
-      return rArray.sort((a,b) => a.time > b.time);
-    } else {
-      return d.filter(obj => state.neighborhood.includes(obj.neighborhood)).map((item) => {
-        return {"time":parseInt(item.time),"value": item.value}
-      }).sort((a,b) => a.time > b.time);
-    }
-  } else {
-    if(state.neighborhood === "") {
-      d.forEach(obj => {
-        if (Object.keys(result).includes(String(obj.time))) {
-          result[obj.time] = result[obj.time] + (obj.value / 1000)
-        } else {
-          result[obj.time] = (obj.value / 1000)
-        }
-      })
-      Object.keys(result).forEach(key => {
-        rArray.push({"time": new Date(key).getFullYear(), "value": result[key]});
-      })
-      return rArray.sort((a,b) => a.time > b.time);
-    } else {
-      return d.filter(obj => obj.neighborhood === state.neighborhood).map((item) => {
-        return {"time":new Date(item.time).getFullYear(),"value": item.value / 1000}
-      }).sort((a,b) => a.time > b.time);
-    }
-  }
+  if(state.view == "demographic") {
+    return d.filter(obj => obj.category == "Bachelor's Degree or Higher")
+  } else if (state.view === "real_estate") {
+    return d.map((item) => {
+            return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value / 1000}
+          }).sort((a,b) => a.time > b.time);
+ } else {
+  return d
+ }
 }
 
 const render = () => {

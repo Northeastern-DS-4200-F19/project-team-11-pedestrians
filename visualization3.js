@@ -5,7 +5,6 @@ function lineChart(deets){
               .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
               .entries(deets)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
-console.log(data)
   var width  = 600;
   var height = 300;
   var margin = {

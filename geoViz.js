@@ -53,10 +53,8 @@ const update = (deets) => {
                 .key(function(d) { return d.neighborhood; })
                 .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
                 .object(deets.data)
-                
-  console.log(stuff)
+              
   var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key]));
-  console.log(daMax)
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
   // graph.call(tip);
@@ -94,13 +92,13 @@ const update = (deets) => {
           .on("mouseout",function(d){hide(d,this);});
 
     var show = (d,target) => {
-      state.setN = d.key;
+      state.setN = d.properties.Name;
       // tip.show(d,target);
       d3.select(target).attr("stroke","blue");
     };
 
       var hide = (d,target) => {
-        state.setN = "";
+        state.removeN = [];
         // tip.hide(d);
         d3.select(target).attr("stroke","grey");
       };

@@ -8,7 +8,6 @@ var margin = {
 };
 
 function stackChart(deets){
-  console.log(deets)
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
   var categories = [... new Set(deets.reduce((a,b) => {
     let keys = Object.keys(b)
@@ -23,13 +22,9 @@ function stackChart(deets){
     total = 0
     let keys = Object.keys(obj)
     keys.pop()
-    keys.forEach(category => total += obj[category])
+    keys.forEach(offense => total += obj[offense])
     totals[obj.neighborhood] = total
   });
-
-  console.log(neighborhoods)
-  console.log(categories)
-  console.log(totals)
 
   var main_data = d3.stack().keys(categories).value((d,k) => {
     if(Object.keys(d).includes(k)) {
@@ -39,7 +34,6 @@ function stackChart(deets){
     }
   })(deets)
 
-  console.log(main_data)
   var svg = d3.select('#vis5')
               .attr('width' , width)
               .attr('height', height)
@@ -52,12 +46,18 @@ function stackChart(deets){
   var xScale = d3.scaleBand()
                  .domain(neighborhoods)
                  // Shifting by 50 so the last category label doesn't get cut off
-                 .range([0, width - margin.right - 30]);
+                 .range([0, width - margin.right - 150]);
   //
     var yScale = d3.scaleLinear()
                    .domain([0, 100])
                    .range([height - margin.bottom - margin.top, margin.top]);
-
+  
+    var y = d3.scaleLinear()
+                      .domain([0,100])
+                      .range([(height - margin.bottom - margin.top), margin.top])
+    
+  //  var y = d3.scaleLinear()
+  //                  .range([height - margin.bottom - margin.top, margin.top]);
     var z = d3.scaleOrdinal(
       d3.schemeTableau10
       )
@@ -120,4 +120,30 @@ function stackChart(deets){
         //     return "white"
         //   }
         // })
+
+      var legends = chartGroup.selectAll("g.layer").append("g")
+      var circles = legends.selectAll("g.layer > circle").data(main_data, d => d.key)
+  
+      circles.enter()
+            .append("circle")
+            .merge(circles)
+            .attr("class", "derp")
+            .attr("cx", width - 150)
+            .attr("r" , 10)
+            .attr("cy", (d,i) => y(i * 5) - 100)
+            .attr("fill", (d) => z(d.key))
+      
+      var texts = legends.selectAll("circle > text").data(main_data, d => d.key)
+          texts.enter()
+              .append("text")
+              .merge(texts)
+              .attr("x", width - 120)
+              .attr("y", (d,i) => y(i * 5) - 100)
+              .attr("text-anchor","begin")
+              .text(d => d.key)
+              .attr("font-size","10")
+              .attr("class","stuff")
+      circles.exit().remove()
+      texts.exit().remove()
+      legends.exit().remove()
   }
