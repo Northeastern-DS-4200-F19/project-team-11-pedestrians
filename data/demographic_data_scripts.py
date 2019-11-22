@@ -28,8 +28,8 @@ def createAge(sheet):
 def createAgeDatabase(db):
     columns = ["neighborhood"
                 ,"time"
-                ,"category"
-                ,"value"]
+                ,"value"
+                ,"category"]
     result = []
     for key in db.keys():
         result.extend(createAge(db[key]))
