@@ -9,6 +9,16 @@ h1, h2, h3 {
 	line-height: 1.2
 }
 
+.tip {
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+}
+
+.tip:click { 
+	position:absolute;
+}
+
 /* Your text should be in a nice narrow column */
 .content-column {
 	max-width: 1280px;
