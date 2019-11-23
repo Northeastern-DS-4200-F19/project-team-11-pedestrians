@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var width  = 1000;
 var height = 600;
 var margin = {
@@ -8,6 +9,24 @@ var margin = {
 };
 
 function stackChart(deets){
+=======
+  //   var minSafetyLevel = 0;
+  //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
+  //
+  var width  = 1100;
+  var height = 700;
+    var margin = {
+      top: 20,
+      bottom: 115,
+      left: 50,
+      right: 100
+    };
+
+function stackChart(deets){
+
+
+  console.log(deets)
+>>>>>>> 45b96832ee55646a553af80c685c89c6aaa5dcf0
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
   var categories = [... new Set(deets.reduce((a,b) => {
     let keys = Object.keys(b)
@@ -41,6 +60,37 @@ function stackChart(deets){
   var chartGroup = svg.append('g')
                         .append('svg')
                         .attr('transform','translate(' + margin.left +',' + margin.top + ')');
+
+  console.log(state);
+
+  d3.select(".x_axis_label3").remove();
+  d3.select(".y_axis_label3").remove();
+  d3.select(".title3").remove();
+
+  var title = "";
+  var x_axis_label = "";
+  var y_axis_label = "";
+
+  if(state["view"] == "crime"){
+    title = "Top 5 Crimes in Boston";
+    y_axis_label = "Percentage of Top 5 Crimes";
+    x_axis_label = "Neighborhood in Boston";
+  } else if (state["view"] == "real_estate") {
+    title = "Division of Type of Homes";
+    y_axis_label = "Percentage of Homes of this Type";
+    x_axis_label = "Neighborhood in Boston";
+  }
+
+  // Adding Graph Title
+  chartGroup.append("text")
+          .attr("x", width/2)
+          .attr("y", margin.top)
+          .attr('class', 'title3')
+          .attr("text-anchor", "middle")
+          .style("font-size", "20px")
+          .style("text-decoration", "underline")
+          .text(title);
+
   //
   var xScale = d3.scaleBand()
                  .domain(neighborhoods)
@@ -77,10 +127,30 @@ function stackChart(deets){
             .attr("text-anchor","end")
             .attr("transform","rotate(-90)");
 
+    // Adding X-Axis Label
+    chartGroup.append("text")
+       .attr("x", width/2)
+       .attr("y", height - margin.bottom + 100)
+       .attr("class", "x_axis_label3")
+       .attr("text-anchor", "middle")
+       .style("font-size", "16px")
+       .text(x_axis_label);
+
     chartGroup.append('g')
               .attr('class', 'y_axis')
               .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
               .call(yAxis);
+
+    // Adding Y-Axis Label
+    chartGroup.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("x", - height/2)
+      .attr("y", margin.left - 30)
+      .attr("class", "y_axis_label3")
+      .style("font-size", "16px")
+      .attr("text-anchor", "middle")
+      .text(y_axis_label);
+
   //
     var group = chartGroup
                 .append("svg" )
@@ -181,9 +251,32 @@ function stackChart(deets){
           }
           // state.setN = nlist
         })
+<<<<<<< HEAD
         console.log(d3.event.selection)
         console.log(new Set(nlist))
         state.setN = new Set(nlist)
        }  
       }
+=======
+
+    // // Add brushing
+    // svg
+    //   .call( d3.brush()                 // Add the brush feature using the d3.brush function
+    //     .extent( [ [0,0], [width,height] ] ) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+    //     .on("start brush", updateChart) // Each time the brush selection changes, trigger the 'updateChart' function
+    //   )
+    //
+    // // Function that is triggered when brushing is performed
+    // function updateChart() {
+    //   extent = d3.event.selection
+    //   console.log(extent)
+    //   bars.classed("selected", function(d){ return isBrushed(extent, xScale(d.data.neighborhood) + margin.left + 20, yScale(d[1]) + margin.top ) } )
+    // }
+    //
+    // // A function that return TRUE or FALSE according if a dot is in the selection or not
+    // function isBrushed(brush_coords, cx, cy) {
+    //   return true
+    // }   // This return TRUE or FALSE depending on if the points is in the selected area
+    //
+>>>>>>> 45b96832ee55646a553af80c685c89c6aaa5dcf0
   }
