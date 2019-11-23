@@ -55,7 +55,7 @@ const update = (deets) => {
   }
 
   d3.select(".title2").remove();
-  graph.append("text")
+  d3.select("#vis-svg").append("text")
             .attr("x", 250)
             .attr("y", 20)
             .attr("class", "title2")

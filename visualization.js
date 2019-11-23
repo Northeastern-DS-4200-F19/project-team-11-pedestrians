@@ -17,10 +17,16 @@ function scatterplot(data){
               .attr('height', height);
               // .style('background', '#efefef');
 
+
+              d3.select(".x_axis_label4").remove();
+              d3.select(".y_axis_labe43").remove();
+              d3.select(".title4").remove();
+
   // Adding Graph Title
   svg.append("text")
             .attr("x", width/2)
             .attr("y", margin.top - 20)
+            .attr("class", "title4")
             .attr("text-anchor", "middle")
             .style("font-size", "16px")
             .style("text-decoration", "underline")
@@ -53,6 +59,7 @@ function scatterplot(data){
   svg.append("text")
      .attr("x", width/2 + margin.left)
      .attr("y", height - margin.bottom/2)
+     .attr("class", "x_axis_label4")
      .attr("text-anchor", "middle")
      .style("font-size", "20px")
      .text("Time of Day");
@@ -68,6 +75,7 @@ function scatterplot(data){
     .attr("transform", "rotate(-90)")
     .attr("x", -height/2 + margin.bottom)
     .attr("y", margin.left/2)
+    .attr("class", "y_axis_label4")
     .style("font-size", "20px")
     .attr("text-anchor", "end")
     .text("Perceived Safety Level");

@@ -53,7 +53,7 @@ function stackChart(deets){
   d3.select(".x_axis_label3").remove();
   d3.select(".y_axis_label3").remove();
   d3.select(".title3").remove();
-
+  chartGroup.call(brush)
   var title = "";
   var x_axis_label = "";
   var y_axis_label = "";
@@ -68,15 +68,6 @@ function stackChart(deets){
     x_axis_label = "Neighborhood in Boston";
   }
 
-  // Adding Graph Title
-  chartGroup.append("text")
-          .attr("x", width/2)
-          .attr("y", margin.top)
-          .attr('class', 'title3')
-          .attr("text-anchor", "middle")
-          .style("font-size", "20px")
-          .style("text-decoration", "underline")
-          .text(title);
 
   //
   var xScale = d3.scaleBand()
@@ -115,7 +106,7 @@ function stackChart(deets){
             .attr("transform","rotate(-90)");
 
     // Adding X-Axis Label
-    chartGroup.append("text")
+    svg.append("text")
        .attr("x", width/2)
        .attr("y", height - margin.bottom + 100)
        .attr("class", "x_axis_label3")
@@ -129,7 +120,7 @@ function stackChart(deets){
               .call(yAxis);
 
     // Adding Y-Axis Label
-    chartGroup.append("text")
+    svg.append("text")
       .attr("transform", "rotate(-90)")
       .attr("x", - height/2)
       .attr("y", margin.left - 30)
@@ -205,7 +196,7 @@ function stackChart(deets){
       texts.exit().remove()
       legends.exit().remove()
 
-      chartGroup.call(brush)
+   
 
       function brush (g) {
         const nlist = []
@@ -243,4 +234,14 @@ function stackChart(deets){
         state.setN = new Set(nlist)
        }  
       }
+
+        // Adding Graph Title
+  svg.append("text")
+  .attr("x", width/2)
+  .attr("y", margin.top)
+  .attr('class', 'title3')
+  .attr("text-anchor", "middle")
+  .style("font-size", "20px")
+  .style("text-decoration", "underline")
+  .text(title);
   }
