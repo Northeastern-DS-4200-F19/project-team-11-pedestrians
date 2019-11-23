@@ -39,7 +39,7 @@ var promises = [
                       visittime: d.visittime,
                       safetylevel: + d.safetylevel
                     }}),
-        d3.json("./data/json_files/bostonv2.geojson")
+        d3.json("./data/json_files/boston.geojson")
     ]
 
 const filterBar = (d) => {
