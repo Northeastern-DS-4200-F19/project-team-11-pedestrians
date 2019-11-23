@@ -21,6 +21,11 @@ h1, h2, h3 {
 	margin: 40px auto;
 }
 
+.highlighted {
+	stroke: width 10;
+	stroke: black;
+}
+
 /* But your visualization should be full-width and full-height */
 .vis-holder {
   width: 100%;

@@ -6,7 +6,6 @@ function lineChart(deets){
               .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
               .entries(deets)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
-console.log(data)
   var width  = 600;
   var height = 400;
   var margin = {
@@ -41,7 +40,6 @@ console.log(data)
   }
 
   var svg = d3.select('#vis3')
-              // .append('svg')
               .attr('width' , width)
               .attr('height', height);
               // .style('background', '#efefef');
@@ -117,4 +115,6 @@ console.log(data)
 
   paths.exit().remove();
   chartGroup.exit().remove()
+
+
 }
