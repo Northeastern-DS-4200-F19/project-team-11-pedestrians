@@ -40,7 +40,7 @@ var geoGenerator = d3.geoPath()
 //the update function
 const update = (info) => {
   var tip = d3.tip()
-            .attr("class","tip")
+            .attr("class","tipVar")
             .html(d => {
               return `<div class="card blue-grey darken-1">
               <div class="card-content white-text">
@@ -49,7 +49,6 @@ const update = (info) => {
               </div>
               </div>`
             })
-            .attr("x", width).attr("y", height)
   var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
   var daMax = Math.max(...stuff);
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);

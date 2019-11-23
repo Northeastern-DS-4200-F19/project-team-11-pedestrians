@@ -9,14 +9,10 @@ h1, h2, h3 {
 	line-height: 1.2
 }
 
-.tip {
-    position: absolute;
-    bottom: 100%;
-    right: 50%;
-}
-
-.tip:click { 
-	position:absolute;
+div.tipVar {
+    position: fixed;
+    right:5px;
+    bottom:50px;
 }
 
 /* Your text should be in a nice narrow column */
