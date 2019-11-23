@@ -5,7 +5,7 @@ var state = {view:'crime',neighborhood:"", set setN(x) {
   removeChart();
   geoViz(db[3])
   lineChart(filterLine(db[lineIndex]));
-  stackChart(filterBar(db[0]));
+  stackChart(filterBar(db[lineIndex]));
 }};
 
 const removeChart = () => {
@@ -115,30 +115,52 @@ const filterLine = (d) => {
   }
 }
 
-const letsGo = (d) => {
-        db = d;
-        scatterplot(d[2]);
-        lineChart(filterLine(d[lineIndex]));
-        stackChart(filterBar(d[0]));
-        geoViz(d[3]);
+const render = () => {
+        scatterplot(db[2]);
+        lineChart(filterLine(db[lineIndex]));
+        stackChart(filterBar(db[0]));
+        geoViz(db[3]);
 }
 
-const render = () => {
-        Promise.all(promises).then(letsGo);
+const setData = (d) => {
+  db = d;
+}
+
+const load = () => {
+    Promise.all(promises).then(setData).then(render);
 };
 
-stateBttns.forEach(btn => {
-    btn.addEventListener("click",(e) => {
-        e.preventDefault();
-        state["view"] = btn.attributes["data-activity"].nodeValue;
-        lineIndex = (lineIndex + 1) % 2
-        d3.selectAll(".derp").remove()
-        d3.selectAll(".x_axis").remove()
-        d3.selectAll(".y_axis").remove()
-        geoViz(db[3])
-        lineChart(filterLine(db[lineIndex]))
-        stackChart(filterBar(db[lineIndex]));
-    });
-});
+var btn1 = document.querySelector(".btn1")
+var btn2 = document.querySelector(".btn2")
 
-render();
+btn1.addEventListener("click" , (e) => {
+  console.log(0)
+  state["view"] = btn1.attributes["data-activity"].nodeValue;
+  lineIndex = 0
+  d3.selectAll(".derp").remove()
+  d3.selectAll(".tip").remove()
+  d3.selectAll(".x_axis").remove()
+  d3.selectAll(".y_axis").remove()
+  // d3.selectAll(".x_axis_label").remove()
+  // d3.selectAll(".y_axis_label").remove()
+  geoViz(db[3])
+  lineChart(filterLine(db[lineIndex]))
+  stackChart(filterBar(db[lineIndex]));
+})
+
+btn2.addEventListener("click" , (e) => {
+  console.log(1);
+  state["view"] = btn2.attributes["data-activity"].nodeValue;
+  lineIndex = 1;
+  d3.selectAll(".derp").remove();
+  d3.selectAll(".tip").remove()
+  d3.selectAll(".x_axis").remove();
+  d3.selectAll(".y_axis").remove();
+  // d3.selectAll(".x_axis_label").remove();
+  // d3.selectAll(".y_axis_label").remove();
+  geoViz(db[3]);
+  lineChart(filterLine(db[lineIndex]));
+  stackChart(filterBar(db[lineIndex]));
+})
+
+load();
