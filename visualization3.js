@@ -20,10 +20,8 @@ function lineChart(deets){
   var maxvalue  = d3.max(data, function(d){return d.value;});
 
   var svg = d3.select('#vis3')
-              // .append('svg')
               .attr('width' , width)
               .attr('height', height)
-              // .style('background', '#efefef');
 
   var chartGroup = svg.append('g')
   					          .append('svg')
@@ -45,7 +43,6 @@ function lineChart(deets){
             .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis)
-            .selectAll("text")
 
   var y_axis = chartGroup.append('g')
             .attr('class', 'y_axis')
@@ -65,4 +62,6 @@ function lineChart(deets){
       
   paths.exit().remove();
   chartGroup.exit().remove()
+
+  
 }

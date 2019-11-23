@@ -20,10 +20,10 @@ function stackChart(deets){
   var totals = {}
   deets.forEach(obj => {
     total = 0
-    let keys = Object.keys(obj)
-    keys.pop()
-    keys.forEach(offense => total += obj[offense])
-    totals[obj.neighborhood] = total
+    let keys = Object.keys(obj);
+    keys.pop();
+    keys.forEach(offense => total += obj[offense]);
+    totals[obj.neighborhood] = total;
   });
 
   var main_data = d3.stack().keys(categories).value((d,k) => {
@@ -33,7 +33,6 @@ function stackChart(deets){
       return 0;
     }
   })(deets)
-
   var svg = d3.select('#vis5')
               .attr('width' , width)
               .attr('height', height)
@@ -86,12 +85,16 @@ function stackChart(deets){
     var group = chartGroup
                 .append("svg" )
                 .selectAll("g.layer")
-                .data(main_data, d => d)
+                .data(main_data, d => d, e => e.data.neighborhood)
                 .enter()
                 .append("g")
                 // .merge(group)
-                .classed("layer",true)
-                .attr("fill", d => z(d.key))
+                .attr("class","layer")
+                .attr("id",(d,e) =>  d[e].data.neighborhood)
+                // .classed("layer",true)
+                .attr("fill", d => {
+                  return z(d.key)
+                })
                 // .attr("class", "derp")
 
     group.exit().remove()
@@ -144,4 +147,43 @@ function stackChart(deets){
       circles.exit().remove()
       texts.exit().remove()
       legends.exit().remove()
+
+      chartGroup.call(brush)
+
+      function brush (g) {
+        const nlist = []
+        const brush = d3.brush().on("end",brushEnd)
+        .extent([
+          [-margin.left,-margin.bottom],
+          [width+margin.right, height + margin.top] 
+        ]);
+
+      g.call(brush);
+      
+      function brushEnd(){
+        // We don't want infinite recursion
+        if(d3.event.sourceEvent.type!="end"){
+          d3.select(this).call(brush.move, null);
+        } 
+        if (d3.event.selection === null) return;
+  
+        const [
+          [x0, y0],
+          [x1, y1]
+        ] = d3.event.selection; 
+        // If within the bounds of the brush, select it
+        d3.selectAll(".layer").each(function(d){
+          var neighborhood = d3.select(this).attr("id")
+          console.log(d)
+          var x = xScale(neighborhood);
+          if(x0 <= x && x1 >= x) {
+            nlist.push(d3.select(this).attr("id"))
+          }
+          // state.setN = nlist
+        })
+        console.log(d3.event.selection)
+        console.log(new Set(nlist))
+        state.setN = new Set(nlist)
+       }  
+      }
   }

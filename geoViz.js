@@ -75,18 +75,19 @@ const update = (deets) => {
             }})
           .attr("stroke",(d) => {
             if(state["neighborhood"].includes(d.properties.Name)) {
-              return "blue"
+              return "blue";
             } else {
-              return "grey"
+              return "grey";
             }
           })
           .attr("stroke-width",(d) => {
             if(state["neighborhood"].includes(d.properties.Name)) {
-              return 3
+              return 3;
             } else {
-              return 1
+              return 1;
             }
           })
+          .attr("id", d=> d.properties.Name)
           // .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
           .on("click",function(d){show(d,this)})
           .on("mouseout",function(d){hide(d,this);});
@@ -97,11 +98,49 @@ const update = (deets) => {
       // d3.select(target).attr("stroke","blue");
     };
 
-      var hide = (d,target) => {
-        state.removeN = [];
-        // tip.hide(d);
-        // d3.select(target).attr("stroke","grey");
-      };
+    var hide = (d,target) => {
+      state.removeN = [];
+      // tip.hide(d);
+      // d3.select(target).attr("stroke","grey");
+    };
+
+    graph.call(brush);
+    function brush (g) {
+      const nlist = []
+      const brush = d3.brush().on("end",brushEnd)
+      .extent([
+        [-margin.left,-margin.bottom],
+        [width+margin.right, height + margin.top] 
+      ]);
+
+    g.call(brush);
+    
+    function brushEnd(){
+      // We don't want infinite recursion
+      if(d3.event.sourceEvent.type!="end"){
+        d3.select(this).call(brush.move, null);
+      } 
+      if (d3.event.selection === null) return;
+
+      const [
+        [x0, y0],
+        [x1, y1]
+      ] = d3.event.selection; 
+      // If within the bounds of the brush, select it
+      
+      // d3.selectAll(".layer").each(function(d){
+      //   var neighborhood = d3.select(this).attr("id")
+      //   var x = geoGenerator(neighborhood);
+      //   if(x0 <= x && x1 >= x) {
+      //     nlist.push(d3.select(this).attr("id"))
+      //   }
+      //   // state.setN = nlist
+      // })
+      console.log(d3.event.selection)
+      console.log(new Set(nlist))
+      state.setN = new Set(nlist)
+     }  
+    }
 }
 
 const geoViz = (d) => {

@@ -1,8 +1,7 @@
 const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green","demographic":"blue"}
 var state = {view:'crime',neighborhood:["Allston"], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
-  this.neighborhood = [...this.neighborhood, x];
-  console.log(this.neighborhood)
+  this.neighborhood = Array.from(x);
   removeChart();
   render()
 }, set removeN(x) {
@@ -58,7 +57,7 @@ const filterBar = (d) => {
   var result = {}
   var rArray = []
   var categorys = new Set(d.map(obj => obj.category));
-  var neighborhoods = new Set(d.map(obj => obj.neighborhood))
+  var neighborhoods = new Set(d.map(obj => obj.neighborhood));
   neighborhoods.forEach(n => {
     row = {}
     categorys.forEach(ot => {
@@ -91,6 +90,11 @@ const filterBar = (d) => {
 }
 
 const filterLine = (d) => {
+  if(state.neighborhood.length == 0) {
+    d = d;
+  } else {
+    d = d.filter(obj => state.neighborhood.includes(obj.neighborhood))
+  }
   if(state.view == "demographic") {
     return d.filter(obj => obj.category == "Bachelor's Degree or Higher")
   } else if (state.view === "real_estate") {
@@ -103,10 +107,10 @@ const filterLine = (d) => {
 }
 
 const render = () => {
-        scatterplot(state.data["survey"]);
-        lineChart(filterLine(state.data[state.view]));
-        stackChart(filterBar(state.data[state.view]));
-        geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+    scatterplot(state.data["survey"]);
+    lineChart(filterLine(state.data[state.view]));
+    stackChart(filterBar(state.data[state.view]));
+    geoViz({"data":state.data[state.view],"info":state.data["geo"]});
 }
 
 const setData = (d) => {
@@ -124,6 +128,7 @@ const load = () => {
 stateBttns.forEach(btn => {
   btn.addEventListener("click" , (e) => {
     state["view"] = btn.attributes["data-activity"].nodeValue;
+    btn.className = "highlighted"
     removeChart()
     render()
   })
