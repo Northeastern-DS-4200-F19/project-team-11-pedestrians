@@ -1,11 +1,9 @@
 function lineChart(deets){
-  console.log(deets)
   var data = d3.nest()
               .key(function(d) { return d.time; })
               .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
               .entries(deets)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
-console.log(data)
   var width  = 600;
   var height = 300;
   var margin = {
@@ -22,10 +20,8 @@ console.log(data)
   var maxvalue  = d3.max(data, function(d){return d.value;});
 
   var svg = d3.select('#vis3')
-              // .append('svg')
               .attr('width' , width)
               .attr('height', height)
-              .style('background', '#efefef');
 
   var chartGroup = svg.append('g')
   					          .append('svg')
@@ -47,7 +43,6 @@ console.log(data)
             .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis)
-            .selectAll("text")
 
   var y_axis = chartGroup.append('g')
             .attr('class', 'y_axis')
@@ -67,4 +62,6 @@ console.log(data)
       
   paths.exit().remove();
   chartGroup.exit().remove()
+
+  
 }

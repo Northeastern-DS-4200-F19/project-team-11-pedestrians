@@ -13,16 +13,14 @@ const graphWidth = width - margin.left - margin.right;
 const canvas = d3.select("#vis-svg")
               .attr("height",height)
               .attr("width",width)
-              // .attr("margin",5)
               .attr("border","black")
               .append("rect")
               .attr("x",0)
               .attr("y",0)
               .attr("height",height)
               .attr("width",width)
-              // .attr("margin",5)
-              .attr("stroke","black")
-              .attr("stroke-width","border")
+              // .attr("stroke","black")
+              // .attr("stroke-width","border")
               .attr("fill","none")
   const graph = d3.select("#vis-svg").append("svg")
                             // .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -38,64 +36,111 @@ var geoGenerator = d3.geoPath()
     .projection(albersProjection);
 
 //the update function
-const update = (info) => {
-  var tip = d3.tip()
-            .attr("class","tip")
-            .html(d => {
-              return `<div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-              <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
-              <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
-              </div>
-              </div>`
-            })
-            .attr("x", width).attr("y", height)
-  var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
-  var daMax = Math.max(...stuff);
+const update = (deets) => {
+  var info = deets.info
+  // var tip = d3.tip()
+  //           .attr("class","tip")
+  //           .html(d => {
+  //             return `<div class="card blue-grey darken-1">
+  //             <div class="card-content white-text">
+  //             <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
+  //             <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
+  //             </div>
+  //             </div>`
+  //           })
+  //           .attr("x", width).attr("y", height)
+  var stuff = d3.nest()
+                .key(function(d) { return d.neighborhood; })
+                .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
+                .object(deets.data)
+              
+  var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key]));
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
-  graph.call(tip);
+  // graph.call(tip);
   
 
     //removing stuff
     paths.exit().remove();
-
     //adding stuff
     paths.enter()
           .append('path')
           .merge(paths)
           .attr('d', geoGenerator)
           .attr("fill",d => {
-            return color(d["properties"][state["view"]])})
-          .attr("stroke",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
-              return "blue"
+            if(Object.keys(stuff).includes(d.properties.Name)) {
+              return color(stuff[d.properties.Name])
             } else {
-              return "grey"
+              return color(0);
+            }})
+          .attr("stroke",(d) => {
+            if(state["neighborhood"].includes(d.properties.Name)) {
+              return "blue";
+            } else {
+              return "grey";
             }
           })
           .attr("stroke-width",(d) => {
-            if(d["properties"]["Name"] === state["neighborhood"]) {
-              return 5
+            if(state["neighborhood"].includes(d.properties.Name)) {
+              return 3;
             } else {
-              return 1
+              return 1;
             }
           })
-          .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
+          .attr("id", d=> d.properties.Name)
+          // .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
           .on("click",function(d){show(d,this)})
           .on("mouseout",function(d){hide(d,this);});
 
     var show = (d,target) => {
-      state.setN = d["properties"]["Name"];
-      tip.show(d,target);
-      d3.select(target).attr("stroke","blue");
+      state.setN = d.properties.Name;
+      // tip.show(d,target);
+      // d3.select(target).attr("stroke","blue");
     };
 
     var hide = (d,target) => {
-      state.setN = "";
-      tip.hide(d,target);
-      d3.select(target).attr("stroke","grey");
+      state.removeN = [];
+      // tip.hide(d);
+      // d3.select(target).attr("stroke","grey");
     };
+
+    graph.call(brush);
+    function brush (g) {
+      const nlist = []
+      const brush = d3.brush().on("end",brushEnd)
+      .extent([
+        [-margin.left,-margin.bottom],
+        [width+margin.right, height + margin.top] 
+      ]);
+
+    g.call(brush);
+    
+    function brushEnd(){
+      // We don't want infinite recursion
+      if(d3.event.sourceEvent.type!="end"){
+        d3.select(this).call(brush.move, null);
+      } 
+      if (d3.event.selection === null) return;
+
+      const [
+        [x0, y0],
+        [x1, y1]
+      ] = d3.event.selection; 
+      // If within the bounds of the brush, select it
+      
+      // d3.selectAll(".layer").each(function(d){
+      //   var neighborhood = d3.select(this).attr("id")
+      //   var x = geoGenerator(neighborhood);
+      //   if(x0 <= x && x1 >= x) {
+      //     nlist.push(d3.select(this).attr("id"))
+      //   }
+      //   // state.setN = nlist
+      // })
+      console.log(d3.event.selection)
+      console.log(new Set(nlist))
+      state.setN = new Set(nlist)
+     }  
+    }
 }
 
 const geoViz = (d) => {

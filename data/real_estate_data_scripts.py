@@ -32,7 +32,7 @@ def getIndicators():
     result = []
     for row in df1.iterrows():
         row_result = []
-        if "Median Listing Price Per Square Foot" == row[1][0].split(" - ")[0]:
+        if "Median Listing Price Per Square Foot" == row[1][0].split(" - ")[0] and ("All Homes" not in row[1][0]):
             row_result.append(row[1][0].split(" - ")[1].split("|")[0])
             row_result.append(row[1][0].split(" - ")[1].split("|")[1])
             result.append(row_result)
