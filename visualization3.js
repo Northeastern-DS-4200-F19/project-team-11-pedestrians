@@ -78,6 +78,7 @@ console.log(data)
             .call(xAxis)
             .style("font-size", "14px");
 
+
   // Adding X-Axis Label
   chartGroup.append("text")
             .attr("x", width/2)
