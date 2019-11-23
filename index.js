@@ -125,7 +125,6 @@ const load = () => {
     Promise.all(promises).then(setData).then(render);
 };
 
-<<<<<<< HEAD
 stateBttns.forEach(btn => {
   btn.addEventListener("click" , (e) => {
     state["view"] = btn.attributes["data-activity"].nodeValue;
@@ -133,39 +132,6 @@ stateBttns.forEach(btn => {
     removeChart()
     render()
   })
-=======
-var btn1 = document.querySelector(".btn1")
-var btn2 = document.querySelector(".btn2")
-
-btn1.addEventListener("click" , (e) => {
-  console.log(0)
-  state["view"] = btn1.attributes["data-activity"].nodeValue;
-  lineIndex = 0
-  d3.selectAll(".derp").remove()
-  d3.selectAll(".tip").remove()
-  d3.selectAll(".x_axis").remove()
-  d3.selectAll(".y_axis").remove()
-  // d3.selectAll(".x_axis_label").remove()
-  // d3.selectAll(".y_axis_label").remove()
-  geoViz(db[3])
-  lineChart(filterLine(db[lineIndex]))
-  stackChart(filterBar(db[lineIndex]));
-})
-
-btn2.addEventListener("click" , (e) => {
-  console.log(1);
-  state["view"] = btn2.attributes["data-activity"].nodeValue;
-  lineIndex = 1;
-  d3.selectAll(".derp").remove();
-  d3.selectAll(".tip").remove()
-  d3.selectAll(".x_axis").remove();
-  d3.selectAll(".y_axis").remove();
-  // d3.selectAll(".x_axis_label").remove();
-  // d3.selectAll(".y_axis_label").remove();
-  geoViz(db[3]);
-  lineChart(filterLine(db[lineIndex]));
-  stackChart(filterBar(db[lineIndex]));
->>>>>>> 45b96832ee55646a553af80c685c89c6aaa5dcf0
 })
 
 load();

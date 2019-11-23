@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-var width  = 1000;
-var height = 600;
-var margin = {
-  top: 20,
-  bottom: 115,
-  left: 50,
-  right: 100
-};
-
-function stackChart(deets){
-=======
   //   var minSafetyLevel = 0;
   //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
   //
+
+
+function stackChart(deets){
+
   var width  = 1100;
   var height = 700;
     var margin = {
@@ -21,12 +13,7 @@ function stackChart(deets){
       left: 50,
       right: 100
     };
-
-function stackChart(deets){
-
-
   console.log(deets)
->>>>>>> 45b96832ee55646a553af80c685c89c6aaa5dcf0
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
   var categories = [... new Set(deets.reduce((a,b) => {
     let keys = Object.keys(b)
@@ -251,32 +238,9 @@ function stackChart(deets){
           }
           // state.setN = nlist
         })
-<<<<<<< HEAD
         console.log(d3.event.selection)
         console.log(new Set(nlist))
         state.setN = new Set(nlist)
        }  
       }
-=======
-
-    // // Add brushing
-    // svg
-    //   .call( d3.brush()                 // Add the brush feature using the d3.brush function
-    //     .extent( [ [0,0], [width,height] ] ) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
-    //     .on("start brush", updateChart) // Each time the brush selection changes, trigger the 'updateChart' function
-    //   )
-    //
-    // // Function that is triggered when brushing is performed
-    // function updateChart() {
-    //   extent = d3.event.selection
-    //   console.log(extent)
-    //   bars.classed("selected", function(d){ return isBrushed(extent, xScale(d.data.neighborhood) + margin.left + 20, yScale(d[1]) + margin.top ) } )
-    // }
-    //
-    // // A function that return TRUE or FALSE according if a dot is in the selection or not
-    // function isBrushed(brush_coords, cx, cy) {
-    //   return true
-    // }   // This return TRUE or FALSE depending on if the points is in the selected area
-    //
->>>>>>> 45b96832ee55646a553af80c685c89c6aaa5dcf0
   }

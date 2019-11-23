@@ -37,7 +37,7 @@ var geoGenerator = d3.geoPath()
 
 //the update function
 const update = (info) => {
-  console.log(state["view"]);
+  console.log(info);
 
   // // Add brushing
   // d3.select("#vis-svg")
