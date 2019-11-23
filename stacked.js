@@ -78,11 +78,11 @@ function stackChart(deets){
     var yScale = d3.scaleLinear()
                    .domain([0, 100])
                    .range([height - margin.bottom - margin.top, margin.top]);
-  
+
     var y = d3.scaleLinear()
                       .domain([0,100])
                       .range([(height - margin.bottom - margin.top), margin.top])
-    
+
   //  var y = d3.scaleLinear()
   //                  .range([height - margin.bottom - margin.top, margin.top]);
     var z = d3.scaleOrdinal(
@@ -170,9 +170,10 @@ function stackChart(deets){
           state.removeN = d
         })
 
+
       var legends = chartGroup.selectAll("g.layer").append("g")
       var circles = legends.selectAll("g.layer > circle").data(main_data, d => d.key)
-  
+
       circles.enter()
             .append("circle")
             .merge(circles)
@@ -181,7 +182,7 @@ function stackChart(deets){
             .attr("r" , 10)
             .attr("cy", (d,i) => y(i * 5) - 100)
             .attr("fill", (d) => z(d.key))
-      
+
       var texts = legends.selectAll("g > .stuff").data(main_data, d => d.key)
           texts.enter()
               .append("text")
@@ -196,29 +197,29 @@ function stackChart(deets){
       texts.exit().remove()
       legends.exit().remove()
 
-   
+
 
       function brush (g) {
         const nlist = []
         const brush = d3.brush().on("end",brushEnd)
         .extent([
           [-margin.left,-margin.bottom],
-          [width+margin.right, height + margin.top] 
+          [width+margin.right, height + margin.top]
         ]);
 
       g.call(brush);
-      
+
       function brushEnd(){
         // We don't want infinite recursion
         if(d3.event.sourceEvent.type!="end"){
           d3.select(this).call(brush.move, null);
-        } 
+        }
         if (d3.event.selection === null) return;
-  
+
         const [
           [x0, y0],
           [x1, y1]
-        ] = d3.event.selection; 
+        ] = d3.event.selection;
         // If within the bounds of the brush, select it
         d3.selectAll(".layer").each(function(d){
           var neighborhood = d3.select(this).attr("id")
@@ -232,7 +233,7 @@ function stackChart(deets){
         console.log(d3.event.selection)
         console.log(new Set(nlist))
         state.setN = new Set(nlist)
-       }  
+       }
       }
 
         // Adding Graph Title
