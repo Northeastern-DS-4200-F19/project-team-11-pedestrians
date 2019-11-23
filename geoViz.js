@@ -1,5 +1,5 @@
-var width  = 400;
-var height = 300;
+var width  = 500;
+var height = 400;
 var margin = {
   top: 30,
   bottom: 30,
@@ -24,7 +24,7 @@ const canvas = d3.select("#vis-svg")
               .attr("stroke","black")
               .attr("stroke-width","border")
               .attr("fill","none")
-  const graph = d3.select("#vis-svg").append("svg")
+  const graph = d3.select("#vis-svg").append("svg");
                             // .attr("transform", `translate(${margin.left},${margin.top})`);
 
 //lon and lat to x and y
@@ -39,6 +39,17 @@ var geoGenerator = d3.geoPath()
 
 //the update function
 const update = (info) => {
+  console.log(state);
+  var title = "Choropleth Map of Boston"
+
+  graph.append("text")
+            .attr("x", 250)
+            .attr("y", 20)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("text-decoration", "underline")
+            .text(title);
+
   var tip = d3.tip()
             .attr("class","tip")
             .html(d => {
@@ -86,7 +97,7 @@ const update = (info) => {
 
     var hide = (d,target) => {
       state.setN = "";
-      tip.hide(d);
+      tip.hide(d, target);
       d3.select(target).attr("stroke","grey");
     };
 }

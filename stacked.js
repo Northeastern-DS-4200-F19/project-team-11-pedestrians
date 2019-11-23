@@ -1,8 +1,8 @@
   //   var minSafetyLevel = 0;
   //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
   //
-  var width  = 1000;
-  var height = 600;
+  var width  = 1100;
+  var height = 700;
     var margin = {
       top: 20,
       bottom: 115,
@@ -51,6 +51,16 @@ function stackChart(deets){
   var chartGroup = svg.append('g')
                         .append('svg')
                         .attr('transform','translate(' + margin.left +',' + margin.top + ')');
+
+  // Adding Graph Title
+  svg.append("text")
+          .attr("x", width/2)
+          .attr("y", margin.top)
+          .attr("text-anchor", "middle")
+          .style("font-size", "16px")
+          .style("text-decoration", "underline")
+          .text("Perceived Safety Level at Different Times of Day in Chester Square Park");
+
   //
   var xScale = d3.scaleBand()
                  .domain(neighborhoods)
