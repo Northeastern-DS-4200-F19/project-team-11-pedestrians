@@ -1,6 +1,6 @@
 const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green","demographic":"blue"}
-var state = {view:'crime',neighborhood:["Allston"], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
+var state = {view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
   this.neighborhood = Array.from(x);
   removeChart();
   render()
@@ -128,7 +128,7 @@ const load = () => {
 stateBttns.forEach(btn => {
   btn.addEventListener("click" , (e) => {
     state["view"] = btn.attributes["data-activity"].nodeValue;
-    btn.className = "highlighted"
+    // btn.className = "highlighted"
     removeChart()
     render()
   })

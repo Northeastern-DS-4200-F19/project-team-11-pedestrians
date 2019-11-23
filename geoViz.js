@@ -36,9 +36,9 @@ var geoGenerator = d3.geoPath()
     .projection(albersProjection);
 
 //the update function
-const update = (info) => {
-  console.log(info);
-
+const update = (deets) => {
+  console.log(deets.data)
+  var info = deets.info
   // // Add brushing
   // d3.select("#vis-svg")
   //       .call( d3.brush()                     // Add the brush feature using the d3.brush function
@@ -70,7 +70,7 @@ const update = (info) => {
               return `<div class="card blue-grey darken-1">
               <div class="card-content white-text">
               <div class="card-title"><span>${d["properties"]["Name"]}</span></div>
-              <p class="tool"><br>Total ${state["view"]}: ${Math.round(d["properties"][state["view"]])}</p>
+              <p class="tool"><br>Total ${state["view"]}: ${Math.round(stuff[d.properties.Name])}</p>
               </div>
               </div>`
             })
@@ -84,8 +84,11 @@ const update = (info) => {
               d3.select(target).attr("stroke","grey");
             };
 
-  var stuff = info["features"].map(d => Math.round(d["properties"][state["view"]]));
-  var daMax = Math.max(...stuff);
+  var stuff = d3.nest().key(function(d) {return d.neighborhood})
+                  .rollup(function(v) {return d3.sum(v,function(d){return d.value})})
+                  .object(deets.data);
+  var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key]));
+  console.log(daMax)
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
   graph.call(tip);
@@ -99,7 +102,8 @@ const update = (info) => {
         .merge(paths)
         .attr('d', geoGenerator)
         .attr("fill",d => {
-          return color(d["properties"][state["view"]])})
+          console.log(stuff[d.properties.Name])
+          return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(d["properties"]["Name"] === state["neighborhood"]) {
             return "blue"
