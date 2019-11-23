@@ -39,6 +39,14 @@ def totime(d):
         result = datetime.strptime(d, '%Y-%m-%d %H:%M:%S').strftime("%H")
     return result
 
+def toyear(d):
+    result = 0
+    try:
+        result = datetime.strptime(d, '%m/%d/%Y %H:%M:%S %p').strftime("%Y")
+    except:
+        result = datetime.strptime(d, '%Y-%m-%d %H:%M:%S').strftime("%Y")
+    return result
+
 ## classifying crime to neighborhoods
 def classify(location):
     result = ""
@@ -55,7 +63,7 @@ def classify(location):
             continue
     return result
 
-newCategories = df1["OFFENSE_CODE_GROUP"].unique()
+# newCategories = df1["OFFENSE_CODE_GROUP"].unique()
 
 def legacyToNew(category):
     highest = process.extractOne(category, newCategories)
@@ -80,15 +88,16 @@ data["location"] = mergeCols(df["Location"], df1["Location"])
 data["street"] = mergeCols(df["STREETNAME"], df1["STREET"])
 data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
 
-crime = pd.DataFrame(data)
+# crime = pd.DataFrame(data)
 
 # Creating time Field, Classifying Crime, Saving base level dataset
 crime["time"] = crime["date"].apply(totime)
+crime["year"] = crime["date"].apply(toyear)
 crime["neighborhood"] = crime["location"].apply(classify)
 crime.to_csv("./csv_files/boston_crime.csv")
 
 # Aggregating Dataset
-aggregate = crime.groupby(["neighborhood","category","time"]).agg('count')
+aggregate = crime.groupby(["neighborhood","category","year","time"]).agg('count')
 aggregate.rename(columns={'id':'value'}, inplace=True)
 aggregate.reset_index(inplace=True)
-aggregate[["neighborhood","category","time","value"]].to_csv("./csv_files/crime.csv")
+aggregate[["neighborhood","category","year","time","value"]].to_csv("./csv_files/crime.csv")
