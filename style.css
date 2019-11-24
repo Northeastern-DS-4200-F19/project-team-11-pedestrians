@@ -9,6 +9,14 @@ h1, h2, h3 {
 	line-height: 1.2
 }
 
+div.vis3 {
+
+}
+
+.tipVar {
+	width: 15%;
+}
+
 .selected {
   opacity: 2 !important;
   stroke: black;

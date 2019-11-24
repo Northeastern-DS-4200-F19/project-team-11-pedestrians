@@ -40,6 +40,7 @@ function lineChart(deets){
   }
 
   var svg = d3.select('#vis3')
+              .attr("class", "vis3")
               .attr('width' , width)
               .attr('height', height);
               // .style('background', '#efefef');
