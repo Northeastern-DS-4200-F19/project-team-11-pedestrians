@@ -9,11 +9,15 @@ h1, h2, h3 {
 	line-height: 1.2
 }
 
-div.vis3 {
-
+div.geoVis {
+	position:relative;
 }
 
 .tipVar {
+	position:absolute;
+	transform:translate(100%, 120%);
+	right: 120%;
+	bottom: 110%;
 	width: 15%;
 }
 
