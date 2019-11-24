@@ -77,8 +77,8 @@ const update = (deets) => {
                                 </tr>
                               <tbody>
                                <tr>
-                                  <td>Total ${state["view"]}: ${Math.round(stuff[d.properties.Name])}</td> 
-                                  <td>Total Count for Chester</td> 
+                                  <td>Total ${state["view"]} count: ${Math.round(stuff[d.properties.Name])}</td> 
+                                  <td>Total crime count: </td> 
                                 </tr>
                               </tbody>
                             </table>
