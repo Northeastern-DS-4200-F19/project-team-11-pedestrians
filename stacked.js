@@ -5,13 +5,13 @@
 
 function stackChart(deets){
 
-  var width  = 1100;
+  var width  = 1200;
   var height = 700;
     var margin = {
       top: 20,
       bottom: 115,
       left: 50,
-      right: 100
+      right: 180
     };
   console.log(deets)
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
@@ -53,6 +53,9 @@ function stackChart(deets){
   d3.select(".x_axis_label3").remove();
   d3.select(".y_axis_label3").remove();
   d3.select(".title3").remove();
+  d3.selectAll(".legend").remove();
+  console.log(state);
+
   chartGroup.call(brush)
   var title = "";
   var x_axis_label = "";
@@ -65,6 +68,11 @@ function stackChart(deets){
   } else if (state["view"] == "real_estate") {
     title = "Division of Type of Homes";
     y_axis_label = "Percentage of Homes of this Type";
+    x_axis_label = "Neighborhood in Boston";
+  } else if (state["view"] == "demographic") {
+    console.log(state);
+    title = "Percentage of People with Different Degrees";
+    y_axis_label = "Percentage of people with this type of Degree";
     x_axis_label = "Neighborhood in Boston";
   }
 
@@ -86,9 +94,8 @@ function stackChart(deets){
   //  var y = d3.scaleLinear()
   //                  .range([height - margin.bottom - margin.top, margin.top]);
     var z = d3.scaleOrdinal(
-      d3.schemeTableau10
       )
-                    //.range(["#efefef","orange","yellow","green","blue","purple","indigo","white","black","grey","navy","indigo","brown","maroon"])
+                    .range(["#eb3434","#eb8934","#ebd034","#c0eb34","#6beb34","#34eb8c","#34ebd6","#34b1eb","#3474eb","#4034eb","#8334eb","#ba34eb","#eb34dc","#eb3499"])
                    .domain([...categories]);
 
   var xAxis = d3.axisBottom(xScale);
@@ -103,7 +110,9 @@ function stackChart(deets){
             .call(xAxis)
             .selectAll("text")
             .attr("text-anchor","end")
-            .attr("transform","rotate(-90)");
+            .style("font-size", "9px")
+            .attr("transform","rotate(-90)")
+            
 
     // Adding X-Axis Label
     svg.append("text")
@@ -178,20 +187,22 @@ function stackChart(deets){
             .append("circle")
             .merge(circles)
             .attr("class", "derp")
-            .attr("cx", width - 150)
-            .attr("r" , 10)
+            .attr("cx", width - 220)
+            .attr("r" , 13)
             .attr("cy", (d,i) => y(i * 5) - 100)
             .attr("fill", (d) => z(d.key))
 
       var texts = legends.selectAll("g > .stuff").data(main_data, d => d.key)
           texts.enter()
               .append("text")
+              .attr("class", "legend")
               .merge(texts)
-              .attr("x", width - 130)
+              .attr("x", width - 200)
               .attr("y", (d,i) => y(i * 5) - 97)
               .attr("text-anchor","begin")
               .text(d => d.key)
-              .attr("font-size","10")
+              .attr("font-size","13px")
+              .attr("fill","black")
               .attr("class","stuff")
       circles.exit().remove()
       texts.exit().remove()

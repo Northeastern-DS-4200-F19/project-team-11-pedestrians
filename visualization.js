@@ -17,18 +17,17 @@ function scatterplot(data){
               .attr('height', height);
               // .style('background', '#efefef');
 
-
-              d3.select(".x_axis_label4").remove();
-              d3.select(".y_axis_labe43").remove();
-              d3.select(".title4").remove();
+  d3.select(".x_axis_label4").remove();
+  d3.select(".y_axis_label4").remove();
+  d3.select(".title4").remove();
 
   // Adding Graph Title
   svg.append("text")
             .attr("x", width/2)
-            .attr("y", margin.top - 20)
+            .attr("y", margin.top - 10)
             .attr("class", "title4")
             .attr("text-anchor", "middle")
-            .style("font-size", "16px")
+            .style("font-size", "20px")
             .style("text-decoration", "underline")
             .text("Perceived Safety Level at Different Times of Day in Chester Square Park");
 
@@ -39,7 +38,7 @@ function scatterplot(data){
   var xScale = d3.scaleOrdinal()
                  .domain(["", "Morning", "Afternoon", "Evening"])
                  // Shifting by 50 so the last category label doesn't get cut off
-                 .range([0, 100, width/2, width - 100]);
+                 .range([0, 100, width/2, width - 110]);
 
   var yScale = d3.scaleLinear()
                  .domain([minSafetyLevel, maxSafetyLevel])
@@ -50,7 +49,7 @@ function scatterplot(data){
   var yAxis = d3.axisLeft(yScale);
 
   chartGroup.append('g')
-            .attr('class', 'x axis')
+            .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis)
             .style("font-size", "16px");
@@ -59,13 +58,13 @@ function scatterplot(data){
   svg.append("text")
      .attr("x", width/2 + margin.left)
      .attr("y", height - margin.bottom/2)
-     .attr("class", "x_axis_label4")
+     .attr('class', "x_axis_label4")
      .attr("text-anchor", "middle")
      .style("font-size", "20px")
      .text("Time of Day");
 
   chartGroup.append('g')
-            .attr('class', 'y axis')
+            .attr('class', 'y_axis')
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
             .call(yAxis)
             .style("font-size", "16px");
@@ -75,7 +74,7 @@ function scatterplot(data){
     .attr("transform", "rotate(-90)")
     .attr("x", -height/2 + margin.bottom)
     .attr("y", margin.left/2)
-    .attr("class", "y_axis_label4")
+    .attr('class', "y_axis_label4")
     .style("font-size", "20px")
     .attr("text-anchor", "end")
     .text("Perceived Safety Level");
@@ -88,7 +87,7 @@ function scatterplot(data){
      .attr("cx", function (d) { return xScale(d.visittime) + margin.left; })
      .attr("cy", function (d) { return yScale(d.safetylevel) + margin.top; })
      .attr("r", 10)
-     .style("fill", "#69b3a2")
+     .style("fill", "#69b3a2");
 
      // Add brushing
      chartGroup
