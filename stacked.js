@@ -34,6 +34,7 @@ function stackChart(deets){
       return 0;
     }
   })(deets)
+  
   var svg = d3.select('#vis5')
               .attr('width' , width)
               .attr('height', height)
@@ -154,12 +155,12 @@ function stackChart(deets){
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
         .attr("stroke", (d,e) => {
           if(state.neighborhood.includes(d.data.neighborhood)) {
-            return "black"
+            return "blue"
           } else {
             return "white"
           }
         }).on("click", d => {
-          state.setN = d.data.neighborhood;
+          state.setN = d.data;
         })
         .on("mouseout", (d,e) => {
           state.removeN = d
@@ -184,6 +185,7 @@ function stackChart(deets){
               .attr("x", width - 130)
               .attr("y", (d,i) => y(i * 5) - 97)
               .attr("text-anchor","begin")
+              .attr("fill","black")
               .text(d => d.key)
               .attr("font-size","10")
               .attr("class","stuff")
@@ -215,10 +217,13 @@ function stackChart(deets){
           [x1, y1]
         ] = d3.event.selection; 
         // If within the bounds of the brush, select it
+        var index = 0
         d3.selectAll(".layer").each(function(d){
+          console.log(index)
+          index++
           var neighborhood = d3.select(this).attr("id")
-          console.log(d)
           var x = xScale(neighborhood) + margin.left + 20;
+          console.log(x)
           if(x0 <= x && x1 >= x) {
             nlist.push(d3.select(this).attr("id"))
           }
@@ -230,7 +235,7 @@ function stackChart(deets){
        }  
       }
 
-        // Adding Graph Title
+  // Adding Graph Title
   svg.append("text")
   .attr("x", width/2)
   .attr("y", margin.top)

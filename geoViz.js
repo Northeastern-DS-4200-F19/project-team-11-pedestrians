@@ -37,12 +37,9 @@ var geoGenerator = d3.geoPath()
 
 //the update function
 const update = (deets) => {
-  console.log(deets.data)
   var info = deets.info
 
   var title = "";
-  console.log(title);
-
   if(state["view"] == "crime"){
     title = "Crime Choropleth Map of Boston";
   } else if (state["view"] == "real_estate") {
@@ -84,8 +81,7 @@ const update = (deets) => {
   var stuff = d3.nest().key(function(d) {return d.neighborhood})
                   .rollup(function(v) {return d3.sum(v,function(d){return d.value})})
                   .object(deets.data);
-  var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key]));
-  console.log(daMax)
+  var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key])); 
   var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
   graph.call(tip);
@@ -99,7 +95,6 @@ const update = (deets) => {
         .merge(paths)
         .attr('d', geoGenerator)
         .attr("fill",d => {
-          console.log(stuff[d.properties.Name])
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(d["properties"]["Name"] === state["neighborhood"]) {
