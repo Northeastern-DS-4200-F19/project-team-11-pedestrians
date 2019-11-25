@@ -120,7 +120,7 @@ const update = (deets) => {
             return 1
           }
         })
-        .on("mouseover", function(d){  d3.select(this).attr("stroke","blue");})
+        .on("mouseover", function(d){d3.select(this).attr("stroke","blue");})
         .on("click",function(d){show(d,this)})
         .on("mouseout",function(d){hide(d,this);});
 

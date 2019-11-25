@@ -34,7 +34,6 @@ function stackChart(deets){
       return 0;
     }
   })(deets)
-  
   var svg = d3.select('#vis5')
               .attr('width' , width)
               .attr('height', height)
@@ -185,7 +184,7 @@ function stackChart(deets){
               .attr("x", width - 130)
               .attr("y", (d,i) => y(i * 5) - 97)
               .attr("text-anchor","begin")
-              .attr("fill","black")
+              .attr("fill", "purple")
               .text(d => d.key)
               .attr("font-size","10")
               .attr("class","stuff")
