@@ -1,8 +1,3 @@
-  //   var minSafetyLevel = 0;
-  //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
-  //
-
-
 function stackChart(deets){
 
   var width  = 1100;
@@ -202,8 +197,8 @@ function stackChart(deets){
         const nlist = []
         const brush = d3.brush().on("end",brushEnd)
         .extent([
-          [-margin.left,-margin.bottom],
-          [width+margin.right, height + margin.top] 
+          [0,0],
+          [width, height] 
         ]);
 
       g.call(brush);
@@ -223,7 +218,7 @@ function stackChart(deets){
         d3.selectAll(".layer").each(function(d){
           var neighborhood = d3.select(this).attr("id")
           console.log(d)
-          var x = xScale(neighborhood);
+          var x = xScale(neighborhood) + margin.left + 20;
           if(x0 <= x && x1 >= x) {
             nlist.push(d3.select(this).attr("id"))
           }

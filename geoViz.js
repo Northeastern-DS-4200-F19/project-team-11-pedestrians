@@ -39,11 +39,6 @@ var geoGenerator = d3.geoPath()
 const update = (deets) => {
   console.log(deets.data)
   var info = deets.info
-  // // Add brushing
-  // d3.select("#vis-svg")
-  //       .call( d3.brush()                     // Add the brush feature using the d3.brush function
-  //         .extent( [ [0,0], [400,400] ] )       // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
-  //       )
 
   var title = "";
   console.log(title);
@@ -52,6 +47,8 @@ const update = (deets) => {
     title = "Crime Choropleth Map of Boston";
   } else if (state["view"] == "real_estate") {
     title = "Real Estate Choropleth Map of Boston";
+  } else if (state["view"] == "demographic") {
+    title = "Education Choropleth Map of Boston"
   }
 
   d3.select(".title2").remove();
