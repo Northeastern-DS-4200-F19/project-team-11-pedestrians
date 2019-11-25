@@ -1,12 +1,12 @@
 function stackChart(deets){
 
-  var width  = 1100;
+  var width  = 1200;
   var height = 700;
     var margin = {
       top: 20,
       bottom: 115,
       left: 50,
-      right: 100
+      right: 180
     };
   console.log(deets)
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
@@ -48,6 +48,9 @@ function stackChart(deets){
   d3.select(".x_axis_label3").remove();
   d3.select(".y_axis_label3").remove();
   d3.select(".title3").remove();
+  d3.selectAll(".legend").remove();
+  console.log(state);
+
   chartGroup.call(brush)
   var title = "";
   var x_axis_label = "";
@@ -61,6 +64,11 @@ function stackChart(deets){
     title = "Division of Type of Homes";
     y_axis_label = "Percentage of Homes of this Type";
     x_axis_label = "Neighborhood in Boston";
+  } else if (state["view"] == "demographic") {
+    console.log(state);
+    title = "Percentage of People with Different Degrees";
+    y_axis_label = "Percentage of people with this type of Degree";
+    x_axis_label = "Neighborhood in Boston";
   }
 
 
@@ -73,17 +81,16 @@ function stackChart(deets){
     var yScale = d3.scaleLinear()
                    .domain([0, 100])
                    .range([height - margin.bottom - margin.top, margin.top]);
-  
+
     var y = d3.scaleLinear()
                       .domain([0,100])
                       .range([(height - margin.bottom - margin.top), margin.top])
-    
+
   //  var y = d3.scaleLinear()
   //                  .range([height - margin.bottom - margin.top, margin.top]);
     var z = d3.scaleOrdinal(
-      d3.schemeTableau10
       )
-                    //.range(["#efefef","orange","yellow","green","blue","purple","indigo","white","black","grey","navy","indigo","brown","maroon"])
+                    .range(["#eb3434","#eb8934","#ebd034","#c0eb34","#6beb34","#34eb8c","#34ebd6","#34b1eb","#3474eb","#4034eb","#8334eb","#ba34eb","#eb34dc","#eb3499"])
                    .domain([...categories]);
 
   var xAxis = d3.axisBottom(xScale);
@@ -98,7 +105,9 @@ function stackChart(deets){
             .call(xAxis)
             .selectAll("text")
             .attr("text-anchor","end")
-            .attr("transform","rotate(-90)");
+            .style("font-size", "9px")
+            .attr("transform","rotate(-90)")
+            
 
     // Adding X-Axis Label
     svg.append("text")
@@ -165,34 +174,37 @@ function stackChart(deets){
           state.removeN = d
         })
 
+
       var legends = chartGroup.selectAll("g.layer").append("g")
       var circles = legends.selectAll("g.layer > circle").data(main_data, d => d.key)
-  
+
       circles.enter()
             .append("circle")
             .merge(circles)
             .attr("class", "derp")
-            .attr("cx", width - 150)
-            .attr("r" , 10)
+            .attr("cx", width - 220)
+            .attr("r" , 13)
             .attr("cy", (d,i) => y(i * 5) - 100)
             .attr("fill", (d) => z(d.key))
-      
+
       var texts = legends.selectAll("g > .stuff").data(main_data, d => d.key)
           texts.enter()
               .append("text")
+              .attr("class", "legend")
               .merge(texts)
-              .attr("x", width - 130)
+              .attr("x", width - 200)
               .attr("y", (d,i) => y(i * 5) - 97)
               .attr("text-anchor","begin")
               .attr("fill", "purple")
               .text(d => d.key)
-              .attr("font-size","10")
+              .attr("font-size","13px")
+              .attr("fill","black")
               .attr("class","stuff")
       circles.exit().remove()
       texts.exit().remove()
       legends.exit().remove()
 
-   
+
 
       function brush (g) {
         const nlist = []
@@ -203,18 +215,18 @@ function stackChart(deets){
         ]);
 
       g.call(brush);
-      
+
       function brushEnd(){
         // We don't want infinite recursion
         if(d3.event.sourceEvent.type!="end"){
           d3.select(this).call(brush.move, null);
-        } 
+        }
         if (d3.event.selection === null) return;
-  
+
         const [
           [x0, y0],
           [x1, y1]
-        ] = d3.event.selection; 
+        ] = d3.event.selection;
         // If within the bounds of the brush, select it
         var index = 0
         d3.selectAll(".layer").each(function(d){
@@ -231,7 +243,7 @@ function stackChart(deets){
         console.log(d3.event.selection)
         console.log(new Set(nlist))
         state.setN = new Set(nlist)
-       }  
+       }
       }
 
   // Adding Graph Title
