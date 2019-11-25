@@ -1,8 +1,3 @@
-  //   var minSafetyLevel = 0;
-  //   var maxSafetyLevel = d3.max(data, function(d){ return d.value;});
-  //
-
-
 function stackChart(deets){
 
   var width  = 1200;
@@ -168,12 +163,12 @@ function stackChart(deets){
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
         .attr("stroke", (d,e) => {
           if(state.neighborhood.includes(d.data.neighborhood)) {
-            return "black"
+            return "blue"
           } else {
             return "white"
           }
         }).on("click", d => {
-          state.setN = d.data.neighborhood;
+          state.setN = d.data;
         })
         .on("mouseout", (d,e) => {
           state.removeN = d
@@ -200,6 +195,7 @@ function stackChart(deets){
               .attr("x", width - 200)
               .attr("y", (d,i) => y(i * 5) - 97)
               .attr("text-anchor","begin")
+              .attr("fill", "purple")
               .text(d => d.key)
               .attr("font-size","13px")
               .attr("fill","black")
@@ -214,8 +210,8 @@ function stackChart(deets){
         const nlist = []
         const brush = d3.brush().on("end",brushEnd)
         .extent([
-          [-margin.left,-margin.bottom],
-          [width+margin.right, height + margin.top]
+          [0,0],
+          [width, height] 
         ]);
 
       g.call(brush);
@@ -232,10 +228,13 @@ function stackChart(deets){
           [x1, y1]
         ] = d3.event.selection;
         // If within the bounds of the brush, select it
+        var index = 0
         d3.selectAll(".layer").each(function(d){
+          console.log(index)
+          index++
           var neighborhood = d3.select(this).attr("id")
-          console.log(d)
-          var x = xScale(neighborhood);
+          var x = xScale(neighborhood) + margin.left + 20;
+          console.log(x)
           if(x0 <= x && x1 >= x) {
             nlist.push(d3.select(this).attr("id"))
           }
@@ -247,7 +246,7 @@ function stackChart(deets){
        }
       }
 
-        // Adding Graph Title
+  // Adding Graph Title
   svg.append("text")
   .attr("x", width/2)
   .attr("y", margin.top)

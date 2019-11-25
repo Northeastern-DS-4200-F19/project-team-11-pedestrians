@@ -9,6 +9,24 @@ h1, h2, h3 {
 	line-height: 1.2
 }
 
+div.geoVis {
+	position:relative;
+}
+
+.tipVar {
+	width: 15%;
+    position: absolute!important;
+    top: 30em!important;
+    left: 60%!important;
+    margin-top: 500px;
+    margin-left:100px;
+/*	position: absolute!important;
+	transform:translate(100%, 120%);
+	right: 120%;
+	bottom: 110%;
+	width: 15%;*/
+}
+
 .selected {
   opacity: 2 !important;
   stroke: black;

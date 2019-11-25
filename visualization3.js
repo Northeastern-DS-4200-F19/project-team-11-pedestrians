@@ -37,9 +37,14 @@ function lineChart(deets){
     title = "Real Estate Prices over Time";
     y_axis_label = "Home Sales";
     x_axis_label = "Year";
+  } else if (state["view"] == "demographic") {
+    title = "Bachelor's Degrees Over Time";
+    y_axis_label = "Number of Bachelor's Degrees";
+    x_axis_label = "Year";
   }
 
   var svg = d3.select('#vis3')
+              .attr("class", "vis3")
               .attr('width' , width)
               .attr('height', height);
               // .style('background', '#efefef');
