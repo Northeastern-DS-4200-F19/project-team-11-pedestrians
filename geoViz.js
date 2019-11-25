@@ -125,7 +125,7 @@ const update = (deets) => {
         .on("mouseout",function(d){hide(d,this);});
 
     var show = (d,target) => {
-      state.setN = d.properties.Name;
+      state.setN = [d.properties.Name];
       tip.show(d,target);
       d3.select(target).attr("stroke","blue");
     };
