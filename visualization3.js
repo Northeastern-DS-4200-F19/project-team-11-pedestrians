@@ -2,7 +2,9 @@ function lineChart(deets){
 
   console.log(deets)
   var data = d3.nest()
+              // .key(function(d){ return d.neighborhood == "Chester Square"})
               .key(function(d) { return d.time; })
+              // .key(function(d) { return d.neighborhood == "Chester Square"})
               .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
               .entries(deets)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
@@ -14,7 +16,7 @@ function lineChart(deets){
     left: 75,
     right: 30
   };
-
+  console.log(data)
   var mintime = d3.min(data, function(d){return parseInt(d.key);});
   var maxtime = d3.max(data, function(d){return parseInt(d.key);});
 
@@ -112,14 +114,16 @@ function lineChart(deets){
             .append("path")
             .attr("class","derp")
             .attr("fill", "none")
-            .attr("stroke", colors[state["view"]])
+            .attr("stroke", d => {
+              return colors[state["view"]]})
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
-            .x(function (d) { return xScale(parseInt(d.key)) + margin.left; })
-            .y(function (d) { return yScale(d.value) + margin.top; }));
+            .x(function (d) {
+              return xScale(d.key) + margin.left; })
+            .y(function (d) { 
+              return yScale(d.value) + margin.top; }));
 
   paths.exit().remove();
   chartGroup.exit().remove()
-
 
 }

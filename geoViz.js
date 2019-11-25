@@ -66,27 +66,21 @@ const update = (deets) => {
                       <table class="responsive-table">
                               <thead>
                                 <tr>
+                                    <th>Metric</th>
                                     <th>${d["properties"]["Name"]}</th>
                                     <th>Chester Square</th>
                                 </tr>
                               <tbody>
                                <tr>
-                                  <td>Total ${state["view"]} count: ${Math.round(stuff[d.properties.Name])}</td> 
-                                  <td>Total crime count: </td> 
+                                  <td>Total ${state["view"]}</td>
+                                  <td>${Math.round(stuff[d.properties.Name])}</td> 
+                                  <td>${Math.round(stuff["Chester Square"])}</td> 
                                 </tr>
                               </tbody>
                             </table>
                           </div>`
             })
             .attr("x", width).attr("y", height);
-
-            var hide = (d,target) => {
-              console.log("Hidden")
-              state.setN = "";
-              d3.select(".tip").remove();
-              tip.hide(d,this);
-              d3.select(target).attr("stroke","grey");
-            };
 
   var stuff = d3.nest().key(function(d) {return d.neighborhood})
                   .rollup(function(v) {return d3.sum(v,function(d){return d.value})})
@@ -107,35 +101,37 @@ const update = (deets) => {
         .attr("fill",d => {
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
-          if(d["properties"]["Name"] === state["neighborhood"]) {
+          if(state["neighborhood"].includes(d["properties"]["Name"])) {
             return "blue"
           } else {
             return "grey"
           }
         })
         .attr("stroke-width",(d) => {
-          if(d["properties"]["Name"] === state["neighborhood"]) {
-            return 5
+          if(state["neighborhood"].includes(d["properties"]["Name"])) {
+            return 3;
           } else {
-            return 1
+            return 1;
           }
         })
         .on("mouseover", function(d){d3.select(this).attr("stroke","blue");})
         .on("click",function(d){show(d,this)})
         .on("mouseout",function(d){hide(d,this);});
 
-    var show = (d,target) => {
+    var show = (d) => {
       state.setN = [d.properties.Name];
-      tip.show(d,target);
-      d3.select(target).attr("stroke","blue");
+      tip.show(d);
+      // d3.select(target).attr("stroke","blue");
     };
 
     var hide = (d,target) => {
-      state.removeN = [];
-      tip.hide(d);
-      d3.select(target).attr("stroke","grey");
+      console.log("Hidden")
+      state.setN = "";
+      d3.select(".tipVar").remove();
+      // tip.hide(d);
+      // d3.select(target).attr("stroke","grey");
     };
-
+    // show(stuff)
     // graph.call(brush);
     // function brush (g) {
     //   const nlist = []
