@@ -4,3 +4,5 @@ venv/
 data/csv_files/boston_crime.csv
 data/csv_files/boston_crimev0.csv
 .vscode/
+.DS_Store
+data/.DS_Store

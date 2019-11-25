@@ -57,13 +57,15 @@ def classify(location):
         nb_name = feature["properties"]["Name"]
         area = shape(feature["geometry"])
         if(area.contains(point)):
+            if(nb_name == "Chester Square"):
+                print("In CS")
             result = nb_name
             break
         else:
             continue
     return result
 
-# newCategories = df1["OFFENSE_CODE_GROUP"].unique()
+newCategories = df1["OFFENSE_CODE_GROUP"].unique()
 
 def legacyToNew(category):
     highest = process.extractOne(category, newCategories)
@@ -88,11 +90,12 @@ data["location"] = mergeCols(df["Location"], df1["Location"])
 data["street"] = mergeCols(df["STREETNAME"], df1["STREET"])
 data["date"] = mergeCols(df["FROMDATE"], df1["OCCURRED_ON_DATE"])
 
-# crime = pd.DataFrame(data)
+crime = pd.DataFrame(data)
 
 # Creating time Field, Classifying Crime, Saving base level dataset
 crime["time"] = crime["date"].apply(totime)
 crime["year"] = crime["date"].apply(toyear)
+print("classifying")
 crime["neighborhood"] = crime["location"].apply(classify)
 crime.to_csv("./csv_files/boston_crime.csv")
 

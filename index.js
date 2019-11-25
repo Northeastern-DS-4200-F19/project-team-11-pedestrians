@@ -1,5 +1,5 @@
 const stateBttns = document.querySelectorAll(".btn")
-var colors = {"crime":"red","real_estate":"green","demographic":"blue"}
+var colors = {"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}
 var state = {view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
   this.neighborhood = Array.from(x);
   removeChart();

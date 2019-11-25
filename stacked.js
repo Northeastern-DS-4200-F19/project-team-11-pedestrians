@@ -168,7 +168,7 @@ function stackChart(deets){
             return "white"
           }
         }).on("click", d => {
-          state.setN = d.data;
+          state.setN = [d.data.neighborhood];
         })
         .on("mouseout", (d,e) => {
           state.removeN = d
