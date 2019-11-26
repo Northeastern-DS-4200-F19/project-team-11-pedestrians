@@ -102,7 +102,7 @@ const update = (deets) => {
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
-            return "blue"
+            return "orange"
           } else {
             return "grey"
           }
@@ -127,7 +127,7 @@ const update = (deets) => {
     var hide = (d,target) => {
       console.log("Hidden")
       state.setN = "";
-      d3.select(".tipVar").remove();
+      // d3.select(".tipVar").remove();
       // tip.hide(d);
       // d3.select(target).attr("stroke","grey");
     };

@@ -1,6 +1,7 @@
 function stackChart(deets){
 
   var width  = 1200;
+  console.log(width)
   var height = 700;
     var margin = {
       top: 20,
@@ -8,6 +9,7 @@ function stackChart(deets){
       left: 50,
       right: 180
     };
+
   console.log(deets)
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
   var categories = [... new Set(deets.reduce((a,b) => {
@@ -112,7 +114,7 @@ function stackChart(deets){
     // Adding X-Axis Label
     svg.append("text")
        .attr("x", width/2)
-       .attr("y", height - margin.bottom + 100)
+       .attr("y", height - margin.bottom + 110)
        .attr("class", "x_axis_label3")
        .attr("text-anchor", "middle")
        .style("font-size", "16px")
@@ -161,13 +163,21 @@ function stackChart(deets){
         .attr("width",xScale.bandwidth() - 3)
         .attr("y", function (d) { return yScale(d[1])+margin.top})
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
-        .attr("stroke", (d,e) => {
-          if(state.neighborhood.includes(d.data.neighborhood)) {
-            return "blue"
+        .attr("stroke",(d) => {
+          if(state["neighborhood"].includes(d.data.neighborhood)) {
+            return "orange"
           } else {
             return "white"
           }
-        }).on("click", d => {
+        })
+        .attr("stroke-width",(d) => {
+          if(state["neighborhood"].includes(d.data.neighborhood)) {
+            return 3;
+          } else {
+            return 1;
+          }
+        })
+        .on("click", d => {
           state.setN = [d.data.neighborhood];
         })
         .on("mouseout", (d,e) => {
@@ -199,12 +209,10 @@ function stackChart(deets){
               .text(d => d.key)
               .attr("font-size","13px")
               .attr("fill","black")
-              .attr("class","stuff")
+              .attr("class","stuff");
       circles.exit().remove()
       texts.exit().remove()
       legends.exit().remove()
-
-
 
       function brush (g) {
         const nlist = []
@@ -228,10 +236,7 @@ function stackChart(deets){
           [x1, y1]
         ] = d3.event.selection;
         // If within the bounds of the brush, select it
-        var index = 0
         d3.selectAll(".layer").each(function(d){
-          console.log(index)
-          index++
           var neighborhood = d3.select(this).attr("id")
           var x = xScale(neighborhood) + margin.left + 20;
           console.log(x)
