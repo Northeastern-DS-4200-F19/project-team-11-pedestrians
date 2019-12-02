@@ -11,14 +11,36 @@ h1, h2, h3 {
 
 /* Your text should be in a nice narrow column */
 .content-column {
-	max-width: 60%;
+	max-width: 650px;
+	justify-content: center;
 	margin: 40px auto;
 }
 
 /* But your visualization should be full-width and full-height */
 .vis-holder {
+	display:grid;
+	grid-template-areas:
+	"a"
+	"c"
+	"e"
+	"e";
   width: 100%;
   height: 100%;
+}
+
+.toolbar {
+	display:grid;
+	grid-template-columns: repeat(3,1fr);	
+	gap: 1em;
+}
+.rowOne {
+	display:flex;
+	flex: 50% 50%
+}
+
+.viz {
+	width: 100%;
+	height:100%
 }
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
