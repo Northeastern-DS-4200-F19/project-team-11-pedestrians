@@ -2,7 +2,6 @@ function csOverTime(deets){
 
     // Acknowledgement
     // https://bl.ocks.org/d3noob/814a2bcb3e7d8d8db74f36f77c8e6b7f
-    console.log(deets)
     var data = d3.nest()
                 // .key(function(d){ return d.neighborhood == "Chester Square"})
                 .key(function(d) { return d.time; })
@@ -10,8 +9,6 @@ function csOverTime(deets){
                 .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
                 .entries(deets["actual"])
                 .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
-    console.log(data)
-    console.log(deets["perceived"])
     var width  = 600;
     var height = 400;
     var margin = {
@@ -20,14 +17,13 @@ function csOverTime(deets){
       left: 75,
       right: 30
     };
-    console.log(data)
     var mintime = d3.min(data, function(d){return parseInt(d.key);});
     var maxtime = d3.max(data, function(d){return parseInt(d.key);});
     var minvalue = 0;
     var maxvalue  = d3.max(data, function(d){return d.value;});
   
     var maxvalueII = Math.max(...Object.values(deets["perceived"]));
-    console.log(maxvalueII)
+
     d3.select(".x_axis_label").remove();
     d3.select(".y_axis_label").remove();
     d3.select(".title").remove();
@@ -111,8 +107,8 @@ function csOverTime(deets){
               .style("font-size", "14px");
 
     var y_axis_ii = chartGroup.append('g')
-              .attr('class', 'y_axis')
-              .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
+              .attr('class', 'y_axis_ii')
+              .attr('transform', 'translate('+ (width - margin.right + 5) +', ' + margin.top+')')
               .call(yAxisII)
               .style("font-size", "14px");
   
