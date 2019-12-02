@@ -70,7 +70,7 @@ function lineChart(deets){
                  .range([0, width - 100]);
 
   var yScale = d3.scaleLinear()
-                 .domain([minvalue, maxvalue + 1000])
+                 .domain([minvalue, maxvalue])
                  .range([height - margin.bottom - margin.top, 0]);
 
   var xAxis = d3.axisBottom(xScale);

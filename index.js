@@ -48,7 +48,8 @@ var promises = [
         d3.csv("./data/csv_files/ChesterSquareSurveyResponses.csv",function(d) {
                     return {
                       visittime: d.visittime,
-                      safetylevel: + d.safetylevel
+                      safetylevel: + d.safetylevel,
+                      hour: parseInt(d.hour)
                     }}),
         d3.json("./data/json_files/boston.geojson")
     ]
@@ -89,6 +90,61 @@ const filterBar = (d) => {
   return rArray
 }
 
+const filterCsBar = (d) => {
+  var result = {}
+  var rArray = []
+  var categorys = new Set(d.map(obj => obj.category));
+  var neighborhoods = new Set(d.map(obj => obj.neighborhood));
+  neighborhoods.forEach(n => {
+    row = {}
+    categorys.forEach(ot => {
+      row[ot] = 0
+    })
+    result[n] = row
+  })
+  d.forEach(obj => {
+    result[obj.neighborhood][obj.category] = result[obj.neighborhood][obj.category] + obj.value
+  })
+  Object.keys(result).forEach(neighborhood => {
+    row = result[neighborhood]
+    filtered_row = {}
+    sortedKeys = Object.keys(result[neighborhood]).sort((a,b) => {
+      return result[neighborhood][b] - result[neighborhood][a]}
+      )
+    for(let i = 0; i < 10; i++) {
+      filtered_row[sortedKeys[i]] = row[sortedKeys[i]]
+    }
+    filtered_row["neighborhood"] = neighborhood
+    rArray.push(filtered_row)
+  })
+  return rArray.filter(a => a.neighborhood == "Chester Square")
+}
+
+const transformSurvey = (d) => {
+  var result = {}
+  for(let i = 0; i < 23; i++) {
+    result[i] = {"total":0,"records":0}
+  }
+  d.forEach(row => {
+      result[row.hour]["total"] += row.safetylevel 
+      result[row.hour]["records"] += 1
+    })
+    console.log(result)
+    var final = [];
+  Object.keys(result).forEach(key => {
+    current = {}
+    current["key"] = parseInt(key)
+    if(result[key]["records"] == 0) {
+      current["value"] = 0
+    } else {
+      current["value"] = result[key]["total"]/result[key]["records"]
+    }
+    
+    final.push(current)
+  })
+  console.log(final)
+  return final;
+}
 const filterLine = (d) => {
   if(state.neighborhood.length == 0) {
     d = d;
@@ -111,6 +167,8 @@ const render = () => {
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+    csTopFive(filterCsBar(state.data["crime"])[0]);
+    csOverTime({"actual":filterLine(state.data["crime"]).filter(a => a.neighborhood == "Chester Square"),"perceived":transformSurvey(state.data["survey"])})
 }
 
 const setData = (d) => {
@@ -127,11 +185,11 @@ const load = () => {
 
 stateBttns.forEach(btn => {
   if(btn.className = "btn4") {
-    btn.addEventListener("click",e => {
-      e.preventDefault()
-      document.querySelectorAll(".boston").forEach(element => element.style.visibility = "hidden");
-      document.querySelectorAll(".cs").forEach(element => element.style.visibility = "visible");
-    });
+    // btn.addEventListener("click",e => {
+    //   e.preventDefault()
+    //   document.querySelectorAll(".boston").forEach(element => element.style.visibility = "hidden");
+    //   document.querySelectorAll(".cs").forEach(element => element.style.visibility = "visible");
+    // });
   } else {
   btn.addEventListener("click" , (e) => {
     e.preventDefault()

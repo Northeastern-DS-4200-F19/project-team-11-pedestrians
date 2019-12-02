@@ -18,7 +18,4 @@ def visitTimeToHour(val):
 
 df["hour"] = [visitTimeToHour(x) for x in df["visittime"]]
 print(df["hour"])
-# real = realEstateData()
-# sorted_real = real.sort_values(by="Date")
-# sorted_real.rename(columns={'Date':'time','Value':'value'}, inplace=True)
 df.to_csv("./csv_files/ChesterSquareSurveyResponses.csv")
