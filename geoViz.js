@@ -125,7 +125,6 @@ const update = (deets) => {
     };
 
     var hide = (d,target) => {
-      console.log("Hidden")
       state.setN = "";
       // d3.select(".tipVar").remove();
       // tip.hide(d);

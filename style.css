@@ -45,6 +45,12 @@ h1, h2, h3 {
 	flex: 50% 50%
 }
 
+.rowTwo {
+	display:flex;
+	align-items: center;
+	flex: 50% 50%
+}
+
 .viz {
 	width: 100%;
 	height:100%

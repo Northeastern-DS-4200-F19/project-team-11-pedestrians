@@ -1,11 +1,14 @@
 function csTopFive(deets){
-    var width  = 1200;
-    var height = 700;
+
+  // Acknowledgement
+  //https://bl.ocks.org/caravinden/d04238c4c9770020ff6867ee92c7dac1
+    var width  = 600;
+    var height = 400;
       var margin = {
         top: 20,
         bottom: 115,
         left: 50,
-        right: 180
+        right: 50
       };
     var svg = d3.select('#vis7')
                 .attr('width' , width)
@@ -15,7 +18,15 @@ function csTopFive(deets){
     var chartGroup = svg.append('g')
                           .append('svg')
                           .attr('transform','translate(' + margin.left +',' + margin.top + ')');
-  
+    var plz = []
+    Object.keys(deets).forEach(key => {
+      current = {}
+      current["key"] = key
+      current["value"] = deets[key]
+      plz.push(current);
+    });
+    plz.pop()
+    console.log(plz)
     d3.select(".x_axis_label3").remove();
     d3.select(".y_axis_label3").remove();
     d3.select(".title3").remove();
@@ -48,15 +59,14 @@ function csTopFive(deets){
     var xScale = d3.scaleBand()
                    .domain(categories)
                    // Shifting by 50 so the last category label doesn't get cut off
-                   .range([0, width - margin.right - 150]);
+                   .range([0, width - margin.right - margin.left]);
     //
     var values = Object.values(deets)
     values.pop()
-    console.log(values)
 
       var yScale = d3.scaleLinear()
                      .domain([0, Math.max(...values)])
-                     .range([height - margin.bottom - margin.top, margin.top]);
+                     .range([height - margin.bottom - margin.top, 0]);
   
     var xAxis = d3.axisBottom(xScale);
     var yAxis = d3.axisLeft(yScale);
@@ -97,19 +107,18 @@ function csTopFive(deets){
         .text(y_axis_label);
   
         console.log(deets)
-      var bars = chartGroup.selectAll("rect").data(deets)
+      var bars = chartGroup.selectAll("rect").data(plz)
       bars.exit().remove()
       bars.enter()
           .append("rect")
           .merge(bars)
           .attr("class","derp")
-          .attr("x", function (d,i) {
-              console.log(i)
-              return xScale(i) + margin.left + 20;
+          .attr("x", function (d) { 
+              return xScale(d.key) + margin.left;
             })
             .attr("width",xScale.bandwidth() - 3)
-          .attr("y", function (d,i) { return yScale(d[i]) + margin.top})
-          .attr("height", function (d,i) {return height - yScale(d[i])})
+          .attr("y", function (d) { return height - yScale(d["value"]) - margin.bottom})
+          .attr("height", function (d) {return yScale(d["value"])})
           .attr("stroke",(d) => {
               return "black"
             // if(state["neighborhood"].includes(d.data.neighborhood)) {
@@ -118,7 +127,7 @@ function csTopFive(deets){
             //   return "white"
             // }
           })
-          .attr("fill", "black")
+          .attr("fill", "white")
         //   .attr("stroke-width",(d) => {
         //     if(state["neighborhood"].includes(d.data.neighborhood)) {
         //       return 3;

@@ -1,5 +1,5 @@
 function csOverTime(deets){
-
+  console.log(deets["perceived"])
     // Acknowledgement
     // https://bl.ocks.org/d3noob/814a2bcb3e7d8d8db74f36f77c8e6b7f
     var data = d3.nest()
@@ -21,7 +21,6 @@ function csOverTime(deets){
     var maxtime = d3.max(data, function(d){return parseInt(d.key);});
     var minvalue = 0;
     var maxvalue  = d3.max(data, function(d){return d.value;});
-  
     var maxvalueII = Math.max(...Object.values(deets["perceived"]));
 
     d3.select(".x_axis_label").remove();
@@ -121,6 +120,15 @@ function csOverTime(deets){
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text(y_axis_label);
+    // Second Y Axis
+              chartGroup.append("text")
+              .attr("transform", "rotate(-90)")
+              .attr("x", -height/2)
+              .attr("y", width)
+              .attr("class", "y_axis_label")
+              .style("font-size", "16px")
+              .attr("text-anchor", "middle")
+              .text("Perceived Safety");
   
     var paths = chartGroup
               .datum(data)

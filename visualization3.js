@@ -1,6 +1,4 @@
 function lineChart(deets){
-
-  console.log(deets)
   var data = d3.nest()
               // .key(function(d){ return d.neighborhood == "Chester Square"})
               .key(function(d) { return d.time; })
@@ -16,7 +14,6 @@ function lineChart(deets){
     left: 75,
     right: 30
   };
-  console.log(data)
   var mintime = d3.min(data, function(d){return parseInt(d.key);});
   var maxtime = d3.max(data, function(d){return parseInt(d.key);});
 

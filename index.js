@@ -129,7 +129,6 @@ const transformSurvey = (d) => {
       result[row.hour]["total"] += row.safetylevel 
       result[row.hour]["records"] += 1
     })
-    console.log(result)
     var final = [];
   Object.keys(result).forEach(key => {
     current = {}
@@ -143,7 +142,6 @@ const transformSurvey = (d) => {
     }
     final.push(current)
   })
-  console.log(final)
   return final;
 }
 

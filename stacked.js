@@ -1,7 +1,6 @@
 function stackChart(deets){
 
   var width  = 1200;
-  console.log(width)
   var height = 700;
     var margin = {
       top: 20,
@@ -10,7 +9,6 @@ function stackChart(deets){
       right: 180
     };
 
-  console.log(deets)
   var neighborhoods = [... new Set(deets.map(d => d.neighborhood  ))]
   var categories = [... new Set(deets.reduce((a,b) => {
     let keys = Object.keys(b)
@@ -45,13 +43,11 @@ function stackChart(deets){
                         .append('svg')
                         .attr('transform','translate(' + margin.left +',' + margin.top + ')');
 
-  console.log(state);
 
   d3.select(".x_axis_label3").remove();
   d3.select(".y_axis_label3").remove();
   d3.select(".title3").remove();
   d3.selectAll(".legend").remove();
-  console.log(state);
 
   chartGroup.call(brush)
   var title = "";
@@ -67,7 +63,6 @@ function stackChart(deets){
     y_axis_label = "Percentage of Homes of this Type";
     x_axis_label = "Neighborhood in Boston";
   } else if (state["view"] == "demographic") {
-    console.log(state);
     title = "Percentage of People with Different Degrees";
     y_axis_label = "Percentage of people with this type of Degree";
     x_axis_label = "Neighborhood in Boston";
@@ -244,8 +239,6 @@ function stackChart(deets){
           }
           // state.setN = nlist
         })
-        console.log(d3.event.selection)
-        console.log(new Set(nlist))
         state.setN = new Set(nlist)
        }
       }
