@@ -134,17 +134,19 @@ const transformSurvey = (d) => {
   Object.keys(result).forEach(key => {
     current = {}
     current["key"] = parseInt(key)
-    if(result[key]["records"] == 0) {
-      current["value"] = 0
+    if(parseInt(key) <= 7) {
+      current["value"] = result["7"]["total"]/result["7"]["records"]
+    } else if (parseInt(key) <= 14) {
+      current["value"] = result["14"]["total"]/result["14"]["records"]
     } else {
-      current["value"] = result[key]["total"]/result[key]["records"]
+      current["value"] = result["21"]["total"]/result["21"]["records"]
     }
-    
     final.push(current)
   })
   console.log(final)
   return final;
 }
+
 const filterLine = (d) => {
   if(state.neighborhood.length == 0) {
     d = d;
