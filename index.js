@@ -1,6 +1,6 @@
 const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}
-var state = {view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
+var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
   this.neighborhood = Array.from(x);
   removeChart();
   render()
@@ -126,13 +126,21 @@ const load = () => {
 };
 
 stateBttns.forEach(btn => {
+  if(btn.className = "btn4") {
+    btn.addEventListener("click",e => {
+      e.preventDefault()
+      document.querySelectorAll(".boston").forEach(element => element.style.visibility = "hidden");
+      document.querySelectorAll(".cs").forEach(element => element.style.visibility = "visible");
+    });
+  } else {
   btn.addEventListener("click" , (e) => {
+    e.preventDefault()
     state["view"] = btn.attributes["data-activity"].nodeValue;
     // btn.className = "highlighted"
     d3.selectAll(".tipVar").remove()
     removeChart()
     render()
   })
-})
+}})
 
 load();
