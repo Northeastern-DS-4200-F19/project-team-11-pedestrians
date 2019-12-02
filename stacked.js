@@ -178,11 +178,11 @@ function stackChart(deets){
           }
         })
         .on("click", d => {
-          state.setN = [d.data.neighborhood];
+          state.removeN = [];
         })
-        .on("mouseout", (d,e) => {
-          state.removeN = d
-        })
+        // .on("mouseout", (d,e) => {
+        //   state.removeN = d
+        // })
 
 
       var legends = chartGroup.selectAll("g.layer").append("g")
@@ -239,7 +239,6 @@ function stackChart(deets){
         d3.selectAll(".layer").each(function(d){
           var neighborhood = d3.select(this).attr("id")
           var x = xScale(neighborhood) + margin.left + 20;
-          console.log(x)
           if(x0 <= x && x1 >= x) {
             nlist.push(d3.select(this).attr("id"))
           }
