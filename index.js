@@ -129,6 +129,7 @@ stateBttns.forEach(btn => {
   btn.addEventListener("click" , (e) => {
     state["view"] = btn.attributes["data-activity"].nodeValue;
     // btn.className = "highlighted"
+    d3.selectAll(".tipVar").remove()
     removeChart()
     render()
   })

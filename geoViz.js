@@ -11,7 +11,7 @@ var margin = {
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
-const canvas = d3.select("#vis-svg")
+const canvas = d3.select("#geovis")
               .attr("class", "geoVis")
               .attr("height",height)
               .attr("width",width)
@@ -24,7 +24,7 @@ const canvas = d3.select("#vis-svg")
               // .attr("stroke","black")
               // .attr("stroke-width","border")
               .attr("fill","none")
-  const graph = d3.select("#vis-svg").append("svg");
+  const graph = d3.select("#geovis").append("svg");
                             // .attr("transform", `translate(${margin.left},${margin.top})`);
 
 //lon and lat to x and y
@@ -51,7 +51,7 @@ const update = (deets) => {
   }
 
   d3.select(".title2").remove();
-  d3.select("#vis-svg").append("text")
+  d3.select("#geovis").append("text")
             .attr("x", 250)
             .attr("y", 20)
             .attr("class", "title2")
@@ -103,7 +103,7 @@ const update = (deets) => {
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
-            return "blue"
+            return "orange"
           } else {
             return "grey"
           }
@@ -128,7 +128,7 @@ const update = (deets) => {
     var hide = (d,target) => {
       console.log("Hidden")
       state.setN = "";
-      d3.select(".tipVar").remove();
+      // d3.select(".tipVar").remove();
       // tip.hide(d);
       // d3.select(target).attr("stroke","grey");
     };

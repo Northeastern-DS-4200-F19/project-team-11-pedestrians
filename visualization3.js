@@ -37,11 +37,11 @@ function lineChart(deets){
     x_axis_label = "Hour of Day";
   } else if (state["view"] == "real_estate") {
     title = "Real Estate Prices over Time";
-    y_axis_label = "Home Sales";
+    y_axis_label = "Average Price Per Square Feet";
     x_axis_label = "Year";
   } else if (state["view"] == "demographic") {
     title = "Bachelor's Degrees Over Time";
-    y_axis_label = "Number of Bachelor's Degrees";
+    y_axis_label = "Bachelor's Degrees Per Year";
     x_axis_label = "Year";
   }
 
