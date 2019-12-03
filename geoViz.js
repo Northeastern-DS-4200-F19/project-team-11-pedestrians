@@ -7,7 +7,6 @@ var margin = {
   right: 30
 };
 
-
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
@@ -103,14 +102,14 @@ const update = (deets) => {
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
-            return "orange"
+            return "black"
           } else {
             return "grey"
           }
         })
         .attr("stroke-width",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
-            return 3;
+            return 2;
           } else {
             return 1;
           }

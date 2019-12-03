@@ -92,7 +92,7 @@ function stackChart(deets){
   //                  .range([height - margin.bottom - margin.top, margin.top]);
     var z = d3.scaleOrdinal(
       )
-                    .range(["#eb3434","#eb8934","#ebd034","#c0eb34","#6beb34","#34eb8c","#34ebd6","#34b1eb","#3474eb","#4034eb","#8334eb","#ba34eb","#eb34dc","#eb3499"])
+                    .range(["#FF6767","#FFA367","#FFD867","#DCFF67","#93FF67","#67FFC5","#67EFFF","#67BAFF","#6797FF","#6767FF","#8767FF","#B567FF","#D867FF","#FF67DA"])
                    .domain([...categories]);
 
   var xAxis = d3.axisBottom(xScale);
@@ -165,14 +165,14 @@ function stackChart(deets){
         .attr("height", function (d) {return yScale(d[0]) - yScale(d[1])})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d.data.neighborhood)) {
-            return "orange"
+            return "black"
           } else {
             return "white"
           }
         })
         .attr("stroke-width",(d) => {
           if(state["neighborhood"].includes(d.data.neighborhood)) {
-            return 3;
+            return 2;
           } else {
             return 1;
           }

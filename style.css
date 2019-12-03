@@ -120,7 +120,7 @@ div.geoVis {
 
 .selected {
   opacity: 2 !important;
-  stroke: black;
+  stroke: "FF67DA";
   stroke-width: 3px;
 }
 
