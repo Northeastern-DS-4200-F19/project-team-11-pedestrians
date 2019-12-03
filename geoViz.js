@@ -7,6 +7,7 @@ var margin = {
   right: 30
 };
 
+
 const centerBoston = [-71.057,42.313]
 const graphHeight = height - margin.top - margin.bottom;
 const graphWidth = width - margin.left - margin.right;
