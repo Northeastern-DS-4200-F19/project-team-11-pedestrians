@@ -2,12 +2,10 @@ const stateBttns = document.querySelectorAll(".btn")
 var colors = {"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}
 var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
   this.neighborhood = Array.from(x);
-  removeChart();
-  render()
+  updateViz()
 }, set removeN(x) {
   this.neighborhood = []
-  removeChart()
-  render()
+  updateViz()
 }};
 
 const removeChart = () => {
@@ -163,12 +161,18 @@ const filterLine = (d) => {
 }
 
 const render = () => {
-    scatterplot(state.data["survey"]);
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
     csTopFive(filterCsBar(state.data["crime"])[0]);
     csOverTime({"actual":filterLine(state.data["crime"]).filter(a => a.neighborhood == "Chester Square"),"perceived":transformSurvey(state.data["survey"])})
+}
+
+const updateViz = () => {
+  removeChart()
+  lineChart(filterLine(state.data[state.view]));
+  stackChart(filterBar(state.data[state.view]));
+  geoViz({"data":state.data[state.view],"info":state.data["geo"]});
 }
 
 const setData = (d) => {
@@ -195,9 +199,7 @@ stateBttns.forEach(btn => {
     e.preventDefault()
     state["view"] = btn.attributes["data-activity"].nodeValue;
     // btn.className = "highlighted"
-    d3.selectAll(".tipVar").remove()
-    removeChart()
-    render()
+    updateViz()
   })
 }})
 
