@@ -169,7 +169,7 @@ const render = () => {
 }
 
 const updateViz = () => {
-  removeChart()
+  removeChart();
   lineChart(filterLine(state.data[state.view]));
   stackChart(filterBar(state.data[state.view]));
   geoViz({"data":state.data[state.view],"info":state.data["geo"]});

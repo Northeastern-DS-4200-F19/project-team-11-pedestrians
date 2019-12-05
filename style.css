@@ -41,7 +41,7 @@ h1, h2, h3 {
 }
 .rowOne {
 	display:flex;
-	flex: 50% 50%
+	flex: 40% 40% 20%
 }
 
 .rowTwo {

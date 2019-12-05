@@ -20,8 +20,8 @@ const canvas = d3.select("#geovis")
               .attr("y",0)
               .attr("height",height)
               .attr("width",width)
-              // .attr("stroke","black")
-              // .attr("stroke-width","border")
+              .attr("stroke","black")
+              .attr("stroke-width","border")
               .attr("fill","none")
   const graph = d3.select("#geovis").append("svg");
                             // .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -113,7 +113,7 @@ const update = (deets) => {
             return 1;
           }
         })
-        .on("mouseover", function(d){d3.select(this).attr("stroke","blue");})
+        .on("mouseover", function(d){show(d,this);})
         .on("click",function(d){show(d,this)})
         .on("mouseout",function(d){hide(d,this);});
 
