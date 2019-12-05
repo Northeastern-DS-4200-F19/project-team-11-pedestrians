@@ -86,7 +86,7 @@ const update = (deets) => {
                   .rollup(function(v) {return d3.sum(v,function(d){return d.value})})
                   .object(deets.data);
   var daMax = Math.max(...Object.keys(stuff).map(key => stuff[key])); 
-  var color = d3.scaleLinear().domain([0,daMax]).range(["white",colors[state["view"]]]);
+  var color = d3.scaleLinear().domain([0,daMax]).range(["white",state.colors[state["view"]]]);
   var paths = graph.selectAll("path").data(info.features);
 
   //removing stuff

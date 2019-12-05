@@ -8,30 +8,35 @@ function lineChart(deets){
    * @param {*} d data set passed through
    */
   // TODO Fix Real Estate Averaging
+  console.log(deets)
   const filterLine = (d) => {
-      let transformed = null;
       if(state.neighborhood.length == 0) {
         d = d;
       } else {
         d = d.filter(obj => state.neighborhood.includes(obj.neighborhood))
       }
       if(state.view == "demographic") {
-        transformed = d.filter(obj => obj.category == "Bachelor's Degree or Higher")
+        return d3.nest().key(function(d) { return parseInt(d.time); })
+        .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
+        .entries(d.filter(obj => obj.category == "Bachelor's Degree or Higher"))
+        .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
       } else if (state.view === "real_estate") {
-        transformed = d.map((item) => {
-                return {"time":Math.round(new Date(Date.parse(item.time)).getFullYear()),"value": item.value}
-              }).sort((a,b) => a.time - b.time);
-    } else {
-      transformed = d.sort((a,b) => a.category - b.category)
-    }
-    return d3.nest()
-              .key(function(d) { return parseInt(d.time); })
+        return d3.nest().key(function(d) { return parseInt(d.time); })
               .rollup(function(v) { return d3.mean(v, function(d) { return d.value; });})
-              .entries(transformed)
-              .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
+              .entries(d.map((item) => {
+                return {"time":Math.round(new Date(Date.parse(item.time)).getFullYear()),"value": item.value}
+              }).sort((a,b) => a.time - b.time))
+              .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});;
+    } else {
+      return d3.nest().key(function(d) { return parseInt(d.time); })
+      .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
+      .entries(d.sort((a,b) => a.category - b.category))
+      .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
+    }
   }
 
   var data = filterLine(deets)
+  console.log(data)
   // setting constants
   var width  = 600;
   var height = 400;
@@ -45,7 +50,7 @@ function lineChart(deets){
   var maxtime = Math.max(data.map(row => parseInt(row.key)));
 
   var minvalue = 0;
-  var maxvalue = Math.max(data.map(row => d.value));
+  var maxvalue = Math.max(data.map(row => row.value));
 
   // removing labels
   d3.select(".x_axis_label").remove();
@@ -157,7 +162,7 @@ function lineChart(deets){
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
             .x(function (d) {
-              return xScale(d.key) + margin.left; })
+              return xScale(parseInt(d.key)) + margin.left; })
             .y(function (d) { 
               return yScale(d.value) + margin.top; }));
 

@@ -3,9 +3,7 @@ function csOverTime(deets){
     // Acknowledgement
     // https://bl.ocks.org/d3noob/814a2bcb3e7d8d8db74f36f77c8e6b7f
     var data = d3.nest()
-                // .key(function(d){ return d.neighborhood == "Chester Square"})
                 .key(function(d) { return d.time; })
-                // .key(function(d) { return d.neighborhood == "Chester Square"})
                 .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
                 .entries(deets["actual"])
                 .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
@@ -136,7 +134,7 @@ function csOverTime(deets){
               .attr("class","derp")
               .attr("fill", "none")
               .attr("stroke", d => {
-                return colors[state["view"]]})
+                return state.colors[state["view"]]})
               .attr("stroke-width", 1.5)
               .attr("d", d3.line()
               .x(function (d) {

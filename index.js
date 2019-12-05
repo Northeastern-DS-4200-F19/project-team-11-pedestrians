@@ -1,12 +1,11 @@
 const stateBttns = document.querySelectorAll(".btn")
-var colors = {"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}
 var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
   this.neighborhood = Array.from(x);
   updateViz()
 }, set removeN(x) {
   this.neighborhood = []
   updateViz()
-}};
+},colors:{"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}};
 
 const removeChart = () => {
   d3.selectAll(".stuff").remove()
@@ -47,7 +46,7 @@ var promises = [
                     return {
                       visittime: d.visittime,
                       safetylevel: + d.safetylevel,
-                      hour: parseInt(d.hour)
+                      hour: parseInt(d.hour,10)
                     }}),
         d3.json("./data/json_files/boston.geojson")
     ]
