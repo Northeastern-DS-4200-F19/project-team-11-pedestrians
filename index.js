@@ -5,7 +5,14 @@ var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"
 }, set removeN(x) {
   this.neighborhood = []
   updateViz()
-},colors:{"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}};
+},colors:{"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"},
+  set setView(x) {
+    this.view = x;
+    // removeChart();
+    lineChart(filterLine(state.data[state.view]));
+    stackChart(filterBar(state.data[state.view]));
+    geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+  }};
 
 const removeChart = () => {
   d3.selectAll(".stuff").remove()
@@ -189,8 +196,7 @@ const load = () => {
 stateBttns.forEach(btn => {
   btn.addEventListener("click" , (e) => {
     e.preventDefault()
-    state["view"] = btn.attributes["data-activity"].nodeValue;
-    updateViz()
+    state.setView = btn.attributes["data-activity"].nodeValue;
   })
 });
 

@@ -21,16 +21,17 @@ function lineChart(deets){
         .entries(d.filter(obj => obj.category == "Bachelor's Degree or Higher"))
         .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
       } else if (state.view === "real_estate") {
-        return d3.nest().key(function(d) { return parseInt(d.time); })
-              .rollup(function(v) { return d3.mean(v, function(d) { return d.value; });})
-              .entries(d.map((item) => {
+        return d3.nest()
+                  .key(function(d) { return parseInt(d.time); })
+                  .rollup(function(v) { return d3.mean(v, function(d) { return d.value; });})
+                  .entries(d.map((item) => {
                 return {"time":Math.round(new Date(Date.parse(item.time)).getFullYear()),"value": item.value}
               }).sort((a,b) => a.time - b.time))
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});;
     } else {
       return d3.nest().key(function(d) { return parseInt(d.time); })
       .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
-      .entries(d.sort((a,b) => a.category - b.category))
+      .entries(d)
       .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
     }
   }
