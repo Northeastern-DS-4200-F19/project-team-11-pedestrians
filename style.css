@@ -36,9 +36,8 @@ h1, h2, h3 {
 }
 
 .toolbar {
-	display:grid;
-	grid-template-columns: repeat(4,1fr);	
-	gap: 1em;
+	display:flex;
+	flex-direction:column;
 }
 .rowOne {
 	display:flex;

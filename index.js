@@ -188,19 +188,11 @@ const load = () => {
 };
 
 stateBttns.forEach(btn => {
-  if(btn.className = "btn4") {
-    // btn.addEventListener("click",e => {
-    //   e.preventDefault()
-    //   document.querySelectorAll(".boston").forEach(element => element.style.visibility = "hidden");
-    //   document.querySelectorAll(".cs").forEach(element => element.style.visibility = "visible");
-    // });
-  } else {
   btn.addEventListener("click" , (e) => {
     e.preventDefault()
     state["view"] = btn.attributes["data-activity"].nodeValue;
-    // btn.className = "highlighted"
     updateViz()
   })
-}})
+});
 
 load();
