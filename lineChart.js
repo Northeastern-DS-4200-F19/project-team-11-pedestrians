@@ -19,14 +19,14 @@ function lineChart(deets){
         transformed = d.filter(obj => obj.category == "Bachelor's Degree or Higher")
       } else if (state.view === "real_estate") {
         transformed = d.map((item) => {
-                return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value / 1000}
+                return {"time":Math.round(new Date(Date.parse(item.time)).getFullYear()),"value": item.value}
               }).sort((a,b) => a.time - b.time);
     } else {
       transformed = d.sort((a,b) => a.category - b.category)
     }
     return d3.nest()
-              .key(function(d) { return d.time; })
-              .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
+              .key(function(d) { return parseInt(d.time); })
+              .rollup(function(v) { return d3.mean(v, function(d) { return d.value; });})
               .entries(transformed)
               .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
   }
