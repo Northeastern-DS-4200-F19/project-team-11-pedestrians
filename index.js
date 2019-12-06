@@ -1,14 +1,18 @@
 const stateBttns = document.querySelectorAll(".btn")
-var colors = {"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"}
-var state = {view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
+var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"demographic": null,"real_estate":null, "survey":null }, set setN(x) {
   this.neighborhood = Array.from(x);
-  removeChart();
-  render()
+  updateViz()
 }, set removeN(x) {
   this.neighborhood = []
-  removeChart()
-  render()
-}};
+  updateViz()
+},colors:{"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"},
+  set setView(x) {
+    this.view = x;
+    // removeChart();
+    lineChart(filterLine(state.data[state.view]));
+    stackChart(filterBar(state.data[state.view]));
+    geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+  }};
 
 const removeChart = () => {
   d3.selectAll(".stuff").remove()
@@ -48,7 +52,8 @@ var promises = [
         d3.csv("./data/csv_files/ChesterSquareSurveyResponses.csv",function(d) {
                     return {
                       visittime: d.visittime,
-                      safetylevel: + d.safetylevel
+                      safetylevel: + d.safetylevel,
+                      hour: parseInt(d.hour,10)
                     }}),
         d3.json("./data/json_files/boston.geojson")
     ]
@@ -89,6 +94,61 @@ const filterBar = (d) => {
   return rArray
 }
 
+const filterCsBar = (d) => {
+  var result = {}
+  var rArray = []
+  var categorys = new Set(d.map(obj => obj.category));
+  var neighborhoods = new Set(d.map(obj => obj.neighborhood));
+  neighborhoods.forEach(n => {
+    row = {}
+    categorys.forEach(ot => {
+      row[ot] = 0
+    })
+    result[n] = row
+  })
+  d.forEach(obj => {
+    result[obj.neighborhood][obj.category] = result[obj.neighborhood][obj.category] + obj.value
+  })
+  Object.keys(result).forEach(neighborhood => {
+    row = result[neighborhood]
+    filtered_row = {}
+    sortedKeys = Object.keys(result[neighborhood]).sort((a,b) => {
+      return result[neighborhood][b] - result[neighborhood][a]}
+      )
+    for(let i = 0; i < 10; i++) {
+      filtered_row[sortedKeys[i]] = row[sortedKeys[i]]
+    }
+    filtered_row["neighborhood"] = neighborhood
+    rArray.push(filtered_row)
+  })
+  return rArray.filter(a => a.neighborhood == "Chester Square")
+}
+
+const transformSurvey = (d) => {
+  var result = {}
+  for(let i = 0; i < 23; i++) {
+    result[i] = {"total":0,"records":0}
+  }
+  d.forEach(row => {
+      result[row.hour]["total"] += row.safetylevel 
+      result[row.hour]["records"] += 1
+    })
+    var final = [];
+  Object.keys(result).forEach(key => {
+    current = {}
+    current["key"] = parseInt(key)
+    if(parseInt(key) <= 7) {
+      current["value"] = result["7"]["total"]/result["7"]["records"]
+    } else if (parseInt(key) <= 14) {
+      current["value"] = result["14"]["total"]/result["14"]["records"]
+    } else {
+      current["value"] = result["21"]["total"]/result["21"]["records"]
+    }
+    final.push(current)
+  })
+  return final;
+}
+
 const filterLine = (d) => {
   if(state.neighborhood.length == 0) {
     d = d;
@@ -107,10 +167,18 @@ const filterLine = (d) => {
 }
 
 const render = () => {
-    scatterplot(state.data["survey"]);
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+    csTopFive(filterCsBar(state.data["crime"])[0]);
+    csOverTime({"actual":filterLine(state.data["crime"]).filter(a => a.neighborhood == "Chester Square"),"perceived":transformSurvey(state.data["survey"])})
+}
+
+const updateViz = () => {
+  removeChart();
+  lineChart(filterLine(state.data[state.view]));
+  stackChart(filterBar(state.data[state.view]));
+  geoViz({"data":state.data[state.view],"info":state.data["geo"]});
 }
 
 const setData = (d) => {
@@ -127,12 +195,9 @@ const load = () => {
 
 stateBttns.forEach(btn => {
   btn.addEventListener("click" , (e) => {
-    state["view"] = btn.attributes["data-activity"].nodeValue;
-    // btn.className = "highlighted"
-    d3.selectAll(".tipVar").remove()
-    removeChart()
-    render()
+    e.preventDefault()
+    state.setView = btn.attributes["data-activity"].nodeValue;
   })
-})
+});
 
 load();

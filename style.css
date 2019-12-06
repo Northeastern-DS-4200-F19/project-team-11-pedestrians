@@ -27,14 +27,26 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
 }
+.boston {
+	visibility: visible;
+}
+
+.cs {
+	visibility: hidden;
+}
 
 .toolbar {
-	display:grid;
-	grid-template-columns: repeat(3,1fr);	
-	gap: 1em;
+	display:flex;
+	flex-direction:column;
 }
 .rowOne {
 	display:flex;
+	flex: 40% 40% 20%
+}
+
+.rowTwo {
+	display:flex;
+	align-items: center;
 	flex: 50% 50%
 }
 
@@ -42,6 +54,8 @@ h1, h2, h3 {
 	width: 100%;
 	height:100%
 }
+
+
 
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
 #forkongithub a{

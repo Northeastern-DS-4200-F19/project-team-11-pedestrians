@@ -62,5 +62,6 @@ def realEstateData():
 
 real = realEstateData()
 sorted_real = real.sort_values(by="Date")
-sorted_real.rename(columns={'Date':'time','Value':'value'}, inplace=True)
+sorted_real.rename(columns={'Value':'value'}, inplace=True)
+sorted_real.rename(columns={'Date':'time'}, inplace=True)
 sorted_real.to_csv("./csv_files/real_estate.csv")
