@@ -30,7 +30,7 @@ function csOverTime(deets){
     var y_axis_label = "";
   
     if(state["view"] == "crime"){
-      title = "Crime By Hour in Boston";
+      title = "Crime By Hour in Chester Square";
       y_axis_label = "Crime Count";
       x_axis_label = "Hour of Day";
     } else if (state["view"] == "real_estate") {
@@ -113,6 +113,7 @@ function csOverTime(deets){
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text(y_axis_label);
+              
     // Second Y Axis
               chartGroup.append("text")
               .attr("transform", "rotate(-90)")

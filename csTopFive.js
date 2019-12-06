@@ -4,12 +4,12 @@ function csTopFive(deets){
   //https://bl.ocks.org/caravinden/d04238c4c9770020ff6867ee92c7dac1
     var width  = 600;
     var height = 400;
-      var margin = {
-        top: 20,
-        bottom: 115,
-        left: 50,
-        right: 50
-      };
+    var margin = {
+      top: 20,
+      bottom: 115,
+      left: 50,
+      right: 50
+    };
     var svg = d3.select('#vis7')
                 .attr('width' , width)
                 .attr('height', height)
@@ -38,9 +38,9 @@ function csTopFive(deets){
     var y_axis_label = "";
   
     if(state["view"] == "crime"){
-      title = "Top 5 Crimes in Boston";
-      y_axis_label = "Percentage of Top 5 Crimes";
-      x_axis_label = "Neighborhood in Boston";
+      title = "Top 10 Crime Categories in Chester Square";
+      y_axis_label = "Number of Crimes";
+      x_axis_label = "Crime Categories";
     } else if (state["view"] == "real_estate") {
       title = "Division of Type of Homes";
       y_axis_label = "Percentage of Homes of this Type";
@@ -50,15 +50,13 @@ function csTopFive(deets){
       y_axis_label = "Percentage of people with this type of Degree";
       x_axis_label = "Neighborhood in Boston";
     }
-  
-  
-    
+
     var categories = Object.keys(deets)
     categories.pop()
+    console.log(categories)
     //
     var xScale = d3.scaleBand()
                    .domain(categories)
-                   // Shifting by 50 so the last category label doesn't get cut off
                    .range([margin.left, width - margin.right]);
     //
     var values = Object.values(deets)
@@ -66,7 +64,7 @@ function csTopFive(deets){
 
     var yScale = d3.scaleLinear()
                      .domain([0, Math.max(...values)])
-                     .range([height - margin.bottom - margin.top, 0]);
+                     .range([height - margin.bottom - margin.top,0]);
   
     var xAxis = d3.axisBottom(xScale);
     var yAxis = d3.axisLeft(yScale);
@@ -96,8 +94,8 @@ function csTopFive(deets){
       // Adding Y-Axis Label
       svg.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("x", - height/2)
-        .attr("y", margin.left - 30)
+        .attr("x", - height/2 + 10)
+        .attr("y", 0 + margin.left/2)
         .style("font-size", "16px")
         .attr("text-anchor", "middle")
         .text(y_axis_label);
@@ -109,11 +107,11 @@ function csTopFive(deets){
           .append("rect")
           .merge(bars)
           .attr("x", function (d) { 
-              return xScale(d.key);
+              return xScale(d.key) + 5;
             })
           .attr("width",xScale.bandwidth() - 7)
-          .attr("y", function (d) { return height - yScale(d["value"]) - margin.bottom})
-          .attr("height", function (d) {return yScale(d["value"])})
+          .attr("y", function (d) { return yScale(d["value"]) + margin.top})
+          .attr("height", function (d) {return height - yScale(d["value"]) - margin.top - margin.bottom})
           .attr("stroke",(d) => {
               return "black"
           })
