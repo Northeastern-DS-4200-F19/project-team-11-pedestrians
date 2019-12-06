@@ -83,8 +83,6 @@ function stackChart(deets){
                       .domain([0,100])
                       .range([(height - margin.bottom - margin.top), margin.top])
 
-  //  var y = d3.scaleLinear()
-  //                  .range([height - margin.bottom - margin.top, margin.top]);
     var z = d3.scaleOrdinal(
       )
                     .range(["#eb3434","#eb8934","#ebd034","#c0eb34","#6beb34","#34eb8c","#34ebd6","#34b1eb","#3474eb","#4034eb","#8334eb","#ba34eb","#eb34dc","#eb3499"])

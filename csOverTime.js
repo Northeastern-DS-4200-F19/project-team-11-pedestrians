@@ -75,7 +75,6 @@ function csOverTime(deets){
                    .domain([minvalue, 10])
                    .range([height - margin.bottom - margin.top, 0]);
 
-  
     var xAxis = d3.axisBottom(xScale);
   
     var yAxis = d3.axisLeft(yScale);
@@ -113,7 +112,7 @@ function csOverTime(deets){
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text(y_axis_label);
-              
+
     // Second Y Axis
               chartGroup.append("text")
               .attr("transform", "rotate(-90)")
@@ -148,17 +147,38 @@ function csOverTime(deets){
                   return xScale(d.key); })
                 .y(function (d) { 
                   return yScaleII(d.value) + margin.top; }));
+    
+                  var z = d3.scaleOrdinal()
+                  .range(["red","orange"])
+                  .domain(["actual","perceived"]);
+
+    var y = d3.scaleLinear()
+                      .domain([0,100])
+                      .range([(height - margin.bottom - margin.top), margin.top])
+
+    // var legend = chartGroup.append("g")
+    //                         .selectAll("circle")
+    //                         .data(deets, d => d.key)
+    //                         .enter()
+    //                         .append("circle")
+    //                         .merge(legend)
+    //                         .attr("cx", width - margin.right)
+    //                         .attr("cy",(d,i) => y(i*5))
+    //                         .attr("r",10)
+    //                         .attr("stroke","black")
+    //                         .attr("fill",d => z(d));
 
     // Gotta fix that circle stuff dude
-    var dots = chartGroup
-                  .selectAll("dot")
-                  .datum(deets["survey"])
-                  // .enter()
-                  .append("circle")
-                  .attr("cx", function (d) { return xScale(d.key) + margin.left; })
-                  .attr("cy", function (d) { return yScaleII(d.value) + margin.top; })
-                  .attr("r", 10)
-                  .style("fill", "#69b3a2");
+    // var dots = chartGroup
+    //               .append("g")
+    //               .selectAll("dot")
+    //               .datum(deets["survey"])
+    //               .enter()
+    //               .append("circle")
+    //               .attr("cx", function (d) { return xScale(d.key) + margin.left; })
+    //               .attr("cy", function (d) { return yScaleII(d.value) + margin.top; })
+    //               .attr("r", 10)
+    //               .style("fill", "#69b3a2");
     paths.exit().remove();
     chartGroup.exit().remove()
   dots.exit().remove()
