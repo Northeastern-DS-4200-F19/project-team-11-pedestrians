@@ -176,19 +176,19 @@ function csOverTime(deets){
     //                         .attr("stroke","black")
     //                         .attr("fill",d => z(d));
 
-    // Gotta fix that circle stuff dude
-    // var dots = chartGroup
-    //               .append("g")
-    //               .selectAll("dot")
-    //               .datum(deets["survey"])
-    //               .enter()
-    //               .append("circle")
-    //               .attr("cx", function (d) { return xScale(d.key) + margin.left; })
-    //               .attr("cy", function (d) { return yScaleII(d.value) + margin.top; })
-    //               .attr("r", 10)
-    //               .style("fill", "#69b3a2");
+    console.log(deets["survey"])
+    var dots = chartGroup
+                  .append("g")
+                  .selectAll("dot")
+                  .data(deets["survey"])
+                  .enter()
+                  .append("circle")
+                  .attr("cx", function (d) { return xScale(d.hour); })
+                  .attr("cy", function (d) { return yScaleII(d.safetylevel) + margin.top; })
+                  .attr("r", 3)
+                  .style("fill", "#69b3a2");
     paths.exit().remove();
     chartGroup.exit().remove()
-  dots.exit().remove()
+  // dots.exit().remove()
   }
   
