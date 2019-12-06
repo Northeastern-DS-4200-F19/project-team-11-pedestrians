@@ -13,7 +13,7 @@ function csOverTime(deets){
       top: 40,
       bottom: 75,
       left: 75,
-      right: 30
+      right: 75
     };
     var mintime = d3.min(data, function(d){return parseInt(d.key);});
     var maxtime = d3.max(data, function(d){return parseInt(d.key);});
@@ -65,7 +65,7 @@ function csOverTime(deets){
   
     var xScale = d3.scaleLinear()
                    .domain([mintime, maxtime])
-                   .range([0, width - 100]);
+                   .range([margin.left, width - margin.right]);
   
     var yScale = d3.scaleLinear()
                    .domain([minvalue, maxvalue])
@@ -82,7 +82,7 @@ function csOverTime(deets){
     var yAxisII = d3.axisRight(yScaleII);
   
     var x_axis = chartGroup.append('g')
-              .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
+              .attr('transform', 'translate(0, ' + (height - margin.bottom) + ')')
               .call(xAxis)
               .style("font-size", "14px");
   
@@ -101,7 +101,7 @@ function csOverTime(deets){
               .style("font-size", "14px");
 
     var y_axis_ii = chartGroup.append('g')
-              .attr('transform', 'translate('+ (width - margin.right + 5) +', ' + margin.top+')')
+              .attr('transform', 'translate('+ (width - margin.right) +', ' + margin.top+')')
               .call(yAxisII)
               .style("font-size", "14px");
   
@@ -131,7 +131,7 @@ function csOverTime(deets){
               .attr("stroke-width", 1.5)
               .attr("d", d3.line()
               .x(function (d) {
-                return xScale(d.key) + margin.left; })
+                return xScale(d.key); })
               .y(function (d) { 
                 return yScale(d.value) + margin.top; }));
 
@@ -144,7 +144,7 @@ function csOverTime(deets){
                 .attr("stroke-width", 1.5)
                 .attr("d", d3.line()
                 .x(function (d) {
-                  return xScale(d.key) + margin.left; })
+                  return xScale(d.key); })
                 .y(function (d) { 
                   return yScaleII(d.value) + margin.top; }));
 

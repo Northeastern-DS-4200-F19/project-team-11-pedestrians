@@ -5,7 +5,9 @@
 function lineChart(deets){
   var data = d3.nest()
                 .key(function(d) { return parseInt(d.time); })
-                .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
+                .rollup(function(v) { if(state.view == "real_estate") {
+                  return d3.mean(v, function(d) { return d.value;})
+                } else {return d3.sum(v, function(d) { return d.value; });}})
                 .entries(deets)
                 .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
 
