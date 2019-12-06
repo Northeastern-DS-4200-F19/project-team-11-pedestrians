@@ -50,7 +50,7 @@ function csOverTime(deets){
                 // .style('background', '#efefef');
   
     var chartGroup = svg.append('g')
-                                  .append('svg')
+                        .append('svg')
                         .attr('transform','translate(' + margin.left +',' + margin.top + ')');
   
     // Adding Graph Title
@@ -155,9 +155,17 @@ function csOverTime(deets){
                   return xScale(d.key) + margin.left; })
                 .y(function (d) { 
                   return yScaleII(d.value) + margin.top; }));
-  
+    var dots = chartGroup
+                  .selectAll("dot")
+                  .data(deets["survey"])
+                  .enter()
+                  .append("circle")
+                  .attr("cx", function (d) { return xScale(d.key) + margin.left; })
+                  .attr("cy", function (d) { return yScaleII(d.value) + margin.top; })
+                  .attr("r", 10)
+                  .style("fill", "#69b3a2");
     paths.exit().remove();
     chartGroup.exit().remove()
-  
+  dots.exit().remove()
   }
   
