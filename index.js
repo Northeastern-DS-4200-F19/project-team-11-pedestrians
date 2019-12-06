@@ -167,7 +167,7 @@ const filterLine = (d) => {
 }
 
 const render = () => {
-    lineChart(state.data[state.view]);
+    lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
     csTopFive(filterCsBar(state.data["crime"])[0]);
@@ -176,7 +176,7 @@ const render = () => {
 
 const updateViz = () => {
   removeChart();
-  lineChart(state.data[state.view]);
+  lineChart(filterLine(state.data[state.view]));
   stackChart(filterBar(state.data[state.view]));
   geoViz({"data":state.data[state.view],"info":state.data["geo"]});
 }

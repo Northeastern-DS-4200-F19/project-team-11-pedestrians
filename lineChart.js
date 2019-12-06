@@ -3,40 +3,12 @@
  * @param {} deets 
  */
 function lineChart(deets){
-  /**
-   * Transforms the data into the required format.
-   * @param {*} d data set passed through
-   */
-  // TODO Fix Real Estate Averaging
-  const filterLine = (d) => {
-      if(state.neighborhood.length == 0) {
-        d = d;
-      } else {
-        d = d.filter(obj => state.neighborhood.includes(obj.neighborhood))
-      }
-      if(state.view == "demographic") {
-        return d3.nest().key(function(d) { return parseInt(d.time); })
-        .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
-        .entries(d.filter(obj => obj.category == "Bachelor's Degree or Higher"))
-        .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
-      } else if (state.view === "real_estate") {
-        return d3.nest()
-                  .key(function(d) { return parseInt(d.time); })
-                  .rollup(function(v) { return d3.mean(v, function(d) { return d.value; });})
-                  .entries(d.map((item) => {
-                return {"time":Math.round(new Date(Date.parse(item.time)).getFullYear()),"value": item.value}
-              }).sort((a,b) => a.time - b.time))
-              .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});;
-    } else {
-      return d3.nest().key(function(d) { return parseInt(d.time); })
-      .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
-      .entries(d)
-      .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
-    }
-  }
+  var data = d3.nest()
+                .key(function(d) { return parseInt(d.time); })
+                .rollup(function(v) { return d3.sum(v, function(d) { return d.value; });})
+                .entries(deets)
+                .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
 
-  var data = filterLine(deets)
-  console.log(data)
   // setting constants
   var width  = 600;
   var height = 400;
@@ -52,11 +24,6 @@ function lineChart(deets){
   var minvalue = 0;
   var maxvalue = d3.max(data, function(d){return parseInt(d.key);});
 
-
-  // removing labels
-  d3.select(".x_axis_label").remove();
-  d3.select(".y_axis_label").remove();
-  d3.select(".title").remove();
 
   //setting table labels
   var title = "";
@@ -76,6 +43,11 @@ function lineChart(deets){
     y_axis_label = "Bachelor's Degrees Per Year";
     x_axis_label = "Year";
   }
+
+  // removing labels
+  d3.select(".x_axis_label").remove();
+  d3.select(".y_axis_label").remove();
+  d3.select(".title").remove();
 
   var svg = d3.select('#vis3')
               .attr("class", "vis3")
@@ -152,7 +124,7 @@ function lineChart(deets){
             .style("font-size", "16px")
             .attr("text-anchor", "middle")
             .text(y_axis_label);
-
+console.log(data)
   var paths = chartGroup
             .datum(data)
             .append("path")
