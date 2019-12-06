@@ -59,12 +59,12 @@ function csTopFive(deets){
     var xScale = d3.scaleBand()
                    .domain(categories)
                    // Shifting by 50 so the last category label doesn't get cut off
-                   .range([0, width - margin.right - margin.left]);
+                   .range([margin.left, width - margin.right]);
     //
     var values = Object.values(deets)
     values.pop()
 
-      var yScale = d3.scaleLinear()
+    var yScale = d3.scaleLinear()
                      .domain([0, Math.max(...values)])
                      .range([height - margin.bottom - margin.top, 0]);
   
@@ -73,7 +73,7 @@ function csTopFive(deets){
   
   
     chartGroup.append('g')
-              .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
+              .attr('transform', 'translate(0, ' + (height - margin.bottom) + ')')
               .call(xAxis)
               .selectAll("text")
               .attr("text-anchor","end")
@@ -102,76 +102,22 @@ function csTopFive(deets){
         .attr("text-anchor", "middle")
         .text(y_axis_label);
   
-        console.log(deets)
+      console.log(deets)
       var bars = chartGroup.selectAll("rect").data(plz)
       bars.exit().remove()
       bars.enter()
           .append("rect")
           .merge(bars)
           .attr("x", function (d) { 
-              return xScale(d.key) + margin.left;
+              return xScale(d.key);
             })
-            .attr("width",xScale.bandwidth() - 3)
+          .attr("width",xScale.bandwidth() - 7)
           .attr("y", function (d) { return height - yScale(d["value"]) - margin.bottom})
           .attr("height", function (d) {return yScale(d["value"])})
           .attr("stroke",(d) => {
               return "black"
-            // if(state["neighborhood"].includes(d.data.neighborhood)) {
-            //   return "orange"
-            // } else {
-            //   return "white"
-            // }
           })
-          .attr("fill", "white")
-        //   .attr("stroke-width",(d) => {
-        //     if(state["neighborhood"].includes(d.data.neighborhood)) {
-        //       return 3;
-        //     } else {
-        //       return 1;
-        //     }
-        //   })
-        //   .on("click", d => {
-        //     state.removeN = [];
-        //   })
-          // .on("mouseout", (d,e) => {
-          //   state.removeN = d
-          // })
-  
-    //     function brush (g) {
-    //       const nlist = []
-    //       const brush = d3.brush().on("end",brushEnd)
-    //       .extent([
-    //         [0,0],
-    //         [width, height] 
-    //       ]);
-  
-    //     g.call(brush);
-  
-    //     function brushEnd(){
-    //       // We don't want infinite recursion
-    //       if(d3.event.sourceEvent.type!="end"){
-    //         d3.select(this).call(brush.move, null);
-    //       }
-    //       if (d3.event.selection === null) return;
-  
-    //       const [
-    //         [x0, y0],
-    //         [x1, y1]
-    //       ] = d3.event.selection;
-    //       // If within the bounds of the brush, select it
-    //       d3.selectAll(".layer").each(function(d){
-    //         var neighborhood = d3.select(this).attr("id")
-    //         var x = xScale(neighborhood) + margin.left + 20;
-    //         if(x0 <= x && x1 >= x) {
-    //           nlist.push(d3.select(this).attr("id"))
-    //         }
-    //         // state.setN = nlist
-    //       })
-    //       console.log(d3.event.selection)
-    //       console.log(new Set(nlist))
-    //       state.setN = new Set(nlist)
-    //      }
-    //     }
+          .attr("fill", "#DCDCDC")
   
     // Adding Graph Title
     svg.append("text")
