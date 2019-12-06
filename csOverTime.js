@@ -92,7 +92,6 @@ function csOverTime(deets){
     chartGroup.append("text")
               .attr("x", width/2)
               .attr("y", height - margin.bottom + 40)
-              .attr("class", "x_axis_label")
               .attr("text-anchor", "middle")
               .style("font-size", "16px")
               .text(x_axis_label);
