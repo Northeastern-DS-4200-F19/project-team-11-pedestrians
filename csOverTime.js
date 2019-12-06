@@ -46,10 +46,18 @@ function csOverTime(deets){
     var svg = d3.select('#vis8')
                 .attr("class", "vis8")
                 .attr('width' , width)
-                .attr('height', height);
+                .attr('height', height)
+                .append("rect")
+                .attr("x",0)
+                .attr("y",0)
+                .attr("height",height)
+                .attr("width",width)
+                .attr("stroke","black")
+                .attr("stroke-width","border")
+                .attr("fill","none");
                 // .style('background', '#efefef');
   
-    var chartGroup = svg.append('g')
+    var chartGroup = d3.select('#vis8').append('g')
                         .append('svg')
                         .attr('transform','translate(' + margin.left +',' + margin.top + ')');
   
@@ -108,7 +116,7 @@ function csOverTime(deets){
     chartGroup.append("text")
               .attr("transform", "rotate(-90)")
               .attr("x", -height/2)
-              .attr("y", margin.left - 60)
+              .attr("y", margin.left/2)
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text(y_axis_label);
@@ -117,7 +125,7 @@ function csOverTime(deets){
               chartGroup.append("text")
               .attr("transform", "rotate(-90)")
               .attr("x", -height/2)
-              .attr("y", width)
+              .attr("y", width - margin.right/2)
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text("Perceived Safety");
