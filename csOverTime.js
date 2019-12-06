@@ -131,7 +131,6 @@ function csOverTime(deets){
     var paths = chartGroup
               .datum(data)
               .append("path")
-              .attr("class","derp")
               .attr("fill", "none")
               .attr("stroke", d => {
                 return state.colors[state["view"]]})
@@ -145,7 +144,6 @@ function csOverTime(deets){
     var pathII = chartGroup
                 .datum(deets["perceived"])
                 .append("path")
-                .attr("class","derp")
                 .attr("fill", "none")
                 .attr("stroke", d => {
                   return "orange"})
