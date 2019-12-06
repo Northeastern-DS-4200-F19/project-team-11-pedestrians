@@ -8,7 +8,6 @@ function lineChart(deets){
    * @param {*} d data set passed through
    */
   // TODO Fix Real Estate Averaging
-  console.log(deets)
   const filterLine = (d) => {
       if(state.neighborhood.length == 0) {
         d = d;
@@ -47,11 +46,12 @@ function lineChart(deets){
     left: 75,
     right: 30
   };
-  var mintime = Math.max(data.map(row => parseInt(row.key)));
-  var maxtime = Math.max(data.map(row => parseInt(row.key)));
+  var mintime = d3.min(data, function(d){return parseInt(d.key);});
+  var maxtime = d3.max(data, function(d){return parseInt(d.key);});;
 
   var minvalue = 0;
-  var maxvalue = Math.max(data.map(row => row.value));
+  var maxvalue = d3.max(data, function(d){return parseInt(d.key);});
+
 
   // removing labels
   d3.select(".x_axis_label").remove();
