@@ -82,7 +82,6 @@ function csOverTime(deets){
     var yAxisII = d3.axisRight(yScaleII);
   
     var x_axis = chartGroup.append('g')
-              .attr('class', 'x_axis')
               .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
               .call(xAxis)
               .style("font-size", "14px");
@@ -97,13 +96,11 @@ function csOverTime(deets){
               .text(x_axis_label);
   
     var y_axis = chartGroup.append('g')
-              .attr('class', 'y_axis')
               .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
               .call(yAxis)
               .style("font-size", "14px");
 
     var y_axis_ii = chartGroup.append('g')
-              .attr('class', 'y_axis_ii')
               .attr('transform', 'translate('+ (width - margin.right + 5) +', ' + margin.top+')')
               .call(yAxisII)
               .style("font-size", "14px");
@@ -113,7 +110,6 @@ function csOverTime(deets){
               .attr("transform", "rotate(-90)")
               .attr("x", -height/2)
               .attr("y", margin.left - 60)
-              .attr("class", "y_axis_label")
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text(y_axis_label);
@@ -122,7 +118,6 @@ function csOverTime(deets){
               .attr("transform", "rotate(-90)")
               .attr("x", -height/2)
               .attr("y", width)
-              .attr("class", "y_axis_label")
               .style("font-size", "16px")
               .attr("text-anchor", "middle")
               .text("Perceived Safety");
