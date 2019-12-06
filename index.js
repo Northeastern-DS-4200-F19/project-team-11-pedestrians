@@ -159,7 +159,7 @@ const filterLine = (d) => {
     return d.filter(obj => obj.category == "Bachelor's Degree or Higher")
   } else if (state.view === "real_estate") {
     return d.map((item) => {
-            return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value / 1000}
+            return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value}
           }).sort((a,b) => a.time - b.time);
  } else {
   return d.sort((a,b) => a.category - b.category)

@@ -22,7 +22,7 @@ function lineChart(deets){
   var maxtime = d3.max(data, function(d){return parseInt(d.key);});;
 
   var minvalue = 0;
-  var maxvalue = d3.max(data, function(d){return parseInt(d.key);});
+  var maxvalue = d3.max(data, function(d){return d.value;});
 
 
   //setting table labels
