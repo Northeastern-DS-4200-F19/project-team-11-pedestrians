@@ -8,7 +8,7 @@ var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"
 },colors:{"crime":"red","real_estate":"green","demographic":"blue", "chester_square":"orange"},
   set setView(x) {
     this.view = x;
-    // removeChart();
+    removeChart();
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
