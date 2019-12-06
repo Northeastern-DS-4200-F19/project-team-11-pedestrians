@@ -65,7 +65,6 @@ function csOverTime(deets){
     chartGroup.append("text")
             .attr("x", width/2)
             .attr("y", margin.top - 20)
-            .attr('class', 'title')
             .attr("text-anchor", "middle")
             .style("font-size", "20px")
             .style("text-decoration", "underline")

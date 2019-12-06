@@ -35,10 +35,6 @@ function csTopFive(deets){
     });
     plz.pop()
     console.log(plz)
-    d3.select(".x_axis_label3").remove();
-    d3.select(".y_axis_label3").remove();
-    d3.select(".title3").remove();
-    d3.selectAll(".legend").remove();
 
   
     var title = "";
