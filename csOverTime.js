@@ -147,10 +147,12 @@ function csOverTime(deets){
                   return xScale(d.key) + margin.left; })
                 .y(function (d) { 
                   return yScaleII(d.value) + margin.top; }));
+
+    // Gotta fix that circle stuff dude
     var dots = chartGroup
                   .selectAll("dot")
-                  .data(deets["survey"])
-                  .enter()
+                  .datum(deets["survey"])
+                  // .enter()
                   .append("circle")
                   .attr("cx", function (d) { return xScale(d.key) + margin.left; })
                   .attr("cy", function (d) { return yScaleII(d.value) + margin.top; })

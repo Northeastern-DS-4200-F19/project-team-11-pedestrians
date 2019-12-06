@@ -73,7 +73,6 @@ function csTopFive(deets){
   
   
     chartGroup.append('g')
-              .attr('class', 'x_axis')
               .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
               .call(xAxis)
               .selectAll("text")
@@ -86,13 +85,11 @@ function csTopFive(deets){
       svg.append("text")
          .attr("x", width/2)
          .attr("y", height - margin.bottom + 110)
-         .attr("class", "x_axis_label3")
          .attr("text-anchor", "middle")
          .style("font-size", "16px")
          .text(x_axis_label);
   
       chartGroup.append('g')
-                .attr('class', 'y_axis')
                 .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
                 .call(yAxis);
   
@@ -101,7 +98,6 @@ function csTopFive(deets){
         .attr("transform", "rotate(-90)")
         .attr("x", - height/2)
         .attr("y", margin.left - 30)
-        .attr("class", "y_axis_label3")
         .style("font-size", "16px")
         .attr("text-anchor", "middle")
         .text(y_axis_label);
@@ -112,7 +108,6 @@ function csTopFive(deets){
       bars.enter()
           .append("rect")
           .merge(bars)
-          .attr("class","derp")
           .attr("x", function (d) { 
               return xScale(d.key) + margin.left;
             })
