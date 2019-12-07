@@ -174,6 +174,7 @@ const render = () => {
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
     csTopFive(filterCsBar(state.data["crime"])[0]);
+    scatterplot(state.data["survey"])
     csOverTime({"survey":state.data["survey"],"actual":filterLine(state.data["crime"]).filter(a => a.neighborhood == "Chester Square"),"perceived":transformSurvey(state.data["survey"])})
 }
 
