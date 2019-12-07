@@ -24,10 +24,20 @@ function tablevis(deets,cs) {
 		thead = table.append("thead"),
 		tbody = table.append("tbody");
 
+var metric = "";
+
+if(state["view"] == "crime"){
+    metric = "Crime By Hour in Boston";
+  } else if (state["view"] == "real_estate") {
+    metric = "Real Estate Prices over Time";
+  } else if (state["view"] == "demographic") {
+    metric = "Bachelor's Degrees Over Time";
+  }
+
 		var supplement = 0
 		console.log(Object.keys(stuff).length)
 		if(Object.keys(stuff).length == 1) {
-			supplement =  Object.keys(stuff)
+			supplement =  stuff[0].key
 		} else if(Object.keys(stuff).length == 28){
 			supplement = "Boston"
 		} else {
@@ -35,12 +45,12 @@ function tablevis(deets,cs) {
 		}
 		console.log(supplement);
    var data = {
-    	"metric": "whater",
+    	"metric": metric,
     	"Chester Square":cs_total}
     	data[supplement] = total;
 		var columns = Object.keys(data);
-		var stuff = Object.values(data);
-		console.log(stuff)
+		var values = Object.values(data);
+		
 		var header = thead.append("tr")
 		.selectAll("th")
 		.data(columns)
@@ -48,9 +58,9 @@ function tablevis(deets,cs) {
 		.append("th")
 		.text(function(d) {return d})
 
-
+		var valued = [values]
 		let rows = tbody.selectAll("tr")
-		.data(stuff)
+		.data(valued)
 		.enter()
 		.append("tr")
    var cells = rows.selectAll("td")
