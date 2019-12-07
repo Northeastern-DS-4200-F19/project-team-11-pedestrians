@@ -66,95 +66,125 @@
     </div>
 
 
-    <!-- Your writeup goes here -->
-    <div class ="content-column">
+  <!-- Your writeup goes here -->
+  <div class="content-column">
 
-      <h1>Demo Video</h1>
+    <h1>Demo Video</h1>
+    <video controls width="100%">
+      <source src="./files/DS 4200 F19 Team 11 - Demo Video.mp4" type="video/mp4">
+      <p>Your browser doesn't support HTML5 video. Here is
+        a <a href="./files/DS 4200 F19 Team 11 - Demo Video.mp4">link to the video</a> instead.</p>
+    </video>
 
-      <p><em>Embedded MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</em></p>
+    <h1>Visualization explanation</h1>
+    <p> For our visualization, there are 4 main components. The first is the choropleth map in the top right which
+      updates based on the dataset that is selected and shows an overview of the selected data using different
+      shades of color. When a neighborhood is selected on the choropleth map, the second visualization (a line chart) in
+      the top
+      left corner is updated to show the relevant data for the specific neighborhood that is chosen. The third
+      visualization
+      is the stacked bar chart in the middle which shows every neighborhood in Boston and Chester Square Park. This
+      stacked bar chart is brushed and linked with the other two visualizations to allow for aggregation of the data
+      of multiple neighborhoods. Finally, the last component of our visualization is the scatter plot at the bottom
+      which shows the results of the survey we sent out to the residents of Chester Square.</p>
 
-      <video controls width="100%">
-        <source src="./files/DS 4200 F19 Team 11 - Demo Video.mp4" type="video/mp4">
-        <p>Your browser doesn't support HTML5 video. Here is
-         a <a href="./files/DS 4200 F19 Team 11 - Demo Video.mp4">link to the video</a> instead.</p>
-      </video>
-      <h1>Visualization explanation</h1>
+    <h1>Data Analysis</h1>
+    <p>The primary dataset that we used was the Boston Crime dataset pulled from the Analyze Boston website. Due to the
+      fact that the dataset was
+      very large (over 450,000 entries) we did a lot of preprocessing using Python to aggregate the data ahead of time.
+      For example, for the crime count by time
+      chart, we ran a python script on the Boston crime dataset ahead of time to aggregate the data by time before
+      displaying the data using D3.</p>
 
-      <p><em>final visualization screenshots (PNG images), design justifications, UI walk-through, and linked presentation slides.</em></p>
+    <h1>Task Analysis</h1>
+    <p>For this project, we had three tasks that we wanted to accomplish: aggregate crime, real estate, and
+      demographic data for Boston neighborhoods, analyze pedestrian demographic data of Chester Square Park, and
+      compare the level of safety current users of the park feel with crime reports. For the first task we had,
+      analyzing the different types of data, we wanted to summarize the plethora of data across the three datasets
+      we had and allow users to be able to browse the data through our visualizations. The focus of our second domain
+      task was to identify the different kinds of demographic data we were working with and then allow users to look up
+      the different data and make their own discoveries about it. For our last task analysis we wanted to allow users
+      to compare the survey results of perceived safety level with the hourly crime count and make their own discoveries
+      and conclusions about the data.
+    </p>
 
-      <h1>Data Analysis</h1>
-      <p><em>The primary dataset that we used was the Boston Crime dataset pulled from the Analyze Boston website. Due to the fact that the dataset was
-        very large (over 450,000 entries) we did a lot of preprocessing using Python to aggregate the data ahead of time. For example, for the crime count by time
-        chart, we ran a python script on the Boston crime dataset ahead of time to aggregate the data by time before displaying the data using D3.</em></p>
+    <h1>Design Process</h1>
+    <p>We began our design process by looking at already existing visualizations of crime data for Boston. While looking
+      at the visualizations, we
+      noticed that there was a common theme in that all of the already existing visualizations did not have good visual
+      encodings and were overall very
+      unintuitive. A common problem was the color schemes for the visualizations were very poorly chosen. With this
+      information in mind, we decided
+      that we would create a better crime map for Boston. <br><br> On top of creating a crime map, we also surveyed
+      safety levels of residents around Chester
+      Square Park and plan to compare crime levels with perceived safety levels around the Park. We hope to find a
+      correlation between crime and safety
+      around the park so as to use the crime dataset we have as an analog for Safety data. Originally we planned on our
+      visualizations to look like the
+      following: <br></p>
 
-      <p><em>Summary of data, data types, and data preprocessing.
-        Expectation: Data sources match the problem statement and are appropriate. These descriptions should be very explicit so someone could read your page and properly reproduce your results.</em></p>
+    <table>
+      <tr>
+        <td><img src="images/vis1.png" width="800px" height="500px"></img></td>
+      </tr>
+      <tr>
+        <td><img src="images/vis2.png" width="800px" height="500px"></img></td>
+      </tr>
 
-      <h1>Task Analysis</h1>
+      <tr>
+        <td><img src="images/vis3.png" width="800px" height="500px"></img></td>
+      </tr>
+      <tr>
+        <td><img src="images/vis4.png" width="800px" height="500px"></img></td>
+      </tr>
+    </table>
+    <p>However, after looking at the visualizations more critically, we realized that size encoded circles were not the
+      best way to show relative crime (and
+      real estate prices). Ultimatley we chose to go with the shaded neighborhood regions instead as this was a more
+      distinguishable use of color.</p>
 
-      <p><em>Summary of task table.</em></p>
+    <h1>Conclusion</h1>
+    <p align="justify">Over the past few months, we have been able to create a visualizaton that accurately
+      compares the crime counts of all of the different neighborhoods in Boston with the crime counts in Chester Square
+      Park. Users
+      are able to see crime counts by the hour for each neighborhood and are able to aggragate results of multiple
+      neighborhoods. Currently, our visualization compares the crime count and top 5 crime categories reported in
+      Chester Square Park with neighborhoods as a whole around Boston. We understand that this is not an even
+      comparison and in the future we hope to isolate data for parks around Boston similar to how we did for
+      Chester Square Park now. Using the real estate and demographic data we have also included in our visualization,
+      we hope that users, in the future, will be able to find parks with similar real estate and demographic values.
+      Once these parks are located, users can then look into the history of those parks to see what initiatives were
+      implemented in the past as well as if they were succesful.</p>
 
-      <p><em>Expectation: Clearly describes domain tasks, processes, goals and abstract tasks for domain problems.</em></p>
+    <h1>Acknowledgements</h1>
+    <ul>
+      <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
+      <li><a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">Pure CSS responsive "Fork me on GitHub"
+          ribbon</a> by Chris Heilmann</li>
+      <li>Line Chart Starter Code From Class</li>
+      <li>Brushing and Linking Assignment From Class</li>
+      <li><a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">Basic Scatterplot in D3.js</a></li>
+      <li><a href="https://codepen.io/alanbuchanan/pen/RryBVQ">Tooltip Positioning in D3</a></li>
+      <li><a href="https://observablehq.com/@d3/brushable-scatterplot-matrix">Brushable Scatterplot Matrix</a></li>
+      <li><a href="https://pandas.pydata.org">Pandas Python Library</a></li>
+      <li><a href="https://www.zillow.com/howto/api/APIOverview.htm">Zillow API</a></li>
+      <li><a href="https://data.boston.gov/dataset/crime-incident-reports-august-2015-to-date-source-new-system">Boston
+          Crime Dataset</a></li>
+      <li><a href="https://pypi.org/project/Shapely/">Shapely Python Library</a></li>
+      <li><a href="https://www.zillow.com/howto/api/APIOverview.htm">Boston Demographic Data</a></li>
+    </ul>
+  </div>
 
-      <h1>Design Process</h1>
-        <p><em>We began our design process by looking at already existing visualizations of crime data for Boston. While looking at the visualizations, we
-          noticed that there was a common theme in that all of the already existing visualizations did not have good visual encodings and were overall very
-          unintuitive. A common problem was the color schemes for the visualizations were very poorly chosen. With this information in mind, we decided
-          that we would create a better crime map for Boston. <br><br> On top of creating a crime map, we also surveyed safety levels of residents around Chester
-          Square Park and plan to compare crime levels with perceived safety levels around the Park. We hope to find a correlation between crime and safety
-          around the park so as to use the crime dataset we have as an analog for Safety data. Originally we planned on our visualizations to look like the
-          following: <br> </em></p>
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src="lib/d3.v5.12.0/d3.min.js"></script>
+  <script src="lib/d3.tip/d3-tip.min.js"></script>
+  <script src="geoViz.js"></script>
+  <script src="lineChart.js"></script>
+  <script src="scatterplot.js"></script>
+  <script src="stacked.js"></script>
+  <script src="csOverTime.js"></script>
+  <script src="csTopFive.js"></script>
+  <script src="index.js"></script>
+</body>
 
-        <table>
-          <tr>
-            <td><img src ="images/vis1.png" width="800px" height="500px"></img></td>
-            <td><img src ="images/vis2.png" width="800px" height="500px"></img></td>
-          </tr>
-          <tr>
-            <td><img src ="images/vis3.png" width="800px" height="500px"></img></td>
-            <td><img src ="images/vis4.png" width="800px" height="500px"></img></td>
-          </tr>
-        </table>
-
-        <p><em>However, after looking at the visualizations more critically, we realized that size encoded circles were not the best way to show relative crime (and
-          real estate prices). Ultimatley we chose to go with the shaded neighborhood regions instead as this was a more distinguishable use of color.</p>
-
-      <p><em>Sketches and design choices to justify final visualization.</em></p>
-
-      <p><em>Expectation: Evidence of iterative improvement.
-      Logical discussion of design choices grounded in theory from course.
-      Discusses feedback from usability testing.</em></p>
-
-
-      <h1>Conclusion</h1>
-
-      <p><em>Short summary of work completed and areas for improvement/future-work.</em></p>
-
-      <p><em>Expectation: Meaningfully wraps up project and has good future directions.</em></p>
-
-      <h1>Acknowledgements</h1>
-
-      <p><em>List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.</em></p>
-
-      <ul>
-        <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
-        <li><a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">Pure CSS responsive "Fork me on GitHub" ribbon</a> by Chris Heilmann</li>
-        <li>Line Chart Starter Code From Class</li>
-        <li><a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">Basic Scatterplot in D3.js</a></li>
-        <li><a href="https://codepen.io/alanbuchanan/pen/RryBVQ">Tooltip Positioning in D3</a></li>
-      </ul>
-
-    </div>
-
-    <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
-    <script src="lib/d3.v5.12.0/d3.min.js"></script>
-    <script src="lib/d3.tip/d3-tip.min.js"></script>
-    <script src="geoViz.js"></script>
-    <script src="lineChart.js"></script>
-    <script src="scatterplot.js"></script>
-    <script src="stacked.js"></script>
-    <script src="csTopFive.js"></script>
-    <script src="csOverTime.js"></script>
-    <script src="index.js"></script>
-  </body>
 </html>

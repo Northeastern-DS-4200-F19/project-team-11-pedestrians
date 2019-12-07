@@ -1,29 +1,33 @@
 /* General formatting */
 body {
-	padding: 0 10px;
-	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
-	sans-serif;
+  padding: 0 10px;
+  font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",
+    roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu,
+    "franklin gothic medium", "century gothic", "Liberation Sans", sans-serif;
 }
 
-h1, h2, h3 {
-	line-height: 1.2
+h1,
+h2,
+h3 {
+  line-height: 1.2;
 }
 
 /* Your text should be in a nice narrow column */
 .content-column {
-	max-width: 650px;
-	justify-content: center;
-	margin: 40px auto;
+  max-width: 650px;
+  justify-content: center;
+  margin: 40px auto;
 }
 
 /* But your visualization should be full-width and full-height */
 .vis-holder {
-	display:grid;
-	grid-template-areas:
-	"a"
-	"c"
-	"e"
-	"e";
+  display: grid;
+  grid-template-areas:
+    "a"
+    "c"
+    "e"
+    "e";
   width: 100%;
   height: 100%;
 }
@@ -36,101 +40,90 @@ h1, h2, h3 {
 }
 
 .toolbar {
-	display:grid;
-	grid-template-rows: repeat(3,1fr);
-	grid-gap: 1rem;
-	align-items: center;
-	padding: 1em;
-	border: black;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
 }
 .rowOne {
-	display:grid;
-	grid-template-columns: repeat(3,1fr);
-}
-
-.rowTwo {
-	display:flex;
-	align-items: center;
-	flex: 50% 50%
+  display: flex;
+  flex: 50% 50%;
 }
 
 .viz {
-	width: 100%;
-	height:100%
+  width: 100%;
+  height: 100%;
 }
 
-
-
-/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
-#forkongithub a{
-	background:#00F;
-	color:#fff;
-	text-decoration:none;
-	font-family:arial,sans-serif;
-	text-align:center;
-	font-weight:bold;
-	padding:5px 40px;
-	font-size:1rem;
-	line-height:1.4rem;
-	position:relative;
-	transition:0.5s;
+/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
+#forkongithub a {
+  background: #00f;
+  color: #fff;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 40px;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  position: relative;
+  transition: 0.5s;
 }
-#forkongithub a:hover{
-	background:#118;
-	color:#fff;
+#forkongithub a:hover {
+  background: #118;
+  color: #fff;
 }
-#forkongithub a::before,#forkongithub a::after{
-	content:"";
-	width:100%;
-	display:block;
-	position:absolute;
-	top:1px;
-	left:0;
-	height:1px;
-	background:#fff;
+#forkongithub a::before,
+#forkongithub a::after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 1px;
+  background: #fff;
 }
-#forkongithub a::after{
-	bottom:1px;
-	top:auto;
+#forkongithub a::after {
+  bottom: 1px;
+  top: auto;
 }
-@media screen and (min-width:1000px){
-	#forkongithub{
-		position:fixed;
-		display:block;
-		top:0;
-		right:0;
-		width:200px;
-		overflow:hidden;
-		height:200px;
-		z-index:9999;
-	}
-	#forkongithub a{
-		width:200px;
-		position:absolute;
-		top:60px;
-		right:-60px;
-		transform:rotate(45deg);
-		-webkit-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
-		-o-transform:rotate(45deg);
-		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
-	}
+@media screen and (min-width: 1000px) {
+  #forkongithub {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 200px;
+    overflow: hidden;
+    height: 200px;
+    z-index: 9999;
+  }
+  #forkongithub a {
+    width: 200px;
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+  }
 }
 
 div.geoVis {
-	position:relative;
+  position: relative;
 }
 
 .tipVar {
-	width: 15%;
-    position: absolute!important;
-    top: 30em!important;
-    left: 60%!important;
-    margin-top: 20%;
-    margin-left: 5%;
-/*	position: absolute!important;
+  width: 15%;
+  position: absolute !important;
+  top: 30em !important;
+  left: 60% !important;
+  margin-top: 500px;
+  margin-left: 100px;
+  /*	position: absolute!important;
 	transform:translate(100%, 120%);
 	right: 120%;
 	bottom: 110%;
@@ -139,12 +132,11 @@ div.geoVis {
 
 .selected {
   opacity: 2 !important;
-  stroke: black;
+  stroke: "FF67DA";
   stroke-width: 3px;
 }
 
-table
-{
-    table-layout: fixed;
-    width: 1280px;
+table {
+  table-layout: fixed;
+  width: 1280px;
 }
