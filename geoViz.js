@@ -14,15 +14,6 @@ const canvas = d3.select("#geovis")
               .attr("class", "geoVis")
               .attr("height",height)
               .attr("width",width)
-              .attr("border","black")
-              .append("rect")
-              .attr("x",0)
-              .attr("y",0)
-              .attr("height",height)
-              .attr("width",width)
-              .attr("stroke","black")
-              .attr("stroke-width","border")
-              .attr("fill","none")
   const graph = d3.select("#geovis").append("svg");
                             // .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -101,7 +92,7 @@ const update = (deets) => {
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
-            return "orange"
+            return "black"
           } else {
             return "grey"
           }
