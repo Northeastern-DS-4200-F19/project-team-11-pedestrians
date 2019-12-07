@@ -124,6 +124,9 @@ const filterLine = d => {
   }
 };
 
+/**
+ * hi there.
+ */
 const render = () => {
   scatterplot(state.data["survey"]);
   lineChart(filterLine(state.data[state.view]));
