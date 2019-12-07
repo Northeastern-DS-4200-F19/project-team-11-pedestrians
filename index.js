@@ -173,6 +173,7 @@ const render = () => {
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+    tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
     csTopFive(filterCsBar(state.data["crime"])[0]);
     scatterplot(state.data["survey"])
     csOverTime({"survey":state.data["survey"],"actual":filterLine(state.data["crime"]).filter(a => a.neighborhood == "Chester Square"),"perceived":transformSurvey(state.data["survey"])})
@@ -183,6 +184,7 @@ const updateViz = () => {
   lineChart(filterLine(state.data[state.view]));
   stackChart(filterBar(state.data[state.view]));
   geoViz({"data":state.data[state.view],"info":state.data["geo"]});
+  tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
 }
 
 const setData = (d) => {
