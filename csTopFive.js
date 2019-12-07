@@ -13,15 +13,7 @@ function csTopFive(deets){
     var svg = d3.select('#vis7')
                 .attr('width' , width)
                 .attr('height', height)
-                //.append("rect")
-                // .attr("x",0)
-                // .attr("y",0)
-                // .attr("height",height)
-                // .attr("width",width)
-                // .attr("stroke","black")
-                // .attr("stroke-width","border")
-                // .attr("fill","none")
-                // .style('background', '#efefef');
+
   
     var chartGroup = d3.select("#vis7").append('g')
                           .append('svg')
