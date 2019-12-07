@@ -1,6 +1,6 @@
 /* General formatting */
 body {
-  padding: 0 10px;
+  padding: 10px 10px;
   font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next", avenir,
     "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",
     roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu,
@@ -11,6 +11,10 @@ h1,
 h2,
 h3 {
   line-height: 1.2;
+}
+
+.content-column p {
+  text-align: justify;
 }
 
 /* Your text should be in a nice narrow column */
