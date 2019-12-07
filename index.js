@@ -21,6 +21,8 @@ const removeChart = () => {
   d3.selectAll(".derp").remove()
   d3.selectAll(".x_axis").remove()
   d3.selectAll(".y_axis").remove()
+  d3.selectAll(".header").remove()
+  d3.selectAll(".row").remove()
   // d3.select("#table").remove()
 }
 

@@ -51,18 +51,20 @@ if(state["view"] == "crime"){
 		var columns = Object.keys(data);
 		var values = Object.values(data);
 		
-		var header = thead.append("tr")
+	var header = thead.append("tr")
 		.selectAll("th")
 		.data(columns)
 		.enter()
 		.append("th")
+		.attr("class","header")
 		.text(function(d) {return d})
 
 		var valued = [values]
 		let rows = tbody.selectAll("tr")
-		.data(valued)
-		.enter()
-		.append("tr")
+						.data(valued)
+						.enter()
+						.append("tr")
+						.attr("class","row")
    var cells = rows.selectAll("td")
     		.data(d => d)
     		.enter()
