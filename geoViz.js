@@ -101,7 +101,7 @@ const update = (deets) => {
           return color(stuff[d.properties.Name])})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
-            return "orange"
+            return "black"
           } else {
             return "grey"
           }
