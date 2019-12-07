@@ -41,10 +41,15 @@ h3 {
 
 .toolbar {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 1em;
 }
 .rowOne {
+  display: flex;
+  flex: 50% 50%;
+}
+
+.rowTwo {
   display: flex;
   flex: 50% 50%;
 }
