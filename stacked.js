@@ -95,21 +95,23 @@ function stackChart(deets) {
   var z = d3
     .scaleOrdinal()
     .range([
-      "#FF6767",
-      "#FFA367",
-      "#FFD867",
-      "#DCFF67",
-      "#93FF67",
-      "#67FFC5",
-      "#67EFFF",
-      "#67BAFF",
-      "#6797FF",
-      "#6767FF",
-      "#8767FF",
-      "#B567FF",
-      "#D867FF",
-      "#FF67DA"
-    ])
+      "#ffeaa7",
+      "#fdcb6e",
+      "#fab1a0",
+      "#e17055",
+      "#ff7675",
+      "#d63031",
+      "#55efc4",
+      "#00b894",
+      "#81ecec",
+      "#00cec9",
+      "#74b9ff",
+      "#0984e3",
+      "#a29bfe",
+      "#6c5ce7",
+      "#fd79a8",
+      "#e84393",
+    ].reverse())
     .domain([...categories]);
 
   var xAxis = d3.axisBottom(xScale);
