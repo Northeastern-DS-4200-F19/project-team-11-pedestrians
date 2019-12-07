@@ -166,6 +166,9 @@ const filterLine = (d) => {
  }
 }
 
+/**
+ * hi there.
+ */
 const render = () => {
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
