@@ -6,7 +6,7 @@ function tablevis(deets, stuff) {
 		thead = table.append("thead"),
 		tbody = table.append("tbody");
 
-		var columns = Math.round(stuff[d.properties.Name]);
+		var columns = Math.round(stuff[deets.properties.Name]);
 
 		var header = thead.append("tr")
 		.selectAll("th")
