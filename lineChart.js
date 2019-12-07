@@ -1,13 +1,17 @@
+/**
+ * Linechart function object.
+ * @param {} deets 
+ */
 function lineChart(deets){
-
-  console.log(deets)
   var data = d3.nest()
-              // .key(function(d){ return d.neighborhood == "Chester Square"})
-              .key(function(d) { return d.time; })
-              // .key(function(d) { return d.neighborhood == "Chester Square"})
-              .rollup(function(v) { return d3.sum(v, function(d) { return d.value; }); })
-              .entries(deets)
-              .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))})
+                .key(function(d) { return parseInt(d.time); })
+                .rollup(function(v) { if(state.view == "real_estate") {
+                  return d3.mean(v, function(d) { return d.value;})
+                } else {return d3.sum(v, function(d) { return d.value; });}})
+                .entries(deets)
+                .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
+
+  // setting constants
   var width  = 600;
   var height = 400;
   var margin = {
@@ -16,17 +20,14 @@ function lineChart(deets){
     left: 75,
     right: 30
   };
-  console.log(data)
   var mintime = d3.min(data, function(d){return parseInt(d.key);});
-  var maxtime = d3.max(data, function(d){return parseInt(d.key);});
+  var maxtime = d3.max(data, function(d){return parseInt(d.key);});;
 
   var minvalue = 0;
-  var maxvalue  = d3.max(data, function(d){return d.value;});
+  var maxvalue = d3.max(data, function(d){return d.value;});
 
-  d3.select(".x_axis_label").remove();
-  d3.select(".y_axis_label").remove();
-  d3.select(".title").remove();
 
+  //setting table labels
   var title = "";
   var x_axis_label = "";
   var y_axis_label = "";
@@ -45,15 +46,29 @@ function lineChart(deets){
     x_axis_label = "Year";
   }
 
+  // removing labels
+  d3.select(".x_axis_label").remove();
+  d3.select(".y_axis_label").remove();
+  d3.select(".title").remove();
+
   var svg = d3.select('#vis3')
               .attr("class", "vis3")
               .attr('width' , width)
-              .attr('height', height);
+              .attr('height', height)
+              .append("rect")
+              .attr("x",0)
+              .attr("y",0)
+              .attr("height",height)
+              .attr("width",width)
+              .attr("stroke","black")
+              .attr("stroke-width","border")
+              .attr("fill","none")
               // .style('background', '#efefef');
 
-  var chartGroup = svg.append('g')
+  // appending svg
+  var chartGroup = d3.select('#vis3').append('g')
   					          .append('svg')
-                      .attr('transform','translate(' + margin.left +',' + margin.top + ')');
+                      .attr('transform','translate(' + margin.left +',' + margin.top + ')')
 
   // Adding Graph Title
   chartGroup.append("text")
@@ -65,19 +80,21 @@ function lineChart(deets){
           .style("text-decoration", "underline")
           .text(title);
 
+  // x scale
   var xScale = d3.scaleLinear()
                  .domain([mintime, maxtime])
                  .range([0, width - 100]);
 
+  // y scale
   var yScale = d3.scaleLinear()
-                 .domain([minvalue, maxvalue + 1000])
+                 .domain([minvalue, maxvalue])
                  .range([height - margin.bottom - margin.top, 0]);
 
   var xAxis = d3.axisBottom(xScale);
 
   var yAxis = d3.axisLeft(yScale);
 
-  var x_axis = chartGroup.append('g')
+  chartGroup.append('g')
             .attr('class', 'x_axis')
             .attr('transform', 'translate('+ margin.left+', ' + (height - margin.bottom) + ')')
             .call(xAxis)
@@ -93,7 +110,8 @@ function lineChart(deets){
             .style("font-size", "16px")
             .text(x_axis_label);
 
-  var y_axis = chartGroup.append('g')
+  // Setting the Y axis labels
+  chartGroup.append('g')
             .attr('class', 'y_axis')
             .attr('transform', 'translate('+ margin.left +', ' + margin.top+')')
             .call(yAxis)
@@ -108,22 +126,21 @@ function lineChart(deets){
             .style("font-size", "16px")
             .attr("text-anchor", "middle")
             .text(y_axis_label);
-
+console.log(data)
   var paths = chartGroup
             .datum(data)
             .append("path")
             .attr("class","derp")
             .attr("fill", "none")
             .attr("stroke", d => {
-              return colors[state["view"]]})
+              return state.colors[state["view"]]})
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
             .x(function (d) {
-              return xScale(d.key) + margin.left; })
+              return xScale(parseInt(d.key)) + margin.left; })
             .y(function (d) { 
               return yScale(d.value) + margin.top; }));
 
   paths.exit().remove();
   chartGroup.exit().remove()
-
 }
