@@ -58,6 +58,7 @@ const update = (deets) => {
             .style("font-size", "16px")
             .style("text-decoration", "underline")
             .text(title);
+  tablevis(deets, stuff);
 
   var tip = d3.tip()
             .attr("class","tipVar")
