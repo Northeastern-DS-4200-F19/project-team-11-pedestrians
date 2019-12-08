@@ -160,3 +160,12 @@ table {
   table-layout: fixed;
   width: 1280px;
 }
+
+#heading {
+  text-align: center;
+
+}
+
+#table_body {
+  text-align: center;
+}

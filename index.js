@@ -13,7 +13,7 @@ var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
-    tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
+    tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value), new Set(state.data[state.view].map(s => s.neighborhood)));
   }};
 
 const removeChart = () => {
@@ -167,9 +167,10 @@ const filterLine = (d) => {
     return d.filter(obj => obj.category == "Bachelor's Degree or Higher")
   } else if (state.view === "real_estate") {
     return d.map((item) => {
-            return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value}
+            return {"time":new Date(Date.parse(item.time)).getFullYear(),"value": item.value, "neighborhood": item.neighborhood}
           }).sort((a,b) => a.time - b.time);
- } else {
+ } 
+ else {
   return d.sort((a,b) => a.category - b.category)
  }
 }
@@ -181,7 +182,7 @@ const render = () => {
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
-    tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
+    tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value), new Set(state.data[state.view].map(s => s.neighborhood)));
     csTopFive(filterCsBar(state.data["crime"])[0]);
     scatterplot(state.data["survey"])
     csOverTime({"survey":state.data["survey"],"actual":filterLine(state.data["crime"]).filter(a => a.neighborhood == "Chester Square"),"perceived":transformSurvey(state.data["survey"])})
@@ -192,7 +193,7 @@ const updateViz = () => {
   lineChart(filterLine(state.data[state.view]));
   stackChart(filterBar(state.data[state.view]));
   geoViz({"data":state.data[state.view],"info":state.data["geo"]});
-  tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
+  tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value), new Set(state.data[state.view].map(s => s.neighborhood)));
 }
 
 const setData = (d) => {

@@ -1,7 +1,5 @@
-function tablevis(deets,cs) {
+function tablevis(deets,cs, neigh) {
 	
-
-	console.log(deets);
 	var stuff = d3.nest()
                 .key(function(d) { return d.neighborhood; })
                 .rollup(function(v) { if(state.view == "real_estate") {
@@ -9,14 +7,14 @@ function tablevis(deets,cs) {
                 } else {return d3.sum(v, function(d) { return d.value; });}})
                 .entries(deets)
                 .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
-    console.log(stuff);
-    console.log(cs);
+
     var cs_total = d3.sum(cs, function(d) {return d});
     var values = stuff.map(s => s.value);
-    var total = d3.sum(values, function(d) {return d});
-    console.log(total)
-    console.log(cs_total)
+    var total = Math.round(d3.sum(values, function(d) {return d}));
 
+    if (cs_total == 0) {
+    	cs_total = "Data not available";
+    }
     //Creating the table
 	let table = d3.select('.table')
 		thead = d3.select("#heading");
@@ -25,25 +23,23 @@ function tablevis(deets,cs) {
 var metric = "";
 
 if(state["view"] == "crime"){
-    metric = "Crime By Hour in Boston";
+    metric = "Crime Reports By Hour";
   } else if (state["view"] == "real_estate") {
-    metric = "Real Estate Prices over Time";
+    metric = "Real Estate Prices over Time (in $)";
   } else if (state["view"] == "demographic") {
-    metric = "Bachelor's Degrees Over Time";
+    metric = "Total Individuals with Bachelor's Degrees";
   }
 
 		var supplement = 0
-		console.log(Object.keys(stuff).length)
 		if(Object.keys(stuff).length == 1) {
 			supplement =  stuff[0].key
-		} else if(Object.keys(stuff).length == 28){
+		} else if(Object.keys(stuff).length == neigh.size) {
 			supplement = "Boston"
 		} else {
 			supplement = "Group"
 		}
-		console.log(supplement);
    var data = {
-    	"metric": metric,
+    	"Metric": metric,
     	"Chester Square":cs_total}
     	data[supplement] = total;
 		var columns = Object.keys(data);
