@@ -12,6 +12,7 @@ function tablevis(deets,cs, neigh) {
     var values = stuff.map(s => s.value);
     var total = Math.round(d3.sum(values, function(d) {return d}));
 
+
     if (cs_total == 0) {
     	cs_total = "Data not available";
     }
@@ -31,6 +32,7 @@ if(state["view"] == "crime"){
   }
 
 		var supplement = 0
+
 		if(Object.keys(stuff).length == 1) {
 			supplement =  stuff[0].key
 		} else if(Object.keys(stuff).length == neigh.size) {

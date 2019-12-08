@@ -26,7 +26,6 @@ function csTopFive(deets){
       plz.push(current);
     });
     plz.pop()
-    console.log(plz)
 
   
     var title = "";
@@ -49,7 +48,6 @@ function csTopFive(deets){
 
     var categories = Object.keys(deets)
     categories.pop()
-    console.log(categories)
     //
     var xScale = d3.scaleBand()
                    .domain(categories)
@@ -96,7 +94,6 @@ function csTopFive(deets){
         .attr("text-anchor", "middle")
         .text(y_axis_label);
   
-      console.log(deets)
       var bars = chartGroup.selectAll("rect").data(plz)
       bars.exit().remove()
       bars.enter()
