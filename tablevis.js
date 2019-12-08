@@ -18,11 +18,9 @@ function tablevis(deets,cs) {
     console.log(cs_total)
 
     //Creating the table
-	let table = d3.select('#table')
-		.append("table")
-		.attr("class", "table table-condensed table-stripled"),
-		thead = table.append("thead"),
-		tbody = table.append("tbody");
+	let table = d3.select('.table')
+		thead = d3.select("#heading");
+		tbody = d3.select("#table_body");
 
 var metric = "";
 
@@ -51,7 +49,7 @@ if(state["view"] == "crime"){
 		var columns = Object.keys(data);
 		var values = Object.values(data);
 		
-	var header = thead.append("tr")
+	var header = thead
 		.selectAll("th")
 		.data(columns)
 		.enter()
@@ -59,18 +57,21 @@ if(state["view"] == "crime"){
 		.attr("class","header")
 		.text(function(d) {return d})
 
-		var valued = [values]
-		let rows = tbody.selectAll("tr")
-						.data(valued)
-						.enter()
-						.append("tr")
-						.attr("class","row")
+	var valued = [values]
+	let rows = tbody.selectAll("tr")
+					.data(valued)
+					.enter()
+					.append("tr")
+					.attr("class","row")
+
    var cells = rows.selectAll("td")
     		.data(d => d)
     		.enter()
-    		.append("td")
+			.append("td")
+			.attr("class","column")
     		.html(function(d){return d});
     return table;
-
-    table.exit().remove();
+	header.exit.remove();
+	cells.exit.remove();
+	table.exit().remove();
 };

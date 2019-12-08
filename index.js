@@ -13,7 +13,7 @@ var state = {scope:"boston",view:'crime',neighborhood:[], data: {"crime": null,"
     lineChart(filterLine(state.data[state.view]));
     stackChart(filterBar(state.data[state.view]));
     geoViz({"data":state.data[state.view],"info":state.data["geo"]});
-    // tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
+    tablevis(filterLine(state.data[state.view]),state.data[state.view].filter(a => a.neighborhood == "Chester Square").map(s => s.value));
   }};
 
 const removeChart = () => {
@@ -23,6 +23,9 @@ const removeChart = () => {
   d3.selectAll(".y_axis").remove()
   d3.selectAll(".header").remove()
   d3.selectAll(".row").remove()
+  d3.selectAll(".column").remove()
+  d3.selectAll(".thead").remove()
+  d3.selectAll(".tbody").remove()
   // d3.select("#table").remove()
 }
 
