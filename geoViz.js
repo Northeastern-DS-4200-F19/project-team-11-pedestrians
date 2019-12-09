@@ -67,7 +67,7 @@ const update = (deets) => {
         .attr('d', geoGenerator)
         .attr("fill",d => {
           if(stuff[d.properties.Name] == null) {
-            return color(0)
+            return "black"
           } else {
             return color(stuff[d.properties.Name])
           }})
