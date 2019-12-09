@@ -24,7 +24,7 @@ function tablevis(deets,cs, neigh) {
 var metric = "";
 
 if(state["view"] == "crime"){
-    metric = "Crime Reports By Hour";
+    metric = "Total Crime Reports";
   } else if (state["view"] == "real_estate") {
     metric = "Real Estate Prices over Time (in $)";
   } else if (state["view"] == "demographic") {
