@@ -50,29 +50,6 @@ const update = (deets) => {
             .style("text-decoration", "underline")
             .text(title);
 
-  var tip = d3.tip()
-            .attr("class","tipVar")
-            .html(d => {
-              return `<div class = "table grey">
-                      <table class="responsive-table">
-                              <thead>
-                                <tr>
-                                    <th>Metric</th>
-                                    <th>${d["properties"]["Name"]}</th>
-                                    <th>Chester Square</th>
-                                </tr>
-                              <tbody>
-                               <tr>
-                                  <td>Total ${state["view"]}</td>
-                                  <td>${Math.round(stuff[d.properties.Name])}</td> 
-                                  <td>${Math.round(stuff["Chester Square"])}</td> 
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>`
-            })
-            .attr("x", width).attr("y", height);
-
   var stuff = d3.nest().key(function(d) {return d.neighborhood})
                   .rollup(function(v) {return d3.sum(v,function(d){return d.value})})
                   .object(deets.data);
@@ -89,7 +66,11 @@ const update = (deets) => {
         .merge(paths)
         .attr('d', geoGenerator)
         .attr("fill",d => {
-          return color(stuff[d.properties.Name])})
+          if(stuff[d.properties.Name] == null) {
+            return color(0)
+          } else {
+            return color(stuff[d.properties.Name])
+          }})
         .attr("stroke",(d) => {
           if(state["neighborhood"].includes(d["properties"]["Name"])) {
             return "black"
