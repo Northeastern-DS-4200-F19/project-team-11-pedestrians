@@ -1,7 +1,5 @@
 function tablevis(deets,cs) {
 	
-
-	console.log(deets);
 	var stuff = d3.nest()
                 .key(function(d) { return d.neighborhood; })
                 .rollup(function(v) { if(state.view == "real_estate") {
@@ -9,13 +7,11 @@ function tablevis(deets,cs) {
                 } else {return d3.sum(v, function(d) { return d.value; });}})
                 .entries(deets)
                 .sort((a,b) => { return d3.ascending(parseInt(a.key), parseInt(b.key))});
-    console.log(stuff);
-    console.log(cs);
+
     var cs_total = d3.sum(cs, function(d) {return d});
     var values = stuff.map(s => s.value);
     var total = d3.sum(values, function(d) {return d});
-    console.log(total)
-    console.log(cs_total)
+
 
     //Creating the table
 	let table = d3.select('.table')
@@ -33,7 +29,7 @@ if(state["view"] == "crime"){
   }
 
 		var supplement = 0
-		console.log(Object.keys(stuff).length)
+
 		if(Object.keys(stuff).length == 1) {
 			supplement =  stuff[0].key
 		} else if(Object.keys(stuff).length == 28){
@@ -41,7 +37,7 @@ if(state["view"] == "crime"){
 		} else {
 			supplement = "Group"
 		}
-		console.log(supplement);
+
    var data = {
     	"metric": metric,
     	"Chester Square":cs_total}

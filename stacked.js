@@ -286,8 +286,7 @@ function stackChart(deets) {
         }
         // state.setN = nlist
       });
-      console.log(d3.event.selection);
-      console.log(new Set(nlist));
+
       state.setN = new Set(nlist);
     }
   }

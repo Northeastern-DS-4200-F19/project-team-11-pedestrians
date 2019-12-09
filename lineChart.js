@@ -118,7 +118,7 @@ function lineChart(deets){
             .style("font-size", "16px")
             .attr("text-anchor", "middle")
             .text(y_axis_label);
-console.log(data)
+
   var paths = chartGroup
             .datum(data)
             .append("path")

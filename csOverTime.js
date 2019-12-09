@@ -1,5 +1,4 @@
 function csOverTime(deets){
-  console.log(deets["perceived"])
     // Acknowledgement
     // https://bl.ocks.org/d3noob/814a2bcb3e7d8d8db74f36f77c8e6b7f
     var data = d3.nest()
@@ -155,19 +154,6 @@ function csOverTime(deets){
                       .domain([0,100])
                       .range([(height - margin.bottom - margin.top), margin.top])
 
-    // var legend = chartGroup.append("g")
-    //                         .selectAll("circle")
-    //                         .data(deets, d => d.key)
-    //                         .enter()
-    //                         .append("circle")
-    //                         .merge(legend)
-    //                         .attr("cx", width - margin.right)
-    //                         .attr("cy",(d,i) => y(i*5))
-    //                         .attr("r",10)
-    //                         .attr("stroke","black")
-    //                         .attr("fill",d => z(d));
-
-    console.log(deets["survey"])
     var dots = chartGroup
                   .append("g")
                   .selectAll("dot")
